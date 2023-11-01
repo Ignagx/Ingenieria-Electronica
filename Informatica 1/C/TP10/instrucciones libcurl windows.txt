@@ -1,0 +1,25 @@
+Bajar e instalar MSYS2 https://github.com/msys2/msys2-installer/releases/download/2023-07-18/msys2-x86_64-20230718.exe
+Dejar el directorio de instalacion en: C:\msys64
+Cuando se abra MSYS2 Ejecutar: 
+			pacman -S mingw-w64-ucrt-x86_64-gcc
+			pacman -S mingw-w64-x86_64-curl-winssl
+Si da error al ejecutar pacman, cerrar MSYS2 y abrirlo nuevamente desde la barra de busqueda
+
+decargar wingw para windows desde: https://github.com/skeeto/w64devkit/releases/download/v1.20.0/w64devkit-1.20.0.zip
+descomprimir el archivo .zip y copiar la carpeta w64devkit a: 
+c:\program files
+
+Agregar al codigo:
+Cambiar #include <curl/curl.h> por: #include "C:\msys64\mingw64\include\curl\curl.h"
+#define CURL_STATICLIB
+
+Editar variables de entorno y agregar al PATH:
+C:\msys64\mingw64\bin
+C:\Program Files\w64devkit\bin
+
+Abrir la terminal en la carpeta del codigo, con los archivos cJSON.h y cJSON.c en la misma carpeta
+IMPORTANTE: si estas editando el codigo desde zinjai guardarlo manualmente antes de compilar
+Compilar con: 
+gcc "TP10-IgnacioGil.c" -L "C:\msys64\mingw64\lib" cJSON.c -lcurl && a.exe
+
+Ejecutar a.exe
