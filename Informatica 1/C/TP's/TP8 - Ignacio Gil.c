@@ -2,9 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-// Esta es una prueba
-// Nueva Branch
-
 #define TAM 20
 #define MIN 20
 #define MAX 200
