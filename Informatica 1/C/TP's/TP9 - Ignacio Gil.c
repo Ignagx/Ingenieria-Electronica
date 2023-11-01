@@ -7,6 +7,7 @@
 // This is a file change, I do not want to merge this in main yet
 // Now, I will merge the branch
 // This is really good
+// I fogot to add this
 
 typedef struct {
   char nombre[40];
