@@ -4,14 +4,7 @@
 #define ENTERO 1
 #define FLOTANTE 0
 
-// This is a file change, I do not want to merge this in main yet
-// Now, I will merge the branch
-// This is really good
-// I forgot to do this too
-// I fogot to add this
-// I Love You
-// I Love you more
-// I love you too
+// Comentario
 
 typedef struct {
   char nombre[40];
