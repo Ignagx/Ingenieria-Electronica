@@ -4,15 +4,6 @@
 #define ENTERO 1
 #define FLOTANTE 0
 
-// This is a file change, I do not want to merge this in main yet
-// Now, I will merge the branch
-// This is really good
-// I forgot to do this too
-// I fogot to add this
-// I Love You
-// I Love you more
-// I love you too
-
 typedef struct {
   char nombre[40];
   int  anio_nacimiento;
@@ -41,13 +32,11 @@ void ingresar_capitulos(int *);
 void ingresar_paginas(libro_t *);
 void ingresar_precio(float *);
 void ingresar_datos_autor(autor_t *);
-void cargar_biblioteca(libro_t *bib, int cant);
-void imprimir_biblioteca(libro_t *bib, int cant);
-void swap(int *, int *);
-void swapFloat(float *, float *);
-void swapChar(char *, char *);
+void cargar_biblioteca(libro_t *, int);
+void imprimir_biblioteca(libro_t *, int);
+void swapLib(libro_t *, libro_t *);
 void quicksort(libro_t *, int, int);
-void ordenar_por_precio_menor_mayor(libro_t *bib, int cant);
+void ordenar_por_precio_menor_mayor(libro_t *, int);
 
 int main(void) {
 
@@ -90,7 +79,9 @@ void ingresar_numero(void *pV, const int tipo) {
 
   do {
     scanf(" %1000s", string); // Se ingresa la entrada a un arreglo
-
+    char ch;
+    while ((ch = getchar()) != '\n' && ch != EOF)
+      ;
     correcto = prueba_ingreso(string);
 
   } while (correcto == 0);
@@ -168,7 +159,7 @@ void ingresar_datos_autor(autor_t *autor) {
 
 void imprimir_biblioteca(libro_t *bib, int cant) {
   for (int i = 0; i < cant; i++) {
-    printf("Nombre del libro N: %s\n", i + 1, (bib + i)->nombre);
+    printf("Nombre del libro: %s\n", (bib + i)->nombre);
     printf("Cantidad de Paginas: %d\n", (bib + i)->cant_paginas);
     printf("Cantidad de capitulos: %d\n", (bib + i)->cant_capitulos);
     for (int j = 0; j < (bib + i)->cant_capitulos; j++)
@@ -180,33 +171,8 @@ void imprimir_biblioteca(libro_t *bib, int cant) {
   }
 }
 
-void swap(int *p, int *q) {
-  int tmp = *p;
-  *p = *q;
-  *q = tmp;
-}
-
-void swapFloat(float *p, float *q) {
-  float tmp = *p;
-  *p = *q;
-  *q = tmp;
-}
-
-void swapDatos(autor_t *p, autor_t *q) {
-  autor_t tmp = *p;
-  *p = *q;
-  *q = tmp;
-}
-
-void swapChar(char *p, char *q) {
-  char tmp[40] = {0};
-  strcpy(tmp, p);
-  strcpy(p, q);
-  strcpy(q, tmp);
-}
-
-void swapArr(int **p, int **q) {
-  int *tmp = *p;
+void swapLib(libro_t *p, libro_t *q) {
+  libro_t tmp = *p;
   *p = *q;
   *q = tmp;
 }
@@ -221,23 +187,13 @@ void quicksort(libro_t *bib, int left, int right) {
     while (((bib + i)->precio < (bib + j)->precio) && i < j)
       j--;
     if (i < j) {
-      swapFloat(&(bib + i)->precio, &(bib + j)->precio);
-      swapChar((bib + i)->nombre, (bib + j)->nombre);
-      swapArr(&(bib + i)->paginas_por_capitulo, &(bib + j)->paginas_por_capitulo);
-      swap(&(bib + i)->cant_capitulos, &(bib + j)->cant_capitulos);
-      swapDatos(&(bib + i)->datos_autor, &(bib + j)->datos_autor);
-      swap(&(bib + i)->cant_paginas, &(bib + j)->cant_paginas);
+      swapLib(bib + i, bib + j);
       i++;
     }
     while (((bib + i)->precio < (bib + j)->precio) && i < j)
       i++;
     if (i < j) {
-      swapFloat(&(bib + i)->precio, &(bib + j)->precio);
-      swapChar((bib + i)->nombre, (bib + j)->nombre);
-      swapArr(&(bib + i)->paginas_por_capitulo, &(bib + j)->paginas_por_capitulo);
-      swap(&(bib + i)->cant_capitulos, &(bib + j)->cant_capitulos);
-      swapDatos(&(bib + i)->datos_autor, &(bib + j)->datos_autor);
-      swap(&(bib + i)->cant_paginas, &(bib + j)->cant_paginas);
+      swapLib(bib + i, bib + j);
       j--;
     }
   } while (i < j);
