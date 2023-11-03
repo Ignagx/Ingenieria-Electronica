@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "cstdio": "c",
+        "curl.h": "c"
+    },
+    "C_Cpp.errorSquiggles": "enabled"
+}
