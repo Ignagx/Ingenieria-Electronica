@@ -534,10 +534,10 @@ char *stringAdjustment(const char *str, const int len) {
 void consultApi(char *apiString, string_buffer_t *callback) {
   CURL *curl_api;
 
+  curl_api = curl_easy_init();
+
   if (!curl_api)
     fprintf(stderr, "Fatal: curl_easy_init() error.\n");
-
-  curl_api = curl_easy_init();
 
   /* Especificar la URL a consultar */
   curl_easy_setopt(curl_api, CURLOPT_URL, apiString);
