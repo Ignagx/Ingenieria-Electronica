@@ -1,11 +1,33 @@
 \documentclass[12pt]{report}
-\usepackage[left=3cm,right=3cm,top=2cm,bottom=2cm]{geometry}
+\usepackage[left=2.5cm,right=2.5cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{etoolbox}
+\usepackage{titlesec}
+\usepackage{titling} % para personalizar el título
+
+\pagestyle{fancy}
+\fancyhf{} 
+\fancyhead[L]{UTN-FRC}
+\fancyhead[C]{FISICA 2: TPL1}
+\fancyhead[R]{2R3}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancyfoot[C]{\vfill\thepage}
+
+\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
 
 \renewcommand{\chaptername}{Experiencia}
 
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\huge}
+\titlespacing*{\chapter}{0pt}{0pt}{0pt}
+
 \DeclareMathSizes{12}{13}{6}{5}
 
-\title{Universidad Tecnológica Nacional\\TPL1: Calorimetria}
+\title{%
+  \fontsize{25}{0}\selectfont Universidad Tecnológica Nacional \\
+  \fontsize{22}{30}\selectfont Física 2 \\
+  \fontsize{18}{25}\selectfont TPL1: Calorimetría
+}
 \author{
 Franco Palombo\\
 Gaston Grasso\\
@@ -14,7 +36,7 @@ Luciano Cortesini\\
 Santino Noccetti\\
 Veronica Sticotti
 }
-\date{Abril 2024}
+\date{24 / 04 / 2024}
 
 \begin{document}
 \maketitle
@@ -27,7 +49,7 @@ En esta primera experiencia se busca medir las perdidas de calor de un caloríme
 Para esto se ingresó una masa de $92 g$ de agua a una temperatura de $25^\circ C$.
 Luego se agregó al calorímetro una porción de agua hirviendo, obteniendo finalmente una temperatura de  $45^\circ C$. 
 Para obtener la masa de agua hirviendo que fue ingresada al calorímetro, se vertió todo el contenido en un vaso de precipitado y se pesó la masa total, deduciendo así una masa de agua caliente de $43g$.
-\begin{table}[htbp]
+\begin{table}[htbp!]
     \centering
     \begin{tabular}{|c|c|c|c|}
     \hline
@@ -35,9 +57,9 @@ Para obtener la masa de agua hirviendo que fue ingresada al calorímetro, se ver
     \hline
     $Masa[g]$ & 92 & 43 & $\pi$ \\
     \hline
-   $T_o[^\circ C]$ & 25 & 100 & 25\\
+    $t_o[^\circ C]$ & 25 & 100 & 25\\
     \hline
-     $T_f[^\circ C]$ & \multicolumn{3}{|c|}{45}\\
+    $t_f[^\circ C]$ & \multicolumn{3}{|c|}{45}\\
     \hline
     \end{tabular}
     \caption{Cuadro de valores medidos en la experiencia 1}
@@ -48,7 +70,7 @@ Para calcular $\pi$ se parte de la idea de que el calorímetro es un sistema cer
 $$\sum Q_{Sistema}= 0$$
 $$Q_{AF} + Q_{AC} + Q_{C} = 0$$
 \hspace{1cm} Sustituyendo por cada respectiva formula de calor.
-$$m_{AF} \cdot c_{Agua} \cdot {\Delta t}_{AF} + m_{AC} \cdot c_{Agua} \cdot {\Delta t}_{AF} + \pi \cdot c_{Agua} \cdot {\Delta t}_{C} = 0$$
+$$m_{AF} \cdot c_{Agua} \cdot {\Delta t}_{AF} + m_{AC} \cdot c_{Agua} \cdot {\Delta t}_{AC} + \pi \cdot c_{Agua} \cdot {\Delta t}_{C} = 0$$
 $$c_{Agua} \cdot (m_{AF}  \cdot {\Delta t}_{AF} + m_{AC} \cdot {\Delta t}_{AC} + \pi \cdot {\Delta t}_C) = 0$$
 $$m_{AF} \cdot  {\Delta t}_{AF} + m_{AC} \cdot  {\Delta t}_{AC} + \pi \cdot {\Delta t}_C= 0$$
 \hspace{1cm} y finalmente despejando $\pi$, obtenemos:
@@ -63,7 +85,7 @@ Con esta experiencia se busca calcular el calor especifico de un metal desconoci
 Primero, se prepararon $149 g$ de agua a temperatura ambiente. Y se calentó el metal, de una masa de $229 g$, a $100^\circ C$. Se tomó la temperatura del agua, se introdujo el metal y se cerró la tapa del calorímetro. Finalmente, se midió la temperatura de equilibrio.
 Estos valores se pueden visualizar en el cuadro \ref{table:data}:
 
-\begin{table}[htbp]
+\begin{table}[htpb!]
 \centering
 \begin{tabular}{|c|c|c|c|}
     \hline
@@ -71,9 +93,9 @@ Estos valores se pueden visualizar en el cuadro \ref{table:data}:
     \hline
     Masa$[g]$ & 149 & 229 & 26.25 \\
     \hline
-    $T_o [^\circ C]$ & 27 & 100 & 27 \\
+    $t_o [^\circ C]$ & 27 & 100 & 27 \\
     \hline
-    $T_f [^\circ C]$ & \multicolumn{3}{|c|}{35}\\
+    $t_f [^\circ C]$ & \multicolumn{3}{|c|}{35}\\
     \hline
 \end{tabular}
 \caption{Cuadro de valores medidos en la experiencia 2}
@@ -88,7 +110,7 @@ $$\sum Q_{Sistema} = 0$$
 $$Q_{AF} + Q_c + Q_{MD} = 0$$
 \hspace{1cm} Sustituyendo por cada respectiva formula de calor.
 $$m_{AF} \cdot c_{Agua} \cdot {\Delta T}_{AF} + m_C \cdot c_C \cdot {\Delta T}_c + m_{MD} \cdot c_{MD} \cdot {\Delta T}_{MD} = 0$$
-$$149g \cdot 1 \frac{cal}{g\cdot^\circ C} \cdot (35^\circ C - 27^\circ C) + 26,25g \cdot 1 \frac{cal}{g\cdot^\circ C} \cdot (35^\circ C - 25^\circ C) + 229g \cdot  c_{MD} \cdot (35^\circ C - 100^\circ C) = 0$$
+$$149g \cdot 1 \frac{cal}{g\cdot^\circ C} \cdot (35^\circ C - 27^\circ C) + 26,25g \cdot 1 \frac{cal}{g\cdot^\circ C} \cdot (35^\circ C - 27^\circ C) + 229g \cdot  c_{MD} \cdot (35^\circ C - 100^\circ C) = 0$$
 $$149g \cdot 1 \frac{cal}{g\cdot^\circ C} \cdot 8^\circ C + 26,25g \cdot 1 \frac{cal}{g\cdot^\circ C} \cdot 8^\circ C + 229g \cdot c_{MD}  \cdot (-65)^\circ C = 0$$
 $$1.192 cal + 210 cal - 14.885 g\cdot^\circ C \cdot c_{MD}  = 0$$
 
