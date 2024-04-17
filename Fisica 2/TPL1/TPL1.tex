@@ -84,32 +84,24 @@ Estos valores se pueden visualizar en el cuadro \ref{table:data}:
 
 Para el calculo del calor específico utilizamos la formula general de calor que dice:
 
-$$\sum Q = 0$$
+$$\sum Q_{Sistema} = 0$$
 
 \noindent
 Teniendo en cuenta el calor de cada uno de los materiales que utilizamos, nos queda:
 
-\tiny{
-\begin{eqnarray*}
-Q_{af} + Q_c + Q_{md} = 0 \\
-m_{af} \cdot Ce_{af} \cdot \Delta T_{af} + m_c \cdot Ce_c \cdot \Delta T_c + m_{md} \cdot Ce_{md} \cdot \Delta T_{md} = 0 \\
-144g \cdot 1 \frac{cal}{g\cdot^\circ C} \cdot (35^\circ C - 27^\circ C) + 26,25g \cdot 1 \frac{cal}{g\cdot^\circ C} \cdot (35^\circ C - 25^\circ C) + 229g \cdot X \cdot (35^\circ C - 100^\circ C) = 0 \\
-144g \cdot 1 \frac{cal}{g\cdot^\circ C} \cdot 8^\circ C + 26,25g \cdot 1 \frac{cal}{g\cdot^\circ C} \cdot 8^\circ C + 229g \cdot X \cdot (-65)^\circ C = 0 \\
-1.152 g\cdot^\circ C + 210 g\cdot^\circ C - 14.885 g\cdot^\circ C \cdot X = 0
-\end{eqnarray*}
-}
+$$Q_{AF} + Q_c + Q_{MD} = 0$$
+$$m_{AF} \cdot Ce_{Agua} \cdot {\Delta T}_{AF} + m_c \cdot Ce_c \cdot {\Delta T}_c + m_{md} \cdot Ce_{md} \cdot {\Delta T}_{md} = 0$$
+$$144g \cdot 1 \frac{cal}{g\cdot^\circ C} \cdot (35^\circ C - 27^\circ C) + 26,25g \cdot 1 \frac{cal}{g\cdot^\circ C} \cdot (35^\circ C - 25^\circ C) + 229g \cdot  Ce_{md} \cdot (35^\circ C - 100^\circ C) = 0$$
+$$144g \cdot 1 \frac{cal}{g\cdot^\circ C} \cdot 8^\circ C + 26,25g \cdot 1 \frac{cal}{g\cdot^\circ C} \cdot 8^\circ C + 229g \cdot Ce_{md}  \cdot (-65)^\circ C = 0$$
+$$1.152 cal + 210 cal - 14.885 g\cdot^\circ C \cdot Ce_{md}  = 0$$
 
-\normalsize{
 \noindent
-Si despejamos X quedaria:
+Si despejamos $Ce_{md}$ quedaria:
 
-\begin{eqnarray*}
-X = \frac{210 cal - 1.152 cal}{-14.885 g\cdot^\circ C}\\
-X = 0.094 \frac{cal}{g\cdot^\circ C}
-\end{eqnarray*}
+$$Ce_{md}  = \frac{210 cal - 1.152 cal}{-14.885 g\cdot^\circ C}\\$$
+$$Ce_{md}  = 0.094 \frac{cal}{g\cdot^\circ C}$$
 
 \noindent
 Este calor específico nos indica que el metal desconocido era de bronce.
-}
 
 \end{document}
