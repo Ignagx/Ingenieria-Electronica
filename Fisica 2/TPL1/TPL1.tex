@@ -47,13 +47,13 @@ Para obtener la masa de agua hirviendo que fue ingresada al calorímetro, se ver
 Para calcular $\pi$ se parte de la idea de que el calorímetro es un sistema cerrado, por ende no intercambia calor con el entorno. por lo que es correcto afirmar que:
 $$\sum Q_{Sistema}= 0$$
 $$Q_{AF} + Q_{AC} + Q_{C} = 0$$
-$$m_{AF} c_{Agua} {\Delta t}_{AF} + m_{AC} c_{Agua} {\Delta t}_{AF} + \pi c_{Agua} {\Delta t}_{C} = 0$$
+$$m_{AF} \cdot c_{Agua} \cdot {\Delta t}_{AF} + m_{AC} \cdot c_{Agua} \cdot {\Delta t}_{AF} + \pi \cdot c_{Agua} \cdot {\Delta t}_{C} = 0$$
 \hspace{1cm} Sustituimos por cada respectiva formula de calor.
-$$c_{Agua}(m_{AF}  {\Delta t}_{AF} + m_{AC}  {\Delta t}_{AC} + \pi {\Delta t}_C) = 0$$
-$$m_{AF}  {\Delta t}_{AF} + m_{AC}  {\Delta t}_{AC} + \pi {\Delta t}_C= 0$$
+$$c_{Agua} \cdot (m_{AF}  \cdot {\Delta t}_{AF} + m_{AC} \cdot {\Delta t}_{AC} + \pi \cdot {\Delta t}_C) = 0$$
+$$m_{AF} \cdot  {\Delta t}_{AF} + m_{AC} \cdot  {\Delta t}_{AC} + \pi \cdot {\Delta t}_C= 0$$
 \hspace{1cm} y finalmente despejamos $\pi$.
-$$\pi =-\frac{m_{AF}  {\Delta t}_{AF} + m_{AC}  {\Delta t}_{AC}}{{\Delta t}_C}$$
-$$\pi =-\frac{92g(45^\circ C-25^\circ C)+ 43g (45^\circ C-100^\circ C)}{45^\circ C-25^\circ C}$$
+$$\pi =-\frac{m_{AF} \cdot  {\Delta t}_{AF} + m_{AC} \cdot  {\Delta t}_{AC}}{{\Delta t}_C}$$
+$$\pi =-\frac{92g \cdot (45^\circ C-25^\circ C)+ 43g \cdot (45^\circ C-100^\circ C)}{45^\circ C-25^\circ C}$$
 $$\pi = 26,25g$$
 \chapter{}
 \section{Objetivo}
@@ -67,9 +67,9 @@ Estos valores se pueden visualizar en el cuadro \ref{table:data}:
 \centering
 \begin{tabular}{|c|c|c|c|}
     \hline
-    Valores & Agua Fria & Calorimetro & Metal Desconocido \\
+    Valores & Agua Fria (AF) & Calorimetro (C) & Metal Desconocido (MD) \\
     \hline
-    Masa$[g]$ & 144 & 229 & 26.25 \\
+    Masa$[g]$ & 149 & 229 & 26.25 \\
     \hline
     $T_o [^\circ C]$ & 27 & 100 & 27 \\
     \hline
@@ -90,16 +90,16 @@ $$\sum Q_{Sistema} = 0$$
 Teniendo en cuenta el calor de cada uno de los materiales que utilizamos, nos queda:
 
 $$Q_{AF} + Q_c + Q_{MD} = 0$$
-$$m_{AF} \cdot Ce_{Agua} \cdot {\Delta T}_{AF} + m_c \cdot Ce_c \cdot {\Delta T}_c + m_{md} \cdot Ce_{md} \cdot {\Delta T}_{md} = 0$$
-$$144g \cdot 1 \frac{cal}{g\cdot^\circ C} \cdot (35^\circ C - 27^\circ C) + 26,25g \cdot 1 \frac{cal}{g\cdot^\circ C} \cdot (35^\circ C - 25^\circ C) + 229g \cdot  Ce_{md} \cdot (35^\circ C - 100^\circ C) = 0$$
-$$144g \cdot 1 \frac{cal}{g\cdot^\circ C} \cdot 8^\circ C + 26,25g \cdot 1 \frac{cal}{g\cdot^\circ C} \cdot 8^\circ C + 229g \cdot Ce_{md}  \cdot (-65)^\circ C = 0$$
-$$1.152 cal + 210 cal - 14.885 g\cdot^\circ C \cdot Ce_{md}  = 0$$
+$$m_{AF} \cdot C_{Agua} \cdot {\Delta T}_{AF} + m_C \cdot C_C \cdot {\Delta T}_c + m_{MD} \cdot C_{MD} \cdot {\Delta T}_{MD} = 0$$
+$$149g \cdot 1 \frac{cal}{g\cdot^\circ C} \cdot (35^\circ C - 27^\circ C) + 26,25g \cdot 1 \frac{cal}{g\cdot^\circ C} \cdot (35^\circ C - 25^\circ C) + 229g \cdot  C_{MD} \cdot (35^\circ C - 100^\circ C) = 0$$
+$$149g \cdot 1 \frac{cal}{g\cdot^\circ C} \cdot 8^\circ C + 26,25g \cdot 1 \frac{cal}{g\cdot^\circ C} \cdot 8^\circ C + 229g \cdot C_{MD}  \cdot (-65)^\circ C = 0$$
+$$1.192 cal + 210 cal - 14.885 g\cdot^\circ C \cdot Ce_{MD}  = 0$$
 
 \noindent
-Si despejamos $Ce_{md}$ quedaria:
+Si despejamos $Ce_{MD}$ quedaria:
 
-$$Ce_{md}  = \frac{210 cal - 1.152 cal}{-14.885 g\cdot^\circ C}\\$$
-$$Ce_{md}  = 0.094 \frac{cal}{g\cdot^\circ C}$$
+$$C_{MD}  = \frac{210 cal - 1.192 cal}{-14.885 g\cdot^\circ C}\\$$
+$$C_{MD}  = 0.094 \frac{cal}{g\cdot^\circ C}$$
 
 \noindent
 Este calor específico nos indica que el metal desconocido era de bronce.
