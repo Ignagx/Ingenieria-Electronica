@@ -3,6 +3,8 @@
 
 \renewcommand{\chaptername}{Experiencia}
 
+\DeclareMathSizes{12}{13}{6}{5}
+
 \title{Universidad Tecnológica Nacional\\TPL1: Calorimetria}
 \author{
 Luciano Cortesini\\
@@ -25,12 +27,11 @@ En esta primera experiencia se busca medir las perdidas de calor de un caloríme
 Para esto se ingresó una masa de $92 g$ de agua a una temperatura de $25^\circ C$.
 Luego se agregó al calorímetro una porción de agua hirviendo, obteniendo finalmente una temperatura de  $45^\circ C$. 
 Para obtener la masa de agua hirviendo que fue ingresada al calorímetro, se vertió todo el contenido en el vaso de precipitado y se pesó la masa total, deduciendo así una masa de agua caliente de $43g$.
-\subsection{Calculo de $\pi$}
 \begin{table}[htbp]
     \centering
     \begin{tabular}{|c|c|c|c|}
     \hline
-    & Agua Fría & Agua Caliente & Calorímetro\\
+    & Agua Fría (AF) & Agua Caliente (AC) & Calorímetro (C)\\
     \hline
     $Masa[g]$ & 92 & 43 & $\pi$ \\
     \hline
@@ -42,7 +43,18 @@ Para obtener la masa de agua hirviendo que fue ingresada al calorímetro, se ver
     \caption{Cuadro de valores medidos en la experiencia 1}
     \label{tab:datos experiencia 1}
 \end{table}
-
+\subsection{Calculo de $\pi$}
+Para calcular $\pi$ se parte de la idea de que el calorímetro es un sistema cerrado, por ende no intercambia calor con el entorno. por lo que es correcto afirmar que:
+$$\sum Q_{Sistema}= 0$$
+$$Q_{AF} + Q_{AC} + Q_{C} = 0$$
+$$m_{AF} c_{Agua} {\Delta t}_{AF} + m_{AC} c_{Agua} {\Delta t}_{AF} + \pi c_{Agua} {\Delta t}_{C} = 0$$
+\hspace{1cm} Sustituimos por cada respectiva formula de calor.
+$$c_{Agua}(m_{AF}  {\Delta t}_{AF} + m_{AC}  {\Delta t}_{AC} + \pi {\Delta t}_C) = 0$$
+$$m_{AF}  {\Delta t}_{AF} + m_{AC}  {\Delta t}_{AC} + \pi {\Delta t}_C= 0$$
+\hspace{1cm} y finalmente despejamos $\pi$.
+$$\pi =-\frac{m_{AF}  {\Delta t}_{AF} + m_{AC}  {\Delta t}_{AC}}{{\Delta t}_C}$$
+$$\pi =-\frac{92g(45^\circ C-25^\circ C)+ 43g (45^\circ C-100^\circ C)}{45^\circ C-25^\circ C}$$
+$$\pi = 26,25g$$
 \chapter{}
 \section{Objetivo}
 En la segunda experiencia, el objetivo era calcular el calor especifico de un metal desconocido.
@@ -72,11 +84,7 @@ Estos valores se pueden visualizar en el cuadro \ref{table:data}:
 
 Para el calculo del calor específico utilizamos la formula general de calor que dice:
 
-\begin{center}
-\begin{math}
-\sum Q = 0
-\end{math}
-\end{center}
+$$\sum Q = 0$$
 
 \noindent
 Teniendo en cuenta el calor de cada uno de los materiales que utilizamos, nos queda:
