@@ -6,6 +6,7 @@
 \usepackage{titling} % para personalizar el título
 \usepackage{amssymb}
 \usepackage{amsmath}
+\usepackage{graphicx}
 
 \pagestyle{fancy}
 \fancyhf{} 
@@ -76,4 +77,120 @@ Considerar las siguientes funciones de variable compleja $z = x + jy$:
 
     \item[f)] De las funciones anteriores, ¿se puede afirmar que $f'_1(z) = u_{1x} + jv_{1x}$ o $f'_2(z) = u_{2x} + jv_{2x}$? ¿Por qué?
 \end{enumerate}
+\chapter{}
+
+Considerar $$ f(z) = w $$ el mapeo bilineal que transforma los puntos:
+
+\begin{align*}
+    z_1 &= \infty, \quad & w_1 &= -j \\
+    z_2 &= -j, \quad & w_2 &= 0 \\
+    z_3 &= 0, \quad & w_3 &= \infty 
+\end{align*}
+
+\textbf{a) Desarrollar la fórmula que determina al mapeo \( f(z) \), empleando razones cruzadas.}
+
+Resolución: Se procede partiendo desde la definición de mapeo para una razón cruzada:
+
+$$ \frac{z - z_1}{z - z_3} \cdot \frac{z_2 - z_3}{z_2 - z_1} = \frac{w - w_1}{w - w_3} \cdot \frac{w_2 - w_3}{w_2 - w_1} $$
+
+Antes de reemplazar los valores de los puntos en la definición anterior, es más cómodo si se simplifica acorde al ejercicio. Debido a que tenemos puntos que tienden al infinito en ambos \( w \) y \( z \), vamos a sacar factor común de aquellos puntos, con el objetivo de simplificarlos, ya sea por cancelación o utilizando las identidades de los números hiperreales:
+
+$$ \frac{z_1z}{z - 1} \cdot \frac{z - z_3}{z_2 - z_3} \cdot \frac{z_2 - z_3}{z_1z_3 - 1} = \frac{w_1w}{w - 1} \cdot \frac{w - w_3}{w_2 - w_3} \cdot \frac{w_2 - w_3}{w_1w_3 - 1} $$
+
+$$ \frac{z}{z - 1} \cdot \frac{-j - 0}{0 - (-j)} \cdot \frac{-j}{-j - 1} = \frac{w}{w - 1} \cdot \frac{\infty - \infty}{0 - \infty} \cdot \frac{0 - \infty}{-j\infty - 1} $$
+
+Por las identidades de los números hiperreales, cualquier número dividido una magnitud infinita es igual a cero:
+
+$$ \frac{0 - 1}{z} \cdot \frac{j}{-j} \cdot \frac{1}{j} = \frac{w + j}{0} \cdot \frac{0 - 1}{-j} \cdot \frac{j}{-1} $$
+
+$$ - \frac{1}{z} \cdot j = - \frac{w + j}{j} $$
+
+$$ w = \frac{1}{z} - j $$
+
+\textbf{b) Obtener las fórmulas y graficar \( R' \) en el plano \( W \), sabiendo que \( R = \{z \in \mathbb{C} \mid \text{Im}(z) - 2\text{Re}(z) = 0\} \) en el plano \( W \).}
+
+Resolución: Para simplificar el desarrollo del ejercicio, se realizarán dos mapeos. Uno, \( w_0 \), que va a ser el mapeo recíproco, y otro, \( w_1 \), que va a ser la traslación del mapeo \( w_0 \) a \( -j \).
+
+Para empezar, necesitamos encontrar la relación que tienen las componentes \( x \) e \( y \) (de \( z \)) respecto de \( u \) y \( v \) (de \( w_0 \)):
+
+$$ w_0 = \frac{1}{z} $$
+$$ u + jv = \frac{1}{x + jy} $$
+$$ x + jy = \frac{1}{u + jv} $$
+$$ x + jy = \frac{1}{u + jv} \cdot \frac{u - jv}{u - jv} $$
+$$ x + jy = \frac{u - jv}{u^2 + v^2} $$
+
+$$ x = \frac{u}{u^2 + v^2}, \quad y = \frac{-v}{u^2 + v^2} $$
+
+Ya teniendo las relaciones entre \( w_0 \) y \( z \), procedemos a operar la ecuación que define el conjunto, y reemplazar con sus respectivas igualdades las variables que correspondan:
+
+$$ \text{Im}(z) - 2\text{Re}(z) = 0 $$
+$$ y - 2x = 0 $$
+$$ -\frac{v}{u^2 + v^2} - 2\frac{u}{u^2 + v^2} = 0 $$
+$$ -v - 2u = 0 $$
+$$ -v - 2u = w_0 $$
+
+Ya teniendo \( w_0 \), para completar el mapeo, es tan simple como reemplazar el resultado obtenido en \( w_1 \), y se obtiene la ecuación que define el nuevo conjunto \( R' \):
+
+$$ w_1 = w_0 - j $$
+$$ w_1 = -v - 2u - j $$
+
+$$ R' = \{w \in \mathbb{C} \mid -v - 2u = j\} $$\\
+
+\vspace{1em} % Agregar espacio vertical
+
+
+\begin{figure}[h] % Aquí comienza el ambiente de figura
+    \centering % Centrar la imagen
+    \includegraphics[width=0.65\textwidth]{./Imagenes/foto1Ej3.png} % Insertar la imagen
+\end{figure}
+
+\vspace{1em} % Agregar espacio vertical
+
+
+\textbf{c) Obtener las fórmulas y graficar \( C' \) en el plano \( W \), sabiendo que \( C = \{z \in \mathbb{C} \mid |z - 1 - j| = 2\} \) en el plano \( W \).}
+
+Resolución: Para simplificar el desarrollo del ejercicio, como se hizo antes, se realizarán dos mapeos. Uno, \( w_0 \), que va a ser el mapeo recíproco, y otro, \( w_1 \), que va a ser la traslación del mapeo \( w_0 \) a \( -j \).
+
+Para no repetir, vamos a traer del punto b, las relaciones de \( x \) e \( y \) (de \( z \)) respecto de \( u \) y \( v \) (de \( w_0 \)):
+
+$$ x = \frac{u}{u^2 + v^2}, \quad y = \frac{-v}{u^2 + v^2} $$
+
+
+
+Ahora simplemente obtenemos la ecuación que define el conjunto y reemplazamos correspondientemente:\\[6pt]
+\begin{math}
+\begin{align*}
+|z-1-j| &= 2 \\[6pt]
+|x+jy-1-j| &= 2 \\[6pt]
+|x-1+jy-j| &= 2 \\[6pt]
+|(x-1)+j(y-1)| &= 2 \\[6pt]
+(x-1)^2 + (y-1)^2 &= 2 \\[6pt]
+(x-1)^2 + (y-1)^2 &= 2 \\[6pt]
+x^2 - 2x + 1 + y^2 - 2y + 1 &= 2 \\[6pt]
+x^2 - 2x + y^2 - 2y + 2 &= 2 \\[6pt]
+x^2 - 2x + y^2 - 2y &= 0 \\[6pt]
+uu^2 + v^2 - 2uu^2 + v^2 - vu^2 + v^2 - 2 - vu^2 + v^2 &= 0 \\[6pt]
+u^2 u^2 + v^2 - 2uu^2 + v^2 + v^2 u^2 + v^2 - 2vu^2 + v^2 &= 0 \\[6pt]
+u^2 u^2 + v^2 + v^2 u^2 + v^2 &= 2uu^2 + v^2 - 2vu^2 + v^2 \\[6pt]
+1 u^2 + v^2 u^2 u^2 + v^2 + v^2 u^2 + v^2 &= 1 u^2 + v^2 2u - 2v \\[6pt]
+u^2 + v^2 u^2 + v^2 &= 2u - 2v \\[6pt]
+1 &= 2u - 2v \\[6pt]
+w_0 &= 2u - 2v - 1\\
+\end{align*}
+\end{math}
+
+Ya teniendo $w_0$, para completar el mapeo, es tan simple como reemplazar el resultado obtenido en $w_1$, y se obtiene la ecuación que define el nuevo conjunto C':\\
+
+
+w_1=w_0-j \\[5pt]
+w_1=2u-2v-1-j \\[5pt]
+C'=\{w \in \mathbb{C} | 2u-2v-j=1\}
+
+\begin{figure}[h] % Aquí comienza el ambiente de figura
+    \centering % Centrar la imagen
+    \includegraphics[width=0.65\textwidth]{./Imagenes/foto2Ej3.png} % Insertar la imagen
+\end{figure}
+
+
+
 \end{document}
