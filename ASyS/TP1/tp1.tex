@@ -139,6 +139,52 @@ $$ R' = \{w \in \mathbb{C} \mid -v - 2u = j\} $$
     \includegraphics[width=0.65\textwidth]{./Imagenes/foto1Ej3.png} % Insertar la imagen
 \end{figure}
 
+\textbf{c) Obtener las fórmulas y graficar \( C' \) en el plano \( W \), sabiendo que \( C = \{z \in \mathbb{C} \mid |z - 1 - j| = 2\} \) en el plano \( W \).}\\[6pt]
+
+Resolución: Para simplificar el desarrollo del ejercicio, como se hizo antes, se realizarán dos mapeos. Uno, \( w_0 \), que va a ser el mapeo recíproco, y otro, \( w_1 \), que va a ser la traslación del mapeo \( w_0 \) a \( -j \).
+
+Para no repetir, vamos a traer del punto b, las relaciones de \( x \) e \( y \) (de \( z \)) respecto de \( u \) y \( v \) (de \( w_0 \)):
+
+$$ x = \frac{u}{u^2 + v^2}, \quad y = \frac{-v}{u^2 + v^2} $$\\[6pt]
+Ahora simplemente obtenemos la ecuación que define el conjunto y reemplazamos correspondientemente:
+\begin{math}
+\begin{aligned}
+|z-1-j| &= 2 \\[6pt]
+|x+jy-1-j| &= 2 \\[6pt]
+|x-1+jy-j| &= 2 \\[6pt]
+|(x-1)+j(y-1)| &= 2 \\[6pt]
+(x-1)^2 + (y-1)^2 &= 2 \\[6pt]
+(x-1)^2 + (y-1)^2 &= 2 \\[6pt]
+x^2 - 2x + 1 + y^2 - 2y + 1 &= 2 \\[6pt]
+x^2 - 2x + y^2 - 2y + 2 &= 2 \\[6pt]
+x^2 - 2x + y^2 - 2y &= 0 \\[6pt]
+uu^2 + v^2 - 2uu^2 + v^2 - vu^2 + v^2 - 2 - vu^2 + v^2 &= 0 \\[6pt]
+u^2 u^2 + v^2 - 2uu^2 + v^2 + v^2 u^2 + v^2 - 2vu^2 + v^2 &= 0 \\[6pt]
+u^2 u^2 + v^2 + v^2 u^2 + v^2 &= 2uu^2 + v^2 - 2vu^2 + v^2 \\[6pt]
+1 u^2 + v^2 u^2 u^2 + v^2 + v^2 u^2 + v^2 &= 1 u^2 + v^2 2u - 2v \\[6pt]
+u^2 + v^2 u^2 + v^2 &= 2u - 2v \\[6pt]
+1 &= 2u - 2v \\[6pt]
+w_0 &= 2u - 2v - 1\\[6pt]
+\end{aligned}
+\end{math}
+
+Ya teniendo $w_0$, para completar el mapeo, es tan simple como reemplazar el resultado obtenido en $w_1$, y se obtiene la ecuación que define el nuevo conjunto \( C' \):\\
+
+\begin{math}
+\begin{aligned}
+    w_1 &= w_0-j \\[5pt]
+    w_1 &= 2u-2v-1-j \\[5pt]
+    C' &= \{w \in \mathbb{C} \, | \, 2u-2v-j=1\}
+\end{aligned}
+\end{math}
+
+\begin{figure}[htbp] % Aquí comienza el ambiente de figura
+    \centering % Centrar la imagen
+    \includegraphics[width=0.65\textwidth]{./Imagenes/foto2Ej3.png} % Insertar la imagen
+\end{figure}
+
+\clearpage
+
 \chapter{}
 
 Con este ejercicio se espera que el estudiante controle el comportamiento de un mapeo expresándolo previamente como una composición de mapeos básicos, y como ello, obtener fácilmente las fórmulas de una región en el plano $W$ dadas las fórmulas en el plano $Z$. Considerar el mapeo $w = e^{3z + 2}$.
