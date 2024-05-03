@@ -21,7 +21,7 @@
   {\normalfont\bfseries}{\chaptertitlename\ \thechapter}{15pt}{}
 \titlespacing*{\chapter}{0pt}{0pt}{0pt}
 
-\DeclareMathSizes{12}{13}{8}{8}
+\DeclareMathSizes{15}{13}{8}{8}
 
 \title{%
   \fontsize{25}{0}\selectfont Universidad Tecnológica Nacional \\
@@ -36,7 +36,23 @@
 
 \chapter{}
 Considerar la ecuación en variable compleja $z^7-jz^7+2^{14}2e^{\frac{j\pi}{2}}=0$
+Obtener el conjunto $S$ de números complejos que solucionan la ecuación
 
+\begin{enumerate}
+  \item Demostrar que  $S = \{z_k = 4e^{j(\frac{\pi}{4}+\frac{2k\pi}{7})} \mid k=-3;-2;-1;0;1;2;3\}$
+    $$z^7 - jz^7 + 2^{14}\sqrt{2}e^{\frac{j\pi}{2}} = 0$$
+    $$z^7(1-j) = 2^{14}\sqrt{2}e^{\frac{-j\pi}{2}}$$
+    $$z^7 = \frac{2^{14}\sqrt{2}e^{-\frac{j\pi}{2}}} {2e^{-\frac{j\pi}{4}}}$$
+    $$z = (2^{14}e^{j(-\frac{\pi} {4})})^{1/7}$$
+    $$z = 4e^{j\frac{(-\frac{\pi}{4}+2k\pi)}{7}} \quad,\quad k = \{-3,-2,-1,0,1,2,3\}$$
+
+  \item Obtener el gráfico de normas del conjunto $S$, esto es,
+    $$k, |k| \quad | \quad k = -3;-2;-1;0;1;2;3 $$
+
+  \item Obtener el gráfico de argumentos principales del conjunto $S$, esto es,
+    $$k, Arg(z_k) \quad | \quad k = -3;-2;-1;0;1;2;3 $$
+
+\end{enumerate}
 
 \chapter{}
 
