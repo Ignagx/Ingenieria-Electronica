@@ -134,25 +134,18 @@ $$ w_1 = -v - 2u - j $$
 
 $$ R' = \{w \in \mathbb{C} \mid -v - 2u = j\} $$
 
-
 \begin{figure}[h] % Aquí comienza el ambiente de figura
     \centering % Centrar la imagen
     \includegraphics[width=0.65\textwidth]{./Imagenes/foto1Ej3.png} % Insertar la imagen
 \end{figure}
 
-
-\vspace{33em} % Agregar espacio vertical
-
-
-\textbf{c) Obtener las fórmulas y graficar \( C' \) en el plano \( W \), sabiendo que \( C = \{z \in \mathbb{C} \mid |z - 1 - j| = 2\} \) en el plano \( W \).}
+\textbf{c) Obtener las fórmulas y graficar \( C' \) en el plano \( W \), sabiendo que \( C = \{z \in \mathbb{C} \mid |z - 1 - j| = 2\} \) en el plano \( W \).}\\[6pt]
 
 Resolución: Para simplificar el desarrollo del ejercicio, como se hizo antes, se realizarán dos mapeos. Uno, \( w_0 \), que va a ser el mapeo recíproco, y otro, \( w_1 \), que va a ser la traslación del mapeo \( w_0 \) a \( -j \).
 
 Para no repetir, vamos a traer del punto b, las relaciones de \( x \) e \( y \) (de \( z \)) respecto de \( u \) y \( v \) (de \( w_0 \)):
 
-$$ x = \frac{u}{u^2 + v^2}, \quad y = \frac{-v}{u^2 + v^2} $$
-
-
+$$ x = \frac{u}{u^2 + v^2}, \quad y = \frac{-v}{u^2 + v^2} $$\\[6pt]
 
 Ahora simplemente obtenemos la ecuación que define el conjunto y reemplazamos correspondientemente:\\[6pt]
 \begin{math}
@@ -172,7 +165,7 @@ u^2 u^2 + v^2 + v^2 u^2 + v^2 &= 2uu^2 + v^2 - 2vu^2 + v^2 \\[6pt]
 1 u^2 + v^2 u^2 u^2 + v^2 + v^2 u^2 + v^2 &= 1 u^2 + v^2 2u - 2v \\[6pt]
 u^2 + v^2 u^2 + v^2 &= 2u - 2v \\[6pt]
 1 &= 2u - 2v \\[6pt]
-w_0 &= 2u - 2v - 1
+w_0 &= 2u - 2v - 1\\[6pt]
 \end{aligned}
 \end{math}
 
@@ -189,6 +182,57 @@ Ya teniendo $w_0$, para completar el mapeo, es tan simple como reemplazar el res
 \begin{figure}[t] % Aquí comienza el ambiente de figura
     \centering % Centrar la imagen
     \includegraphics[width=0.65\textwidth]{./Imagenes/foto2Ej3.png} % Insertar la imagen
+\end{figure}
+
+
+\chapter{}
+
+Con este ejercicio se espera que el estudiante controle el comportamiento de un mapeo expresándolo previamente como una composición de mapeos básicos, y como ello, obtener fácilmente las fórmulas de una región en el plano $W$ dadas las fórmulas en el plano $Z$. Considerar el mapeo $w = e^{3z + 2}$.
+
+\textbf{a)} Graficar la región $R = \{z \in \mathbb{C} \, | \, 2 \leq \text{Re}(z) \leq 5; \frac{\pi}{4} \leq \text{Im}(z) \leq \frac{\pi}{2}\}$.
+
+Resolucion:
+Graficamos la región $R = \{z \in \mathbb{C} \, | \, 2 \leq \text{Re}(z) \leq 5; 4 \leq \text{Im}(z) \leq 2\}$ en el plano $Z$.
+
+Parametrizando la frontera de $R$ en:
+\begin{itemize}
+    \item $R_1 = x + j4$, $2 \leq x \leq 5$
+    \item $R_2 = 5 + jy$, $4 \leq y \leq 2$
+    \item $R_3 = x + j2$, $2 \leq x \leq 5$
+    \item $R_4 = 2 + jy$, $4 \leq y \leq 2$
+\end{itemize}
+
+
+\begin{figure}[h] % Aquí comienza el ambiente de figura
+    \centering % Centrar la imagen
+    \includegraphics[width=0.65\textwidth]{./Imagenes/foto1Ej4.png} % Insertar la imagen
+\end{figure}
+
+\textbf{b)} Obtener las fórmulas y graficar $R' = \{w = f(z) \, | \, z \in R\}$ en el plano $W$, al ser mapeada desde $R$ en el plano $Z$.
+
+Resolucion:
+El mapeo dado se puede expresar como una combinación de tres mapeos:
+
+\begin{itemize}
+    \item $z \rightarrow 3z$ (ampliación)
+    \item $z \rightarrow e^z$ (mapeo exponencial)
+    \item $w \rightarrow w + 2$ (traslación)
+\end{itemize}
+
+Al aplicar los mapeos, obtenemos en un plano $w$ una región $R$, formada por dos rayos (mapeos de $R_1$ y $R_3$), y por dos arcos de circunferencia (mapeos de $R_2$ y $R_4$).
+
+La nueva región $R'$ está parametrizada por:
+\begin{itemize}
+    \item $R_1 = e^{3x+j\frac{3\pi}{4}} + 2$, $2 \leq x \leq 5$
+    \item $R_2 = e^{3 \cdot 5+j3y} + 2$, $4 \leq y \leq 2$
+    \item $R_3 = e^{3x+j\frac{3\pi}{2}} + 2$, $2 \leq x \leq 5$
+    \item $R_4 = e^{3 \cdot 5+j3y} + 2$, $4 \leq y \leq 2$
+\end{itemize}
+
+
+\begin{figure}[h] % Aquí comienza el ambiente de figura
+    \centering % Centrar la imagen
+    \includegraphics[width=0.65\textwidth]{./Imagenes/foto2Ej4.png} % Insertar la imagen
 \end{figure}
 
 \end{document}
