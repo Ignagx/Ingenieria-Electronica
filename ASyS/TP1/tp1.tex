@@ -139,52 +139,6 @@ $$ R' = \{w \in \mathbb{C} \mid -v - 2u = j\} $$
     \includegraphics[width=0.65\textwidth]{./Imagenes/foto1Ej3.png} % Insertar la imagen
 \end{figure}
 
-\textbf{c) Obtener las fórmulas y graficar \( C' \) en el plano \( W \), sabiendo que \( C = \{z \in \mathbb{C} \mid |z - 1 - j| = 2\} \) en el plano \( W \).}\\[6pt]
-
-Resolución: Para simplificar el desarrollo del ejercicio, como se hizo antes, se realizarán dos mapeos. Uno, \( w_0 \), que va a ser el mapeo recíproco, y otro, \( w_1 \), que va a ser la traslación del mapeo \( w_0 \) a \( -j \).
-
-Para no repetir, vamos a traer del punto b, las relaciones de \( x \) e \( y \) (de \( z \)) respecto de \( u \) y \( v \) (de \( w_0 \)):
-
-$$ x = \frac{u}{u^2 + v^2}, \quad y = \frac{-v}{u^2 + v^2} $$\\[6pt]
-
-Ahora simplemente obtenemos la ecuación que define el conjunto y reemplazamos correspondientemente:\\[6pt]
-\begin{math}
-\begin{aligned}
-|z-1-j| &= 2 \\[6pt]
-|x+jy-1-j| &= 2 \\[6pt]
-|x-1+jy-j| &= 2 \\[6pt]
-|(x-1)+j(y-1)| &= 2 \\[6pt]
-(x-1)^2 + (y-1)^2 &= 2 \\[6pt]
-(x-1)^2 + (y-1)^2 &= 2 \\[6pt]
-x^2 - 2x + 1 + y^2 - 2y + 1 &= 2 \\[6pt]
-x^2 - 2x + y^2 - 2y + 2 &= 2 \\[6pt]
-x^2 - 2x + y^2 - 2y &= 0 \\[6pt]
-uu^2 + v^2 - 2uu^2 + v^2 - vu^2 + v^2 - 2 - vu^2 + v^2 &= 0 \\[6pt]
-u^2 u^2 + v^2 - 2uu^2 + v^2 + v^2 u^2 + v^2 - 2vu^2 + v^2 &= 0 \\[6pt]
-u^2 u^2 + v^2 + v^2 u^2 + v^2 &= 2uu^2 + v^2 - 2vu^2 + v^2 \\[6pt]
-1 u^2 + v^2 u^2 u^2 + v^2 + v^2 u^2 + v^2 &= 1 u^2 + v^2 2u - 2v \\[6pt]
-u^2 + v^2 u^2 + v^2 &= 2u - 2v \\[6pt]
-1 &= 2u - 2v \\[6pt]
-w_0 &= 2u - 2v - 1\\[6pt]
-\end{aligned}
-\end{math}
-
-Ya teniendo $w_0$, para completar el mapeo, es tan simple como reemplazar el resultado obtenido en $w_1$, y se obtiene la ecuación que define el nuevo conjunto C':\\
-
-\begin{math}
-\begin{aligned}
-    w_1 &= w_0-j \\[5pt]
-    w_1 &= 2u-2v-1-j \\[5pt]
-    C' &= \{w \in \mathbb{C} \, | \, 2u-2v-j=1\}
-\end{aligned}
-\end{math}
-
-\begin{figure}[t] % Aquí comienza el ambiente de figura
-    \centering % Centrar la imagen
-    \includegraphics[width=0.65\textwidth]{./Imagenes/foto2Ej3.png} % Insertar la imagen
-\end{figure}
-
-
 \chapter{}
 
 Con este ejercicio se espera que el estudiante controle el comportamiento de un mapeo expresándolo previamente como una composición de mapeos básicos, y como ello, obtener fácilmente las fórmulas de una región en el plano $W$ dadas las fórmulas en el plano $Z$. Considerar el mapeo $w = e^{3z + 2}$.
@@ -234,5 +188,75 @@ La nueva región $R'$ está parametrizada por:
     \centering % Centrar la imagen
     \includegraphics[width=0.65\textwidth]{./Imagenes/foto2Ej4.png} % Insertar la imagen
 \end{figure}
+
+\chapter{}
+
+Considerar la función de variable compleja $f(z) = z + 3j(z - 1)^2(z^2 + 9)$.\\[6pt]
+
+\textbf{a) Obtener el conjunto de ceros y el conjunto de singularidades de la función.}\\[6pt]
+
+\textbf{b) Clasificar todas y cada una de las singularidades de la función $f(z)$ en: Evitable, Polo (orden), Esencial.}\\[6pt]
+
+\textbf{c) Valuar las siguientes integrales:}\\[6pt]
+\begin{align*}
+    I_1 &= \oint_{|z|=1/2} f(z) \, dz \\[6pt]
+    I_2 &= \oint_{|z|=2} f(z) \, dz \\[6pt]
+    I_3 &= \oint_{|z|=4} f(z) \, dz\\[6pt]
+\end{align*}
+
+\textbf{d) Para evaluar las integrales del inciso, ¿en qué tenemos que concentrar nuestro análisis?}
+
+\chapter{}
+
+Con este ejercicio se busca que el estudiante obtenga información relevante de la serie de Laurent de una función en variable compleja.
+Considerar la función de variable compleja \( f(z) = (z - 1)^2 \frac{1}{z - 1} \).\\[6pt]
+
+\textbf{a)  Obtener la serie de Laurent de la función identificando claramente la Parte Analítica y la Parte Singular, esto es,}
+
+$$ f(z) = \sum_{n=0}^{\infty} a_n(z - 1)^n + \sum_{n=1}^{\infty} b_n(z - 1)^{-n} $$
+
+\textbf{b)  Teniendo en cuenta la serie del inciso anterior clasificar la singularidad (evitable, polo, esencial) y calcular el residuo \( \text{Res}(f, z = 1) \).}\\[6pt]
+
+\textbf{c)  Valuar las siguientes integrales:}
+
+$$ I_1 = \oint_{|z| = 1/2} f(z) \, dz; \quad I_2 = \oint_{|z| = 2} f(z) \, dz; \quad I_3 = \oint_{|z| = 4} f(z) \, dz $$
+
+\textbf{d)  Teniendo en cuenta el inciso anterior podemos afirmar que:}
+
+$$ I_r = \oint_{|z| = r} f(z) \, dz = I_1, \text{ para todo } 0 < r < 1 $$ ¿Por qué?
+
+$$ I_r = \oint_{|z| = r} f(z) \, dz = I_2, \text{ para todo } r > 1 $$ ¿Por qué?
+
+\chapter{}
+
+    Con este ejercicio se busca que el estudiante calcule integrales del Análisis I empleando la variable compleja de forma metodológica.\\
+
+Calcular el área bajo la curva\\
+
+
+\begin{figure}[h] % Aquí comienza el ambiente de figura
+    \centering % Centrar la imagen
+    \includegraphics[width=0.65\textwidth]{./Imagenes/foto1Ej7.png} % Insertar la imagen
+\end{figure}
+
+$a = \int_{0}^{2\pi} \frac{3}{3 - 2\cos(x) + \sin(x)} \, dx$\\[6pt]
+
+siguiendo los siguientes pasos:\\[6pt]
+
+\textbf{a)  Defina $z = e^{x}$ y con ello consiga las siguientes igualdades:}\\[6pt]
+
+$dx = \frac{dz}{jz}; \quad \cos(x) = \frac{z^{2} + 1}{2z}; \quad \sin(x) = \frac{z^{2} - 1}{2jz}$\\[6pt]
+
+\textbf{b)  Realizar una sustitución para obtener una función racional en la variable \( z \):}
+
+$$ f(x) \, dx = \frac{3}{3 - 2\int \left( \frac{z^{2} + 1}{2z} \right) \, dz + \int \left( \frac{z^{2} - 1}{2jz} \right) \, dz} \cdot \frac{dz}{jz} = R(z) \, dz $$ 
+
+Y con ello, se valida la igualdad:
+
+$$ \int_{0}^{2\pi} f(x) \, dx = \oint_{|z|=1} R(z) \, dz$$ 
+
+
+\textbf{c)  Finalmente, clasificar todas las singularidades de la función racional $R(z)$ y usar el teorema del residuo para calcular el lado derecho de la integral formulada en el inciso anterior.}
+
 
 \end{document}
