@@ -1,0 +1,39 @@
+\documentclass[12pt]{report}
+\usepackage[left=2.5cm,right=2.5cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{etoolbox}
+\usepackage{titlesec}
+\usepackage{titling} % para personalizar el título
+
+\pagestyle{fancy}
+\fancyhf{} 
+\fancyhead[L]{UTN-FRC}
+\fancyhead[C]{ASyS}
+\fancyhead[R]{2R3}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancyfoot[C]{\vfill\thepage}
+
+\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
+
+\renewcommand{\chaptername}{Ejercicio}
+
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\huge}
+\titlespacing*{\chapter}{0pt}{0pt}{0pt}
+
+\DeclareMathSizes{12}{13}{6}{5}
+
+\title{%
+  \fontsize{25}{0}\selectfont Universidad Tecnológica Nacional \\
+  \fontsize{22}{30}\selectfont Analisis de Señales y Sistemas \\
+  \fontsize{20}{25}\selectfont Trabajo Practico 1
+}
+\author{Luciano Cortesini}
+\date{06 / 05 / 2024}
+
+\begin{document}
+\maketitle
+
+\chapter{}
+
+\end{document}
