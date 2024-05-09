@@ -107,7 +107,7 @@ $$\frac{\delta V_1}{\delta y}=-1 \quad \quad - \frac{\delta U_1}{\delta y}=-(4-2
 si:$$\frac{\delta V_1}{\delta x}=-\frac{\delta U_1}{\delta y}$$
 $$-4x-x^2=y^2+2y-4$$
 $$x^2+4x+y^2+2y=4$$
-$$(x+2)^2+(y+q)^2=9$$\\
+$$(x+2)^2+(y+1)^2=9$$\\
 Entonces, el conjunto de numeros complejos $D_1$ donde $f_1$ es derivable es:
 $$D_1 = \{z \in \mathbb{C} : |z + 2 + j| = 3\}$$
 
@@ -165,17 +165,23 @@ $$ \frac{z - z_1}{z - z_3} \cdot \frac{z_2 - z_3}{z_2 - z_1} = \frac{w - w_1}{w 
 
 Antes de reemplazar los valores de los puntos en la definición anterior, es más cómodo si se simplifica acorde al ejercicio. Debido a que tenemos puntos que tienden al infinito en ambos \( w \) y \( z \), vamos a sacar factor común de aquellos puntos, con el objetivo de simplificarlos, ya sea por cancelación o utilizando las identidades de los números hiperreales:
 
-$$ \frac{z_1z}{z - 1} \cdot \frac{z - z_3}{z_2 - z_3} \cdot \frac{z_2 - z_3}{z_1z_3 - 1} = \frac{w_1w}{w - 1} \cdot \frac{w - w_3}{w_2 - w_3} \cdot \frac{w_2 - w_3}{w_1w_3 - 1} $$
+\begin{align*}
+    \frac{z_1 \left(\frac{z}{z_1}-1\right) }{z-z_3} \frac{z_2-z_3}{z_1 \left( \frac{z_3}{z_2} -1 \right) } &= \frac{w-w_1}{w_3 \left( \frac{w}{w_3} - 1 \right)} \frac{w_3 \left( \frac{w_1}{w_3} -1 \right) }{w_2-w_1}\\[10pt]
+    \frac{\frac{z}{z_1} -1}{z-z_3} \frac{z_2-z_3}{\frac{z_3}{z_1}-1} &= \frac{w-w_1}{\frac{w}{w_3}-1} \frac{\frac{w_1}{w_3}-1}{w_2-w_1}\\
+\end{align*}
+Ahora si, reemplazando los puntos:\\
 
-$$ \frac{z}{z - 1} \cdot \frac{-j - 0}{0 - (-j)} \cdot \frac{-j}{-j - 1} = \frac{w}{w - 1} \cdot \frac{\infty - \infty}{0 - \infty} \cdot \frac{0 - \infty}{-j\infty - 1} $$
+$$\frac{\frac{z}{\infty}-1}{z-0} \frac{-j-0}{\frac{0}{\infty}-1} = \frac{w-(-j)}{\frac{w}{\infty}-1} \frac{\frac{-j}{\infty}-1}{0-(-j)}$$\\
 
-Por las identidades de los números hiperreales, cualquier número dividido una magnitud infinita es igual a cero:
+Por las identidades de los números hiperreales, cualquier número dividido una magnitud infinita es igual a cero:\\
 
-$$ \frac{0 - 1}{z} \cdot \frac{j}{-j} \cdot \frac{1}{j} = \frac{w + j}{0} \cdot \frac{0 - 1}{-j} \cdot \frac{j}{-1} $$
-
-$$ - \frac{1}{z} \cdot j = - \frac{w + j}{j} $$
-
-$$ w = \frac{1}{z} - j $$
+\begin{align*}
+    \frac{0-1}{z} \frac{-j}{0-1} &= \frac{w+j}{0-1} \frac{0-1}{j}\\
+    \frac{-1}{z} \frac{-j}{-1} &= \frac{w+j}{-1} \frac{-1}{j}\\
+    \frac{-1}{z}j &= (-w-j)j\\
+    -\frac{1}{z}+j &= -w\\
+    w &= \frac{1}{z}-j\\
+\end{align*}
 
 \textbf{b) Obtener las fórmulas y graficar \( R' \) en el plano \( W \), sabiendo que \( R = \{z \in \mathbb{C} \mid \text{Im}(z) - 2\text{Re}(z) = 0\} \) en el plano \( W \).}
 
@@ -183,21 +189,26 @@ Resolución: Para simplificar el desarrollo del ejercicio, se realizarán dos ma
 
 Para empezar, necesitamos encontrar la relación que tienen las componentes \( x \) e \( y \) (de \( z \)) respecto de \( u \) y \( v \) (de \( w_0 \)):
 
-$$ w_0 = \frac{1}{z} $$
-$$ u + jv = \frac{1}{x + jy} $$
-$$ x + jy = \frac{1}{u + jv} $$
-$$ x + jy = \frac{1}{u + jv} \cdot \frac{u - jv}{u - jv} $$
-$$ x + jy = \frac{u - jv}{u^2 + v^2} $$
-
-$$ x = \frac{u}{u^2 + v^2}, \quad y = \frac{-v}{u^2 + v^2} $$
-
+\begin{align*}
+    w_0 &=\frac{1}{z}\\
+    u+jv &=\frac{1}{x+jy}\\
+    x+jy &= \frac{1}{u+jv}\\
+    x+jy &= \frac{1}{u+jv} \frac{u-jv}{u-jv}\\
+    x+jy &= \frac{u-jv}{u^2+juv-juv-j^2y^2}\\
+    x+jy &= \frac{u}{u^2+v^2}-j\frac{v}{u^2+v^2}\\
+    x=\frac{u}{u^2+v^2} \hspace{0.5cm} &;\hspace{0.5cm} y=-\frac{v}{u^2+v^2}\\
+\end{align*}
 Ya teniendo las relaciones entre \( w_0 \) y \( z \), procedemos a operar la ecuación que define el conjunto, y reemplazar con sus respectivas igualdades las variables que correspondan:
 
-$$ \text{Im}(z) - 2\text{Re}(z) = 0 $$
-$$ y - 2x = 0 $$
-$$ -\frac{v}{u^2 + v^2} - 2\frac{u}{u^2 + v^2} = 0 $$
-$$ -v - 2u = 0 $$
-$$ -v - 2u = w_0 $$
+\begin{align*}
+&\text{Im}(z) - 2\text{Re}(z) = 0\\ 
+&y - 2x = 0\\ 
+&-\frac{v}{u^2 + v^2} - 2\frac{u}{u^2 + v^2} = 0\\ 
+&-\frac{v}{u^2 + v^2} = 2\frac{u}{u^2 + v^2}\\ 
+&-v=2u\\
+&-v - 2u = 0\\ 
+&-v - 2u = w_0\\ 
+\end{align*}
 
 Ya teniendo \( w_0 \), para completar el mapeo, es tan simple como reemplazar el resultado obtenido en \( w_1 \), y se obtiene la ecuación que define el nuevo conjunto \( R' \):
 
@@ -221,35 +232,35 @@ $$ x = \frac{u}{u^2 + v^2}, \quad y = \frac{-v}{u^2 + v^2} $$\\[6pt]
 Ahora simplemente obtenemos la ecuación que define el conjunto y reemplazamos correspondientemente:\\
 \begin{align*}
 |z-1-j| &= 2 \\[6pt]
-|x+jy-1-j| &= 2 \\[6pt]
+|x+jy-1-j|  &= 2 \\[6pt]
 |x-1+jy-j| &= 2 \\[6pt]
 |(x-1)+j(y-1)| &= 2 \\[6pt]
-(x-1)^2 + (y-1)^2 &= 2 \\[6pt]
+  \sqrt{(x-1)^2 + (y-1)^2} &= 2 \\[6pt]
 (x-1)^2 + (y-1)^2 &= 2 \\[6pt]
 x^2 - 2x + 1 + y^2 - 2y + 1 &= 2 \\[6pt]
-\end{align*}
-\begin{align*}
 x^2 - 2x + y^2 - 2y + 2 &= 2 \\[6pt]
 x^2 - 2x + y^2 - 2y &= 0 \\[6pt]
-uu^2 + v^2 - 2uu^2 + v^2 - vu^2 + v^2 - 2 - vu^2 + v^2 &= 0 \\[6pt]
-u^2 u^2 + v^2 - 2uu^2 + v^2 + v^2 u^2 + v^2 - 2vu^2 + v^2 &= 0 \\[6pt]
-u^2 u^2 + v^2 + v^2 u^2 + v^2 &= 2uu^2 + v^2 - 2vu^2 + v^2 \\[6pt]
-1 u^2 + v^2 u^2 u^2 + v^2 + v^2 u^2 + v^2 &= 1 u^2 + v^2 2u - 2v \\[6pt]
-u^2 + v^2 u^2 + v^2 &= 2u - 2v \\[6pt]
-1 &= 2u - 2v \\[6pt]
-w_0 &= 2u - 2v - 1\\[6pt]
+   \left(\frac{u}{u^2+v^2} \right)^2 - 2\frac{u}{u^2+v^2} + \left( -\frac{v}{u^2+v^2} \right)^2-2 \left( -\frac{v}{u^2+v^2} \right) &=0\\
+   \frac{u^2}{(u^2+v^2)^2}-2\frac{u}{u^2+v^2} + \frac{v^2}{(u^2+v^2)^2}+2\frac{v}{u^2+v^2}&=0\\ 
+\frac{u^2}{(u^2+v^2)^2}+\frac{v^2}{(u^2+v^2)^2}&=2\frac{u}{u^2+v^2} - 2 \frac{v}{u^2+v^2}\\
+   \frac{1}{u^2+v^2} \left( \frac{u^2}{u^2+v^2} + \frac{v^2}{u^2+v^2} \right) &= \frac{1}{u^2+v^2}(2u-2v)\\
+   \frac{u^2+v^2}{u^2+v^2}&=2u-2v\\
 \end{align*}
-
-Ya teniendo $w_0$, para completar el mapeo, es tan simple como reemplazar el resultado obtenido en $w_1$, y se obtiene la ecuación que define el nuevo conjunto \( C' \):\\
-
-
 \begin{align*}
-    w_1 &= w_0-j \\[5pt]
-    w_1 &= 2u-2v-1-j \\[5pt]
-    C' &= \{w \in \mathbb{C} \, | \, 2u-2v-j=1\}
-\end{align*}
-
-
+     1 &= 2u - 2v \\[6pt]
+    w_0 &= 2u - 2v - 1\\[6pt]
+ \end{align*}
+ 
+ Ya teniendo $w_0$, para completar el mapeo, es tan simple como reemplazar el resultado obtenido en $w_1$, y se obtiene la ecuación que define el nuevo conjunto \( C' \):\\
+ 
+ 
+ \begin{align*}
+     w_1 &= w_0-j \\[5pt]
+     w_1 &= 2u-2v-1-j \\[5pt]
+     C' &= \{w \in \mathbb{C} \, | \, 2u-2v-j=1\}
+ \end{align*}
+ 
+ 
 \begin{figure}[htbp] % Aquí comienza el ambiente de figura
     \centering % Centrar la imagen
     \includegraphics[width=0.65\textwidth]{./Imagenes/foto2Ej3.png} % Insertar la imagen
