@@ -45,22 +45,32 @@
 Considerar la ecuación en variable compleja $z^7-jz^7+2^{14}2e^{\frac{j\pi}{2}}=0$
 Obtener el conjunto $S$ de números complejos que solucionan la ecuación
 
-\begin{enumerate}
-  \item Demostrar que  $S = \{z_k = 4e^{j(\frac{\pi}{4}+\frac{2k\pi}{7})} \mid k=-3;-2;-1;0;1;2;3\}$
-    $$z^7 - jz^7 + 2^{14}\sqrt{2}e^{\frac{j\pi}{2}} = 0$$
-    $$z^7(1-j) = 2^{14}\sqrt{2}e^{\frac{-j\pi}{2}}$$
-    $$z^7 = \frac{2^{14}\sqrt{2}e^{-\frac{j\pi}{2}}} {2e^{-\frac{j\pi}{4}}}$$
-    $$z = (2^{14}e^{j(-\frac{\pi} {4})})^{\frac{1}{7}}$$
-    $$z = 4e^{j\frac{(-\frac{\pi}{4}+2k\pi)}{7}} \quad,\quad k = \{-3,-2,-1,0,1,2,3\}$$
+\textbf{a) Demostrar que  $S = \{z_k = 4e^{j(\frac{\pi}{4}+\frac{2k\pi}{7})} \mid k=-3;-2;-1;0;1;2;3\}$}\\
 
-  \item Obtener el gráfico de normas del conjunto $S$, esto es,
+Resolucion:\\
+\begin{align*}
+&z^7 - jz^7 + 2^{14}\sqrt{2}e^{\frac{j\pi}{2}} = 0\\
+&z^7(1-j) = 2^{14}\sqrt{2}e^{\frac{-j\pi}{2}}\\
+&z^7 = \frac{2^{14}\sqrt{2}e^{-\frac{j\pi}{2}}} {2e^{-\frac{j\pi}{4}}}\\
+&z = (2^{14}e^{j(-\frac{\pi} {4})})^{\frac{1}{7}}\\
+&z = 4e^{j\frac{(-\frac{\pi}{4}+2k\pi)}{7}} \quad,\quad k = \{-3,-2,-1,0,1,2,3\}\\
+\end{align*}
+
+\textbf{b) Obtener el gráfico de normas del conjunto $S$, esto es,}
     $$k, |k| \quad | \quad k = -3;-2;-1;0;1;2;3 $$
+Resolucion:\\
+\begin{figure}[h] % Aquí comienza el ambiente de figura
+    \centering % Centrar la imagen
+    \includegraphics[width=0.4\textwidth]{./Imagenes/foto1Ej1.png} % Insertar la imagen
+\end{figure}
 
-  \item Obtener el gráfico de argumentos principales del conjunto $S$, esto es,
+\textbf{c) Obtener el gráfico de argumentos principales del conjunto $S$, esto es,}
     $$k, Arg(z_k) \quad | \quad k = -3;-2;-1;0;1;2;3 $$
-
-\end{enumerate}
-
+Resolucion:\\
+\begin{figure}[h] % Aquí comienza el ambiente de figura
+    \centering % Centrar la imagen
+    \includegraphics[width=0.4\textwidth]{./Imagenes/foto2Ej1.png} % Insertar la imagen
+\end{figure}
 \chapter{}%ejercicio 2
 Considerar las siguientes funciones de variable compleja $z = x + jy$:
 $$f_1(z) = (4y - y^2 - x - \frac{1}{3}y^3) - j(y + 2x^2 + \frac{1}{3}x^3)$$
@@ -217,13 +227,13 @@ Ahora simplemente obtenemos la ecuación que define el conjunto y reemplazamos c
 (x-1)^2 + (y-1)^2 &= 2 \\[6pt]
 (x-1)^2 + (y-1)^2 &= 2 \\[6pt]
 x^2 - 2x + 1 + y^2 - 2y + 1 &= 2 \\[6pt]
+\end{align*}
+\begin{align*}
 x^2 - 2x + y^2 - 2y + 2 &= 2 \\[6pt]
 x^2 - 2x + y^2 - 2y &= 0 \\[6pt]
 uu^2 + v^2 - 2uu^2 + v^2 - vu^2 + v^2 - 2 - vu^2 + v^2 &= 0 \\[6pt]
 u^2 u^2 + v^2 - 2uu^2 + v^2 + v^2 u^2 + v^2 - 2vu^2 + v^2 &= 0 \\[6pt]
 u^2 u^2 + v^2 + v^2 u^2 + v^2 &= 2uu^2 + v^2 - 2vu^2 + v^2 \\[6pt]
-\end{align*}
-\begin{align*}
 1 u^2 + v^2 u^2 u^2 + v^2 + v^2 u^2 + v^2 &= 1 u^2 + v^2 2u - 2v \\[6pt]
 u^2 + v^2 u^2 + v^2 &= 2u - 2v \\[6pt]
 1 &= 2u - 2v \\[6pt]
@@ -347,7 +357,7 @@ Como el limite es infinito entonces es un polo.\\
 \begin{align*}
 &\lim_{z \to 3j}frac{\cancel{z+3j}}{j(z - 1)^2(z-3j)\cancel{(z+3j)}}=\frac{1}{(3j-1)^20}=\infty\\[6pt]
 &\text{como el limite es infinito entonces es un polo}\\[6pt]
-&\lim_{z \to 3j}\cancel{(z - 3j)^2}\frac{\cancel{z+3j}}{(z - 1)^2\cancel{(z-3j)}\cancel{(z+3j)}}=\frac{1}{(3j-1)^2}\rightarrow \text{polo simple}\\[12pt]
+&\lim_{z \to 3j}\cancel{(z - 3j)}\frac{\cancel{z+3j}}{(z - 1)^2\cancel{(z-3j)}\cancel{(z+3j)}}=\frac{1}{(3j-1)^2}\rightarrow \text{polo simple}\\[12pt]
 \end{align*}
 
 
@@ -369,11 +379,11 @@ Como el limite es finito entonces es una singularidad eviable.\\
 Resolucion:
 \begin{figure}[h]
     \centering
-    \begin{minipage}{0.45\textwidth}
+    \begin{minipage}{0.35\textwidth}
         \centering
         \includegraphics[width=\textwidth]{./Imagenes/foto1Ej5.jpeg}
     \end{minipage}\hfill
-    \begin{minipage}{0.45\textwidth}
+    \begin{minipage}{0.35\textwidth}
         \centering
         \includegraphics[width=\textwidth]{./Imagenes/foto2Ej5.jpeg}
     \end{minipage}
