@@ -7,6 +7,8 @@
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{graphicx}
+\usepackage{ulem}
+\usepackage{cancel}
 
 \pagestyle{fancy}
 \fancyhf{} 
@@ -295,11 +297,74 @@ La nueva región $R'$ está parametrizada por:
 
 \chapter{}
 
-Considerar la función de variable compleja $f(z) = z + 3j(z - 1)^2(z^2 + 9)$.\\[6pt]
+Considerar la función de variable compleja $f(z) =\frac{z + 3}{j(z - 1)^2(z^2 + 9)}$\\[6pt]
 
 \textbf{a) Obtener el conjunto de ceros y el conjunto de singularidades de la función.}\\[6pt]
 
+Ceros $\rightarrow f(z)=0$\\
+
+\begin{math}
+\begin{aligned}
+&f(z)=\frac{z + 3}{j(z - 1)^2(z^2 + 9)}\\[6pt]
+&z+3j=0\\[6pt]
+&z=-3j\\[6pt]
+\end{aligned}
+\end{math}
+    
+singularidades:\\
+
+Como la funcion es un conciente de polinomios complejos va a tener singularidades cuando el denominador sea cero;\\
+
+\begin{math}
+\begin{aligned}
+    &(z-1)^2(z^2+9)=0\\[6pt]
+    &(z-1)^2=0 \hspace{3.5cm}    z^2+9=0\\[6pt]
+    &z-1=0     \hspace{4cm}   z=\sqrt{-9}\\[6pt]
+    &z=1       \hspace{4.75cm}  z=\pm3j\\[6pt]
+\end{aligned}
+\end{math}
+
+El conjunto de singularidades es: $$\{1,3j,-3j\}$$
+
 \textbf{b) Clasificar todas y cada una de las singularidades de la función $f(z)$ en: Evitable, Polo (orden), Esencial.}\\[6pt]
+Resolucion:\\
+
+1) $z_0=1$ \hspace{3cm} $\lim_{z \to z_0}f(z_0)$\\[10pt]
+\begin{math}
+\begin{aligned}
+&\lim_{z \to 1}\frac{z+3j}{(z - 1)^2(z^2 + 9)}=\lim_{z \to 1}\frac{\cancel{z+3j}}{j(z - 1)^2(z-3j)\cancel{(z+3j)}}\\[6pt]
+&\lim_{z \to 1}\frac{1}{j(z - 1)^2(z-3j)}=\lim_{z \to 1}\frac{1}{0.(1-3j)}=\infty\\[6pt]
+\end{aligned}
+\end{math}
+
+
+Como el limite es infinito entonces es un polo.\\
+$\lim_{z \to z_0}(z-z_0)^n$\\[10pt]
+
+\begin{math}
+\begin{aligned}
+&\lim_{z \to 1}\cancel{(z - 1)^2}\frac{\cancel{z+3j}}{\cancel{(z - 1)^2}(z-3j)\cancel{(z+3j)}}\\[6pt]
+&\lim_{z \to 1}\frac{1}{z-3j}=\frac{1}{1-3j}\rightarrow \text{polo de orden 2}\\[12pt]
+\end{aligned}
+\end{math}
+
+2) $z_0=3j$ \hspace{3cm} $\lim_{z \to z_0}f(z_0)$\\[10pt]
+\begin{math}
+\begin{aligned}
+&\lim_{z \to 3j}frac{\cancel{z+3j}}{j(z - 1)^2(z-3j)\cancel{(z+3j)}}=\frac{1}{(3j-1)^20}=\infty\\[6pt]
+&\text{como el limite es infinito entonces es un polo}\\[6pt]
+&\lim_{z \to 3j}\cancel{(z - 3j)^2}\frac{\cancel{z+3j}}{(z - 1)^2\cancel{(z-3j)}\cancel{(z+3j)}}=\frac{1}{(3j-1)^2}\rightarrow \text{polo simple}\\[12pt]
+\end{aligned}
+\end{math}
+
+3) $z_0=-3j$ \hspace{3cm} $\lim_{z \to z_0}f(z_0)$\\[10pt]
+\begin{math}
+\begin{aligned}
+&\lim_{z \to -3j}\frac{\cancel{z+3j}}{j(z - 1)^2(z-3j)\cancel{(z+3j)}}=\frac{1}{(3j-1)^2(-3j-3j)}\\[12pt]
+\end{aligned}
+\end{math}
+
+Como el limite es finito entonces es una singularidad eviable.\\
 
 \textbf{c) Valuar las siguientes integrales:}\\[6pt]
 \begin{align*}
@@ -308,12 +373,58 @@ Considerar la función de variable compleja $f(z) = z + 3j(z - 1)^2(z^2 + 9)$.\\
     I_3 &= \oint_{|z|=4} f(z) \, dz\\[6pt]
 \end{align*}
 
-\textbf{d) Para evaluar las integrales del inciso, ¿en qué tenemos que concentrar nuestro análisis?}
+Resolucion:
 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./Imagenes/foto1Ej5.jpeg}
+    \begin{minipage}[b]{0.4\textwidth}
+       Para calcular las integrales 1, 2 y 3 primero calculamos con las formulas de integracion de cauchy las integrales de las singularidades bajo la curva C. 
+    \end{minipage}
+\end{figure}
+\begin{align*}
+    I_{c1} &= \oint_{c}\frac{z+3j}{j(z - 1)^2(z-3j)(z+3j)} \, dz =\oint_{c}\frac{\frac{\cancel{z+3j}}{\cancel{(z+3j)}(z-1)^2}}{z-3j} \, dz\\[6pt]
+&= \oint_{c}\frac{\frac{1}{(z-1)^2}(z-3j)}{z-3j} \, dz = 2\pi j \frac{1}{(3j-1)^2}\\[6pt]
+    I_{c2} &= \oint_{c}\frac{z+3j}{j(z - 1)^2(z-3j)(z+3j)} \, dz =\oint_{c}\frac{\frac{\cancel{z+3j}}{\cancel{(z+3j)}(z-1)^2}}{(z-1)^2} \, dz\\[6pt]
+    &= \oint_{c}\frac{\frac{1}{(z-3j)}}{(z-1)^2} \, dz = \frac{2\pi j}{(2-1)!} \left[ \frac{1}{z-3j} \right]_{z=1}^1= -\frac{2\pi j}{(1-3i)^2} \\[6pt]
+    I_{c3} &= \oint_{c}\frac{\cancel{z+3j}}{(z - 1)^2(z-3j)\cancel{(z+3j)}} \, dz=0 \\[6pt]
+\end{align*}
+
+
+Una vez obtenidas las curvas integrales se calculan las integrales 1, 2 y 3 haciendo un analisis de cuales singularidades estan bajo la curva $|z|=v$ y usando el teorema de deformacion de contorno: \\
+
+\begin{align*}
+I_1&=\oint_{|z|=\frac{1}{2}}f(z) \, dz= 0 \rightarrow \text{Por que no hay ninguna singularidad bajo la curva $|z|=\frac{1}{2}$}\\[6pt]
+I_2&=\oint_{|z|=2}f(z) \, dz = I \oint_{c2} = - \frac{2 \pi j}{(1-3j)^2}\\[6pt]
+    &\text{Por que bajo la curva $|z|=2$ esta la singularidad $z=1$}\\[12pt]
+I_3&= \oint_{|z|=4}f(z) \, dz = I_{c2}+I_{c1}=2 \pi j \left( -\frac{1}{(1-3j)^2} + \frac{1}{(3j-1)^2} \right) = 0 \\[6pt]
+\end{align*}
+Otro metodo para hacerlos es mediante el teorema del residuo:\\
+Primero se calulan los residuos de cada polo\\
+\begin{align*}
+&\text{Res}(f(z),3j)= \lim_{z \to 3j} \frac{\cancel{(z-3j)}\cancel{(z+3j)}}{(z-1)^2\cancel{(z-3j)}\cancel{(z+3j)}}= \lim_{z \to 3j} \frac{1}{(z-1)^2}=\frac{1}{(3j-1)^2} \\[6pt]
+&\text{Res}(f(z),1)=\frac{1}{(2-1)!} \lim_{z \to 2} \frac{d}{\,dz} \left[ \cancel{(z-1)^2} \frac{\cancel{(z+3j)}}{\cancel{(z-1)^2}(z-3j) \cancel{(z+3j)}} \right]\\[6pt]
+&\phantom{\text{Res}(f(z),1)}= \lim_{z \to 1} \frac{d}{\,dz} \left[ \frac{1}{z-3j} \right]= \frac{1}{(1-3j)^2}\\[6pt]
+\end{align*}
+
+Siguiendo la logica de que singularidad esta bajo la curva $|z|=r$ calculamos los integrales:
+
+\begin{align*}
+I_1&= \oint_{|z|=\frac{1}{2}}f(z) \, dz = 0 \rightarrow \text{no hay ninguna singularidad}\\[6pt]
+I_2&= \oint_{|z|=2}f(z) \, dz = 2 \pi j \text{Res}\hspace{0.5cm}(f(z),1)= -\frac{2 \pi j}{(1-3j)^2}\\[6pt]
+I_3&= \oint_{|z|=4}f(z) \, dz = 2 \pi j(\text{Res}(f(z),1)+\text{Res}(f(z),3j))\\[6pt]
+&\phantom{I_3=\oint_{|z|=4}f(z) \, dz } =2\pi j \left( -\frac{1}{(1-3j)^2} + \frac{1}{(3j-1)^2} \right)\\[6pt]
+&\phantom{I_3=\oint_{|z|=4}f(z) \, dz }=0\\[6pt]
+\end{align*}
+
+\textbf{d) Para evaluar las integrales del inciso, ¿en qué tenemos que concentrar nuestro análisis?}\\
+
+Resolucion:\\
+Para evaluar las integrales del inciso C tenemos que concentrar nuestro analisis en las singularidades de la funcion $f(z)$ con respecto a las curvas, cerradas en este caso.\\
 \chapter{}
 
 Con este ejercicio se busca que el estudiante obtenga información relevante de la serie de Laurent de una función en variable compleja.
-Considerar la función de variable compleja \( f(z) = (z - 1)^2 \frac{1}{z - 1} \).\\[6pt]
+Considerar la función de variable compleja $ f(z) = (z - 1)^2 \frac{1}{z - 1} $.\\[6pt]
 
 \textbf{a)  Obtener la serie de Laurent de la función identificando claramente la Parte Analítica y la Parte Singular, esto es,}
 
