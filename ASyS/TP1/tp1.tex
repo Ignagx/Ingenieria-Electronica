@@ -59,22 +59,74 @@ Obtener el conjunto $S$ de números complejos que solucionan la ecuación
 
 \chapter{}
 Considerar las siguientes funciones de variable compleja $z = x + jy$:
-\begin{center}
-    $f_1(z) = 4y - y^2 - x - 13y^3 - jy + 2x^2 + 13x^3$ \\[10pt]
-    $f_2(z) = 4z - z^2 - z - 13z^3 - jz + 2z^2 + 13z^3$
-\end{center}
+$$f_1(z) = (4y - y^2 - x - \frac{1}{3}y^3) - j(y + 2x^2 + \frac{1}{3}x^3)$$
+$$f_2(z) = (4z - z^2 - z - \frac{1}{3}z^3) - j(z + 2z^2 + \frac{1}{3}z^3)$$
 
-\textbf{a) Obtener la parte real $u_1 = \text{Re}(f_1)$ y la parte imaginaria $v_1 = \text{Im}(f_1)$, y exponer la igualdad $f_1(z) = u_1 + jv_1$. Similarmente, para la función $f_2(z)$.}
+\textbf{a) Obtener la parte real $u_1 = \text{Re}(f_1)$ y la parte imaginaria $v_1 = \text{Im}(f_1)$
+, y exponer la igualdad $f_1(z) = u_1 + jv_1$. Similarmente, para la función $f_2(z)$.}\\
 
-\textbf{b) Obtener el conjunto de números complejos $D_1$ donde la función $f_1(z)$ es derivable. Similarmente, obtener $D_2$ donde $f_2(z)$ es derivable. ¿Hace falta resolver las ecuaciones de Cauchy-Riemann para determinar $D_2$?}
+$f_1$ parte real e imaginaria
+$$U_1=Re(f_1)=4y-y^2-x-\frac{1}{3}y^3$$
+$$V_1=Im(f_1)=-y-2x^2-\frac{1}{3}y^3$$
+
+Para obtener la parte real e imaginaria de $f2$, reemplazamos $z=x+jy$\\
+Para el primer termino:
+$$4z - z^2 - z - \frac{1}{3}z^3=(x+jy) - (x+jy)^2 - (x+jy) - \frac{1}{3}(x+jy)^3$$
+$$=4x + 4jy -x^2 -2xyj + y^2 -x -jy - \frac{1}{3}x^3 - jx^2y + xy^2 + \frac{1}{3}jy^3$$
+$$=(- \frac{1}{3}x^3 -x^2 + 3x + y^2 + xy^2) +j(3y -2xy + \frac{1}{3}y^3 - x^2y )$$ \\
+Para el segundo termino:
+$$-j (z + 2z^2 + \frac{1}{3}z^3) = -j ((x+jy) + 2(x+jy)^2 + \frac{1}{3}(x+jy)^3)$$
+$$=-j (x+jy + 2(x^2+2xyj-y^2) + \frac{1}{3}(x^3 + 3x^2yj + 3x(yj)^2 + (jy)^3))$$
+$$=-j ((x + 2x^2 - 2y^2 + \frac{1}{3} x^3 - xy^2) + j( y +4xy + x^2y - \frac{1}{3}y^3))$$
+$$=j(-x - 2x^2 + 2y^2 - \frac{1}{3} x^3 + xy^2) + ( y +4xy + x^2y - \frac{1}{3}y^3)$$\\
+Luego de separar ambos terminos de $f_2$ en su parte real e imaginaria encontraremos la parte real
+e imaginaria de $f_2$
+$$U_2=Re(f_2)=- \frac{1}{3}x^3 - x^2 + 3x + y^2 + xy^2 + y +4xy + x^2y - \frac{1}{3}y^3$$
+$$V_2=Im(f_2)=-x + 3y -2xy - 2x^2 + 2y^2 - x^2y + xy^2 + \frac{1}{3}y^3 - \frac{1}{3} x^3$$
+
+\textbf{b) Obtener el conjunto de números complejos $D_1$ donde la función $f_1(z)$ es derivable. Similarmente, obtener $D_2$ donde $f_2(z)$ es derivable.
+¿Hace falta resolver las ecuaciones de Cauchy-Riemann para determinar $D_2$?}
+
+Para obtener el conjunto de numeros complejos $D_1$ donde la funcion $f_1(z)$ es derivable, utilizaremos las ecuaciones de Cauchy-Riemman
+$$\frac{\delta U_1}{\delta x}=-1 \quad \quad \frac{\delta V_1}{\delta x}=-4x-x^2$$
+$$\frac{\delta V_1}{\delta y}=-1 \quad \quad - \frac{\delta U_1}{\delta y}=-(4-2y-y^2)=y^2+2y-4$$
+si:$\frac{\delta V_1}{\delta x}=-\frac{\delta U_1}{\delta y}$
+$$-4x-x^2=y^2+2y-4$$
+$$x^2+4x+y^2+2y=4$$
+$$(x+2)^2+(y+q)^2=9$$\\
+Entonces, el conjunto de numeros complejos $D_1$ donde $f_1$ es derivable es:
+$$D_1 = \{z \in \mathbb{C} : |z + 2 + j| = 3\}$$
+
+Para obtener el conjunto de numeros complejos $D_2$ donde $f_2$ es derivable, no es necesario aplicar las ecuaciones de Cauchy-Riemman,
+ya que la funcion es un polinomio complejo, por lo tanto:
+$$D_2=\mathbb{C}$$\\
 
 \textbf{c) Demostrar que $D_1 = \{z \in \mathbb{C} : |z + 2 + j| = 3\}$ y $D_2 = \mathbb{C}$.}
 
 \textbf{d) Demostrar que la función $f_1(z)$ no es analítica y que la función $f_2(z)$ es entera.}
 
+Al ver los resultados obtenidos por Cauchy-Riemann, observamos que las derivadas parciales de $f1$ nos dan una condición, en este caso $f1$ es derivable solamente
+en $D1 = \{z \in \mathbb{C} : |z + 2 + j| = 3\}$, o sea una circunferencia de radio $3$ centrada en $(-2, -j)$, sin embargo para cualquier punto de $f$ en la
+circunferencia no hay una vecindad o disco abierto alrededor del punto en cuestión en el que se satisfagan las ecuaciones de Cauchy-Riemann.
+
+$f2$ es una función compleja cuyo dominio abarca todo el plano complejo. Dado que $f2$ es una composición de polinomios, se garantiza la continuidad y
+derivabilidad en todo su dominio. Además, al ser derivable en cada punto del plano complejo, $f2$ es analítica en cada punto del dominio, cumpliendo las
+condiciones necesarias para decir que la $f2$ es una función entera
+
 \textbf{e) De las funciones anteriores, ¿se puede afirmar que "Derivable implica analítica" o "Analítica implica derivable"? ¿Por qué?}
 
+La analiticidad no implica derivabilidad, porque, para que una función sea analítica no basta con ser derivable en un punto sino en todo el dominio de esa
+función, cumpliendo así también con las ecuaciones de Cauchy-Riemann.\\
+
 \textbf{f) De las funciones anteriores, ¿se puede afirmar que $f'_1(z) = u_{1x} + jv_{1x}$ o $f'_2(z) = u_{2x} + jv_{2x}$? ¿Por qué?}
+Se puede afirmar que:
+
+$$f'_1(z)=\frac{\delta U_1}{\delta x}+\frac{\delta V_1}{\delta x}$$
+$$f'_2(z)=\frac{\delta U_2}{\delta x}+\frac{\delta V_2}{\delta x}$$
+
+porque tanto la $f1$ y la $f2$, cumplen Cauchy-Riemann y en particular, $f2$ es una función entera, entonces se puede decir en este caso que las derivadas de las
+funciones son iguales a las derivadas parciales de $u$ y $v$ con respecto a $x$ e $y$
+
 \chapter{}
 
 Considerar $$ f(z) = w $$ el mapeo bilineal que transforma los puntos:
