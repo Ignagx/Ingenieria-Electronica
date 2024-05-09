@@ -457,21 +457,39 @@ $$(-k+2) < 0 \quad \Leftrightarrow \quad k>2$$
 Entonces podemos expresar la funcion como:
 $$f(z) = \sum_{k=0}^{2}a_k(z - 1)^{-k+2} + \sum_{k=3}^{\infty}a_k(z - 1)^{-k+2}\qquad, \qquad a_k=\frac{1}{k!}$$
 o lo que es igual:
-$$f(z) = \sum_{n=0}^{2}a_n(z - 1)^{n} + \sum_{n=1}^{\infty}b_n(z - 1)^{-n}\qquad, \qquad a_n=\frac{1}{(2-n)!}\quad y \quad b_n=\frac{1}{(n+2)!}$$
-$$\underbrace{x + y}_{\text{This is under the equation}} = z$$
-Siendo el primer termino la parte analitica de la serie, y el segunda la parte singular
+$$f(z) = \underbrace{\sum_{n=0}^{2}a_n(z - 1)^{n}}_{\text{Parte Analitica}} + \underbrace{\sum_{n=1}^{\infty}b_n(z - 1)^{-n}}_{\text{Parte Singular}}
+\qquad, \qquad a_n=\frac{1}{(2-n)!}\quad y \quad b_n=\frac{1}{(n+2)!}$$
 
-\textbf{b)  Teniendo en cuenta la serie del inciso anterior clasificar la singularidad (evitable, polo, esencial) y calcular el residuo \( \text{Res}(f, z = 1) \).}\\[6pt]
+\textbf{b)  Teniendo en cuenta la serie del inciso anterior clasificar la singularidad (evitable, polo, 
+esencial) y calcular el residuo \( \text{Res}(f, z = 1) \).}
+
+Ya que la parte singular de la serie de Laurent tiene infinitos terminos, podemos afirmar que la singularidad
+en el punto $1+j0$ es esencial.
+
+Por definicion, el residuo es el primer coeficiente de la Parte Singular de la serie de Laurent, por ende:
+$$\text{Res}(f, z = 1) = b_1=\frac{1}{(1+2)!} = \frac{1}{6}$$
 
 \textbf{c)  Valuar las siguientes integrales:}
 
-$$ I_1 = \oint_{|z| = 1/2} f(z) \, dz; \quad I_2 = \oint_{|z| = 2} f(z) \, dz; \quad I_3 = \oint_{|z| = 4} f(z) \, dz $$
+$$ I_1 = \oint_{|z| =\frac{1}{2}} f(z) \, dz; \quad I_2 = \oint_{|z| = 2} f(z) \, dz; \quad I_3 = \oint_{|z| = 4} f(z) \, dz $$
+
+Como que no hay singularidades dentro de la curva $|z|=\frac{1}{2}$
+$$\oint_{|z| = 1/2} f(z) \, dz = 0$$
+
+Para la segunda integral, aplicando teorema del residuo
+$$\oint_{|z| = 2} f(z) \, dz = 2\pi j \text{Res}(f, z = 1) = 2\pi j\frac{1}{6}=\frac{1}{3}\pi j$$
+
+De igual forma para la tercer integral
+$$\oint_{|z| = 4} f(z) \, dz = 2\pi j \text{Res}(f, z = 1) =\frac{1}{3}\pi j$$\\
 
 \textbf{d)  Teniendo en cuenta el inciso anterior podemos afirmar que:}
 
-$$ I_r = \oint_{|z| = r} f(z) \, dz = I_1, \text{ para todo } 0 < r < 1 $$ ¿Por qué?
+$$ I_r = \oint_{|z| = r} f(z) \, dz = I_1, \text{ para todo } 0 < r < 1 $$ 
+Ya que cualquier curva en este intervalo no va a incluir al unico punto singular que tiene nuestra funcion
 
-$$ I_r = \oint_{|z| = r} f(z) \, dz = I_2, \text{ para todo } r > 1 $$ ¿Por qué?
+Y:
+$$ I_r = \oint_{|z| = r} f(z) \, dz = I_2, \text{ para todo } r > 1 $$ 
+De manera opuesta, todas estas curvas van a incluir al unico punto singular de la funcion
 
 \chapter{}%ejercicio 7
 
