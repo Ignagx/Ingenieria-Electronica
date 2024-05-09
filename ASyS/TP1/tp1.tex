@@ -331,13 +331,13 @@ Resolucion:\\
 
 \begin{align*}
 &\lim_{z \to 1}\frac{z+3j}{(z - 1)^2(z^2 + 9)}=\lim_{z \to 1}\frac{\cancel{z+3j}}{j(z - 1)^2(z-3j)\cancel{(z+3j)}}\\[6pt]
-&\lim_{z \to 1}\frac{1}{j(z - 1)^2(z-3j)}=\lim_{z \to 1}\frac{1}{0.(1-3j)}=\infty\\[6pt]
+&\lim_{z \to 1}\frac{1}{(z - 1)^2(z-3j)}=\lim_{z \to 1}\frac{1}{0.(1-3j)}=\infty\\[6pt]
 \end{align*}
 
 Como el limite es infinito entonces es un polo.\\
-$\lim_{z \to z_0}(z-z_0)^n$\\[10pt]
 
 \begin{align*}
+&\lim_{z \to z_0}(z-z_0)^n\\[10pt]
 &\lim_{z \to 1}\cancel{(z - 1)^2}\frac{\cancel{z+3j}}{\cancel{(z - 1)^2}(z-3j)\cancel{(z+3j)}}\\[6pt]
 &\lim_{z \to 1}\frac{1}{z-3j}=\frac{1}{1-3j}\rightarrow \text{polo de orden 2}\\[12pt]
 \end{align*}
@@ -367,20 +367,26 @@ Como el limite es finito entonces es una singularidad eviable.\\
 \end{align*}
 
 Resolucion:
-
-\begin{figure}[htbp]
+\begin{figure}[h]
     \centering
-    \includegraphics[width=0.5\textwidth]{./Imagenes/foto1Ej5.jpeg}
-    \begin{minipage}[b]{0.4\textwidth}
-       Para calcular las integrales 1, 2 y 3 primero calculamos con las formulas de integracion de cauchy las integrales de las singularidades bajo la curva C. 
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{./Imagenes/foto1Ej5.jpeg}
+    \end{minipage}\hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{./Imagenes/foto2Ej5.jpeg}
     \end{minipage}
 \end{figure}
+       
+Para calcular las integrales 1, 2 y 3 primero calculamos con las formulas de integracion de cauchy las integrales de las singularidades bajo la curva C. \\
+
 \begin{align*}
-    I_{c1} &= \oint_{c}\frac{z+3j}{j(z - 1)^2(z-3j)(z+3j)} \, dz =\oint_{c}\frac{\frac{\cancel{z+3j}}{\cancel{(z+3j)}(z-1)^2}}{z-3j} \, dz\\[6pt]
+I_{c1} &= \oint_{c}\frac{z+3j}{j(z - 1)^2(z-3j)(z+3j)} \, dz =\oint_{c}\frac{\frac{\cancel{z+3j}}{\cancel{(z+3j)}(z-1)^2}}{z-3j} \, dz\\[6pt]
 &= \oint_{c}\frac{\frac{1}{(z-1)^2}(z-3j)}{z-3j} \, dz = 2\pi j \frac{1}{(3j-1)^2}\\[6pt]
-    I_{c2} &= \oint_{c}\frac{z+3j}{j(z - 1)^2(z-3j)(z+3j)} \, dz =\oint_{c}\frac{\frac{\cancel{z+3j}}{\cancel{(z+3j)}(z-1)^2}}{(z-1)^2} \, dz\\[6pt]
-    &= \oint_{c}\frac{\frac{1}{(z-3j)}}{(z-1)^2} \, dz = \frac{2\pi j}{(2-1)!} \left[ \frac{1}{z-3j} \right]_{z=1}^1= -\frac{2\pi j}{(1-3i)^2} \\[6pt]
-    I_{c3} &= \oint_{c}\frac{\cancel{z+3j}}{(z - 1)^2(z-3j)\cancel{(z+3j)}} \, dz=0 \\[6pt]
+I_{c2} &= \oint_{c}\frac{z+3j}{j(z - 1)^2(z-3j)(z+3j)} \, dz =\oint_{c}\frac{\frac{\cancel{z+3j}}{\cancel{(z+3j)}(z-1)^2}}{(z-1)^2} \, dz\\[6pt]
+&= \oint_{c}\frac{\frac{1}{(z-3j)}}{(z-1)^2} \, dz = \frac{2\pi j}{(2-1)!} \left[ \frac{1}{z-3j} \right]_{z=1}^1= -\frac{2\pi j}{(1-3i)^2} \\[6pt]
+I_{c3} &= \oint_{c}\frac{\cancel{z+3j}}{(z - 1)^2(z-3j)\cancel{(z+3j)}} \, dz=0 \\[6pt]
 \end{align*}
 
 
