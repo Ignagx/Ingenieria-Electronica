@@ -206,9 +206,8 @@ Resolución: Para simplificar el desarrollo del ejercicio, como se hizo antes, s
 Para no repetir, vamos a traer del punto b, las relaciones de \( x \) e \( y \) (de \( z \)) respecto de \( u \) y \( v \) (de \( w_0 \)):
 
 $$ x = \frac{u}{u^2 + v^2}, \quad y = \frac{-v}{u^2 + v^2} $$\\[6pt]
-Ahora simplemente obtenemos la ecuación que define el conjunto y reemplazamos correspondientemente:
-\begin{math}
-\begin{aligned}
+Ahora simplemente obtenemos la ecuación que define el conjunto y reemplazamos correspondientemente:\\
+\begin{align*}
 |z-1-j| &= 2 \\[6pt]
 |x+jy-1-j| &= 2 \\[6pt]
 |x-1+jy-j| &= 2 \\[6pt]
@@ -221,22 +220,23 @@ x^2 - 2x + y^2 - 2y &= 0 \\[6pt]
 uu^2 + v^2 - 2uu^2 + v^2 - vu^2 + v^2 - 2 - vu^2 + v^2 &= 0 \\[6pt]
 u^2 u^2 + v^2 - 2uu^2 + v^2 + v^2 u^2 + v^2 - 2vu^2 + v^2 &= 0 \\[6pt]
 u^2 u^2 + v^2 + v^2 u^2 + v^2 &= 2uu^2 + v^2 - 2vu^2 + v^2 \\[6pt]
+\end{align*}
+\begin{align*}
 1 u^2 + v^2 u^2 u^2 + v^2 + v^2 u^2 + v^2 &= 1 u^2 + v^2 2u - 2v \\[6pt]
 u^2 + v^2 u^2 + v^2 &= 2u - 2v \\[6pt]
 1 &= 2u - 2v \\[6pt]
 w_0 &= 2u - 2v - 1\\[6pt]
-\end{aligned}
-\end{math}
+\end{align*}
 
 Ya teniendo $w_0$, para completar el mapeo, es tan simple como reemplazar el resultado obtenido en $w_1$, y se obtiene la ecuación que define el nuevo conjunto \( C' \):\\
 
-\begin{math}
-\begin{aligned}
+
+\begin{align*}
     w_1 &= w_0-j \\[5pt]
     w_1 &= 2u-2v-1-j \\[5pt]
     C' &= \{w \in \mathbb{C} \, | \, 2u-2v-j=1\}
-\end{aligned}
-\end{math}
+\end{align*}
+
 
 \begin{figure}[htbp] % Aquí comienza el ambiente de figura
     \centering % Centrar la imagen
