@@ -513,7 +513,8 @@ De manera opuesta, todas estas curvas van a incluir al unico punto singular de l
 
 \chapter{}%ejercicio 7
 
-    Con este ejercicio se busca que el estudiante calcule integrales del Análisis I empleando la variable compleja de forma metodológica.\\
+Con este ejercicio se busca que el estudiante calcule integrales del Análisis I empleando la variable
+compleja de forma metodológica.
 
 Calcular el área bajo la curva\\
 
@@ -523,17 +524,44 @@ Calcular el área bajo la curva\\
     \includegraphics[width=0.65\textwidth]{./Imagenes/foto1Ej7.png} % Insertar la imagen
 \end{figure}
 
-$a = \int_{0}^{2\pi} \frac{3}{3 - 2\cos(x) + \sin(x)} \, dx$\\[6pt]
+$$a = \int_{0}^{2\pi} \frac{3}{3 - 2\cos(x) + \sin(x)} \, dx$$
 
-siguiendo los siguientes pasos:\\[6pt]
+siguiendo los siguientes pasos:
 
-\textbf{a)  Defina $z = e^{x}$ y con ello consiga las siguientes igualdades:}\\[6pt]
+\textbf{a)  Defina $z = e^{jx}$ y con ello consiga las siguientes igualdades:}
 
-$dx = \frac{dz}{jz}; \quad \cos(x) = \frac{z^{2} + 1}{2z}; \quad \sin(x) = \frac{z^{2} - 1}{2jz}$\\[6pt]
+$$dx = \frac{dz}{jz}; \quad \cos(x) = \frac{z^{2} + 1}{2z}; \quad \sin(x) = \frac{z^{2} - 1}{2jz}$$
 
-\textbf{b)  Realizar una sustitución para obtener una función racional en la variable \( z \):}
+Partiendo de :
+$$z = e^{jx}$$
 
-$$ f(x) \, dx = \frac{3}{3 - 2\int \left( \frac{z^{2} + 1}{2z} \right) \, dz + \int \left( \frac{z^{2} - 1}{2jz} \right) \, dz} \cdot \frac{dz}{jz} = R(z) \, dz $$ 
+y diferenciando:
+$$dz = e^{jx}j \, dx$$
+$$dz = zj \, dx$$
+$$dx = \frac{dz}{zj}$$
+
+Para $\cos(x)$
+Partimos de:
+$$\cos(z)=\frac{e^{jz}+e^{-jz}}{2}$$
+
+entonces:
+$$\cos(x)=\frac{e^{jx}+e^{-jx}}{2}$$
+
+reemplazado $z=e^{jx}$
+$$\cos(x)=\frac{z+z^{-1}}{2}$$
+$$\cos(x)=\frac{z}{2}+\frac{z^{-1}}{2}$$
+$$\cos(x)=\frac{z}{2}+\frac{1}{2z}$$
+$$\cos(x)=\frac{z^2-1}{2z}$$
+
+Similarmente para $\sin(x)$
+$$\sin(x)=\frac{e^{jx}-e^{-jx}}{2}$$
+$$\sin(x)=\frac{z-z^{-1}}{2j}$$
+$$\sin(x)=\frac{z}{2j}-\frac{1}{2jz}$$
+$$\sin(x)=\frac{z^2-1}{2jz}$$
+
+\textbf{b)  Realizar una sustitución para obtener una función racional en la variable $z$:}
+
+$$ f(x) \, dx = \frac{3}{3 - 2\frac{z^{2} + 1}{2z} + \frac{z^{2} - 1}{2jz}} \cdot \frac{dz}{jz} = R(z) \, dz $$ 
 
 Y con ello, se valida la igualdad:
 
