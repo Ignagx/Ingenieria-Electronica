@@ -571,6 +571,8 @@ $$ f(x) \, dx = \frac{3}{3 - 2\frac{z^{2} + 1}{2z} + \frac{z^{2} - 1}{2jz}} \cdo
 Y con ello, se valida la igualdad:
 $$ \int_{0}^{2\pi} f(x) \, dx = \oint_{|z|=1} R(z) \, dz$$ 
 
+\vspace{6cm}
+
 \textbf{c)  Finalmente, clasificar todas las singularidades de la función racional $R(z)$ y usar el teorema del residuo para calcular el lado derecho de la integral formulada en el inciso anterior.}
 Para calcular las singularidades, desarrollamos la funcion:
 $$\frac{3}{3 - 2\frac{z^{2} + 1}{2z} + \frac{z^{2} - 1}{2jz}} \cdot \frac{dz}{jz}$$ 
@@ -592,16 +594,60 @@ $$z_2 = \frac{-6j + 4j} {2-4j} = \frac{2}{5}-\frac{1}{5}j\quad;\quad z_3 = \frac
 Identificamos asi los polos:
 $$z_1=0\quad;\quad z_2=\frac{2}{5}-\frac{1}{5}j \quad;\quad z_3=2-j$$
 
-\textbf{Clasificación de polos:}\\
+\vspace{2cm}
+
+\textbf{Clasificación de polos:}\\[6pt]
 Para $z_1$:
-$$\lim_{z \to 0}\frac{6\cancel{z^2}}{(1- 2j)z^{2} + 6jz - (1 + 2j)} \cdot \frac{dz}{\cancel{z^2}}
+$$\lim_{z \to 0}\frac{6\cancel{z^2}}{(1- 2j)z^{2} + 6jz - (1 + 2j)} \cdot \frac{1}{\cancel{z^2}}
 =\frac{6}{- (1 + 2j)}=-\frac{6}{5}+\frac{12}{5}j$$ 
-\begin{center}Singularidad evitable\end{center}
+\begin{center}\framebox[5cm][c]{\textbf{Singularidad evitable}}\end{center}
 
 Para $z_2$:
-$$\lim_{z \to \frac{2}{5}-\frac{1}{5}j}\frac{6z^2}{(1- 2j)z^{2} + 6jz - (1 + 2j)} \cdot \frac{dz}{z^2}
-=$$
-\begin{center}Polo simple\end{center}
+$$\lim_{z \to \frac{2}{5}-\frac{1}{5}j}\frac{6z^2}{(1- 2j)z^{2} + 6jz - (1 + 2j)} \cdot \frac{1}{z^2}
+$$
+
+\begin{align*}
+&\lim_{z \to \frac{2}{5}-\frac{1}{5}j}\,\frac{6\cancel{z^2}}{(6jz-2jz^2-2j+z^2-1)}\frac{1}{\cancel{z^2}}\\
+& \lim_{z \to \frac{2}{5}-\frac{1}{5}j}\, \frac{6}{6j\left(\frac{2}{5}-\frac{j}{5} \right)-2j\left(\frac{2}{5}-\frac{j}{5} \right)^2-2j+\left(\frac{2}{5}-\frac{j}{5} \right)^2-1}\\
+&\lim_{z \to \frac{2}{5}-\frac{1}{5}j}\,\frac{6}{\frac{6}{5}+\frac{12}{5}j-\frac{8}{25}-\frac{6}{25}j-2j+\frac{3}{25}-\frac{4}{25}j-1}=\frac{6}{0} \quad \framebox[4cm][c]{\textbf{Indeterminación}}\\
+\end{align*}
+
+Debido a la indeterminacion se procede a determinar el grado del polo utilizando limites\\[8pt]
+Para $n=1$:
+\begin{align*}
+&\lim_{z \to \frac{2}{5}-\frac{1}{5}j}\,\left(z-\left( \frac{2}{5}-\frac{j}{5} \right)\right)\frac{6\cancel{z^2}}{(6jz-2jz^2-2j+z^2-1)}\frac{1}{\cancel{z^2}}=\frac{0}{0} \quad \framebox[3cm][c]{\textbf{L´Hopital}}\\
+&\lim_{z \to \frac{2}{5}-\frac{1}{5}j}\,\frac{6}{6j-4jz+2z}\\
+&\lim_{z \to \frac{2}{5}-\frac{1}{5}j}\,\frac{6}{6j-4j\left(\frac{2}{5}-\frac{j}{5} \right) +2 \left(\frac{2}{5}-\frac{j}{5} \right)}= -\frac{3}{2}\, j \quad \framebox[4cm][c]{\textbf{Polo simple}}\\
+\end{align*}
+
+
+Para $z_3$:
+$$\lim_{z \to 2-j}\frac{6z^2}{(1- 2j)z^{2} + 6jz - (1 + 2j)} \cdot \frac{1}{z^2}
+$$
+
+\begin{align*}
+&\lim_{z \to 2-j}\,\frac{6\cancel{z^2}}{(6jz-2jz^2-2j+z^2-1)}\frac{1}{\cancel{z^2}}\\
+&\lim_{z \to 2-j}\, \frac{6}{6j(2-j)-2j(2-j)^2-2j+(2-j)^2-1}\\
+&\lim_{z \to 2-j}\,\frac{6}{6+12j-8-6j-2j+3-4j-1}= \frac{6}{0} \quad \framebox[4cm][c]{\textbf{Indeterminación}}\\
+\end{align*}
+
+Debido a la indeterminacion se procede a determinar el grado del polo utilizando limites\\[8pt]
+Para $n=1$:
+
+\begin{align*}
+&\lim_{z \to 2-j}\,(z-(2-j))\frac{6\cancel{z^2}}{(6jz-2jz^2-2j+z^2-1)}\frac{1}{\cancel{z^2}}=\frac{0}{0}\quad \framebox[3cm][c]{\textbf{L´Hopital}}\\
+&\lim_{z \to 2-j}\,(z-(2-j))\, {6}{6j-4jz+2z}\\
+&\lim_{z \to 2-j}\,(z-(2-j))\, \frac{6}{6j-4j(2-j+2(2-j)}=\frac{3}{2} \, j \quad \framebox[4cm][c]{\textbf{Polo simple}}\\
+\end{align*}
+
+Calculamos la integral utilizando el teorema del residuo:
+
+\begin{align*}
+& \oint_{|z|=1} \frac{6z^2}{(6jz-2jz^2-2j+z^2-1)}\frac{1}{z^2}\, dz= 2\pi j \sum_{k=1}^1 Res(f(z),zk)\\
+&\phantom{\oint_{|z|=1} \frac{6z^2}{(6jz-2jz^2-2j+z^2-1)}\frac{1}{z^2}\, dz}=2\pi j (Res(f(z),\left( \frac{2}{5}-\frac{j}{5} \right)\\
+&\phantom{\oint_{|z|=1} \frac{6z^2}{(6jz-2jz^2-2j+z^2-1)}\frac{1}{z^2}\, dz}=2\pi j \left( -\frac{3}{2}\,j \right)\\
+&\phantom{\oint_{|z|=1} \frac{6z^2}{(6jz-2jz^2-2j+z^2-1)}\frac{1}{z^2}\, dz}=3\pi = 9,42 \text{U.A}\\
+\end{align*}
 
 \end{document}
 
