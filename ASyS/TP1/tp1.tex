@@ -183,28 +183,27 @@ Antes de reemplazar los valores de los puntos en la definición anterior, es má
 
 \begin{align*}
     \frac{z_1 \left(\frac{z}{z_1}-1\right) }{z-z_3} \frac{z_2-z_3}{z_1 \left( \frac{z_3}{z_2} -1 \right) } &= \frac{w-w_1}{w_3 \left( \frac{w}{w_3} - 1 \right)} \frac{w_3 \left( \frac{w_1}{w_3} -1 \right) }{w_2-w_1}\\[10pt]
-    \frac{\frac{z}{z_1} -1}{z-z_3} \frac{z_2-z_3}{\frac{z_3}{z_1}-1} &= \frac{w-w_1}{\frac{w}{w_3}-1} \frac{\frac{w_1}{w_3}-1}{w_2-w_1}\\
+    \frac{\frac{z}{z_1} -1}{z-z_3} \frac{z_2-z_3}{\frac{z_3}{z_1}-1} &= \frac{w-w_1}{\frac{w}{w_3}-1} \frac{\frac{w_1}{w_3}-1}{w_2-w_1}
 \end{align*}
-Ahora si, reemplazando los puntos:\\
+Ahora si, reemplazando los puntos:
 
-$$\frac{\frac{z}{\infty}-1}{z-0} \frac{-j-0}{\frac{0}{\infty}-1} = \frac{w-(-j)}{\frac{w}{\infty}-1} \frac{\frac{-j}{\infty}-1}{0-(-j)}$$\\
+$$\frac{\frac{z}{\infty}-1}{z-0} \frac{-j-0}{\frac{0}{\infty}-1} = \frac{w-(-j)}{\frac{w}{\infty}-1} \frac{\frac{-j}{\infty}-1}{0-(-j)}$$
 
-Por las identidades de los números hiperreales, cualquier número dividido una magnitud infinita es igual a cero:\\
+Por las identidades de los números hiperreales, cualquier número dividido una magnitud infinita es igual a cero:
 
 \begin{align*}
     \frac{0-1}{z} \frac{-j}{0-1} &= \frac{w+j}{0-1} \frac{0-1}{j}\\
     \frac{-1}{z} \frac{-j}{-1} &= \frac{w+j}{-1} \frac{-1}{j}\\
     \frac{-1}{z}j &= (-w-j)j\\
     -\frac{1}{z}+j &= -w\\
-    w &= \frac{1}{z}-j\\
+    w &= \frac{1}{z}-j
 \end{align*}
 
 \textbf{b) Obtener las fórmulas y graficar \( R' \) en el plano \( W \), sabiendo que \( R = \{z \in \mathbb{C} \mid \text{Im}(z) - 2\text{Re}(z) = 0\} \) en el plano \( W \).}
 
-Resolución: Para simplificar el desarrollo del ejercicio, se realizarán dos mapeos. Uno, \( w_0 \), que va a ser el mapeo recíproco, y otro, \( w_1 \), que va a ser la traslación del mapeo \( w_0 \) a \( -j \).
+Resolución: Para simplificar el desarrollo del ejercicio, se realizarán dos mapeos. Uno, \( w_0 \), que va a ser el mapeo recíproco, y otro, \( w_1 \), que va a ser la traslación del mapeo \( w_0 \) a \( -j \).\\
 
-Para empezar, necesitamos encontrar la relación que tienen las componentes \( x \) e \( y \) (de \( z \)) respecto de \( u \) y \( v \) (de \( w_0 \)):
-
+Para empezar, necesitamos encontrar la relación que tienen las componentes $x$ e $y$ (de $z$) respecto de $u$ y $v$ (de $w_0$):
 \begin{align*}
     w_0 &=\frac{1}{z}\\
     u+jv &=\frac{1}{x+jy}\\
@@ -214,6 +213,8 @@ Para empezar, necesitamos encontrar la relación que tienen las componentes \( x
     x+jy &= \frac{u}{u^2+v^2}-j\frac{v}{u^2+v^2}\\
     x=\frac{u}{u^2+v^2} \hspace{0.5cm} &;\hspace{0.5cm} y=-\frac{v}{u^2+v^2}\\
 \end{align*}
+
+
 Ya teniendo las relaciones entre \( w_0 \) y \( z \), procedemos a operar la ecuación que define el conjunto, y reemplazar con sus respectivas igualdades las variables que correspondan:
 
 \begin{align*}
@@ -226,7 +227,7 @@ Ya teniendo las relaciones entre \( w_0 \) y \( z \), procedemos a operar la ecu
 &-v - 2u = w_0\\ 
 \end{align*}
 
-Ya teniendo \( w_0 \), para completar el mapeo, es tan simple como reemplazar el resultado obtenido en \( w_1 \), y se obtiene la ecuación que define el nuevo conjunto \( R' \):
+Ya teniendo $w_0$, para completar el mapeo, es tan simple como reemplazar el resultado obtenido en $w_1$ , y se obtiene la ecuación que define el nuevo conjunto $R'$:
 
 $$ w_1 = w_0 - j $$
 $$ w_1 = -v - 2u - j $$
@@ -335,19 +336,18 @@ La nueva región $R'$ está parametrizada por:
 
 \chapter{}%ejercicio 5
 
-Considerar la función de variable compleja $f(z) =\frac{z + 3}{j(z - 1)^2(z^2 + 9)}$\\[6pt]
+Considerar la función de variable compleja $f(z) =\frac{z + 3}{j(z - 1)^2(z^2 + 9)}$
 
-\textbf{a) Obtener el conjunto de ceros y el conjunto de singularidades de la función.}\\[6pt]
+\textbf{a) Obtener el conjunto de ceros y el conjunto de singularidades de la función.}
 
-Ceros $\rightarrow f(z)=0$\\
+Ceros $\rightarrow f(z)=0$
 
+$$f(z)=\frac{z + 3j}{j(z - 1)^2(z^2 + 9)}$$
 \begin{align*}
-&f(z)=\frac{z + 3}{j(z - 1)^2(z^2 + 9)}\\[6pt]
-&z+3j=0\\[6pt]
-&z=-3j\\[6pt]
+  z+3j&=0\\[6pt]
+  z&=-3j\\[6pt]
 \end{align*}
-    
-singularidades:\\
+Singularidades:
 
 Como la funcion es un conciente de polinomios complejos va a tener singularidades cuando el denominador sea cero;\\
 
@@ -546,14 +546,13 @@ $$dz = e^{jx}j \, dx$$
 $$dz = zj \, dx$$
 $$dx = \frac{dz}{zj}$$
 
-Para $\cos(x)$
-Partimos de:
+Para $\cos(x)$ partimos de:
 $$\cos(z)=\frac{e^{jz}+e^{-jz}}{2}$$
 
-entonces:
+Entonces:
 $$\cos(x)=\frac{e^{jx}+e^{-jx}}{2}$$
 
-reemplazado $z=e^{jx}$
+Reemplazado $z=e^{jx}$
 $$\cos(x)=\frac{z+z^{-1}}{2}$$
 $$\cos(x)=\frac{z}{2}+\frac{z^{-1}}{2}$$
 $$\cos(x)=\frac{z}{2}+\frac{1}{2z}$$
@@ -570,12 +569,39 @@ $$\sin(x)=\frac{z^2-1}{2jz}$$
 $$ f(x) \, dx = \frac{3}{3 - 2\frac{z^{2} + 1}{2z} + \frac{z^{2} - 1}{2jz}} \cdot \frac{dz}{jz} = R(z) \, dz $$ 
 
 Y con ello, se valida la igualdad:
-
 $$ \int_{0}^{2\pi} f(x) \, dx = \oint_{|z|=1} R(z) \, dz$$ 
 
-
 \textbf{c)  Finalmente, clasificar todas las singularidades de la función racional $R(z)$ y usar el teorema del residuo para calcular el lado derecho de la integral formulada en el inciso anterior.}
+Para calcular las singularidades, desarrollamos la funcion:
+$$\frac{3}{3 - 2\frac{z^{2} + 1}{2z} + \frac{z^{2} - 1}{2jz}} \cdot \frac{dz}{jz}$$ 
+$$\frac{3}{3 - \frac{2z^{2} + 2}{2z} + \frac{z^{2} - 1}{2jz}} \cdot \frac{dz}{jz}$$ 
+$$\frac{3}{3 + \frac{-(2z^{2} + 2)2jz + (z^2-1)2z}{4z^2j}} \cdot \frac{dz}{jz}$$ 
+$$\frac{3}{\frac{3(4z^2j) - (2z^{2} + 2)2jz + (z^2-1)2z}{4z^2j}} \cdot \frac{dz}{jz}$$ 
+$$\frac{3(4z^2\cancel{j})}{12z^2j - 4jz^{3} - 4jz + 2z^3 - 2z} \cdot \frac{dz}{\cancel{j}z}$$ 
+$$\frac{12z^2}{6jz - 2jz^{2} - 2j + z^2 - 1} \cdot \frac{dz}{2z^2}$$ 
+$$\frac{6z^2}{(1- 2j)z^{2} + 6jz - (1 + 2j)} \cdot \frac{dz}{z^2}$$ 
 
+Calculamos los ceros de $(1- 2j)z^{2} + 6jz - (1 + 2j)$ por Bashkara
+
+$$\frac{-6j \pm \sqrt{(6j)^2-4(1-2j)(-(1+2j))}} {2(1-2j)} $$
+$$\frac{-6j \pm \sqrt{-36-4(-1+2j-2j+4j^2)}} {2-4j} $$
+$$\frac{-6j \pm \sqrt{-36-4(-5)}} {2-4j} $$
+$$\frac{-6j \pm \sqrt{-16}} {2-4j} $$
+$$z_2 = \frac{-6j + 4j} {2-4j} = \frac{2}{5}-\frac{1}{5}j\quad;\quad z_3 = \frac{-6j - 4j} {2-4j} = 2-j$$
+
+Identificamos asi los polos:
+$$z_1=0\quad;\quad z_2=\frac{2}{5}-\frac{1}{5}j \quad;\quad z_3=2-j$$
+
+\textbf{Clasificación de polos:}\\
+Para $z_1$:
+$$\lim_{z \to 0}\frac{6\cancel{z^2}}{(1- 2j)z^{2} + 6jz - (1 + 2j)} \cdot \frac{dz}{\cancel{z^2}}
+=\frac{6}{- (1 + 2j)}=-\frac{6}{5}+\frac{12}{5}j$$ 
+\begin{center}Singularidad evitable\end{center}
+
+Para $z_2$:
+$$\lim_{z \to \frac{2}{5}-\frac{1}{5}j}\frac{6z^2}{(1- 2j)z^{2} + 6jz - (1 + 2j)} \cdot \frac{dz}{z^2}
+=$$
+\begin{center}Polo simple\end{center}
 
 \end{document}
 
