@@ -52,7 +52,7 @@ Matias Gabriel Moran\\
 \maketitle
 
 \chapter{}%ejercicio 1
-Considerar la ecuación en variable compleja $z^7-jz^7+2^{14}2e^{\frac{j\pi}{2}}=0$
+Considerar la ecuación en variable compleja $z^7-jz^7+2^{14}2e^{\frac{j\pi}{2}}=0a$. 
 Obtener el conjunto $S$ de números complejos que solucionan la ecuación
 
 \textbf{a) Demostrar que  $S = \{z_k = 4e^{j(\frac{\pi}{4}+\frac{2k\pi}{7})} \mid k=-3;-2;-1;0;1;2;3\}$}
@@ -99,7 +99,7 @@ $f_1$ parte real e imaginaria
 $$U_1=Re(f_1)=4y-y^2-x-\frac{1}{3}y^3$$
 $$V_1=Im(f_1)=-y-2x^2-\frac{1}{3}y^3$$
 
-Para obtener la parte real e imaginaria de $f2$, reemplazamos $z=x+jy$\\
+Para obtener la parte real e imaginaria de $f_2$, reemplazamos $z=x+jy$\\
 Para el primer termino:
 $$4z - z^2 - z - \frac{1}{3}z^3=(x+jy) - (x+jy)^2 - (x+jy) - \frac{1}{3}(x+jy)^3$$
 $$=4x + 4jy -x^2 -2xyj + y^2 -x -jy - \frac{1}{3}x^3 - jx^2y + xy^2 + \frac{1}{3}jy^3$$
@@ -117,10 +117,10 @@ $$V_2=Im(f_2)=-x + 3y -2xy - 2x^2 + 2y^2 - x^2y + xy^2 + \frac{1}{3}y^3 - \frac{
 \textbf{b) Obtener el conjunto de números complejos $D_1$ donde la función $f_1(z)$ es derivable. Similarmente, obtener $D_2$ donde $f_2(z)$ es derivable.
 ¿Hace falta resolver las ecuaciones de Cauchy-Riemann para determinar $D_2$?}
 
-Para obtener el conjunto de numeros complejos $D_1$ donde la funcion $f_1(z)$ es derivable, utilizaremos las ecuaciones de Cauchy-Riemman
+Para obtener el conjunto de numeros complejos $D_1$ donde la funcion $f_1(z)$ es derivable, utilizaremos las ecuaciones de Cauchy-Riemman:
 $$\frac{\delta U_1}{\delta x}=-1 \quad \quad \frac{\delta V_1}{\delta x}=-4x-x^2$$
 $$\frac{\delta V_1}{\delta y}=-1 \quad \quad - \frac{\delta U_1}{\delta y}=-(4-2y-y^2)=y^2+2y-4$$
-si:$$\frac{\delta V_1}{\delta x}=-\frac{\delta U_1}{\delta y}$$
+Si:$$\frac{\delta V_1}{\delta x}=-\frac{\delta U_1}{\delta y}$$
 $$-4x-x^2=y^2+2y-4$$
 $$x^2+4x+y^2+2y=4$$
 $$(x+2)^2+(y+1)^2=9$$\\
@@ -141,13 +141,13 @@ $$(x+2)^2+(y+1)^2=3^2$$\\
 
 \textbf{d) Demostrar que la función $f_1(z)$ no es analítica y que la función $f_2(z)$ es entera.}
 
-Al ver los resultados obtenidos por Cauchy-Riemann, observamos que las derivadas parciales de $f1$ nos dan una condición, en este caso $f1$ es derivable solamente
+Al ver los resultados obtenidos por Cauchy-Riemann, observamos que las derivadas parciales de $f_1$ nos dan una condición, en este caso $f_1$ es derivable solamente
 en $D1 = \{z \in \mathbb{C} : |z + 2 + j| = 3\}$, o sea una circunferencia de radio $3$ centrada en $(-2, -j)$, sin embargo para cualquier punto de $f$ en la
 circunferencia no hay una vecindad o disco abierto alrededor del punto en cuestión en el que se satisfagan las ecuaciones de Cauchy-Riemann.
 
-$f2$ es una función compleja cuyo dominio abarca todo el plano complejo. Dado que $f2$ es una composición de polinomios, se garantiza la continuidad y
+$f_2$ es una función compleja cuyo dominio abarca todo el plano complejo. Dado que $f2$ es una composición de polinomios, se garantiza la continuidad y
 derivabilidad en todo su dominio. Además, al ser derivable en cada punto del plano complejo, $f2$ es analítica en cada punto del dominio, cumpliendo las
-condiciones necesarias para decir que la $f2$ es una función entera
+condiciones necesarias para decir que la $f_2$ es una función entera
 
 \textbf{e) De las funciones anteriores, ¿se puede afirmar que "Derivable implica analítica" o "Analítica implica derivable"? ¿Por qué?}
 
@@ -251,30 +251,28 @@ Ahora simplemente obtenemos la ecuación que define el conjunto y reemplazamos c
 |x+jy-1-j|  &= 2 \\[6pt]
 |x-1+jy-j| &= 2 \\[6pt]
 |(x-1)+j(y-1)| &= 2 \\[6pt]
-  \sqrt{(x-1)^2 + (y-1)^2} &= 2 \\[6pt]
+\sqrt{(x-1)^2 + (y-1)^2} &= 2 \\[6pt]
 (x-1)^2 + (y-1)^2 &= 2 \\[6pt]
 x^2 - 2x + 1 + y^2 - 2y + 1 &= 2 \\[6pt]
 x^2 - 2x + y^2 - 2y + 2 &= 2 \\[6pt]
 x^2 - 2x + y^2 - 2y &= 0 \\[6pt]
-   \left(\frac{u}{u^2+v^2} \right)^2 - 2\frac{u}{u^2+v^2} + \left( -\frac{v}{u^2+v^2} \right)^2-2 \left( -\frac{v}{u^2+v^2} \right) &=0\\[6pt]
-   \frac{u^2}{(u^2+v^2)^2}-2\frac{u}{u^2+v^2} + \frac{v^2}{(u^2+v^2)^2}+2\frac{v}{u^2+v^2}&=0\\[6pt]
+\left(\frac{u}{u^2+v^2} \right)^2 - 2\frac{u}{u^2+v^2} + \left( -\frac{v}{u^2+v^2} \right)^2-2 \left( -\frac{v}{u^2+v^2} \right) &=0\\[6pt]
+\frac{u^2}{(u^2+v^2)^2}-2\frac{u}{u^2+v^2} + \frac{v^2}{(u^2+v^2)^2}+2\frac{v}{u^2+v^2}&=0\\[6pt]
 \frac{u^2}{(u^2+v^2)^2}+\frac{v^2}{(u^2+v^2)^2}&=2\frac{u}{u^2+v^2} - 2 \frac{v}{u^2+v^2}\\[6pt]
-   \frac{1}{u^2+v^2} \left( \frac{u^2}{u^2+v^2} + \frac{v^2}{u^2+v^2} \right) &= \frac{1}{u^2+v^2}(2u-2v)\\[6pt]
-   \frac{u^2+v^2}{u^2+v^2}&=2u-2v\\[6pt]
+\frac{1}{u^2+v^2} \left( \frac{u^2}{u^2+v^2} + \frac{v^2}{u^2+v^2} \right) &= \frac{1}{u^2+v^2}(2u-2v)\\[6pt]
+\frac{u^2+v^2}{u^2+v^2}&=2u-2v\\[6pt]
+1 &= 2u - 2v \\[6pt]
+w_0 &= 2u - 2v - 1\\[6pt]
 \end{align*}
+ 
+Ya teniendo $w_0$, para completar el mapeo, es tan simple como reemplazar el resultado obtenido en $w_1$, y se obtiene la ecuación que define el nuevo conjunto \( C' \):\\
+ 
+ 
 \begin{align*}
-     1 &= 2u - 2v \\[6pt]
-    w_0 &= 2u - 2v - 1\\[6pt]
- \end{align*}
- 
- Ya teniendo $w_0$, para completar el mapeo, es tan simple como reemplazar el resultado obtenido en $w_1$, y se obtiene la ecuación que define el nuevo conjunto \( C' \):\\
- 
- 
- \begin{align*}
-     w_1 &= w_0-j \\[5pt]
-     w_1 &= 2u-2v-1-j \\[5pt]
-     C' &= \{w \in \mathbb{C} \, | \, 2u-2v-j=1\}
- \end{align*}
+w_1 &= w_0-j \\[5pt]
+w_1 &= 2u-2v-1-j \\[5pt]
+C' &= \{w \in \mathbb{C} \, | \, 2u-2v-j=1\}
+\end{align*}
  
  
 \begin{figure}[htbp] % Aquí comienza el ambiente de figura
@@ -344,18 +342,18 @@ Ceros $\rightarrow f(z)=0$
 
 $$f(z)=\frac{z + 3j}{j(z - 1)^2(z^2 + 9)}$$
 \begin{align*}
-  z+3j&=0\\[6pt]
-  z&=-3j\\[6pt]
+z+3j&=0\\[6pt]
+z&=-3j\\[6pt]
 \end{align*}
 Singularidades:
 
 Como la funcion es un conciente de polinomios complejos va a tener singularidades cuando el denominador sea cero;\\
 
 \begin{align*}
-    &(z-1)^2(z^2+9)=0\\[6pt]
-    &(z-1)^2=0 \hspace{3.5cm}    z^2+9=0\\[6pt]
-    &z-1=0     \hspace{4cm}   z=\sqrt{-9}\\[6pt]
-    &z=1       \hspace{4.75cm}  z=\pm3j\\[6pt]
+&(z-1)^2(z^2+9)=0\\[6pt]
+&(z-1)^2=0 \hspace{3.5cm}    z^2+9=0\\[6pt]
+&z-1=0     \hspace{4cm}   z=\sqrt{-9}\\[6pt]
+&z=1       \hspace{4.75cm}  z=\pm3j\\[6pt]
 \end{align*}
 
 El conjunto de singularidades es: $$\{1,3j,-3j\}$$
@@ -397,9 +395,9 @@ Como el limite es finito entonces es una singularidad eviable.\\
 
 \textbf{c) Valuar las siguientes integrales:}\\[6pt]
 \begin{align*}
-    I_1 &= \oint_{|z|=1/2} f(z) \, dz \\[6pt]
-    I_2 &= \oint_{|z|=2} f(z) \, dz \\[6pt]
-    I_3 &= \oint_{|z|=4} f(z) \, dz\\[6pt]
+I_1 &= \oint_{|z|=1/2} f(z) \, dz \\[6pt]
+I_2 &= \oint_{|z|=2} f(z) \, dz \\[6pt]
+I_3 &= \oint_{|z|=4} f(z) \, dz\\[6pt]
 \end{align*}
 
 Resolucion:
@@ -431,7 +429,7 @@ Una vez obtenidas las curvas integrales se calculan las integrales 1, 2 y 3 haci
 \begin{align*}
 I_1&=\oint_{|z|=\frac{1}{2}}f(z) \, dz= 0 \rightarrow \text{Por que no hay ninguna singularidad bajo la curva $|z|=\frac{1}{2}$}\\[6pt]
 I_2&=\oint_{|z|=2}f(z) \, dz = I \oint_{c2} = - \frac{2 \pi j}{(1-3j)^2}\\[6pt]
-    &\text{Por que bajo la curva $|z|=2$ esta la singularidad $z=1$}\\[12pt]
+&\text{Por que bajo la curva $|z|=2$ esta la singularidad $z=1$}\\[12pt]
 I_3&= \oint_{|z|=4}f(z) \, dz = I_{c2}+I_{c1}=2 \pi j \left( -\frac{1}{(1-3j)^2} + \frac{1}{(3j-1)^2} \right) = 0 \\[6pt]
 \end{align*}
 Otro metodo para hacerlos es mediante el teorema del residuo:\\
