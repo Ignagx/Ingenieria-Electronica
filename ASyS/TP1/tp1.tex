@@ -57,7 +57,7 @@ Obtener el conjunto $S$ de números complejos que solucionan la ecuación.
 
 \textbf{a) Demostrar que  $S = \{z_k = 4e^{j(\frac{\pi}{4}+\frac{2k\pi}{7})} \mid k=-3;-2;-1;0;1;2;3\}$}
 
-
+Resolución:
 \begin{align*}
 &z^7 - jz^7 + 2^{14}\sqrt{2}e^{\frac{j\pi}{2}} = 0\\
 &z^7(1-j) = 2^{14}\sqrt{2}e^{\frac{-j\pi}{2}}\\
@@ -74,7 +74,7 @@ Vamos a tener 7 soluciones distintas que se repiten en periodos de $2\pi$\\
 
 \textbf{b) Obtener el gráfico de normas del conjunto $S$, esto es:}
     $$k, |k| \quad | \quad k = -3;-2;-1;0;1;2;3 $$
-
+Resolución:\\
 \begin{figure}[h] % Aquí comienza el ambiente de figura
     \centering % Centrar la imagen
     \includegraphics[width=0.6\textwidth]{./Imagenes/foto1Ej1.png} % Insertar la imagen
@@ -83,7 +83,7 @@ Vamos a tener 7 soluciones distintas que se repiten en periodos de $2\pi$\\
 \vspace{3cm}
 \textbf{c) Obtener el gráfico de argumentos principales del conjunto $S$, esto es:}\\
     $$k, Arg(z_k) \quad | \quad k = -3;-2;-1;0;1;2;3 $$
-
+Resolución:\\
 \begin{figure}[h] % Aquí comienza el ambiente de figura
     \centering % Centrar la imagen
     \includegraphics[width=0.6\textwidth]{./Imagenes/foto2Ej1.png} % Insertar la imagen
@@ -101,16 +101,16 @@ $$u_1=Re(f_1)=4y-y^2-x-\frac{1}{3}y^3$$
 $$v_1=Im(f_1)=-y-2x^2-\frac{1}{3}y^3$$
 
 Para obtener la parte real e imaginaria de $f_2$, reemplazamos $z=x+jy$\\
-Para el primer termino:
+Para el primer término:
 $$4z - z^2 - z - \frac{1}{3}z^3=(x+jy) - (x+jy)^2 - (x+jy) - \frac{1}{3}(x+jy)^3$$
 $$=4x + 4jy -x^2 -2xyj + y^2 -x -jy - \frac{1}{3}x^3 - jx^2y + xy^2 + \frac{1}{3}jy^3$$
 $$=(- \frac{1}{3}x^3 -x^2 + 3x + y^2 + xy^2) +j(3y -2xy + \frac{1}{3}y^3 - x^2y )$$ \\
-Para el segundo termino:
+Para el segundo término:
 $$-j (z + 2z^2 + \frac{1}{3}z^3) = -j ((x+jy) + 2(x+jy)^2 + \frac{1}{3}(x+jy)^3)$$
 $$=-j (x+jy + 2(x^2+2xyj-y^2) + \frac{1}{3}(x^3 + 3x^2yj + 3x(yj)^2 + (jy)^3))$$
 $$=-j ((x + 2x^2 - 2y^2 + \frac{1}{3} x^3 - xy^2) + j( y +4xy + x^2y - \frac{1}{3}y^3))$$
 $$=j(-x - 2x^2 + 2y^2 - \frac{1}{3} x^3 + xy^2) + ( y +4xy + x^2y - \frac{1}{3}y^3)$$\\
-Luego de separar ambos terminos de $f_2$ en su parte real e imaginaria encontraremos la parte real
+Luego de separar ambos términos de $f_2$ en su parte real e imaginaria encontraremos la parte real
 e imaginaria de $f_2$
 $$u_2=Re(f_2)=- \frac{1}{3}x^3 - x^2 + 3x + y^2 + xy^2 + y +4xy + x^2y - \frac{1}{3}y^3$$
 $$v_2=Im(f_2)=-x + 3y -2xy - 2x^2 + 2y^2 - x^2y + xy^2 + \frac{1}{3}y^3 - \frac{1}{3} x^3$$
@@ -118,18 +118,18 @@ $$v_2=Im(f_2)=-x + 3y -2xy - 2x^2 + 2y^2 - x^2y + xy^2 + \frac{1}{3}y^3 - \frac{
 \textbf{b) Obtener el conjunto de números complejos $D_1$ donde la función $f_1(z)$ es derivable. Similarmente, obtener $D_2$ donde $f_2(z)$ es derivable.
 ¿Hace falta resolver las ecuaciones de Cauchy-Riemann para determinar $D_2$?}
 
-Para obtener el conjunto de numeros complejos $D_1$ donde la funcion $f_1(z)$ es derivable, utilizaremos las ecuaciones de Cauchy-Riemman:
+Para obtener el conjunto de números complejos $D_1$ donde la función $f_1(z)$ es derivable, utilizaremos las ecuaciones de Cauchy-Riemman:
 $$\frac{\delta u_1}{\delta x}=-1 \quad \quad \frac{\delta v_1}{\delta x}=-4x-x^2$$
 $$\frac{\delta v_1}{\delta y}=-1 \quad \quad - \frac{\delta u_1}{\delta y}=-(4-2y-y^2)=y^2+2y-4$$
 Si:$$\frac{\delta v_1}{\delta x}=-\frac{\delta u_1}{\delta y}$$
 $$-4x-x^2=y^2+2y-4$$
 $$x^2+4x+y^2+2y=4$$
 $$(x+2)^2+(y+1)^2=9$$\\
-Entonces, el conjunto de numeros complejos $D_1$ donde $f_1$ es derivable es:
+Entonces, el conjunto de números complejos $D_1$ donde $f_1$ es derivable es:
 $$D_1 = \{z \in \mathbb{C} : |z + 2 + j| = 3\}$$
 
-Para obtener el conjunto de numeros complejos $D_2$ donde $f_2$ es derivable, no es necesario aplicar las ecuaciones de Cauchy-Riemman,
-ya que la funcion es un polinomio complejo, por lo tanto:
+Para obtener el conjunto de números complejos $D_2$ donde $f_2$ es derivable, no es necesario aplicar las ecuaciones de Cauchy-Riemman,
+ya que la función es un polinomio complejo, por lo tanto:
 $$D_2=\mathbb{C}$$\\
 
 \textbf{c) Demostrar que $D_1 = \{z \in \mathbb{C} : |z + 2 + j| = 3\}$ y $D_2 = \mathbb{C}$.}
@@ -161,7 +161,7 @@ La derivabilidad no implica analiticidad, ya que, para que una función sea anal
 \textbf{f) De las funciones anteriores, ¿se puede afirmar que $f'_1(z)=\frac{\delta u_1}{\delta x}+j\frac{\delta v_1}{\delta x}$ \quad ó \quad 
 $f'_2(z)=\frac{\delta u_2}{\delta x}+j\frac{\delta v_2}{\delta x}$? ¿Por qué?}
 
-Se puede afirmar que, ya que tanto $f_1$ como $f_2$, cumplen las ecuaciuones de Cauchy-Riemann y en particular, $f_2$ es una función entera, entonces se puede decir en este caso que 
+Se puede afirmar que, ya que tanto $f_1$ como $f_2$, cumplen las ecuaciones de Cauchy-Riemann y en particular, $f_2$ es una función entera, entonces se puede decir en este caso que 
 las derivadas de las funciones son iguales a las derivadas parciales de $u$ y $v$ con respecto a $x$ e $y$
 
 \chapter{}%ejercicio 3
@@ -176,15 +176,15 @@ Considerar $$ f(z) = w $$ el mapeo bilineal que transforma los puntos:
 
 \textbf{a) Desarrollar la fórmula que determina al mapeo \( f(z) \), empleando razones cruzadas.}
 
-Se procede partiendo desde la definición de mapeo para una razón cruzada:
+Resolución: Se procede partiendo desde la definición de mapeo para una razón cruzada:
 
 $$ \frac{z - z_1}{z - z_3} \cdot \frac{z_2 - z_3}{z_2 - z_1} = \frac{w - w_1}{w - w_3} \cdot \frac{w_2 - w_3}{w_2 - w_1} $$
 
 Antes de reemplazar los valores de los puntos en la definición anterior, es más cómodo si se simplifica acorde al ejercicio. Debido a que tenemos puntos que tienden al infinito en ambos \( w \) y \( z \), vamos a sacar factor común de aquellos puntos, con el objetivo de simplificarlos, ya sea por cancelación o utilizando las identidades de los números hiperreales:
 
 \begin{align*}
-    \frac{z_1 \left(\frac{z}{z_1}-1\right) }{z-z_3} \frac{z_2-z_3}{z_1 \left( \frac{z_2}{z_1} -1 \right) } &= \frac{w-w_1}{w_3 \left( \frac{w}{w_3} - 1 \right)} \frac{w_3 \left( \frac{w_2}{w_3} -1 \right) }{w_2-w_1}\\[10pt]
-    \frac{\frac{z}{z_1} -1}{z-z_3} \frac{z_2-z_3}{\frac{z_2}{z_1}-1} &= \frac{w-w_1}{\frac{w}{w_3}-1} \frac{\frac{w_2}{w_3}-1}{w_2-w_1}
+    \frac{z_1 \left(\frac{z}{z_1}-1\right) }{z-z_3} \frac{z_2-z_3}{z_1 \left( \frac{z_3}{z_2} -1 \right) } &= \frac{w-w_1}{w_3 \left( \frac{w}{w_3} - 1 \right)} \frac{w_3 \left( \frac{w_1}{w_3} -1 \right) }{w_2-w_1}\\[10pt]
+    \frac{\frac{z}{z_1} -1}{z-z_3} \frac{z_2-z_3}{\frac{z_3}{z_1}-1} &= \frac{w-w_1}{\frac{w}{w_3}-1} \frac{\frac{w_1}{w_3}-1}{w_2-w_1}
 \end{align*}
 Ahora si, reemplazando los puntos:
 
@@ -202,7 +202,7 @@ Por las identidades de los números hiperreales, cualquier número dividido una 
 
 \textbf{b) Obtener las fórmulas y graficar \( R' \) en el plano \( W \), sabiendo que \( R = \{z \in \mathbb{C} \mid \text{Im}(z) - 2\text{Re}(z) = 0\} \) en el plano \( W \).}
 
-Para simplificar el desarrollo del ejercicio, se realizarán dos mapeos. Uno, \( w_0 \), que va a ser el mapeo recíproco, y otro, \( w_1 \), que va a ser la traslación del mapeo \( w_0 \) a \( -j \).\\
+Resolución: Para simplificar el desarrollo del ejercicio, se realizarán dos mapeos. Uno, \( w_0 \), que va a ser el mapeo recíproco, y otro, \( w_1 \), que va a ser la traslación del mapeo \( w_0 \) a \( -j \).\\
 
 Para empezar, necesitamos encontrar la relación que tienen las componentes $x$ e $y$ (de $z$) respecto de $u$ y $v$ (de $w_0$):
 \begin{align*}
@@ -241,7 +241,7 @@ $$ R' = \{w \in \mathbb{C} \mid -v - 2u = j\} $$
 
 \textbf{c) Obtener las fórmulas y graficar \( C' \) en el plano \( W \), sabiendo que \( C = \{z \in \mathbb{C} \mid |z - 1 - j| = 2\} \) en el plano \( W \).}\\[6pt]
 
-Para simplificar el desarrollo del ejercicio, como se hizo antes, se realizarán dos mapeos. Uno, \( w_0 \), que va a ser el mapeo recíproco, y otro, \( w_1 \), que va a ser la traslación del mapeo \( w_0 \) a \( -j \).
+Resolución: Para simplificar el desarrollo del ejercicio, como se hizo antes, se realizarán dos mapeos. Uno, \( w_0 \), que va a ser el mapeo recíproco, y otro, \( w_1 \), que va a ser la traslación del mapeo \( w_0 \) a \( -j \).
 
 Para no repetir, vamos a traer del punto b, las relaciones de \( x \) e \( y \) (de \( z \)) respecto de \( u \) y \( v \) (de \( w_0 \)):
 
@@ -285,17 +285,18 @@ C' &= \{w \in \mathbb{C} \, | \, 2u-2v-j=1\}
 
 \chapter{}%ejercicio 4
 
-\textbf{a)} Graficar la región $R = \{z \in \mathbb{C} \, | \, 2 \leq \text{Re}(z) \leq 5; \frac{\pi}{4} \leq \text{Im}(z) \leq \frac{\pi}{2}\}$.
+Con este ejercicio se espera que el estudiante controle el comportamiento de un mapeo expresándolo previamente como una composición de mapeos básicos, y como ello, obtener fácilmente las fórmulas de una región en el plano $W$ dadas las fórmulas en el plano $Z$. Considerar el mapeo $w = e^{3z + 2}$.
 
+\textbf{a)} Graficar la región $R = \{z \in \mathbb{C} \, | \, 2 \leq \text{Re}(z) \leq 5; \frac{\pi}{4} \leq \text{Im}(z) \leq \frac{\pi}{2}\}$.
 
 Graficamos la región $R = \{z \in \mathbb{C} \, | \, 2 \leq \text{Re}(z) \leq 5; 4 \leq \text{Im}(z) \leq 2\}$ en el plano $Z$.
 
 Parametrizando la frontera de $R$ en:
 \begin{itemize}
-    \item $R_1 = x + j\frac{\pi}{4}$, $2 \leq x \leq 5$
-    \item $R_2 = 5 + jy$, $\frac{\pi}{4} \leq y \leq \frac{\pi}{2}$
-    \item $R_3 = x + j\frac{\pi}{2}$, $2 \leq x \leq 5$
-    \item $R_4 = 2 + jy$,  $\frac{\pi}{4} \leq y \leq \frac{\pi}{2}$
+    \item $R_1 = x + j4$, $2 \leq x \leq 5$
+    \item $R_2 = 5 + jy$, $4 \leq y \leq 2$
+    \item $R_3 = x + j2$, $2 \leq x \leq 5$
+    \item $R_4 = 2 + jy$, $4 \leq y \leq 2$
 \end{itemize}
 
 
@@ -304,8 +305,7 @@ Parametrizando la frontera de $R$ en:
     \includegraphics[width=0.65\textwidth]{./Imagenes/foto1Ej4.png} % Insertar la imagen
 \end{figure}
 
-\textbf{b) Obtener las fórmulas y graficar $R' = \{w = f(z) \, | \, z \in R\}$ en el plano $W$, al ser mapeada desde $R$ en el plano $Z$.}
-
+\textbf{b)} Obtener las fórmulas y graficar $R' = \{w = f(z) \, | \, z \in R\}$ en el plano $W$, al ser mapeada desde $R$ en el plano $Z$.
 
 El mapeo dado se puede expresar como una combinación de tres mapeos:
 
@@ -320,9 +320,9 @@ Al aplicar los mapeos, obtenemos en un plano $w$ una región $R$, formada por do
 La nueva región $R'$ está parametrizada por:
 \begin{itemize}
     \item $R_1 = e^{3x+j\frac{3\pi}{4}} + 2$, $2 \leq x \leq 5$
-    \item $R_2 = e^{3 \cdot 5+j3y} + 2$, $\frac{\pi}{4} \leq y \leq \frac{\pi}{2}$
+    \item $R_2 = e^{3 \cdot 5+j3y} + 2$, $4 \leq y \leq 2$
     \item $R_3 = e^{3x+j\frac{3\pi}{2}} + 2$, $2 \leq x \leq 5$
-    \item $R_4 = e^{3 \cdot 5+j3y} + 2$, $\frac{\pi}{4} \leq y \leq \frac{\pi}{2}$
+    \item $R_4 = e^{3 \cdot 5+j3y} + 2$, $4 \leq y \leq 2$
 \end{itemize}
 
 
@@ -340,14 +340,14 @@ Considerar la función de variable compleja $f(z) =\frac{z + 3}{(z - 1)^2(z^2 + 
 Ceros $\rightarrow f(z)=0$
 
 $$f(z)=\frac{z + 3j}{(z - 1)^2(z^2 + 9)}=0$$\\
-La funcion es cero cuando le numerador es cero, por ende:
+La función es cero cuando le numerador es cero, por ende:
 \begin{align*}
 z+3j&=0\\[6pt]
 z&=-3j\\[6pt]
 \end{align*}
 Singularidades:
 
-Como la funcion es un cociente de polinomios complejos va a tener singularidades cuando el denominador sea cero:
+Como la función es un cociente de polinomios complejos va a tener singularidades cuando el denominador sea cero:
 
 \begin{align*}
     &(z-1)^2(z^2+9)=0\\[6pt]
@@ -369,7 +369,7 @@ $$\lim_{z \to 1}\frac{1}{z-3j}=\frac{1}{1-3j}\rightarrow \text{polo de orden 2}$
 2)De forma similar, para la singularidad $z_1=3j$
 
 $$\lim_{z \to z_1}f(z)=\lim_{z \to 3j}\frac{\cancel{z+3j}}{(z - 1)^2(z-3j)\cancel{(z+3j)}}=\frac{1}{(3j-1)^20}=\infty$$\\
-Observamos que esta singularidad tambien es un polo, de forma analoga al punto anterior, calculamos el orden:
+Observamos que esta singularidad también es un polo, de forma análoga al punto anterior, calculamos el orden:
 $$\lim_{z \to 3j}\cancel{(z - 3j)}\frac{\cancel{z+3j}}{(z - 1)^2\cancel{(z-3j)}\cancel{(z+3j)}}
 =\frac{1}{(3j-1)^2}\rightarrow \text{polo simple}$$\\
 
@@ -388,7 +388,7 @@ $$
 
 \begin{figure}[h]
     \centering
-    \begin{minipage}{0.60\textwidth}
+    \begin{minipage}{0.65\textwidth}
         \centering
         \includegraphics[width=\textwidth]{./Imagenes/foto1Ej5.jpeg}
     \end{minipage}\hfill
@@ -407,7 +407,7 @@ $$
 
 \vspace{1cm}
 
-Primero, aislamos cada singularidad con una curva cerrada $C$ conveniente, y calculamos las integrales para cada una de ellas a travez de las formulas de integración 
+Primero, aislamos cada singularidad con una curva cerrada $C$ conveniente, y calculamos las integrales para cada una de ellas a través de las formulas de integración 
 de Cauchy\\
 \begin{samepage}
 $$I_{z_1} = \oint_{c}\frac{z+3j}{(z - 1)^2(z-3j)(z+3j)} \, dz =\oint_{c}\frac{\frac{\cancel{z+3j}}{\cancel{(z+3j)}(z-1)^2}}{(z-1)^2} \, dz$$
@@ -425,10 +425,10 @@ $$I_1=\oint_{|z|=\frac{1}{2}}f(z) \, dz= 0$$
 Dentro de la curva $|z|=2$, tenemos la singularidad $z_1=1$, por ende:
 $$I_2=\oint_{|z|=2}f(z) \, dz = I_{z_1} = - \frac{2 \pi j}{(1-3j)^2}$$
 
-Dentro de la curva $|z|=4$, teneomos las singularidades $z_1=1$, $z_2=3j$ y $z_3=-3j$ entonces:
+Dentro de la curva $|z|=4$, tenemos las singularidades $z_1=1$, $z_2=3j$ y $z_3=-3j$ entonces:
 $$I_3=\oint_{|z|=4}f(z) \, dz = I_{z_1}+I_{z_2}+I_{z_3} =( -\frac{2 \pi j }{(1-3j)^2} + \frac{2 \pi j}{(3j-1)^2} + 0) = 0$$\\
 
-Otro metodo para resolver estas integrales, es mediante el Teorema del residuo:\\
+Otro método para resolver estas integrales, es mediante el Teorema del residuo:\\
 
 Para esto, primero se calculamos los residuos de cada singularidad.\\
 
@@ -441,7 +441,7 @@ $$\text{Res}(f(z),3j)= \lim_{z \to 3j} \frac{\cancel{(z-3j)}\cancel{(z+3j)}}{(z-
 
 Como la singularidad $z_3 = -3j$ es evitable $$\text{Res}(f(z),-3j)=0$$
 
-Finalmente, aplicamos el Teorema del residuo de Cauchy. Al igual que en el metodo anterior, solo se tienen en cuenta las singularidades que estan dentro
+Finalmente, aplicamos el Teorema del residuo de Cauchy. Al igual que en el método anterior, solo se tienen en cuenta las singularidades que están dentro
 de la curva de integración.
 
 $$I_1= \oint_{|z|=\frac{1}{2}}f(z) \, dz = 0 $$
@@ -455,7 +455,7 @@ Comprobamos así, que ambos caminos son equivalentes.\\
 
 \textbf{d) Para evaluar las integrales del inciso, ¿en qué tenemos que concentrar nuestro análisis?}
 
-Para evaluar las integrales del inciso C tenemos que concentrar nuestro analisis en las singularidades de la funcion $f(z)$ con respecto a las curvas,
+Para evaluar las integrales del inciso C tenemos que concentrar nuestro análisis en las singularidades de la función $f(z)$ con respecto a las curvas,
 cerradas en este caso.\\
 
 \chapter{}%ejercicio 6
@@ -467,13 +467,13 @@ Considerar la función de variable compleja $ f(z) = (z - 1)^2 e^\frac{1}{z - 1}
 
 $$ f(z) = \sum_{n=0}^{\infty} a_n(z - 1)^n + \sum_{n=1}^{\infty} b_n(z - 1)^{-n} $$
 
-Para obtener la Serie de Laurent de esta funcion, partimos de la serie de McLaurin de $e^z$
+Para obtener la Serie de Laurent de esta función, partimos de la serie de McLaurin de $e^z$
 $$e^z=\sum_{k=0}^{\infty}\frac{z^k}{k!}\quad,\quad k \in \mathbb{N}$$
-Si realizamos la sustitucion:
+Si realizamos la sustitución:
 $$e^\frac{1}{z - 1}=e^u \quad, \quad u=(z - 1)^{-1}$$
 Entonces:
 $$e^\frac{1}{z - 1}=\sum_{k=0}^{\infty}\frac{(z - 1)^{-k}}{k!}$$
-Sustituyendo este resultado en nuestra funcion
+Sustituyendo este resultado en nuestra función
 $$f(z) = (z - 1)^2 \sum_{k=0}^{\infty}\frac{(z - 1)^{-k}}{k!}$$
 $$f(z) = \sum_{k=0}^{\infty}\frac{(z - 1)^{-k+2}}{k!}$$
 $$f(z) = \sum_{k=0}^{\infty}a_k(z - 1)^{-k+2}\qquad, \qquad a_k=\frac{1}{k!}$$
@@ -481,7 +481,7 @@ $$f(z) = \sum_{k=0}^{\infty}a_k(z - 1)^{-k+2}\qquad, \qquad a_k=\frac{1}{k!}$$
 Observamos que el exponente $-k+2$
 $$(-k+2) \geq 0 \quad \Leftrightarrow \quad k \leq 2$$
 $$(-k+2) < 0 \quad \Leftrightarrow \quad k>2$$
-Entonces podemos expresar la funcion como:
+Entonces podemos expresar la función como:
 $$f(z) = \sum_{k=0}^{2}a_k(z - 1)^{-k+2} + \sum_{k=3}^{\infty}a_k(z - 1)^{-k+2}\qquad, \qquad a_k=\frac{1}{k!}$$
 o lo que es igual:
 $$f(z) = \underbrace{\sum_{n=0}^{2}a_n(z - 1)^{n}}_{\text{Parte Analitica}} + \underbrace{\sum_{n=1}^{\infty}b_n(z - 1)^{-n}}_{\text{Parte Singular}}
@@ -490,10 +490,10 @@ $$f(z) = \underbrace{\sum_{n=0}^{2}a_n(z - 1)^{n}}_{\text{Parte Analitica}} + \u
 \textbf{b)  Teniendo en cuenta la serie del inciso anterior clasificar la singularidad (evitable, polo, 
 esencial) y calcular el residuo \( \text{Res}(f, z = 1) \).}
 
-Ya que la parte singular de la serie de Laurent tiene infinitos terminos, podemos afirmar que la singularidad
+Ya que la parte singular de la serie de Laurent tiene infinitos términos, podemos afirmar que la singularidad
 en el punto $1+j0$ es esencial.
 
-Por definicion, el residuo es el primer coeficiente de la Parte Singular de la serie de Laurent, por ende:
+Por definición, el residuo es el primer coeficiente de la Parte Singular de la serie de Laurent, por ende:
 $$\text{Res}(f, z = 1) = b_1=\frac{1}{(1+2)!} = \frac{1}{6}$$
 
 \textbf{c)  Valuar las siguientes integrales:}
@@ -512,11 +512,11 @@ $$\oint_{|z| = 4} f(z) \, dz = 2\pi j \text{Res}(f, z = 1) =\frac{1}{3}\pi j$$\\
 \textbf{d)  Teniendo en cuenta el inciso anterior podemos afirmar que:}
 
 $$ I_r = \oint_{|z| = r} f(z) \, dz = I_1, \text{ para todo } 0 < r < 1 $$ 
-Ya que cualquier curva en este intervalo no va a incluir al unico punto singular que tiene nuestra funcion
+Ya que cualquier curva en este intervalo no va a incluir al único punto singular que tiene nuestra función
 
 Y:
 $$ I_r = \oint_{|z| = r} f(z) \, dz = I_2, \text{ para todo } r > 1 $$ 
-De manera opuesta, todas estas curvas van a incluir al unico punto singular de la funcion
+De manera opuesta, todas estas curvas van a incluir al único punto singular de la función
 
 \chapter{}%ejercicio 7
 
@@ -575,7 +575,7 @@ $$ \int_{0}^{2\pi} f(x) \, dx = \oint_{|z|=1} R(z) \, dz$$
 \vspace{6cm}
 
 \textbf{c)  Finalmente, clasificar todas las singularidades de la función racional $R(z)$ y usar el teorema del residuo para calcular el lado derecho de la integral formulada en el inciso anterior.}
-Para calcular las singularidades, desarrollamos la funcion:
+Para calcular las singularidades, desarrollamos la función:
 $$\frac{3}{3 - 2\frac{z^{2} + 1}{2z} + \frac{z^{2} - 1}{2jz}} \cdot \frac{dz}{jz}$$ 
 $$\frac{3}{3 - \frac{2z^{2} + 2}{2z} + \frac{z^{2} - 1}{2jz}} \cdot \frac{dz}{jz}$$ 
 $$\frac{3}{3 + \frac{-(2z^{2} + 2)2jz + (z^2-1)2z}{4z^2j}} \cdot \frac{dz}{jz}$$ 
@@ -592,7 +592,7 @@ $$\frac{-6j \pm \sqrt{-36-4(-5)}} {2-4j} $$
 $$\frac{-6j \pm \sqrt{-16}} {2-4j} $$
 $$z_2 = \frac{-6j + 4j} {2-4j} = \frac{2}{5}-\frac{1}{5}j\quad;\quad z_3 = \frac{-6j - 4j} {2-4j} = 2-j$$
 
-Identificamos asi los polos:
+Identificamos así los polos:
 $$z_1=0\quad;\quad z_2=\frac{2}{5}-\frac{1}{5}j \quad;\quad z_3=2-j$$
 
 \vspace{2cm}
@@ -613,7 +613,7 @@ $$
 &\lim_{z \to \frac{2}{5}-\frac{1}{5}j}\,\frac{6}{\frac{6}{5}+\frac{12}{5}j-\frac{8}{25}-\frac{6}{25}j-2j+\frac{3}{25}-\frac{4}{25}j-1}=\frac{6}{0} \quad \framebox[4cm][c]{\textbf{Indeterminación}}\\
 \end{align*}
 
-Debido a la indeterminacion se procede a determinar el grado del polo utilizando limites\\[8pt]
+Debido a la indeterminación se procede a determinar el grado del polo utilizando limites\\[8pt]
 Para $n=1$:
 \begin{align*}
 &\lim_{z \to \frac{2}{5}-\frac{1}{5}j}\,\left(z-\left( \frac{2}{5}-\frac{j}{5} \right)\right)\frac{6\cancel{z^2}}{(6jz-2jz^2-2j+z^2-1)}\frac{1}{\cancel{z^2}}=\frac{0}{0} \quad \framebox[3cm][c]{\textbf{L´Hopital}}\\
@@ -632,7 +632,7 @@ $$
 &\lim_{z \to 2-j}\,\frac{6}{6+12j-8-6j-2j+3-4j-1}= \frac{6}{0} \quad \framebox[4cm][c]{\textbf{Indeterminación}}\\
 \end{align*}
 
-Debido a la indeterminacion se procede a determinar el grado del polo utilizando limites\\[8pt]
+Debido a la indeterminación se procede a determinar el grado del polo utilizando limites\\[8pt]
 Para $n=1$:
 
 \begin{align*}
