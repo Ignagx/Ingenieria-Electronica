@@ -157,8 +157,8 @@ condiciones necesarias para decir que la $f_2$ es una función entera\\
 
 La derivabilidad no implica analiticidad, ya que, para que una función sea analítica no basta con ser derivable en un punto, sino  que debe serlo en todo un dominio.\\
 
-\textbf{f) De las funciones anteriores, ¿se puede afirmar que $f'_1(z)=\frac{\delta U_1}{\delta x}+\frac{\delta V_1}{\delta x}$ \quad ó \quad 
-$f'_2(z)=\frac{\delta U_2}{\delta x}+\frac{\delta V_2}{\delta x}$? ¿Por qué?}
+\textbf{f) De las funciones anteriores, ¿se puede afirmar que $f'_1(z)=\frac{\delta U_1}{\delta x}+j\frac{\delta V_1}{\delta x}$ \quad ó \quad 
+$f'_2(z)=\frac{\delta U_2}{\delta x}+j\frac{\delta V_2}{\delta x}$? ¿Por qué?}
 
 Se puede afirmar que, ya que tanto $f_1$ como $f_2$, cumplen las ecuaciuones de Cauchy-Riemann y en particular, $f_2$ es una función entera, entonces se puede decir en este caso que 
 las derivadas de las funciones son iguales a las derivadas parciales de $u$ y $v$ con respecto a $x$ e $y$
@@ -334,13 +334,13 @@ La nueva región $R'$ está parametrizada por:
 
 \chapter{}%ejercicio 5
 
-Considerar la función de variable compleja $f(z) =\frac{z + 3}{j(z - 1)^2(z^2 + 9)}$
+Considerar la función de variable compleja $f(z) =\frac{z + 3}{(z - 1)^2(z^2 + 9)}$
 
 \textbf{a) Obtener el conjunto de ceros y el conjunto de singularidades de la función.}
 
 Ceros $\rightarrow f(z)=0$
 
-$$f(z)=\frac{z + 3j}{j(z - 1)^2(z^2 + 9)}=0$$\\
+$$f(z)=\frac{z + 3j}{(z - 1)^2(z^2 + 9)}=0$$\\
 La funcion es cero cuando le numerador es cero, por ende:
 \begin{align*}
 z+3j&=0\\[6pt]
@@ -361,7 +361,7 @@ El conjunto de singularidades es: $$\{1,3j,-3j\}$$
 
 \textbf{b) Clasificar todas y cada una de las singularidades de la función $f(z)$ en: Evitable, Polo (orden), Esencial.}\\[6pt]
 1) Para la singularidad $z_0=1$ calculamos:
-$$\lim_{z \to z_0}f(z)=\lim_{z \to 1}\frac{z+3j}{(z - 1)^2(z^2 + 9)}=\lim_{z \to 1}\frac{\cancel{z+3j}}{j(z - 1)^2(z-3j)\cancel{(z+3j)}}=$$
+$$\lim_{z \to z_0}f(z)=\lim_{z \to 1}\frac{z+3j}{(z - 1)^2(z^2 + 9)}=\lim_{z \to 1}\frac{\cancel{z+3j}}{(z - 1)^2(z-3j)\cancel{(z+3j)}}=$$
 $$\lim_{z \to 1}\frac{1}{(z - 1)^2(z-3j)}=\lim_{z \to 1}\frac{1}{0.(1-3j)}=\infty$$
 Como el limite es infinito la singularidad $z_0=1$ es un polo. Para calcular el orden, buscamos el exponente $n$ que resuelva
 la indeterminación.\\
@@ -369,14 +369,14 @@ $$\lim_{z \to z_0}(z-z_0)^n f(z)=\lim_{z \to 1}\cancel{(z - 1)^2}\frac{\cancel{z
 $$\lim_{z \to 1}\frac{1}{z-3j}=\frac{1}{1-3j}\rightarrow \text{polo de orden 2}$$
 2)De forma similar, para la singularidad $z_1=3j$
 
-$$\lim_{z \to z_1}f(z)=\lim_{z \to 3j}\frac{\cancel{z+3j}}{j(z - 1)^2(z-3j)\cancel{(z+3j)}}=\frac{1}{(3j-1)^20}=\infty$$\\
+$$\lim_{z \to z_1}f(z)=\lim_{z \to 3j}\frac{\cancel{z+3j}}{(z - 1)^2(z-3j)\cancel{(z+3j)}}=\frac{1}{(3j-1)^20}=\infty$$\\
 Observamos que esta singularidad tambien es un polo, de forma analoga al punto anterior, calculamos el orden:
 $$\lim_{z \to 3j}\cancel{(z - 3j)}\frac{\cancel{z+3j}}{(z - 1)^2\cancel{(z-3j)}\cancel{(z+3j)}}
 =\frac{1}{(3j-1)^2}\rightarrow \text{polo simple}$$\\
 
 3)Finalmente, para clasificar $z_3=-3j$, resolvemos:
 
-$$\lim_{z \to z_3}f(z)=\lim_{z \to -3j}\frac{\cancel{z+3j}}{j(z - 1)^2(z-3j)\cancel{(z+3j)}}=\frac{1}{(3j-1)^2(-3j-3j)}$$
+$$\lim_{z \to z_3}f(z)=\lim_{z \to -3j}\frac{\cancel{z+3j}}{(z - 1)^2(z-3j)\cancel{(z+3j)}}=\frac{1}{(3j-1)^2(-3j-3j)}$$
 
 Como el limite es finito entonces es una singularidad evitable.\\
 
@@ -411,9 +411,9 @@ $$
 Primero, aislamos cada singularidad con una curva cerrada $C$ conveniente, y calculamos las integrales para cada una de ellas a travez de las formulas de integración 
 de Cauchy\\
 \begin{samepage}
-$$I_{z_1} = \oint_{c}\frac{z+3j}{j(z - 1)^2(z-3j)(z+3j)} \, dz =\oint_{c}\frac{\frac{\cancel{z+3j}}{\cancel{(z+3j)}(z-1)^2}}{(z-1)^2} \, dz$$
+$$I_{z_1} = \oint_{c}\frac{z+3j}{(z - 1)^2(z-3j)(z+3j)} \, dz =\oint_{c}\frac{\frac{\cancel{z+3j}}{\cancel{(z+3j)}(z-1)^2}}{(z-1)^2} \, dz$$
 $$= \oint_{c}\frac{\frac{1}{(z-3j)}}{(z-1)^2} \, dz = \frac{2\pi j}{(2-1)!} \left[ \frac{1}{z-3j} \right]_{z=1}^1= -\frac{2\pi j}{(1-3i)^2}$$\\
-$$I_{z_2} = \oint_{c}\frac{z+3j}{j(z - 1)^2(z-3j)(z+3j)} \, dz =\oint_{c}\frac{\frac{\cancel{z+3j}}{\cancel{(z+3j)}(z-1)^2}}{z-3j} \, dz $$
+$$I_{z_2} = \oint_{c}\frac{z+3j}{(z - 1)^2(z-3j)(z+3j)} \, dz =\oint_{c}\frac{\frac{\cancel{z+3j}}{\cancel{(z+3j)}(z-1)^2}}{z-3j} \, dz $$
 $$=\frac{2\pi j}{(3j-1)^2}$$\\
 $$I_{z_3} = \oint_{c}\frac{\cancel{z+3j}}{(z - 1)^2(z-3j)\cancel{(z+3j)}} \, dz=0$$
 \end{samepage}
