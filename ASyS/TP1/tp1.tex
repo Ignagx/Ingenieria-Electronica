@@ -1,4 +1,4 @@
-\documentclass[12pt]{report}
+\documentclass[12pt,a4paper]{report}
 \usepackage[left=2.5cm,right=2.5cm,top=3cm,bottom=3cm]{geometry}
 \usepackage{fancyhdr}
 \usepackage{etoolbox}
@@ -139,29 +139,29 @@ $$|x+2+j(y+1)|=3$$
 $$\sqrt{(x+2)^2+(y+1)^2}=3$$
 $$(x+2)^2+(y+1)^2=3^2$$\\
 
+\begin{samepage}
 \textbf{d) Demostrar que la función $f_1(z)$ no es analítica y que la función $f_2(z)$ es entera.}
 
+\nopagebreak
 Al ver los resultados obtenidos por Cauchy-Riemann, observamos que las derivadas parciales de $f_1$ nos dan una condición, en este caso $f_1$ es derivable solamente
 en $D1 = \{z \in \mathbb{C} : |z + 2 + j| = 3\}$, o sea una circunferencia de radio $3$ centrada en $(-2, -j)$, sin embargo para cualquier punto de $f$ en la
 circunferencia no hay una vecindad o disco abierto alrededor del punto en cuestión en el que se satisfagan las ecuaciones de Cauchy-Riemann.
 
-$f_2$ es una función compleja cuyo dominio abarca todo el plano complejo. Dado que $f2$ es una composición de polinomios, se garantiza la continuidad y
-derivabilidad en todo su dominio. Además, al ser derivable en cada punto del plano complejo, $f2$ es analítica en cada punto del dominio, cumpliendo las
-condiciones necesarias para decir que la $f_2$ es una función entera
+\nopagebreak
+$f_2$ es una función compleja cuyo dominio abarca todo el plano complejo. Dado que $f_2$ es una composición de polinomios, se garantiza la continuidad y
+derivabilidad en todo su dominio. Además, al ser derivable en cada punto del plano complejo, $f_2$ es analítica en cada punto del dominio, cumpliendo las
+condiciones necesarias para decir que la $f_2$ es una función entera\\
+\end{samepage}
 
 \textbf{e) De las funciones anteriores, ¿se puede afirmar que "Derivable implica analítica" o "Analítica implica derivable"? ¿Por qué?}
 
-La analiticidad no implica derivabilidad, porque, para que una función sea analítica no basta con ser derivable en un punto sino en todo el dominio de esa
-función, cumpliendo así también con las ecuaciones de Cauchy-Riemann.\\
+La derivabilidad no implica analiticidad, ya que, para que una función sea analítica no basta con ser derivable en un punto, sino  que debe serlo en todo un dominio.\\
 
-\textbf{f) De las funciones anteriores, ¿se puede afirmar que $f'_1(z) = u_{1x} + jv_{1x}$ o $f'_2(z) = u_{2x} + jv_{2x}$? ¿Por qué?}
-Se puede afirmar que:
+\textbf{f) De las funciones anteriores, ¿se puede afirmar que $f'_1(z)=\frac{\delta U_1}{\delta x}+\frac{\delta V_1}{\delta x}$ \quad ó \quad 
+$f'_2(z)=\frac{\delta U_2}{\delta x}+\frac{\delta V_2}{\delta x}$? ¿Por qué?}
 
-$$f'_1(z)=\frac{\delta U_1}{\delta x}+\frac{\delta V_1}{\delta x}$$
-$$f'_2(z)=\frac{\delta U_2}{\delta x}+\frac{\delta V_2}{\delta x}$$
-
-porque tanto la $f1$ y la $f2$, cumplen Cauchy-Riemann y en particular, $f2$ es una función entera, entonces se puede decir en este caso que las derivadas de las
-funciones son iguales a las derivadas parciales de $u$ y $v$ con respecto a $x$ e $y$
+Se puede afirmar que, ya que tanto $f_1$ como $f_2$, cumplen las ecuaciuones de Cauchy-Riemann y en particular, $f_2$ es una función entera, entonces se puede decir en este caso que 
+las derivadas de las funciones son iguales a las derivadas parciales de $u$ y $v$ con respecto a $x$ e $y$
 
 \chapter{}%ejercicio 3
 
@@ -340,7 +340,7 @@ Considerar la función de variable compleja $f(z) =\frac{z + 3}{j(z - 1)^2(z^2 +
 
 Ceros $\rightarrow f(z)=0$
 
-$$f(z)=\frac{z + 3j}{j(z - 1)^2(z^2 + 9)}$$\\
+$$f(z)=\frac{z + 3j}{j(z - 1)^2(z^2 + 9)}=0$$\\
 La funcion es cero cuando le numerador es cero, por ende:
 \begin{align*}
 z+3j&=0\\[6pt]
@@ -360,18 +360,13 @@ Como la funcion es un conciente de polinomios complejos va a tener singularidade
 El conjunto de singularidades es: $$\{1,3j,-3j\}$$
 
 \textbf{b) Clasificar todas y cada una de las singularidades de la función $f(z)$ en: Evitable, Polo (orden), Esencial.}\\[6pt]
-1) Para la singularidad $z_0=1$ calculamos: $$\lim_{z \to z_0}f(z)$$
-\begin{align*}
-&\lim_{z \to 1}\frac{z+3j}{(z - 1)^2(z^2 + 9)}=\lim_{z \to 1}\frac{\cancel{z+3j}}{j(z - 1)^2(z-3j)\cancel{(z+3j)}}\\[6pt]
-&\lim_{z \to 1}\frac{1}{(z - 1)^2(z-3j)}=\lim_{z \to 1}\frac{1}{0.(1-3j)}=\infty\\[6pt]
-\end{align*}
-Como el limite es infinito entonces es un polo. Para calcular el orden, buscamos el exponente $n$ que resuelva
+1) Para la singularidad $z_0=1$ calculamos:
+$$\lim_{z \to z_0}f(z)=\lim_{z \to 1}\frac{z+3j}{(z - 1)^2(z^2 + 9)}=\lim_{z \to 1}\frac{\cancel{z+3j}}{j(z - 1)^2(z-3j)\cancel{(z+3j)}}=$$
+$$\lim_{z \to 1}\frac{1}{(z - 1)^2(z-3j)}=\lim_{z \to 1}\frac{1}{0.(1-3j)}=\infty$$
+Como el limite es infinito la singularidad $z_0=1$ es un polo. Para calcular el orden, buscamos el exponente $n$ que resuelva
 la indeterminación.\\
-\begin{align*}
-&\lim_{z \to z_0}(z-z_0)^n f(z)\\[10pt]
-&\lim_{z \to 1}\cancel{(z - 1)^2}\frac{\cancel{z+3j}}{\cancel{(z - 1)^2}(z-3j)\cancel{(z+3j)}}\\[6pt]
-&\lim_{z \to 1}\frac{1}{z-3j}=\frac{1}{1-3j}\rightarrow \text{polo de orden 2}\\
-\end{align*}
+$$\lim_{z \to z_0}(z-z_0)^n f(z)=\lim_{z \to 1}\cancel{(z - 1)^2}\frac{\cancel{z+3j}}{\cancel{(z - 1)^2}(z-3j)\cancel{(z+3j)}}=$$
+$$\lim_{z \to 1}\frac{1}{z-3j}=\frac{1}{1-3j}\rightarrow \text{polo de orden 2}$$
 2)De forma similar, para la singularidad $z_1=3j$
 
 $$\lim_{z \to z_1}f(z)=\lim_{z \to 3j}\frac{\cancel{z+3j}}{j(z - 1)^2(z-3j)\cancel{(z+3j)}}=\frac{1}{(3j-1)^20}=\infty$$\\
@@ -379,20 +374,19 @@ Observamos que esta singularidad tambien es un polo, de forma analoga al punto a
 $$\lim_{z \to 3j}\cancel{(z - 3j)}\frac{\cancel{z+3j}}{(z - 1)^2\cancel{(z-3j)}\cancel{(z+3j)}}
 =\frac{1}{(3j-1)^2}\rightarrow \text{polo simple}$$\\
 
-3)Finalmente para clasificar $z_3=-3j$
+3)Finalmente, para clasificar $z_3=-3j$, resolvemos:
 
 $$\lim_{z \to z_3}f(z)=\lim_{z \to -3j}\frac{\cancel{z+3j}}{j(z - 1)^2(z-3j)\cancel{(z+3j)}}=\frac{1}{(3j-1)^2(-3j-3j)}$$
 
 Como el limite es finito entonces es una singularidad evitable.\\
 
 \textbf{c) Valuar las siguientes integrales:}\\[6pt]
-\begin{align*}
-I_1 &= \oint_{|z|=1/2} f(z) \, dz \\[6pt]
-I_2 &= \oint_{|z|=2} f(z) \, dz \\[6pt]
-I_3 &= \oint_{|z|=4} f(z) \, dz\\[6pt]
-\end{align*}
+$$
+I_1 = \oint_{|z|=1/2} f(z) \, dz\quad;\quad
+I_2 = \oint_{|z|=2} f(z) \, dz\quad;\quad
+I_3 = \oint_{|z|=4} f(z) \, dz
+$$
 
-Resolucion:
 \begin{figure}[h]
     \centering
     \begin{minipage}{0.65\textwidth}
@@ -413,47 +407,57 @@ Resolucion:
 \end{figure}
 
 \vspace{1cm}
-       
-Para calcular las integrales 1, 2 y 3 primero calculamos con las formulas de integracion de cauchy las integrales de las singularidades bajo la curva C. \\
 
-\begin{align*}
-I_{c1} &= \oint_{c}\frac{z+3j}{j(z - 1)^2(z-3j)(z+3j)} \, dz =\oint_{c}\frac{\frac{\cancel{z+3j}}{\cancel{(z+3j)}(z-1)^2}}{z-3j} \, dz\\[6pt]
-&= \oint_{c}\frac{\frac{1}{(z-1)^2}(z-3j)}{z-3j} \, dz = 2\pi j \frac{1}{(3j-1)^2}\\[6pt]
-I_{c2} &= \oint_{c}\frac{z+3j}{j(z - 1)^2(z-3j)(z+3j)} \, dz =\oint_{c}\frac{\frac{\cancel{z+3j}}{\cancel{(z+3j)}(z-1)^2}}{(z-1)^2} \, dz\\[6pt]
-&= \oint_{c}\frac{\frac{1}{(z-3j)}}{(z-1)^2} \, dz = \frac{2\pi j}{(2-1)!} \left[ \frac{1}{z-3j} \right]_{z=1}^1= -\frac{2\pi j}{(1-3i)^2} \\[6pt]
-I_{c3} &= \oint_{c}\frac{\cancel{z+3j}}{(z - 1)^2(z-3j)\cancel{(z+3j)}} \, dz=0 \\[6pt]
-\end{align*}
+Primero, aislamos cada singularidad con una curva cerrada $C$ conveniente, y calculamos las integrales para cada una de ellas a travez de las formulas de integración 
+de Cauchy\\
+\begin{samepage}
+$$I_{z_1} = \oint_{c}\frac{z+3j}{j(z - 1)^2(z-3j)(z+3j)} \, dz =\oint_{c}\frac{\frac{\cancel{z+3j}}{\cancel{(z+3j)}(z-1)^2}}{(z-1)^2} \, dz$$
+$$= \oint_{c}\frac{\frac{1}{(z-3j)}}{(z-1)^2} \, dz = \frac{2\pi j}{(2-1)!} \left[ \frac{1}{z-3j} \right]_{z=1}^1= -\frac{2\pi j}{(1-3i)^2}$$\\
+$$I_{z_2} = \oint_{c}\frac{z+3j}{j(z - 1)^2(z-3j)(z+3j)} \, dz =\oint_{c}\frac{\frac{\cancel{z+3j}}{\cancel{(z+3j)}(z-1)^2}}{z-3j} \, dz $$
+$$=\frac{2\pi j}{(3j-1)^2}$$\\
+$$I_{z_3} = \oint_{c}\frac{\cancel{z+3j}}{(z - 1)^2(z-3j)\cancel{(z+3j)}} \, dz=0$$
+\end{samepage}
 
-Una vez obtenidas se calculan las integrales 1, 2 y 3 haciendo un analisis de cuales singularidades estan bajo la curva $|z|=v$ y usando el teorema de deformacion de contorno: \\
+Una vez obtenidas, se calculan las integrales $I_1$, $I_2$ y $I_3$ aplicando el teorema de deformación de contorno.
 
-\begin{align*}
-I_1&=\oint_{|z|=\frac{1}{2}}f(z) \, dz= 0 \rightarrow \text{Por que no hay ninguna singularidad bajo la curva $|z|=\frac{1}{2}$}\\[6pt]
-I_2&=\oint_{|z|=2}f(z) \, dz = I \oint_{c2} = - \frac{2 \pi j}{(1-3j)^2}\\[6pt]
-&\text{Por que bajo la curva $|z|=2$ esta la singularidad $z=1$}\\[12pt]
-I_3&= \oint_{|z|=4}f(z) \, dz = I_{c2}+I_{c1}=2 \pi j \left( -\frac{1}{(1-3j)^2} + \frac{1}{(3j-1)^2} \right) = 0 \\[6pt]
-\end{align*}
-Otro metodo para hacerlos es mediante el teorema del residuo:\\
-Primero se calulan los residuos de cada polo\\
-\begin{align*}
-&\text{Res}(f(z),3j)= \lim_{z \to 3j} \frac{\cancel{(z-3j)}\cancel{(z+3j)}}{(z-1)^2\cancel{(z-3j)}\cancel{(z+3j)}}= \lim_{z \to 3j} \frac{1}{(z-1)^2}=\frac{1}{(3j-1)^2} \\[6pt]
-&\text{Res}(f(z),1)=\frac{1}{(2-1)!} \lim_{z \to 2} \frac{d}{\,dz} \left[ \cancel{(z-1)^2} \frac{\cancel{(z+3j)}}{\cancel{(z-1)^2}(z-3j) \cancel{(z+3j)}} \right]\\[6pt]
-&\phantom{\text{Res}(f(z),1)}= \lim_{z \to 1} \frac{d}{\,dz} \left[ \frac{1}{z-3j} \right]= \frac{1}{(1-3j)^2}\\[6pt]
-\end{align*}
+Como no hay singularidades dentro de la curva $|z|=\frac{1}{2}$
+$$I_1=\oint_{|z|=\frac{1}{2}}f(z) \, dz= 0$$
 
-Siguiendo la logica de que singularidad esta bajo la curva $|z|=r$ calculamos los integrales:
+Dentro de la curva $|z|=2$, tenemos la singularidad $z_1=1$, por ende:
+$$I_2=\oint_{|z|=2}f(z) \, dz = I_{z_1} = - \frac{2 \pi j}{(1-3j)^2}$$
 
-\begin{align*}
-I_1&= \oint_{|z|=\frac{1}{2}}f(z) \, dz = 0 \rightarrow \text{no hay ninguna singularidad}\\[6pt]
-I_2&= \oint_{|z|=2}f(z) \, dz = 2 \pi j \text{Res}\hspace{0.5cm}(f(z),1)= -\frac{2 \pi j}{(1-3j)^2}\\[6pt]
-I_3&= \oint_{|z|=4}f(z) \, dz = 2 \pi j(\text{Res}(f(z),1)+\text{Res}(f(z),3j))\\[6pt]
-&\phantom{I_3=\oint_{|z|=4}f(z) \, dz } =2\pi j \left( -\frac{1}{(1-3j)^2} + \frac{1}{(3j-1)^2} \right)\\[6pt]
-&\phantom{I_3=\oint_{|z|=4}f(z) \, dz }=0\\[6pt]
-\end{align*}
+Dentro de la curva $|z|=4$, teneomos las singularidades $z_1=1$, $z_2=3j$ y $z_3=-3j$ entonces:
+$$I_3=\oint_{|z|=4}f(z) \, dz = I_{z_1}+I_{z_2}+I_{z_3} =( -\frac{2 \pi j }{(1-3j)^2} + \frac{2 \pi j}{(3j-1)^2} + 0) = 0$$\\
 
-\textbf{d) Para evaluar las integrales del inciso, ¿en qué tenemos que concentrar nuestro análisis?}\\
+Otro metodo para resolver estas integrales, es mediante el Teorema del residuo:\\
 
-Resolucion:\\
-Para evaluar las integrales del inciso C tenemos que concentrar nuestro analisis en las singularidades de la funcion $f(z)$ con respecto a las curvas, cerradas en este caso.\\
+Para esto, primero se calculamos los residuos de cada singularidad.\\
+
+Para $z_1=1$
+$$\text{Res}(f(z),1)=\frac{1}{(2-1)!} \lim_{z \to 1} \frac{d}{\,dz} \left[ \cancel{(z-1)^2} \frac{\cancel{(z+3j)}}{\cancel{(z-1)^2}(z-3j) \cancel{(z+3j)}} \right]$$
+$$= \lim_{z \to 1} \frac{d}{\,dz} \left[ \frac{1}{z-3j} \right]=-\frac{1}{(1-3j)^2}$$
+
+Para $z_2=3j$
+$$\text{Res}(f(z),3j)= \lim_{z \to 3j} \frac{\cancel{(z-3j)}\cancel{(z+3j)}}{(z-1)^2\cancel{(z-3j)}\cancel{(z+3j)}}= \lim_{z \to 3j} \frac{1}{(z-1)^2}=\frac{1}{(3j-1)^2}$$
+
+Como la singularidad $z_3 = -3j$ es evitable $$\text{Res}(f(z),-3j)=0$$
+
+Finalmente, aplicamos el Teorema del residuo de Cauchy. Al igual que en el metodo anterior, solo se tienen en cuenta las singularidades que estan dentro
+de la curva de integración.
+
+$$I_1= \oint_{|z|=\frac{1}{2}}f(z) \, dz = 0 $$
+
+$$I_2= \oint_{|z|=2}f(z) \, dz = 2 \pi j \, \text{Res}(f(z),1)= -\frac{2 \pi j}{(1-3j)^2}$$
+
+$$I_3= \oint_{|z|=4}f(z) \, dz = 2 \pi j \cdot (\text{Res}(f(z),1)+\text{Res}(f(z),3j)+\text{Res}(f(z),-3j))$$
+$$=2\pi j \left( -\frac{1}{(1-3j)^2} + \frac{1}{(3j-1)^2} \right)=0$$
+
+Comprobamos así, que ambos caminos son equivalentes.\\
+
+\textbf{d) Para evaluar las integrales del inciso, ¿en qué tenemos que concentrar nuestro análisis?}
+
+Para evaluar las integrales del inciso C tenemos que concentrar nuestro analisis en las singularidades de la funcion $f(z)$ con respecto a las curvas,
+cerradas en este caso.\\
 
 \chapter{}%ejercicio 6
 
