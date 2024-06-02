@@ -1,0 +1,101 @@
+\documentclass[12pt]{report}
+\usepackage[left=2.5cm,right=2.5cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{etoolbox}
+\usepackage{titlesec}
+\usepackage{titling} % para personalizar el título
+
+\pagestyle{fancy}
+\fancyhf{} 
+\fancyhead[L]{UTN-FRC}
+\fancyhead[C]{FISICA 2: TPL1}
+\fancyhead[R]{2R3}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancyfoot[C]{\vfill\thepage}
+
+\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
+
+\DeclareMathSizes{12}{13}{6}{5}
+
+\title{%
+  \fontsize{25}{0}\selectfont Universidad Tecnológica Nacional \\
+  \fontsize{22}{30}\selectfont Física 2 \\
+  \fontsize{18}{25}\selectfont TPL2: Capacitores
+}
+\author{
+Franco Palombo\\
+Gaston Grasso\\
+Ignacio Gil\\
+Santino Noccetti\\
+}
+\date{02 / 06 / 2024}
+
+\titleformat{\chapter}[block]
+  {\normalfont\huge\bfseries}{}{0pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{-30pt}{20pt}
+
+% Redefinir el formato de las secciones para que solo muestren el título
+\titleformat{\section}[block]
+  {\normalfont\Large\bfseries}{}{0pt}{\Large}
+\titlespacing*{\section}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+
+% Redefinir el formato de las subsecciones para que solo muestren el título
+\titleformat{\subsection}[block]
+  {\normalfont\large\bfseries}{}{0pt}{\large}
+\titlespacing*{\subsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+
+\begin{document}
+\maketitle
+
+\chapter{Introduccion 1: Capacitores planos}
+\subsection{a}
+\subsection{b}
+\subsection{c}
+
+\chapter{Introduccion2: El campo electrico}
+\subsection{a}
+\subsection{b}
+
+\chapter{Desconexión de la fuente}
+\section{1}
+\subsection{a}
+\subsection{b}
+\section{2}
+\subsection{a}
+\subsection{b}
+\section{3}
+
+\chapter{Introduccion de dielectrico}
+\section{1}
+\subsection{a}
+\subsection{b}
+\subsection{c}
+\subsection{d}
+\subsection{e}
+
+\section{2}
+\subsection{a}
+\subsection{b}
+\subsection{c}
+\subsection{d}
+
+\chapter{Conexión de capacitores}
+\section{1}
+\subsection{a}
+\subsection{b}
+\subsection{c}
+\subsection{d}
+\subsection{e}
+
+\section{2}
+\subsection{a}
+\subsection{b}
+\subsection{c}
+\subsection{d}
+\subsection{e}
+
+\section{3}
+
+\end{document}
+
