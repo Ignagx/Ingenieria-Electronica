@@ -3,99 +3,140 @@
 \usepackage{fancyhdr}
 \usepackage{etoolbox}
 \usepackage{titlesec}
-\usepackage{titling} % para personalizar el título
+\usepackage{titling} % Para personalizar el título
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsmath}
 
+\geometry{a4paper}
+
+% Configuración de cabecera y pie de página
 \pagestyle{fancy}
 \fancyhf{} 
 \fancyhead[L]{UTN-FRC}
-\fancyhead[C]{FISICA 2: TPL1}
+\fancyhead[C]{FÍSICA 2: TPL1}
 \fancyhead[R]{2R3}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancyfoot[C]{\vfill\thepage}
 
+% Cambio en el estilo de las páginas de capítulo
 \patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
 
+% Tamaños de fuente para matemáticas
 \DeclareMathSizes{12}{13}{6}{5}
 
+% Configuración del título del documento
 \title{%
   \fontsize{25}{0}\selectfont Universidad Tecnológica Nacional \\
   \fontsize{22}{30}\selectfont Física 2 \\
   \fontsize{18}{25}\selectfont TPL2: Capacitores
 }
 \author{
-Franco Palombo\\
-Gaston Grasso\\
-Ignacio Gil\\
-Santino Noccetti\\
+  Franco Palombo\\
+  Gaston Grasso\\
+  Ignacio Gil\\
+  Santino Noccetti\\
 }
-\date{02 / 06 / 2024}
+\date{05 / 06 / 2024}
 
+% Formato de títulos y secciones
 \titleformat{\chapter}[block]
   {\normalfont\huge\bfseries}{}{0pt}{\Huge}
 \titlespacing*{\chapter}{0pt}{-30pt}{20pt}
 
-% Redefinir el formato de las secciones para que solo muestren el título
 \titleformat{\section}[block]
   {\normalfont\Large\bfseries}{}{0pt}{\Large}
 \titlespacing*{\section}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
 
-% Redefinir el formato de las subsecciones para que solo muestren el título
 \titleformat{\subsection}[block]
   {\normalfont\large\bfseries}{}{0pt}{\large}
 \titlespacing*{\subsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 
-
 \begin{document}
 \maketitle
 
-\chapter{Introduccion 1: Capacitores planos}
-\subsection{a}
-\subsection{b}
-\subsection{c}
+\section{Introducción 1: El Capacitor Plano}
 
-\chapter{Introduccion2: El campo electrico}
-\subsection{a}
-\subsection{b}
+¡Empecemos! Ingresá al simulador que te adjunté. Si tenés algún problema con el archivo, podés descargarlo de forma directa a partir del link incorporado en la siguiente imagen.
 
-\chapter{Desconexión de la fuente}
-\section{1}
-\subsection{a}
-\subsection{b}
-\section{2}
-\subsection{a}
-\subsection{b}
-\section{3}
+Tildá las casillas “Capacidad” y “Carga de la placa”. Mantené la pila conectada e intenta responder a las siguientes preguntas:
 
-\chapter{Introduccion de dielectrico}
-\section{1}
-\subsection{a}
-\subsection{b}
-\subsection{c}
-\subsection{d}
-\subsection{e}
+\begin{enumerate}
+    \item Al aumentar la diferencia de potencial entre las placas, ¿Qué sucede con la carga de la placa positiva del capacitor? ¿y con la capacidad?
+    \item Fijá la diferencia de potencial a 1,5 V, habilitá el voltímetro y explica qué sucede con la carga, con la diferencia de potencial y con la capacidad, al variar el área de las placas.
+    \item Modificá el espacio entre las placas y comenta qué sucede con la carga, la capacidad y la diferencia de potencial.
+\end{enumerate}
 
-\section{2}
-\subsection{a}
-\subsection{b}
-\subsection{c}
-\subsection{d}
+\section{Introducción 2: El Campo Eléctrico}
 
-\chapter{Conexión de capacitores}
-\section{1}
-\subsection{a}
-\subsection{b}
-\subsection{c}
-\subsection{d}
-\subsection{e}
+Habilitá el detector de campo eléctrico, y manteniendo la pila conectada responde a las siguientes preguntas:
 
-\section{2}
-\subsection{a}
-\subsection{b}
-\subsection{c}
-\subsection{d}
-\subsection{e}
+\begin{enumerate}
+    \item ¿Qué sucede con la intensidad del campo eléctrico al variar el área de las placas? ¿Podrías explicar por qué?
+    \item ¿Qué sucede con la intensidad del campo al variar el espaciamiento entre las placas? ¿A qué se debe?
+\end{enumerate}
 
-\section{3}
+\section{Desconexión de la Fuente}
+
+\begin{enumerate}
+    \item Fijá la tensión de la fuente a 1,5 V, la separación de las placas en 10 mm y el área a 100 mm$^2$. Mantené el voltímetro y el sensor de campo eléctrico conectados y luego desconectá la fuente.
+    \begin{enumerate}
+        \item ¿Qué sucede con la carga, diferencia de potencial, capacidad e intensidad del campo eléctrico al disminuir el espaciamiento entre las placas?
+        \item ¿Qué sucede con la carga, diferencia de potencial, capacidad e intensidad de campo eléctrico al aumentar el área entre las placas?
+    \end{enumerate}
+    \item Conecta nuevamente el capacitor a la fuente de 1,5 V, fijá la separación de las placas a 5 mm, y el área a 400 mm$^2$. Ahora desconecta el capacitor de la fuente y responde:
+    \begin{enumerate}
+        \item ¿Qué sucede con la carga, diferencia de potencial, capacidad e intensidad de campo eléctrico al aumentar el espaciamiento entre las placas?
+        \item ¿Qué sucede con la carga, diferencia de potencial, capacidad e intensidad de campo eléctrico al disminuir el área entre las placas?
+    \end{enumerate}
+    \item ¿Podrías explicar lo sucedido en 1 y en 2?
+\end{enumerate}
+
+\section{Introduzcamos un Dieléctrico}
+
+\begin{enumerate}
+    \item Seleccioná el aislante dieléctrico que prefieras y, con la fuente conectada, introdúcelo entre las placas del capacitor.
+    \begin{enumerate}
+        \item ¿Qué cambios se observan en el material? (Puedes tildar la casilla “mostrar cargas en exceso” para ver mejor el fenómeno).
+        \item ¿Cuánto vale el campo eléctrico resultante entre las placas? ¿Cuánto valía el campo eléctrico entre las placas antes de introducir el dieléctrico? ¿Qué puedes decir al respecto?
+        \item La simulación te presenta el valor del campo eléctrico inducido, el campo eléctrico en el vacío, y el campo eléctrico resultante. En base a éstos, intenta calcular la constante dieléctrica y verificar el valor proporcionado por el simulador.
+        \item ¿Qué sucede con las cargas en las placas metálicas, la diferencia de potencial, la capacidad cuando se introduce el dieléctrico?
+        \item Habilita la casilla de “Energía almacenada” y cuéntame qué ocurre con la energía al introducir un dieléctrico. Realiza el cociente entre la energía almacenada con dieléctrico y la almacenada sin dieléctrico. Compara dicho cociente con la constante dieléctrica.
+    \end{enumerate}
+    \item Ahora, retira el dieléctrico y asegúrate que la pila aporte una diferencia de potencial de 1,5 V. Luego, desconecta la fuente y vuelve a introducir el dieléctrico.
+    \begin{enumerate}
+        \item ¿Cuánto vale el campo eléctrico resultante entre las placas? ¿Y entre las placas cuando no hay material? ¿Qué puedes decir al respecto?
+        \item Vuelve a verificar el valor de la constante dieléctrica en base a la intensidad de los campos. ¿Se obtiene el mismo valor que el obtenido con la fuente conectada?
+        \item ¿Qué sucede con las cargas en las placas metálicas, la diferencia de potencial, la capacidad cuando se introduce el dieléctrico?
+        \item ¿Qué ocurre con la energía al introducir un dieléctrico? Realiza el cociente entre la energía almacenada con dieléctrico y la almacenada sin dieléctrico. Compara dicho cociente con la constante dieléctrica.
+    \end{enumerate}
+\end{enumerate}
+
+\section{Conexión de Capacitores}
+
+\begin{enumerate}
+    \item Arma un circuito serie de dos capacitores de capacidades $C_1 = 2 \times 10^{-13} \, \text{F}$ y $C_2 = 3 \times 10^{-13} \, \text{F}$ con una batería de 1,5 V.
+    \begin{enumerate}
+        \item Mide los campos eléctricos de ambos capacitores. ¿Qué relación guardan entre sí?
+        \item Mide la carga de cada capacitor. ¿Qué relación guardan entre sí?
+        \item Mide las diferencias de potencial entre las placas de cada capacitor. ¿Qué relación guardan con la diferencia de potencial aportada por la batería?
+        \item Calcula la capacidad de un supuesto capacitor que acumule la misma carga, y esté sometido a la misma diferencia de potencial total que el conjunto $\{C_1, C_2\}$ (capacitor equivalente).
+        \item Verifica el cálculo anterior reemplazando ambos capacitores por el equivalente y verificando su carga, campo eléctrico y diferencia de potencial.
+    \end{enumerate}
+    
+    \item Arma un circuito paralelo de dos capacitores de capacidades $C_1 = 1 \times 10^{-13} \, \text{F}$ y $C_2 = 2 \times 10^{-13} \, \text{F}$ con una batería de 1,5 V.
+    \begin{enumerate}
+        \item Mide los campos eléctricos de ambos capacitores. ¿Qué relación guardan con las capacidades?
+        \item Mide la carga de cada capacitor. ¿Qué relación guardan con los campos eléctricos?
+        \item Mide las diferencias de potencial entre las placas de cada capacitor. ¿Qué relación guardan con la diferencia de potencial aportada por la batería?
+        \item Calcula la capacidad de un capacitor que, sometido a la misma diferencia de potencial, acumule la misma carga total que el conjunto $\{C_1, C_2\}$.
+        \item Verifica el cálculo anterior reemplazando ambos capacitores por el equivalente y verificando su carga, campo eléctrico y diferencia de potencial.
+    \end{enumerate}
+\end{enumerate}
+
+\section{Circuitos Mixtos}
+
+Construye dos circuitos mixtos como los de las siguientes figuras. Luego, mide las diferencias de potencial a los bornes de cada capacitor, el campo eléctrico entre las placas de cada uno, la carga de cada uno y la energía total acumulada. Luego, verifica todas estas cantidades de manera analítica.
 
 \end{document}
 
