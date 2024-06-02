@@ -170,25 +170,137 @@ Habilitá el detector de campo eléctrico, y manteniendo la pila conectada respo
     \item Arma un circuito serie de dos capacitores de capacidades $C_1 = 2 \times 10^{-13} \, \text{F}$ y $C_2 = 3 \times 10^{-13} \, \text{F}$ con una batería de 1,5 V.
     \begin{enumerate}
         \item Mide los campos eléctricos de ambos capacitores. ¿Qué relación guardan entre sí?
-        \item Mide la carga de cada capacitor. ¿Qué relación guardan entre sí?
-        \item Mide las diferencias de potencial entre las placas de cada capacitor. ¿Qué relación guardan con la diferencia de potencial aportada por la batería?
-        \item Calcula la capacidad de un supuesto capacitor que acumule la misma carga, y esté sometido a la misma diferencia de potencial total que el conjunto $\{C_1, C_2\}$ (capacitor equivalente).
+            Los campos electricos son iguales, tanto en magnitud como en sentido.
+        \item Mide la carga de cada capacitor. ¿Qué relación guardan entre sí?\\
+            Teniendo en cuenta que $Q=C \times V$\\
+            
+            \begin{align*}
+            Q_1&= C_1 \times V_1\\[6pt]
+            Q_1&= 2 \times 10^{-13} \,\text{F} \times 0.9 \text{V}\\[6pt]
+            Q_1&= 1.8\times 10^{-13} \,\text{C}
+            \end{align*}
+
+
+            \begin{align*}
+            Q_2&= C_2 \times V_1\\[6pt]
+            Q_2&= 3 \times 10^{-13} \,\text{F} \times 0.6 \text{V}\\[6pt]
+            Q_2&= 1.8\times 10^{-13} \,\text{C}\\[12pt]
+            \end{align*}
+       
+            La carga en los 2 capacitores es igual
+
+
+        \item Mide las diferencias de potencial entre las placas de cada capacitor. ¿Qué relación guardan con la diferencia de potencial aportada por la batería?\\
+            la suma de las diferencias de potencial en los capacitores es igual a la diferencia de potencial que entrega la bateria.\\
+        \item Calcula la capacidad de un supuesto capacitor que acumule la misma carga, y esté sometido a la misma diferencia de potencial total que el conjunto $\{C_1, C_2\}$ (capacitor equivalente).\\
+            el capacitor equivalente se puede calcular teniendo en cuenta que los 2 capacitores estan dispuestos en serie, entonces:\\
+            $C_{eq}= \frac{1}{\frac{1}{C1}+\frac{1}{c2}}$\\
+
+            \begin{align*}
+                C_{eq}&= \frac{1}{\frac{1}{C1}+\frac{1}{c2}}\\[6pt]
+                C_{eq}&= \frac{1}{\frac{1}{2 \times 10^{-13} \,\text{F}}+\frac{1}{3 \times 10^{-13} \,\text{F} }}\\[6pt]
+                C_{eq}&= 1.2 \times 10^{-13} \,\text{F}\\[12pt]
+            \end{align*}
+
         \item Verifica el cálculo anterior reemplazando ambos capacitores por el equivalente y verificando su carga, campo eléctrico y diferencia de potencial.
     \end{enumerate}
     
     \item Arma un circuito paralelo de dos capacitores de capacidades $C_1 = 1 \times 10^{-13} \, \text{F}$ y $C_2 = 2 \times 10^{-13} \, \text{F}$ con una batería de 1,5 V.
     \begin{enumerate}
-        \item Mide los campos eléctricos de ambos capacitores. ¿Qué relación guardan con las capacidades?
-        \item Mide la carga de cada capacitor. ¿Qué relación guardan con los campos eléctricos?
+        \item Mide los campos eléctricos de ambos capacitores. ¿Qué relación guardan con las capacidades?\\
+            Los campos electricos de cada capacitor son distintos y directamente proporcionales a la capacitancia de cada uno.\\
+        \item Mide la carga de cada capacitor. ¿Qué relación guardan con los campos eléctricos?\\
+
+            Teniendo en cuenta que $Q=C \times V$\\
+            
+            \begin{align*}
+            Q_1&= C_1 \times V_1\\[6pt]
+            Q_1&= 1 \times 10^{-13} \,\text{F} \times 1.5 \text{V}\\[6pt]
+            Q_1&= 1.5\times 10^{-13} \,\text{C}
+            \end{align*}
+
+
+            \begin{align*}
+            Q_2&= C_2 \times V_1\\[6pt]
+            Q_2&= 2 \times 10^{-13} \,\text{F} \times 1.5 \text{V}\\[6pt]
+            Q_2&= 3\times 10^{-13} \,\text{C}\\[12pt] 
+            \end{align*}
+
+            La cara de cada capacitor es proporcional al campo electrico de cada uno, ya que la diferencia de potencial entre las placas de cada uno es igual.\\
+
         \item Mide las diferencias de potencial entre las placas de cada capacitor. ¿Qué relación guardan con la diferencia de potencial aportada por la batería?
-        \item Calcula la capacidad de un capacitor que, sometido a la misma diferencia de potencial, acumule la misma carga total que el conjunto $\{C_1, C_2\}$.
+            La diferencia de potencial entre las placas de cada capacitor es igual por la disposición en paralelo.\\
+        \item Calcula la capacidad de un capacitor que, sometido a la misma diferencia de potencial, acumule la misma carga total que el conjunto $\{C_1, C_2\}$.\\
+            el capacitor equivalente de 2 capacitores en paralelo es:\\
+            $C_{eq}=C_1+C_2$ Entonces:\\
+
+            \begin{align*}
+                C_{eq}&=C_1+C_2\\[6pt]
+                C_{eq}&= 1 \times 10^{-13} \, \text{F} +  2 \times 10^{-13} \, \text{F}\\[6pt]
+                C_{eq}&= 3\times 10^{-13} \, \text{F}\\[12pt]
+            \end{align*}
+
+
+
+            
         \item Verifica el cálculo anterior reemplazando ambos capacitores por el equivalente y verificando su carga, campo eléctrico y diferencia de potencial.
     \end{enumerate}
+
+
+\item Construye dos circuitos mixtos como los de las siguientes figuras. Luego, mide las diferencias de potencial a los bornes de cada capacitor, el campo eléctrico entre las placas de cada uno, la carga de cada uno y la energía total acumulada. Luego, verifica todas estas cantidades de manera analítica.\\
+
+
+
+
+    \textbf{Circuito 1}\\
+    Primero Calculamos el capacitor equivalente, esto es igual a:\\
+\begin{align*}
+    C_{eq}&=\frac{1}{\frac{1}{C_1}+\frac{1}{C_2+c_3}}\\[6pt]
+    C_{eq}&=\frac{1}{\frac{1}{1 \times 10^{-13} \, \text{F} }+\frac{1}{2 \times 10^{-13} \, \text{F}+ 3 \times 10^{-13} \, \text{F}}}\\[6pt]
+    C_{eq}&=8.333 \times 10^{-14} \, \text{F}\\[6pt]
+\end{align*}
+
+Ahora la carga total acumulada:\\
+\begin{align*}
+    Q&=C \times V\\[6pt]
+    Q&=8.333 \times 10^{-14} \, \text{F} \times 1.5V \\[6pt]
+    Q&=1.25 \times 10^{-13} \, \text{C}\\[6pt]
+\end{align*}
+
+Ahora calculamos la energia total almacenada:\\
+\begin{align*}
+    E&=\frac{1}{2}\times C\times V^2\\[6pt]
+    E&=\frac{1}{2}\times 8.333 \times 10^{-14} \, \text{F} \times 1.5V^2\\[6pt]
+    E&= 9.371 \times 10^{-14} \, \text{J}\\[6pt]
+\end{align*}
+
+
+
+    \textbf{Circuito 2}\\
+    Primero Calculamos el capacitor equivalente, esto es igual a:\\
+\begin{align*}
+    C_{eq}&=\frac{1}{\frac{1}{C_1}+\frac{1}{C_2}}+C_3\\[6pt]
+    C_{eq}&=\frac{1}{\frac{1}{3 \times 10^{-13} \, \text{F} }+\frac{1}{2 \times 10^{-13} \, \text{F}}}+ 3 \times 10^{-13} \, \text{F}\\[6pt]
+    C_{eq}&=2.2 \times 10^{-13} \, \text{F}\\[6pt]
+\end{align*}
+
+Ahora la carga total acumulada:\\
+\begin{align*}
+    Q&=C \times V\\[6pt]
+    Q&=2.2 \times 10^{-13} \, \text{F} \times 1.5V \\[6pt]
+    Q&=3.3 \times 10^{-13} \, \text{C}\\[6pt]
+\end{align*}
+
+Ahora calculamos la energia total almacenada:\\
+\begin{align*}
+    E&=\frac{1}{2}\times C\times V^2\\[6pt]
+    E&=\frac{1}{2}\times 2.2 \times 10^{-14} \, \text{F} \times 1.5V^2\\[6pt]
+    E&= 2.475 \times 10^{-13} \, \text{J}\\[6pt]
+\end{align*}
+
+
+
 \end{enumerate}
-
-\section{Circuitos Mixtos}
-
-Construye dos circuitos mixtos como los de las siguientes figuras. Luego, mide las diferencias de potencial a los bornes de cada capacitor, el campo eléctrico entre las placas de cada uno, la carga de cada uno y la energía total acumulada. Luego, verifica todas estas cantidades de manera analítica.
 
 \end{document}
 
