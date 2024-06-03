@@ -62,18 +62,103 @@
 Tildá las casillas “Capacidad” y “Carga de la placa”. Mantené la pila conectada e intenta responder a las siguientes preguntas:
 
 \begin{enumerate}
-    \item Al aumentar la diferencia de potencial entre las placas, ¿Qué sucede con la carga de la placa positiva del capacitor? ¿y con la capacidad?
-    \item Fijá la diferencia de potencial a 1,5 V, habilitá el voltímetro y explica qué sucede con la carga, con la diferencia de potencial y con la capacidad, al variar el área de las placas.
-    \item Modificá el espacio entre las placas y comenta qué sucede con la carga, la capacidad y la diferencia de potencial.
-\end{enumerate}
+    \item Al aumentar la diferencia de potencial entre las placas, ¿Qué sucede con la carga de la placa positiva del capacitor? ¿y con la capacidad?\\
 
+    
+    Cuando se aumenta la diferencia del potencial del circuito, ambas placas que empiezan teniendo carga neutra empiezan a adquirir una carga negativa y positiva respectivamente, como hay una diferencia de potencial los electrones empiezan a moverse en un cierto sentido, en el caso de la placa que esta mas cercana a la terminal positiva de la bateria, los electrones de la misma van a moverse en direccion de la otra placa  dejando "huecos" o cargandola positivamente mientras que la otra esta esta siendo invadida por los electrones termina cargandose negativamente.
+    Como lo unico que varia en esta situacion es la diferencia de potencial, la capacidad no varia ya que depende del area de las placas y la distancia entre las mismas.
+
+    1FOTO1
+
+    \textit{Simulacion con las placas sin diferencia de potencial}
+
+    1FOTO2
+
+    \textit{Simulacion con las placas con diferencia de potencial}
+
+    \item Fijá la diferencia de potencial a 1,5 V, habilitá el voltímetro y explica qué sucede con la carga, con la diferencia de potencial y con la capacidad, al variar el área de las placas.\\
+
+    Si se conecta la bateria con un voltaje de 1.5 V y mido entre las placas, me va a mostrar el mismo valor que la fuente, si a las placas les aumento el area entonces se va a lograr que: un incremento en la capacidad de la cantidad de cargas que puedan contener, esto conlleva a un aumento de capacitancia, pero esto no implica a una variacion de diferencia de potencial ya que ambas placas estan conectadas a la fuente por lo que el voltimetro va a seguir mostrando el mismo valor.
+
+    Para que el voltaje se mantenga  constante significa que la carga de las placas deban aumentar  proporcionalmente al area de las mismas.\\\\\\Esto se puede comprobar con la siguiente formula de    capacitancia y de diferencia de potencial entre las placas:
+
+    \newpage
+    \begin{center}
+    \[C=e_0\frac{A}{d}\]
+    \[V_{ab}=\frac{Qd}{e_0A}\]
+
+    \end{center}
+    
+    siendo:\\
+    \begin{itemize}
+        \item C: Capacitancia
+        \item $e_0$: Constante de permitividad electrica
+        \item A: Area de las placas
+        \item d: Distancia entre las placas
+        \item $V_{ab}$: Diferencia de potencial entre las placas
+        \item Q: Carga total
+        \end{itemize}
+
+    1FOTO3
+
+    \textit{Simulacion con un area inicial}
+
+    1FOTO4
+
+    \textit{Simulacion con un area final}
+    \item Modificá el espacio entre las placas y comenta qué sucede con la carga, la capacidad y la diferencia de potencial.\\
+
+    En el caso de que se varie unicamente la distancia entre las placas, la capacidad obtiene una variacion inversamente proporcional y se ve un aumento de determinadas cargas en cada placa. En este caso como se tiene la fuente conectada no va a haber una variacion de diferencia de potencial cuando disminuya la distancia, ya que va a haber un aumento en las cargas de cada placa por el incremento de atraccion de las mismas.\\Esto se puede ver con las mismas formulas del enunciado anterior.
+
+    1FOTO5
+
+    \textit{Simulacion con una distancia inicial}
+
+    1FOTO6
+
+    \textit{Simulacion con una distancia final}
+\end{enumerate}
+\newpage
 \section{Introducción 2: El Campo Eléctrico}
 
 Habilitá el detector de campo eléctrico, y manteniendo la pila conectada responde a las siguientes preguntas:
 
 \begin{enumerate}
-    \item ¿Qué sucede con la intensidad del campo eléctrico al variar el área de las placas? ¿Podrías explicar por qué?
-    \item ¿Qué sucede con la intensidad del campo al variar el espaciamiento entre las placas? ¿A qué se debe?
+    \item ¿Qué sucede con la intensidad del campo eléctrico al variar el área de las placas? ¿Podrías explicar por qué?\\
+
+    Cuando varie el area de las placas con la fuente conectada no va a haber una variacion de la intensidad del campo electrico. Debido a que el voltaje permanece constante por estar conectado a la bateria, segun la ecuacion de diferencia de potencial para capacitores de placas paralelas en vacio:
+
+    \[V_{ab}=\vec{E} \cdot \vec{d}\]
+
+    Ambas magnitudes tienen que permanecer constantes para que la diferencia de potencial siga siendo la misma siendo esta dictada por la bateria. Debido a que la distancia permanece constante centramos nuestro analisis en la formula de capacitores de placas paralelas en vacio, definido como:
+
+    \[\vec{E}=\frac{\sigma}{\epsilon_0}=\frac{Q}{\epsilon_0 A}\]
+
+    Al variar el area la unica forma de que el campo electrico permanezca constante es aumentando adecuadamente la carga. Ese aumento en la carga produce que la capacitancia aumente por la formula de capacitancia de capacitores:
+
+
+    \[C=\frac{Q}{V_{ab}}\]
+
+    2FOTO1
+
+    \textit{Simulacion de la intensidad del campo con un area inicial}
+
+    2FOTO2
+
+    \textit{Simulacion de la intensidad del campo con un area final}
+
+    \item ¿Qué sucede con la intensidad del campo al variar el espaciamiento entre las placas? ¿A qué se debe?\\
+
+    Como se vio previamente, si yo hago variar la distancia entre ambas placas en vacio estando conectado en la fuente, se logra un incremento de cargas en las placas para que la diferencia de potencial se mantenga constante. El resultado de esto se ve afectado en el incremento del flujo, por ende, tambien hay un aumento del campo electrico inversamente proporcional a la variacion de la distancia.
+    \newpage
+
+    2FOTO3
+
+    \textit{Simulacion de la intensidad del campo electrico con una distancia inicial}
+
+    2FOTO4
+
+    \textit{Simulacion de la intensidad del campo electricon con una distancia final}
 \end{enumerate}
 
 \section{Desconexión de la Fuente}
