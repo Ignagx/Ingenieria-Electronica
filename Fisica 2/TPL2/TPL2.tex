@@ -303,22 +303,60 @@ Habilitá el detector de campo eléctrico, y manteniendo la pila conectada respo
 
 \begin{enumerate}
     \item Seleccioná el aislante dieléctrico que prefieras y, con la fuente conectada, introdúcelo entre las placas del capacitor.
-        \\\\Se selecciono como aislante al teflon, que tiene una constante dielectrica $k = 2,1$
+        \\\\Se selecciono como aislante al teflon, que tiene una constante dielectrica $k = 2,1$.
+
     \begin{enumerate}
         \item ¿Qué cambios se observan en el material? (Puedes tildar la casilla “mostrar cargas en exceso” para ver mejor el fenómeno).
         \\\\Al introducir el dielectrico entre las placas, este se polariza. Esto se puede visualizar mostrando las cargas en exceso al ver que las cargas opuestas dentro del dielectrico se trasladan hacia los extremos del material, atrayendose las cargas positivas del dielectrico a las negativas de la placa y las cargas negativas del dielectrico a las positivas de la placa.
+
         \item ¿Cuánto vale el campo eléctrico resultante entre las placas? ¿Cuánto valía el campo eléctrico entre las placas antes de introducir el dieléctrico? ¿Qué puedes decir al respecto?
-        \\\\El campo electrico resultante entre las placas vale $150\frac{V}{m}$. Antes de introducir el dielectrico, tambien valia $150\frac{V}{m}$. Esto se debe a que en el caso sin dielectrico, el unico campo que se produce es el que hay entre las placas y que es proporcional a la diferencia de potencial y al area de las placas; en el caso con dielectrico entre las placas, el campo entre las placas aumenta a $E_p = 315\frac{V}{m}$ pero hay que tener en cuenta tambien el campo inducido que se le resta, que vale $E_i = 165\frac{V}{m}$, siendo $E_p - E_i = 150\frac{V}{m}$.
+        \\\\El campo electrico resultante entre las placas al introducir el dielectrico vale $150\frac{V}{m}$. Antes de introducir el dielectrico, tambien valia $150\frac{V}{m}$. Esto se debe a que antes de introducirlo, el unico campo que se produce es el que hay entre las placas y que es proporcional a la diferencia de potencial y al area de las placas. Al introducir el dielectrico, el campo entre las placas aumenta ya que al introducir el dielectrico, la capacitancia aumenta y si mantenemos el voltaje constante, segun $C = \frac{Q}{V}$, la carga debe aumentar, y por ende el campo tambien aumenta a $E_p = 315\frac{V}{m}$; pero hay que tener en cuenta tambien el campo inducido que se le resta, que vale $E_i = 165\frac{V}{m}$, siendo $E_p - E_i = 150\frac{V}{m}$.
+
         \item La simulación te presenta el valor del campo eléctrico inducido, el campo eléctrico en el vacío, y el campo eléctrico resultante. En base a éstos, intenta calcular la constante dieléctrica y verificar el valor proporcionado por el simulador.
+        \\\\Para calcular el dielectrico, usamos la formula:
+        \[k = \frac{C_f}{C_o}\] donde reemplazamos C
+        \[k = \frac{\frac{Q_f}{V}}{\frac{Q_o}{V}}\] Como V es constante, se cancelan y queda:
+        \[k = \frac{Q_f}{Q_o}\] Para calcular $Q_f$ y $Q_o$ usamos:
+        \[E = \frac{Q}{\epsilon_o \cdot A}\]
+        \begin{align*}
+          Q_f&= \epsilon_o \cdot A \cdot E_p                           & Q_o&=\epsilon_o \cdot A \cdot E_p\\[6pt]
+          Q_f&= \epsilon_o \cdot 0,0001 m^2 \cdot 315 \frac{V}{m}      &Q_o&= \epsilon_o \cdot 0,0001 m^2 \cdot 150 \frac{V}{m}\\[6pt]
+          Q_f&= 0,279 \cdot 10^{-12} C                                  &Q_o&= 0,133 \cdot 10^{-12} C\\[6pt]
+        \end{align*}
+        Entonces:
+
+        \begin{align*}
+          k&= \frac{0,279 \cdot 10^{-12} C }{0,133 \cdot 10^{-12} C}\\[6pt]
+          k&= 2,1\\[6pt]
+        \end{align*}
+
+        Este resultado es igual al que nos indica la simulación.
+
         \item ¿Qué sucede con las cargas en las placas metálicas, la diferencia de potencial, la capacidad cuando se introduce el dieléctrico?
+        \\\\Las cargas aumentan, la diferencia de potencial es constante y la capacidad tambien aumenta. Como se dijo anteriormente, esto esta dado por:
+        \[C = \frac{Q}{V}\]
+
         \item Habilita la casilla de “Energía almacenada” y cuéntame qué ocurre con la energía al introducir un dieléctrico. Realiza el cociente entre la energía almacenada con dieléctrico y la almacenada sin dieléctrico. Compara dicho cociente con la constante dieléctrica.
+        \\\\La energia almacenada aumenta al introducir el dielectrico. Si evaluamos el cociente:
+        \begin{align*}
+          k &= \frac{E_f}{E_o}\\[6pt]
+          k &= \frac{0,21 \cdot 10^{-12} J}{0,1 \cdot 10^{-12} J}\\[6pt]
+          k &= 2,1
+        \end{align*}
+
+        Se puede ver que también es igual al que nos proporciona la simulacion.
+
     \end{enumerate}
     \item Ahora, retira el dieléctrico y asegúrate que la pila aporte una diferencia de potencial de 1,5 V. Luego, desconecta la fuente y vuelve a introducir el dieléctrico.
     \begin{enumerate}
         \item ¿Cuánto vale el campo eléctrico resultante entre las placas? ¿Y entre las placas cuando no hay material? ¿Qué puedes decir al respecto?
+
         \item Vuelve a verificar el valor de la constante dieléctrica en base a la intensidad de los campos. ¿Se obtiene el mismo valor que el obtenido con la fuente conectada?
+
         \item ¿Qué sucede con las cargas en las placas metálicas, la diferencia de potencial, la capacidad cuando se introduce el dieléctrico?
+
         \item ¿Qué ocurre con la energía al introducir un dieléctrico? Realiza el cociente entre la energía almacenada con dieléctrico y la almacenada sin dieléctrico. Compara dicho cociente con la constante dieléctrica.
+
     \end{enumerate}
 \end{enumerate}
 
