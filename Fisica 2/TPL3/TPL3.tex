@@ -66,5 +66,25 @@
     % Conectar la última resistencia a tierra y cerrar el circuito
     -- (9,0) -- (0,0);
 \end{circuitikz}
+
+\vspace{2cm}
+
+\newcommand {\ResUno} {R_1}
+\newcommand {\ResDos} {550\Omega}
+\newcommand {\ResTres} {R_3}
+
+\centering
+\begin{circuitikz}
+    % Dibujar la fuente de voltaje
+  \draw (0,0) to[battery1, l=$V$, invert] (0,4) -- (2,4) % Dibujar las resistencias en serie 
+    to[R, l=$\ResUno$] (2,0) -- (0,0);
+  \draw (2,4) -- (4,4)
+    to[R, l=$\ResDos$] (4,0) -- (0,0);
+  \draw (4,4) -- (6,4)
+    to[R, l=$\ResTres$] (6,0) -- (0,0);
+\end{circuitikz}
+
+$$R_T  = \left( \frac{1}{\ResUno}+\frac{1}{\ResDos}+\frac{1}{\ResTres} \right) ^{-1}$$
+
 \end{document}
 
