@@ -7,6 +7,7 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{amsmath}
+\usepackage{circuitikz} % Para dibujar circuitos
 
 \geometry{a4paper}
 
@@ -27,7 +28,7 @@
 
 % Configuración del título del documento
 \title{%
-  \fontsize{25}{0}\selectfont Universidad Tecnológica Nacional \\
+  \fontsize{25}{30}\selectfont Universidad Tecnológica Nacional \\
   \fontsize{22}{30}\selectfont Física 2 \\
   \fontsize{18}{25}\selectfont TPL3: Resistividad
 }
@@ -54,4 +55,16 @@
 
 \begin{document}
 \maketitle
+\centering
+\begin{circuitikz}
+    % Dibujar la fuente de voltaje
+    \draw (0,0) to[battery1, l=$V$] (0,4)
+    % Dibujar las resistencias en serie
+    to[R, l=$R_1$] (3,4)
+    to[R, l=$R_2$] (6,4)
+    to[R, l=$R_3$] (9,4)
+    % Conectar la última resistencia a tierra y cerrar el circuito
+    -- (9,0) -- (0,0);
+\end{circuitikz}
+\end{document}
 
