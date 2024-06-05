@@ -1,0 +1,57 @@
+\documentclass[12pt]{report}
+\usepackage[left=2.5cm,right=2.5cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{etoolbox}
+\usepackage{titlesec}
+\usepackage{titling} % Para personalizar el título
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsmath}
+
+\geometry{a4paper}
+
+% Configuración de cabecera y pie de página
+\pagestyle{fancy}
+\fancyhf{} 
+\fancyhead[L]{UTN-FRC}
+\fancyhead[C]{FÍSICA 2: TPL1}
+\fancyhead[R]{2R3}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancyfoot[C]{\vfill\thepage}
+
+% Cambio en el estilo de las páginas de capítulo
+\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
+
+% Tamaños de fuente para matemáticas
+\DeclareMathSizes{12}{13}{6}{5}
+
+% Configuración del título del documento
+\title{%
+  \fontsize{25}{0}\selectfont Universidad Tecnológica Nacional \\
+  \fontsize{22}{30}\selectfont Física 2 \\
+  \fontsize{18}{25}\selectfont TPL2: Capacitores
+}
+\author{
+  Franco Palombo\\
+  Gaston Grasso\\
+  Ignacio Gil\\
+  Santino Noccetti\\
+}
+\date{05 / 06 / 2024}
+
+% Formato de títulos y secciones
+\titleformat{\chapter}[block]
+  {\normalfont\huge\bfseries}{}{0pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{-30pt}{20pt}
+
+\titleformat{\section}[block]
+  {\normalfont\Large\bfseries}{}{0pt}{\Large}
+\titlespacing*{\section}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+
+\titleformat{\subsection}[block]
+  {\normalfont\large\bfseries}{}{0pt}{\large}
+\titlespacing*{\subsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\begin{document}
+\maketitle
+
