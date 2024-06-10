@@ -55,19 +55,46 @@
 
 \begin{document}
 \maketitle
-\centering
-\begin{circuitikz}
-    % Dibujar la fuente de voltaje
-    \draw (0,0) to[battery1, l=$V$,invert] (0,4)
-    % Dibujar las resistencias en serie
-    to[R, l=$R_1$] (3,4)
-    to[R, l=$R_2$] (6,4)
-    to[R, l=$R_3$] (9,4)
-    % Conectar la última resistencia a tierra y cerrar el circuito
-    -- (9,0) -- (0,0);
-\end{circuitikz}
+\chapter{Ejercicio 1}
+\begin{figure}[h]
+  \centering
+  \begin{minipage}{0.65\textwidth}
+      \centering
+      \begin{circuitikz}
+          % Dibujar la fuente de voltaje
+          \draw (0,0) to[battery1, l=$\epsilon_1$, invert] (0,4)
+          % Dibujar las resistencias en serie
+          to[R, l=$R_1$] (3,4)
+          to[R, l=$R_2$] (6,4)
+          to[R, l=$R_3$] (9,4)
+          % Conectar la última resistencia a tierra y cerrar el circuito
+          -- (9,0) -- (0,0);
+      \end{circuitikz}
+  \end{minipage}\hfill
+  \begin{minipage}{0.35\textwidth}
+      \centering
+      $$R_1=48.5\Omega$$
+      $$R_2=34.1\Omega$$
+      $$R_3=64\Omega$$
+  \end{minipage}
+\end{figure}
 
-\vspace{2cm}
+$$R_{eq}=R_1+R_2+R_3$$
+$$R_{eq}=151,6$$
+
+$$V_{R_1} = R_1 I = 4,9 V$$
+$$V_{R_2} = R_2 I = 3,47 V$$
+$$V_{R_3} = R_3 I = 7 V$$
+$$V_t = \epsilon_1 = 15,43 V$$
+
+$$I = \frac{V_t}{R_{eq}}$$
+$$I = 101,78 mA$$
+
+$$0 = \epsilon_1 - V_{R_1} - V_{R_2} - V_{R_3}$$
+$$0 = \epsilon_1 - I (R_1 + R_2 + R_3)$$
+$$I = \frac{\epsilon_1}{(R_1 + R_2 + R_3)}$$
+
+\chapter{}
 
 \newcommand {\ResUno} {R_1}
 \newcommand {\ResDos} {550\Omega}
@@ -76,7 +103,7 @@
 \centering
 \begin{circuitikz}
     % Dibujar la fuente de voltaje
-  \draw (0,0) to[battery1, l=$V$, invert] (0,4) -- (2,4) % Dibujar las resistencias en serie 
+  \draw (0,0) to[battery1, l=$V$, invert] (0,4) -- (2,4) % Dibujar las resistencias en serie
     to[R, l=$\ResUno$] (2,0) -- (0,0);
   \draw (2,4) -- (4,4)
     to[R, l=$\ResDos$] (4,0) -- (0,0);
