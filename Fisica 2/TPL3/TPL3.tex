@@ -26,7 +26,7 @@
 \patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
 
 % Tamaños de fuente para matemáticas
-\DeclareMathSizes{12}{13}{6}{5}
+\DeclareMathSizes{12}{13}{8}{8}
 
 % Configuración del título del documento
 \title{%
@@ -179,7 +179,76 @@ Para la segunda experiencia, se armó el circuito a continuación.
 
 \section{Procedimiento}
 
-$$R_{eq}  = \left( \frac{1}{R_1}+\frac{1}{R_2}+\frac{1}{R_3} \right) ^{-1}$$
+\subsection{Resistencia equivalente}
+
+Calculamos y medimos las resistencia equivalente del circuito con la fuente desconectada.
+Sabemos, de las mediciones del circuito anterior, que los valores reales de las resistencias son:
+
+$$R_1 = 48,5\Omega \hspace{5mm} R_2 = 34,1\Omega \hspace{5mm} R_3 = 69\Omega \hspace{5mm}$$
+
+Entonces:
+
+$$R_{eq}  = \left( \frac{1}{R_1}+\frac{1}{R_2}+\frac{1}{R_3} \right) ^{-1} = 15,51 \Omega$$\\
+
+Mientras que la resistencia equivalente medida en el circuito fue de $R_{eq\hspace{1mm}real}
+= 17 \Omega$
+
+\subsection{Corrientes}
+Conectamos la fuente de alimentación y medimos la tensión que esta entregaba. Obtuvimos un valor de 
+$ \varepsilon_0=13,81 V $
+
+Con este valor y el de las resistencias, podemos plantear las ecuaciones de Kirchoff de mallas y
+nodos:
+
+\[
+\begin{cases}
+  N_1 : I_{\varepsilon_0} = I_{R_1} + I_{R_1} + I_{R_1} \\
+  M_1 : 0 = \varepsilon_0 - I_{R_1} \cdot R_1 \\
+  M_2 : 0 = I_{R_1} \cdot R_1 - I_{R_2} \cdot R_2 \\
+  M_3 : 0 = I_{R_2} \cdot R_2 - I_{R_3} \cdot R_3
+\end{cases}
+\]
+
+Resolviendo este sistema obtendremos el valor de las corritente a travez de cada resistencia
+
+\noindent
+\begin{minipage}[t]{0.33\textwidth}
+  \centering
+  De $M_1$ despejamos:
+  $$I_{R1} = \frac{\varepsilon_0}{R_1}$$
+  $$I_{R1} = 284,74 mA $$
+\end{minipage}
+\begin{minipage}[t]{0.33\textwidth}
+  \centering
+  De $M_2$ despejamos:
+  $$I_{R2} = \frac{I_{R_1}R_1}{R_2} $$
+  $$I_{R2} = 404,98 mA $$
+\end{minipage}
+\begin{minipage}[t]{0.33\textwidth}
+  \centering
+  De $M_3$ despejamos:
+  $$I_{R2} = \frac{I_{R_2}R_2}{R_3} $$
+  $$I_{R3} = 200,14 mA $$
+\end{minipage}
+
+\vspace{7mm}
+
+finalmente, a travez de la ecuacion N1, podemos obtener el valor de la corriente entregada 
+por la fuente $\varepsilon_0$
+$$I_{\varepsilon_0} = 889,86 mA$$
+
+Obtenidas las corrientes a travez de cada una de las resistencias, podemos calcular su respectiva
+caida de tensión:
+$$ V_{R_1} = I_{R_1} \cdot R_1 = 13,8V \hspace{10mm} V_{R_2} = I_{R_2} \cdot R_2 = 13,8V 
+\hspace{10mm} V_{R_3} = I_{R_3} \cdot R_3 = 13,8V $$
+
+Observamos que la caída de tension es igual en todas las resitencias, lo cual era lo esperado, ya
+que conectadas en paralelo. De esta forma pudimos verificar nuestros resultados.
+
+Por último, medimos la corriente que que estaba siendo entregada por la fuente, observamos que el
+valor mensurado es similar al valor calculado de forma teorica.
+
+$$ I_{\varepsilon_0 \hspace{0,5mm} real} = 820mA \approx 889,86 mA $$
 
 \chapter{Ejercicio 3}
 
