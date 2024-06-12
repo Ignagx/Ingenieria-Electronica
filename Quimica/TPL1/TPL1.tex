@@ -7,6 +7,7 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{amsmath}
+\usepackage{indentfirst}
 
 \geometry{a4paper}
 
@@ -23,7 +24,7 @@
 \patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
 
 % Tamaños de fuente para matemáticas
-\DeclareMathSizes{12}{13}{6}{5}
+\DeclareMathSizes{15}{13}{8}{8}
 
 % Configuración del título del documento
 \title{%
@@ -59,12 +60,86 @@
 
 \chapter{}
 \section{Expectros de emisión}
+En esta experiencia se colocaron distintas sales metalicas en una flama.
+Para esto se utilizó una cuchara para las sales en estado solido y un rociador para las sales en 
+estado acuoso.
+Observamos como la llama cambiaba de color dependiendo de la sal introducida.
+Las sales utilizadas contenian cationes de $Na^{+} ; Ba^{++} ; Cu^{++} ; Li^{+} ; MG^{++} ; K^{+}$.
 
+Teniendo en cuenta el los espectros de cada uno, se confeccionó la siguiente tabla:
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|}
+  \hline
+  \textbf{} & \textbf{Color} & \textbf{Metal} \\
+  \hline
+  Muestra 1 & Verde claro & $Ba$ \\
+  \hline
+  Muestra 2 & Anaranjado & $Na$\\
+  \hline
+  Muestra 3 & Verde & $Cu$ \\
+  \hline
+  Muestra 4 & Rojo & $Li$\\
+  \hline
+  Muestra 5 & Incoloro & $Mg$\\
+  \hline
+  Muestra 6 & Lila & $K$ \\
+  \hline
+\end{tabular}
+\caption{Tabla de colores y metales}
+\label{tab:colores_metales}
+\end{table}
+
+\section{Calculos de energia}
+Con la ecuacion $E=h\cdot\frac{c}{\lambda}$ y aproximando la longitud de onda con la tabla a continuación,
+pudimos estimar la energia de los fotones emitidos.
+
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{|c|c|}
+    \hline
+    Color & Longitud de onda ($\lambda$)\\
+    \hline
+    Violeta & $380-450\hspace{1mm}nm$ \\
+    \hline
+    Azul & $450-495\hspace{1mm} nm$ \\
+    \hline
+    Verde & $495-570\hspace{1mm} nm$ \\
+    \hline
+    Amarillo & $570-590\hspace{1mm} nm$ \\
+    \hline
+    Naranja & $590-620\hspace{1mm} nm$ \\
+    \hline
+    Rojo & $620-750\hspace{1mm} nm$ \\
+    \hline
+  \end{tabular}
+\end{table}
+
+\begin{minipage}[t]{0.48\textwidth}
+  $$
+  \begin{aligned}
+    E_{M1}&=6,63\times10^{-34}\cdot \frac{3\times10^8 \frac{m}{s} }{532,5\hspace{1mm}nm}\\
+    E_{M1}&=3,862\times10^{-19}
+  \end{aligned}
+  $$
+  \vspace{5mm}
+  $$
+  \begin{aligned}
+    E_{M2}&=6,63\times10^{-34}\cdot \frac{3\times10^8 \frac{m}{s} }{ 605 \hspace{1mm}nm}\\
+    E_{M2}&= 3,287 \times10^{-19}
+  \end{aligned}
+  $$
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+  $$asdlkasdlhja$$
+\end{minipage}
 
 \chapter{}
 \section{Determinacion del volumen molar}
 
-En este ejercicio se espera poder comprar teorica y practicamente una reaccion en el laboratorio.\\||
+En este ejercicio se espera poder comprar teorica y practicamente una reaccion en el laboratorio.\\
 
 \subsection{TEÓRICO}
 
