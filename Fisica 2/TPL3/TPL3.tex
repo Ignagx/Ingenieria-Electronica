@@ -7,6 +7,7 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{circuitikz} % Para dibujar circuitos
 \usepackage{indentfirst}
 
@@ -189,26 +190,40 @@ $$R_{eq}  = \left( \frac{1}{R_1}+\frac{1}{R_2}+\frac{1}{R_3} \right) ^{-1}$$
 \begin{circuitikz}
 \ctikzset{bipoles/vsourceam/inner plus={\tiny $+$}}
 \ctikzset{bipoles/vsourceam/inner minus={\tiny $-$}}
-    \draw (0,0) to[voltmeter, l_ =$V1$, ](0,3) -- (4,3)
-    to[R, l=$6\Omega$](6,3) -- (9,3)
+    \draw (0,0) to[voltmeter, l_ =$V_1$, ](0,3) -- (4,3)
+    to[R, l=$R2$](6,3) -- (9,3)
     to(9,3) -- (9,4);
     \draw (3,3) -- (3,5)
     to(3,5) -- (4,5)
-    to[R, l=$3\Omega$] (6,5) -- (7,5)
-    to[ammeter, l =$A_1 \, 2A$] (8,5) -- (9,5)
+    to[R, l=$R3$] (6,5) -- (7,5)
+    to[ammeter, l =$A_1$] (8,5) -- (9,5)
     to (9,5) -- (9,4);
-    \draw (9,4) to[R, l=$5\Omega$](11,4) -- (12,4)
+    \draw (9,4) to[R, l=$R4$](11,4) -- (12,4)
     to [battery1 ,l =$\epsilon$, invert] (14,4) -- (14,1)
-    to [R ,l =$2\Omega$](14,-1) -- (14,-3)
+    to [R ,l =$R5$](14,-1) -- (14,-3)
     to [ammeter, l=$A_2$](13,-3) -- (12,-3)
-    to [R , l =$1\Omega$](10,-3) -- (9, -3)
+    to [R , l =$R6$](10,-3) -- (9, -3)
     to [battery1, l=$28V$](7, -3) -- (6, -3)
-    to [R , l =$2\Omega$](4,-3) -- (0, -3)
+    to [R , l =$R7$](4,-3) -- (0, -3)
     to (0,0);
     \draw (3,-3) -- (3,-2)
-    to [R ,l =$R_1 \, 3\Omega$](3,-1) -- (3,1)
-    to [battery1, l =$50V$, invert] (3,2) -- (3,3);
+    to [R ,l =$R_1$](3,-1) -- (3,1)
+    to [battery1, l =$E1$, invert] (3,2) -- (3,3);
+
+    \node [above] at (8,0) {$\circlearrowright m_1$};
+    \node [above] at (6,3.75) {$\circlearrowright m_2$};
 \end{circuitikz}
+
+$$
+\begin{aligned}
+    &R1=3\Omega \hspace{2cm} &&R2=6\Omega \hspace{2cm} && R3=3\Omega\\[6pt]
+    &R4=5\Omega  &&R5=2\Omega  &&R6=1\Omega\\[6pt]
+    &R7=2\Omega\\[6pt]
+    &E1=50V &&A_1=2A \\[6pt]
+    &\epsilon=\,? &&V_1=\,? &&A_2=\,?\\[6pt]
+\end{aligned}
+$$
+
 \end{document}
 
 
