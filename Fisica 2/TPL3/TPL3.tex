@@ -61,7 +61,7 @@
 \maketitle
 \chapter{Ejercicio 1}
 Se confeccionó el siguiente circuito en laboratorio:
-
+\noindent
 \begin{figure}[h]
   \centering
   \begin{minipage}{0.65\textwidth}
@@ -154,7 +154,7 @@ indica que el valor de Corriente $(I)$ calculado es correcto.
 
 \chapter{Ejercicio 2}
 Para la segunda experiencia, se armó el circuito a continuación.
-
+\noindent
 \begin{figure}[h]
   \centering
   \begin{minipage}{0.65\textwidth}
@@ -254,6 +254,7 @@ $$ I_{\LEpsilon \hspace{0,5mm} real} = 820mA \approx 889,\!86 mA $$
 
 \chapter{Ejercicio 3}
 
+\noindent
 \begin{circuitikz}
     \draw (0,0) to[voltmeter, l=$V_1$, ](0,3) -- (4,3)
     to[R, l=$R2$](6,3) -- (9,3)
@@ -337,7 +338,7 @@ $$
 $$
 
 \chapter{Ejercicio 4}
-
+\noindent
 \begin{circuitikz}
     \draw (0,0) to[battery1, l =$\LEpsilon_1$, invert](0,3) -- (1,3)
     to[R , l=$R1$](2,3)
@@ -345,7 +346,7 @@ $$
     \draw (8,3) -- (8,4)
     to [R , l =$R2$] (12,4) -- (13,4)
     to (13,4) -- (13,2)
-    to [ammeter , l =$A_1$] (11,2)
+    to [ammeter , l =$A_2$] (11,2)
     to [R , l =$R3$] (9,2)
     to (8,2) -- (8,3);
     \draw (13,3) -- (14,3)
@@ -370,24 +371,43 @@ $$
 
 $$
 \begin{aligned}
-    &R1=5\Omega \hspace{2cm} &&R2=3\Omega \hspace{2cm} && R3=6\Omega\\[6pt]
-    &R4=4\Omega  &&R5=12\Omega  &&R6=2\Omega\\[6pt]
-    &R7=2\Omega\\[6pt]
-    &\LEpsilon_1=50V &&\LEpsilon_2=30V&&\LEpsilon_3=20V\\[6pt]
-    &V_1=\,? &&V_2=\,? &&A_1=\,?\\[6pt]
-    &A_2=\,?\\[6pt]
+    &R_1=5\Omega \hspace{2cm} && R_2=3\Omega \hspace{2cm} && R_3=6\Omega \hspace{2cm} && R_4=4\Omega\\[6pt]
+    &R_5=12\Omega && R_6=2\Omega && R_7=2\Omega\\[6pt]
+    &\LEpsilon_1=50V && \LEpsilon_2=30V && \LEpsilon_3=20V\\[6pt]
+    &V_1=\,? && V_2=\,? && A_1=\,? && A_2=\,?\\[6pt]
 \end{aligned}
 $$
-
 
 \[
 \begin{cases}
   N_1 : I_1 = I_2 + I_3\\
-  M_1 : 0 = E_1 - R_1 . I_1 - R_{2//3} . I_1 - \epsilon_2 - R_{4//5} . I_1 + \epsilon_3 - R_6 . I_1 \\
-  M_2 : 0 = R_3 . I_3 - R_2 . I_2 \\
+  M_1 : 0 = E_1 - R_1 \cdot I_1 - R_{2//3} \cdot I_1 - \LEpsilon_2 - R_{4//5} \cdot I_1 + \LEpsilon_3 - R_6 \cdot I_1 \\
+  M_2 : 0 = R_3 \cdot I_3 - R_2 \cdot I_2 \\
 \end{cases}
 \]
 
+\noindent
+\begin{minipage}[t]{0.5\textwidth}
+  \centering
+  De $M_1$ despejamos:
+  $$0 = \LEpsilon_1 - \LEpsilon_2 + \LEpsilon_3 - (R_1 + R_{2//3} + R_6) \cdot I_1$$
+  $$(R_1 + R_{2//3} + R_6) \cdot I_1 = \LEpsilon_1 - \LEpsilon_2 + \LEpsilon_3$$
+  $$I_1 = \frac{\LEpsilon_1 - \LEpsilon_2 + \LEpsilon_3}{(R_1 + R_{2//3} + R_6) \cdot I_1}$$
+  $$I_1 = \frac{40 V}{12 \Omega} = 3,\!34 A$$
+  Lo anterior es lo medido por el $A_1$
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+  \centering
+  Sabiendo que:
+  $$I_2 = I_1 - I_3$$
+  De $M_2$ despejamos:
+  $$0 = R_3 \cdot I_3 - R_2 \cdot (I_1 - I_3)$$
+  $$0 = (R_3 + R_2) \cdot I_3 - R_2 \cdot I_1$$
+  $$(R_3 + R_2) \cdot I_3 = R_2 \cdot I_1$$
+  $$I_3 = \frac{R_2 \cdot I_1}{R_3 + R_2}$$
+  $$I_3 = \frac{10,\!02 V}{9 \Omega} = 1,\!113 A$$
+  Lo anterior es lo medido por el $A_2$
+\end{minipage}
 \end{document}
 
 
