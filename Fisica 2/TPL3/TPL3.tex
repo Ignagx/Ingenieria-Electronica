@@ -62,6 +62,7 @@
 \begin{document}
 \maketitle
 \chapter{Ejercicio 1}
+\vspace{-0.2cm}
 Se confeccionó el siguiente circuito en laboratorio:
 \noindent
 \begin{figure}[h]
@@ -70,11 +71,11 @@ Se confeccionó el siguiente circuito en laboratorio:
     \centering
     \begin{circuitikz}
       % Dibujar la fuente de voltaje
-      \draw (0,0) to[battery1, l=\Large$\LEpsilon$, invert] (0,4)
+      \draw (0,0) to[battery1, l=\Large$\LEpsilon$, invert] (0,3)
       % Dibujar las resistencias en serie
-      to[R, l=$R_1$] (3,4)
-      to[R, l=$R_2$] (6,4)
-      to[R, l=$R_3$] (9,4)
+      to[R, l=$R_1$] (3,3)
+      to[R, l=$R_2$] (6,3)
+      to[R, l=$R_3$] (9,3)
       % Conectar la última resistencia a tierra y cerrar el circuito
       -- (9,0) -- (0,0);
     \end{circuitikz}
@@ -93,15 +94,62 @@ Se confeccionó el siguiente circuito en laboratorio:
 Con la fuente desconectada, se midieron los valores de las distintas resistencias individualmente,
 y luego la resistencia equivalente del circuito. Obteniendo los siguientes valores:
 
-$$R_1 = 48,\!5\Omega \hspace{5mm} R_2 = 34,\!1\Omega \hspace{5mm} R_3 = 69\Omega \hspace{5mm}
-R_{eq} = 151,\!6\Omega$$
+$$R_1 = 48,\!5\Omega \hspace{5mm} R_2 = 34,\!1\Omega \hspace{5mm} R_3 = 69\Omega$$
 
-Observamos que se cumple la ecuación:
-$$R_{eq}=R_1+R_2+R_3$$
+\noindent
+\begin{figure}[h]
+  \centering
+  \begin{minipage}[h]{0.3\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{./pictures/SERIE_R1.jpg}
+    \textit{Medicion $R_1$.}
+  \end{minipage}\hskip 5mm
+  \begin{minipage}[h]{0.3\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{./pictures/SERIE_R2.jpg}
+    \textit{Medicion $R_2$.}
+  \end{minipage}\hskip 5mm
+  \begin{minipage}[h]{0.3\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{./pictures/SERIE_R3.jpg}
+    \textit{Medicion $R_3$.}
+  \end{minipage}
+\end{figure}
+
+Con la medicion de la resistencia equivalente, observamos que se cumple la ecuación:
+
+\noindent
+\begin{figure}[h]
+  \centering
+  \begin{minipage}[h]{0.4\textwidth}
+    \centering
+    \vspace{-2em}
+    $$R_{eq}=R_1+R_2+R_3$$
+    $$R_{eq} = 151,\!6\Omega$$
+  \end{minipage}\hskip 5mm
+  \begin{minipage}[h]{0.4\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{./pictures/SERIE_R3.jpg}
+    \textit{Medicion $R_{eq}$.}
+  \end{minipage}
+\end{figure}
 
 Luego, se conectó la fuente al circuito, y se midio la tension entre sus bornes, obteniendo el
 valor de:
-$$\LEpsilon = 15,\!43V$$
+\noindent
+\begin{figure}[h]
+  \centering
+  \begin{minipage}[h]{0.4\textwidth}
+    \centering
+    \vspace{-2em}
+    $$\LEpsilon = 15,\!43V$$
+  \end{minipage}\hskip 5mm
+  \begin{minipage}[h]{0.4\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{./pictures/SERIE_fem.jpg}
+    \textit{Medicion $\LEpsilon$.}
+  \end{minipage}
+\end{figure}
 
 \section{Cálculos}
 
@@ -131,28 +179,29 @@ con el objetivo de calcular la corriente y las caidas de tensión en cada resist
 \end{minipage}
 
 Observamos que, como era esperado: $\LEpsilon =  V_{R_1} + V_{R_2} + V_{R_3}$. Esto 
-indica que el valor de Corriente $(I)$ calculado es correcto.
+indica que el valor de Corriente $(I)$ calculado es correcto. A pesar de eso, los valores de caida de tension que medimos difieren de los calculados debido a que los cables y las conecciones de los resistores agregan resistencia al circuito, disminuyendo la caida de tension por resistencia.
 
-%$$I_{R_1}=\frac{V_{R_1}}{R_1}$$
-%$$I_{R_2}=\frac{V_{R_2}}{R_2}$$
-%$$I_{R_3}=\frac{V_{R_3}}{R_3}$$
-%
-%$$I_{R_1}=I_{R_2}=I_{R_3}=I$$
-%
-%\section{Teorico}
-%$$\epsilon_1 = 16 V$$
-%$$R_1=50\Omega$$
-%$$R_2=35\Omega$$
-%$$R_3=70\Omega$$
-%
-%$$R_{eq}=155\Omega$$
-%$$I = \frac{\epsilon_1}{R_{eq}}$$
-%$$I = \frac{16V}{155\Omega}$$
-%$$I = 103,23 mA$$
-%
-%$$V_{R_1} = R_1 I =50\Omega \cdot 103,\!23 mA= 5,\!16 V$$
-%$$V_{R_2} = R_2 I =35\Omega \cdot 103,\!23 mA= 3,\!61 V$$
-%$$V_{R_3} = R_3 I =70\Omega \cdot 103,\!23 mA= 7,\!23 V$$
+\noindent
+\begin{figure}[h]
+  \centering
+  \begin{minipage}[h]{0.3\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{./pictures/SERIE_VR1.jpg}
+    \textit{Medicion $V_{R_1}$.}
+  \end{minipage}\hskip 5mm
+  \begin{minipage}[h]{0.3\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{./pictures/SERIE_VR2.jpg}
+    \textit{Medicion $V_{R_2}$.}
+  \end{minipage}\hskip 5mm
+  \begin{minipage}[h]{0.3\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{./pictures/SERIE_VR3.jpg}
+    \textit{Medicion $V_{R_3}$.}
+  \end{minipage}
+\end{figure}
+
+Nota: Los valores presentados pueden no coincidir con los de las fotos porque fueron tomadas despues de la experiencia.
 
 \chapter{Ejercicio 2}
 Para la segunda experiencia, se armó el circuito a continuación.
@@ -192,10 +241,22 @@ $$R_1 = 48,\!5\Omega \hspace{5mm} R_2 = 34,\!1\Omega \hspace{5mm} R_3 = 69\Omega
 
 Entonces:
 
-$$R_{eq}  = \left( \frac{1}{R_1}+\frac{1}{R_2}+\frac{1}{R_3} \right) ^{-1} = 15,\!51 \Omega$$\\
+\noindent
+\begin{figure}[h]
+  \centering
+  \begin{minipage}[h]{0.4\textwidth}
+    \centering
+    \vspace{-2em}
+    $$R_{eq}  = \left( \frac{1}{R_1}+\frac{1}{R_2}+\frac{1}{R_3} \right) ^{-1} = 15,\!51 \Omega$$\\
+    La resistencia equivalente medida en el circuito fue de $R_{eq\hspace{1mm}real} = 17 \Omega$
+  \end{minipage}\hskip 1cm
+  \begin{minipage}[h]{0.4\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{./pictures/PARALELO_Req.jpg}
+    \textit{Medicion $R_{eq}$.}
+  \end{minipage}
+\end{figure}
 
-Mientras que la resistencia equivalente medida en el circuito fue de $R_{eq\hspace{1mm}real}
-= 17 \Omega$
 
 \subsection{Corrientes}
 Conectamos la fuente de alimentación y medimos la tensión que esta entregaba. Obtuvimos un valor de 
@@ -253,6 +314,23 @@ Por último, medimos la corriente entregada por la fuente $\LEpsilon$, observamo
 valor mensurado es similar al valor calculado de forma teorica.
 
 $$ I_{\LEpsilon \hspace{0,5mm} real} = 820mA \approx 889,\!86 mA $$
+
+\noindent
+\begin{figure}[h]
+  \centering
+  \begin{minipage}[h]{0.4\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{./pictures/PARALELO_corr.jpg}
+    \textit{Medicion $I$.}
+  \end{minipage}\hskip 1cm
+  \begin{minipage}[h]{0.4\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{./pictures/PARALELO_fem.jpg}
+    \textit{Medicion $\LEpsilon$.}
+  \end{minipage}
+\end{figure}
+
+Nota: Los valores presentados pueden no coincidir con los de las fotos porque fueron tomadas despues de la experiencia.
 
 \chapter{Ejercicio 3}
 \vspace{-0.5cm}
