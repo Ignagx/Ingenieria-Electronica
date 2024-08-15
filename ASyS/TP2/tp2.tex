@@ -268,17 +268,49 @@ $T$ y amplitud unitaria.
 \end{enumerate}
 
 \chapter{}%ejercicio 4
-    \noindent
-    \textbf{Circuito Eléctrico RC:} circuito eléctrico correspondiente a un sistema de 1° orden y su ecuación característica: 
-    $$v(t) = R\cdot i(t) + \frac{1}{C} \cdot \int_{0}^{t} i(\tau) d\tau$$
-    \begin{figure}[h]
-        \centering
-        \begin{minipage}[h]{0.5\textwidth}
-            \centering
-            \includegraphics[width=1\textwidth]{./images/Ej4.1.jpg}
-            \textit{Circuito RC}
-        \end{minipage}
-    \end{figure}
+  
+  \textbf{Circuito Eléctrico RC:} circuito eléctrico correspondiente a un sistema de 1° orden y su ecuación característica: 
+  $$v(t) = R\cdot i(t) + \frac{1}{C} \cdot \int_{0}^{t} i(\tau) d\tau$$
 
-    
+  \noindent
+  \begin{figure}[h]
+    \centering
+    \begin{minipage}[h]{0.5\textwidth}
+      \centering
+      \includegraphics[width=1\textwidth]{./images/Ej4.1.jpg}
+      \textit{Circuito RC}
+    \end{minipage}
+  \end{figure}
+
+  \begin{enumerate}[label=\alph*)]
+    \item Obtener una representación del circuito con Ecuaciones Diferenciales de primer orden
+      y coeficientes constantes, y con ello, definir un Sistema en tiempo continuo con entrada
+      $x(t) = v(t)$ y salida $y(t) = i(t)$. Luego, hacer un diagrama de bloques de la E.D; exponiendo
+      los integradores que la conforma.
+
+    \item Teniendo en cuenta el siguiente resultado matemático, obtener una descripción explicita
+      de la respuesta $y(t)$ del sistema obtenido en el inciso anterior:
+      \begin{itemize}
+        \item Sean $\alpha, \beta_0, \beta_1 \in R$ constantes; $y(t), x(t)$ funciones con variable de tiempo continuo,
+          las cuales verifican la ecuación diferencial de primer orden con coeficientes constantes:
+
+          $$y_t'+\alpha y_t = \beta_1 x_t' + \beta_0 x_t$$
+
+          Entonces, una Solución General explicita de la Ecuación Diferencial es
+
+          $$y_t = \beta_1 x_t + (y_0 - \beta_1 x_0) e^{-\alpha t} + (\beta_0 - \alpha \beta_1) \int_{0}^{t} x(\tau) e^{-\alpha(t - \tau)} d\tau$$
+
+          donde $y_0 = y(0), x_0 = x(0)$ son Condiciones Iniciales arbitrarias
+        \end{itemize}
+
+    \item Usando la descripción explicita de la salida del Sistema $y_t = S_1{x_t}$ (CI arbitrarias) del
+      inciso anterior, calcular la respuesta a cada una de las siguientes señales:
+
+      $$x_0(t) = 0, \hspace{0.5cm}x_1(t) = \mu_t, \hspace{0.5cm}x_2(t) = \mu(t - t_0), \hspace{0.5cm}x_3(t) = \mu_t - \mu(t - t_0), \hspace{0.5cm}x_4(t) = t$$
+
+      \textbf{Reflexionar:} ¿La señal $y_0$ es completamente nula? ¿Las señales $y_3, y' = y_1 - y_2$ (iguales
+      o distintas)? ¿es suficiente para garantizar la Linealidad del sistema? ¿Las señales $y_1, y_2$
+      son iguales? ¿es suficiente para garantizar la Inv. Tiempo del sistema?
+  \end{enumerate}
+
 \end{document}
