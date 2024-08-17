@@ -30,7 +30,7 @@
 
 \setlength{\headheight}{15pt}
 
-\DeclareMathSizes{15}{13}{8}{8}
+\DeclareMathSizes{17}{15}{10}{10}
 
 \setlength{\parskip}{6pt}
 
@@ -222,18 +222,37 @@ Considerar las siguientes señales proporcionadas por un rectificador de onda co
 
 \chapter{}%ejercicio 3
 
-Considerar $G_T(t) = \mu_{(t + \frac{T}{2})} - \mu_{(t - \frac{T}{2})}$ una señal pulso rectangular con duración finita 
+Considerar $G_T(t) = \mu_{(t + \frac{T}{2})} - \mu_{(t - \frac{T}{2})}$ una señal pulso rectangular con duración finita
 $T$ y amplitud unitaria.
 
 \begin{enumerate}[label=\alph*)]
   \item Realizar el gráfico de las señales $x_1 = G_1(t)$ y $x_2 = G_{0.1}(t)$, luego, calcular la energía $E_1$ de 
     $x_1$, y similarmente $E_2$ de $x_2$.
 
-  \item Obtener la transformada de Fourier $F_1(\omega) = \mathcal{F}\{x_1\}$ y similarmente $F_2(\omega) = 
+    Para calcular la energia de cada respectiva señal aplicamos la definición:
+    $$E_x = \int_{-\infty}^{\infty}x_t^2dt$$
+    En este caso, por ser una señal de amplitud 1, simplemente es el area encerrada bajo cada una de las curvas
+    $$E_1 = \int_{-\infty}^{\infty}x_1^2dt=1$$
+    $$E_2 = \int_{-\infty}^{\infty}x_2^2dt=0.1$$
+  \item Obtener la transformada de Fourier $F_1(\omega) = \mathcal{F}\{x_1\}$ y similarmente $F_2(\omega) =
     \mathcal{F}\{x_2\}$. Reflexionar: ¿En qué variable están definidas las funciones $F_1, F_2$? 
     ¿Qué representa la variable $\omega$ y qué diferencia tiene con la variable $t$? 
     ¿Las funciones $F_1, F_2$ resultan periódicas?
-  
+
+    La transformada de furier para una un pulso genérico $G_T$ es:
+
+    $$\mathcal{F}\{G_T\} = \int_{-\infty}^{\infty}G_T e^{-jwt}dt$$
+
+    Pero, como $G_T$ es 1 en el intervalo $(-\frac{T}{2},\frac{T}{2})$ y 0 en el resto.
+
+    $$
+    \begin{aligned}
+      \mathcal{F}\{G_T\} &= \int_{-\frac{T}{2}}^{\frac{T}{2}}e^{-jwt}dt \\
+      \mathcal{F}\{G_T\} &= -\frac{1}{jw}e^{-jwt}\rvert_{-\frac{T}{2}}^{\frac{T}{2}} \\
+      \mathcal{F}\{G_T\} &= -\frac{1}{jw}e^{\frac{-jwT}{2}}-e^{\frac{jwT}{2}}
+    \end{aligned}
+    $$
+
   \begin {itemize}
     \item Graficar el espectro de frecuencia en fase para $F_1, F_2$, esto es, graficar los pares ordenados
     $$\{(\omega, \text{Arg}(F)) \mid \omega \in \mathbb{R}\}$$
