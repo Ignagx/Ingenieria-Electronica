@@ -122,8 +122,26 @@ Teniendo como punto de referencia el "suelo", responder las siguientes consignas
     $$y_2(t) = (\frac{Y_0}{2} + V_0t - \frac{1}{2}gt^2)u(t)u(\tau - t)$$
 
   \item Teniendo en cuenta las señales redefinidas del inciso anterior $y_1, y_2$ (pasado y futuro de la señal son
-    nulos) verificar si estas cumplen (o no) cada una de las siguientes propiedades: Periódica, Energía finita, 
+    nulos) verificar si estas cumplen (o no) cada una de las siguientes propiedades: Periódica, Energía finita,
     Potencia finita, causal, acotada.
+
+\begin{enumerate}[label=\alph*)]
+    \item Periodicidad
+
+    Las señales $y_1(t)$ y $y_2(t)$ no son periódicas, ya que representan la posición de los cuerpos en caída libre y no se repiten en intervalos regulares de tiempo. Cada cuerpo cae una vez y llega al suelo, después de lo cual la señal es nula.
+    \item Energia
+
+    Las señales $y_1(t)$ e $y_2(t)$ tienen una duración finita en el tiempo (desde t = 0 hasta t = T para $y_1(t)$ y hasta t = $\tau$ para $y_2(t)$), y son nulas fuera de estos intervalos, por lo tanto su energía es finita.
+    \item Potencia
+
+    Dado que las señales $y_1(t)$ e $y_2(t)$ tienen energía finita, se puede afirmar que tienen una potencia media igual a cero.
+    \item Causaludad
+
+    Ambas señales son causales por el hecho de estar multiplicadas por los escalones unitarios (u(t)u(T - t) para $y_1(t)$ y  u(t)u($\tau$ - t) para $y_2(t)$) que anulan el pasado y futuro de las mismas.
+    \item Modulo
+
+    Las señales $y_1(t)$ e $y_2(t)$ son acotadas en sus respectivos intervalos de tiempo. Para $y_1(t)$ la máxima magnitud ocurre en t = 0 y es $Y_0$. Para $y_2(t)$ la máxima magnitud también ocurre en t = 0  y es $\frac{1}{2}Y_0$.
+\end{enumerate}
 
 \end{enumerate}
 
