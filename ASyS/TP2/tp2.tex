@@ -117,6 +117,10 @@ Teniendo como punto de referencia el "suelo", responder las siguientes consignas
     y_2$ en tiempos negativos $t < 0$? En caso afirmativo, ¿qué representa? Y en caso negativo, emplear alguna 
     herramienta para redefinir las señales $y_1, y_2$ de tal forma que la información provista por el pasado sea nula.
 
+    No tiene sentido físico evaluar las señales $y_1(t)$ ni $y_2(t)$ en tiempos mayores a T y $\tau$ respectivamente. A su vez tampoco tiene sentido evaluar las señales en tiempos negativos, menores a cero. Podríamos definir las señales como:
+    $$y_1(t) = (Y_0 + V_0t - \frac{1}{2}gt^2)u(t)u(T - t)$$
+    $$y_2(t) = (\frac{Y_0}{2} + V_0t - \frac{1}{2}gt^2)u(t)u(\tau - t)$$
+
   \item Teniendo en cuenta las señales redefinidas del inciso anterior $y_1, y_2$ (pasado y futuro de la señal son
     nulos) verificar si estas cumplen (o no) cada una de las siguientes propiedades: Periódica, Energía finita, 
     Potencia finita, causal, acotada.
