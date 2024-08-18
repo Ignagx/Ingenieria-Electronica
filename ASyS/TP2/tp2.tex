@@ -232,8 +232,8 @@ $T$ y amplitud unitaria.
     Para calcular la energia de cada respectiva señal aplicamos la definición:
     $$E_x = \int_{-\infty}^{\infty}x_t^2dt$$
     En este caso, por ser una señal de amplitud 1, simplemente es el area encerrada bajo cada una de las curvas
-    $$E_1 = \int_{-\infty}^{\infty}x_1^2dt=1$$
-    $$E_2 = \int_{-\infty}^{\infty}x_2^2dt=0.1$$
+    $$E_1 = \int_{-\infty}^{\infty}x_1^2dt= \int_{-0,5}^{0,5}1dt=1$$
+    $$E_2 = \int_{-\infty}^{\infty}x_2^2dt= \int_{-0,05}^{0,05}1dt=0.1$$
   \item Obtener la transformada de Fourier $F_1(\omega) = \mathcal{F}\{x_1\}$ y similarmente $F_2(\omega) =
     \mathcal{F}\{x_2\}$. Reflexionar: ¿En qué variable están definidas las funciones $F_1, F_2$? 
     ¿Qué representa la variable $\omega$ y qué diferencia tiene con la variable $t$? 
@@ -247,11 +247,19 @@ $T$ y amplitud unitaria.
 
     $$
     \begin{aligned}
-      \mathcal{F}\{G_T\} &= \int_{-\frac{T}{2}}^{\frac{T}{2}}e^{-jwt}dt \\
-      \mathcal{F}\{G_T\} &= -\frac{1}{jw}e^{-jwt}\rvert_{-\frac{T}{2}}^{\frac{T}{2}} \\
-      \mathcal{F}\{G_T\} &= -\frac{1}{jw}e^{\frac{-jwT}{2}}-e^{\frac{jwT}{2}}
+      \mathcal{F}\{G_T\} &= \int_{-\frac{T}{2}}^{\frac{T}{2}}e^{-jwt}dt \\[6pt]
+      \mathcal{F}\{G_T\} &= -\frac{e^{-jwt}}{jw}\Big|^{\frac{T}{2}}_{-\frac{T}{2}} \\[6pt]
+      \mathcal{F}\{G_T\} &= -\frac{e^{\frac{-jwT}{2}}-e^{\frac{jwT}{2}}}{jw}\\[6pt]
+      \text{como:} \hspace{2mm} sin(&x)=\frac{e^{jx}-e^{-jx}}{2j}\\[6pt]
+      \mathcal{F}\{G_T10\} &= \frac{2sin(\frac{wT}{2})}{w}
     \end{aligned}
     $$
+
+    Por ende para la señal $x_1$ la transformada será
+    $$F_1= \frac{2sin(\frac{w}{2})}{w}$$
+
+    Y para $x_2$ la transformada será
+    $$F_1= \frac{2sin(\frac{w}{10})}{w}$$
 
   \begin {itemize}
     \item Graficar el espectro de frecuencia en fase para $F_1, F_2$, esto es, graficar los pares ordenados
