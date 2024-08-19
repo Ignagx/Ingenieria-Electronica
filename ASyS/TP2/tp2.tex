@@ -57,7 +57,7 @@ Matias Gabriel Moran\\
 
 \textbf{Movimiento Rectilíneo Uniformemente Variado (MRUV) - Caída libre}
 
-\begin{itemize}
+\begin{itemize}[left=0pt]
   \item Un primer cuerpo de masa $m_1$ se deja caer (verticalmente) desde una posición inicial $y_0 > 0$.
 
   \item Un segundo cuerpo de igual masa que el primero, se deja caer (verticalmente) desde una posición inicial 
@@ -67,7 +67,7 @@ Matias Gabriel Moran\\
 
 Teniendo como punto de referencia el "suelo", responder las siguientes consignas:
 
-\begin{enumerate}[label=\alph*)]
+\begin{enumerate}[label=\alph*),left=0pt]
   \item Realizar un gráfico que represente la situación de los dos cuerpos en caída libre, sus respectivos vectores 
     de velocidad y posición.
 
@@ -102,7 +102,7 @@ Considerar un sistema conformado por una Masa $m$, atada a la derecha de un reso
 dispuesto en forma horizontal y sujetado en el extremo izquierdo. Teniendo como punto de referencia la posición de
 equilibrio, máxima amplitud $A > 0$ y despreciando los efectos de la fricción, responde las siguientes consignas:
 
-\begin{enumerate}[label=\alph*)]
+\begin{enumerate}[label=\alph*),left=0pt]
   \item Realizar un gráfico que represente el sistema y sus respectivos vectores de fuerza.
 
   \item Determinar la ecuación de cinemática para la posición $x(t)$ en función del tiempo. \textbf{Reflexionar:} ¿la
@@ -126,7 +126,7 @@ Considerar las siguientes señales proporcionadas por un rectificador de onda co
 
 % Incluir aquí el gráfico de la señal sinusoidal rectificada de media onda
 
-\begin{enumerate}[label=\alph*)]
+\begin{enumerate}[label=\alph*),left=0pt]
   \item Calcular el periodo fundamental $T_0$ de las señales $x_1, x_2$. ¿Las señales tienen energía finita? Calcular
     la energía relativa a un intervalo con longitud un periodo fundamental $T_0$.
 
@@ -134,7 +134,7 @@ Considerar las siguientes señales proporcionadas por un rectificador de onda co
 
   $$P_1 = \lim_{r \to \infty} \frac{1}{2r} \int_{-r}^{r} |x(t)|^2 \, dt$$
 
-  \begin{itemize}
+    \begin{itemize}[left=0pt]
     \item Demostrar la siguiente igualdad, válida para señales periódicas en donde la potencia media relativa a un
       intervalo con longitud un periodo fundamental $T_0$ coincide con la potencia media, es decir:
 
@@ -148,7 +148,7 @@ Considerar las siguientes señales proporcionadas por un rectificador de onda co
 
   $$\{\psi_n(t) = \cos(n\omega t) \mid n \geq 0\} \cup \{\varphi_n(t) = \sin(n\omega t) \mid n \geq 1\}$$
 
-  \begin{itemize}
+    \begin{itemize}[left=0pt]
     \item Calcular la energía relativa a un intervalo con longitud un periodo fundamental $T_0$ y el periodo $T_n$
       de cada señal del conjunto, y luego, demostrar que (dos a dos) forman un conjunto de señales ortogonales más no
       ortonormales.
@@ -176,7 +176,7 @@ Considerar las siguientes señales proporcionadas por un rectificador de onda co
 
   $$\phi(-n) = \phi_n^*, \forall n \geq 0$$
 
-  \begin{itemize}
+  \begin{itemize}[left=0pt]
 
     \item Calcular la energía relativa a un intervalo con longitud un periodo fundamental $T_0$ y el periodo $T_n$ de
       cada señal del conjunto, y luego, demostrar que (dos a dos) forman un conjunto de señales ortogonales más no
@@ -225,12 +225,13 @@ Considerar las siguientes señales proporcionadas por un rectificador de onda co
 Considerar $G_T(t) = \mu_{(t + \frac{T}{2})} - \mu_{(t - \frac{T}{2})}$ una señal pulso rectangular con duración finita
 $T$ y amplitud unitaria.
 
-\begin{enumerate}[label=\alph*)]
+\begin{enumerate}[label=\alph*),left=0pt]
+
   \item Realizar el gráfico de las señales $x_1 = G_1(t)$ y $x_2 = G_{0.1}(t)$, luego, calcular la energía $E_1$ de 
     $x_1$, y similarmente $E_2$ de $x_2$.
 
     \begin{figure}[h!]
-      \centering
+      \hspace{6mm}
       \begin{minipage}{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/ej3.1}
@@ -239,19 +240,18 @@ $T$ y amplitud unitaria.
       \end{minipage}
       \hfill
       \begin{minipage}{0.45\textwidth}
-        \centering
         \includegraphics[width=\textwidth]{images/ej3.2}
         \caption{Grafico de la señal $x_2$}
         \label{fig:imagen2}
       \end{minipage}
     \end{figure}
 
-
     Para calcular la energia de cada respectiva señal aplicamos la definición:
     $$E_x = \int_{-\infty}^{\infty}x_t^2dt$$
     En este caso, por ser una señal de amplitud 1, simplemente es el area encerrada bajo cada una de las curvas
     $$E_1 = \int_{-\infty}^{\infty}x_1^2dt= \int_{-0,5}^{0,5}1dt=1$$
     $$E_2 = \int_{-\infty}^{\infty}x_2^2dt= \int_{-0,05}^{0,05}1dt=0.1$$
+
   \item Obtener la transformada de Fourier $F_1(\omega) = \mathcal{F}\{x_1\}$ y similarmente $F_2(\omega) =
     \mathcal{F}\{x_2\}$. Reflexionar: ¿En qué variable están definidas las funciones $F_1, F_2$? 
     ¿Qué representa la variable $\omega$ y qué diferencia tiene con la variable $t$? 
@@ -279,142 +279,150 @@ $T$ y amplitud unitaria.
     Y para $x_2$ la transformada será:
     $$F_1= \frac{2}{w}sin\Big(\frac{w}{20}\Big)$$
 
-  \begin {itemize}
-    \item Graficar el espectro de frecuencia en fase para $F_1, F_2$, esto es, graficar los pares ordenados
-    $$\{(\omega, \text{Arg}(F)) \mid \omega \in \mathbb{R}\}$$
-    Para cada una de las funciones $F_1, F_2$.\newline
+    \begin {itemize}[left=0pt]
 
-    \begin{figure}[h!]
-      \centering
-      \begin{minipage}{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/ej3.3}
-        \caption{Espectro de frecuencia en fase para $x_1$}
-        \label{fig:imagen1}
-      \end{minipage}
-      \hfill
-      \begin{minipage}{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/ej3.4}
-        \caption{Espectro de frecuencia en fase para $x_2$}
-        \label{fig:imagen2}
-      \end{minipage}
-    \end{figure}
+      \item Graficar el espectro de frecuencia en fase para $F_1, F_2$, esto es, graficar los pares ordenados
+        $$\{(\omega, \text{Arg}(F)) \mid \omega \in \mathbb{R}\}$$
+        Para cada una de las funciones $F_1, F_2$.\newline
 
-    \textbf{Reflexionar:} ¿El espectro de frecuencia en fase es discreto o continuo? ¿El gráfico admite una simetría
-    par, impar o ninguna?\\
+        \begin{figure}[h!]
+          \hspace{10mm}
+          \begin{minipage}{0.45\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/ej3.3}
+            \caption{Espectro de frecuencia en fase para $x_1$}
+            \label{fig:imagen1}
+          \end{minipage}
+          \hfill
+          \begin{minipage}{0.45\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/ej3.4}
+            \caption{Espectro de frecuencia en fase para $x_2$}
+            \label{fig:imagen2}
+          \end{minipage}
+        \end{figure}
 
-    En ambos casos, el espectro de la frecuencia en fase es una señal de tiempo continuo y admite simetria par.\\
+        \textbf{Reflexionar:} ¿El espectro de frecuencia en fase es discreto o continuo? ¿El gráfico admite una simetría
+        par, impar o ninguna?\\
 
-    \item Graficar el espectro de frecuencia en módulo para $F_1, F_2$, esto es, graficar los pares ordenados
-    $$\{(\omega, |F|) \mid \omega \in \mathbb{R}\}$$
-    Para cada una de las funciones $F_1, F_2$.\newline
+        En ambos casos, el espectro de la frecuencia en fase es una señal de tiempo continuo y admite simetria par.\\
 
-    \begin{figure}[h!]
-      \centering
-      \begin{minipage}{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/ej3.5}
-        \caption{Espectro de frecuencia en módulo para $x_1$}
-        \label{fig:imagen1}
-      \end{minipage}
-      \hfill
-      \begin{minipage}{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/ej3.6}
-        \caption{Espectro de frecuencia en módulo para $x_2$}
-        \label{fig:imagen2}
-      \end{minipage}
-    \end{figure}
+      \item Graficar el espectro de frecuencia en módulo para $F_1, F_2$, esto es, graficar los pares ordenados
+        $$\{(\omega, |F|) \mid \omega \in \mathbb{R}\}$$
+        Para cada una de las funciones $F_1, F_2$.\newline
 
-    \textbf{Reflexionar:} ¿El espectro de frecuencia en módulo es discreto o continuo? ¿El gráfico admite una 
-    simetría par, impar o ninguna?\\
+        \begin{figure}[h!]
+          \hspace{10mm}
+          \begin{minipage}{0.45\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/ej3.5}
+            \caption{Espectro de frecuencia en módulo para $x_1$}
+            \label{fig:imagen1}
+          \end{minipage}
+          \hfill
+          \begin{minipage}{0.45\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/ej3.6}
+            \caption{Espectro de frecuencia en módulo para $x_2$}
+            \label{fig:imagen2}
+          \end{minipage}
+        \end{figure}
 
-    Para ambas señales el espectro de frecuencia en modulo es una señal de tiempo continuo, y admiten simtria par.\\
+        \textbf{Reflexionar:} ¿El espectro de frecuencia en módulo es discreto o continuo? ¿El gráfico admite una 
+        simetría par, impar o ninguna?\\
 
-    \item Graficar la densidad espectral para $F_1, F_2$, esto es, graficar los pares ordenados
-    $$\{(\omega, |F|^2) \mid \omega \in \mathbb{R}\}$$
-    Para cada una de las funciones $F_1$, $F_2$.\\
+        Para ambas señales el espectro de frecuencia en modulo es una señal de tiempo continuo, y admiten simtria par.\\
 
-    \begin{figure}[h!]
-      \centering
-      \begin{minipage}{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/ej3.7}
-        \caption{Densidad espectral para $x_1$}
-        \label{fig:imagen1}
-      \end{minipage}
-      \hfill
-      \begin{minipage}{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/ej3.8}
-        \caption{Densidad espectral para $x_2$}
-        \label{fig:imagen2}
-      \end{minipage}
-    \end{figure}
+      \item Graficar la densidad espectral para $F_1, F_2$, esto es, graficar los pares ordenados
+        $$\{(\omega, |F|^2) \mid \omega \in \mathbb{R}\}$$
+        Para cada una de las funciones $F_1$, $F_2$.\\
 
-    \textbf{Reflexionar:} ¿La densidad espectral es discreta o continua? ¿El gráfico admite una simetría par, impar o
-    ninguna?\\
+        \begin{figure}[h!]
+          \hspace{10mm}
+          \begin{minipage}{0.45\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/ej3.7}
+            \caption{Densidad espectral para $x_1$}
+            \label{fig:imagen1}
+          \end{minipage}
+          \hfill
+          \begin{minipage}{0.45\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/ej3.8}
+            \caption{Densidad espectral para $x_2$}
+            \label{fig:imagen2}
+          \end{minipage}
+        \end{figure}
 
-    La densidad espectral tambien es una señal de tiempo continuo, y acepta simetria par.\\
+        \textbf{Reflexionar:} ¿La densidad espectral es discreta o continua? ¿El gráfico admite una simetría par, impar o
+        ninguna?\\
 
-    \item Calcular la energía $E_1, E_2$ haciendo uso de la relación de Parseval.
+        La densidad espectral tambien es una señal de tiempo continuo, y acepta simetria par.\\
 
-    La relacion de Parseval indica que:
+      \item Calcular la energía $E_1, E_2$ haciendo uso de la relación de Parseval.
 
-    $$E_x=\frac{1}{2\pi}\int_{-\infty}^{\infty}|\mathcal{F}\{x\}|^2$$
+        La relacion de Parseval indica que:
 
-    $$
-    \begin{aligned}
-    \int \Bigg[\phantom{/}\frac{2}{\omega} \sin\left(\frac{\omega T}{2}\right)\Bigg]^2 d\omega
-    &=\int \frac{4}{\omega^2} \sin^2\left(\frac{\omega T}{2}\right) d\omega \\
-    &= \sin^2\left(\frac{\omega T}{2}\right) \Big(-\frac{4}{\omega}\Big) - \int \Big(-\frac{4}{\omega}\Big)
-      \frac{T}{2} \sin(\omega T)d\omega \\
-    &= \sin^2\Big(\frac{\omega T}{2}\Big)\Big(-\frac{4}{\omega}\Big) +
-      2 T^2 \int \frac{\sin(\omega T)}{\omega T}d\omega \\
-    \end{aligned}
-    $$
-    Apoyandonos en la siguiente sustitución:
-    $$
-    \begin{aligned}
-    \omega T &= x \\
-    Td\omega &= dx \\
-    d\omega &= \frac{dx}{T}
-    \end{aligned}
-    $$
+        $$E_x=\frac{1}{2\pi}\int_{-\infty}^{\infty}|\mathcal{F}\{x\}|^2$$
 
-    $$
-    \begin{aligned}
-    &= -\sin^2\Big(\frac{\omega T}{2}\Big)\frac{4}{\omega} + 2T \int \frac{\sin(x)}{x} dx\\
-    &=\Big[-\frac{4}{\omega} \Big(\frac{1- \cos(wt)}{2}\Big) + 2T Si(x)\Big]\Big|_{-\infty}^{\infty}\\
-    &=\Big[\frac{2}{\omega} (\cos(wt) - 1) + 2T Si(x)\Big]\Big|_{-\infty}^{\infty}\\
-    \end{aligned}
-    $$
-    Desarrollando el primer termino:\\
-    $$
-    \begin{aligned}
-    &= 2\frac{\cos(\omega T)-1}{\omega} \Big|_{-\infty}^{\infty} \\
-    &= 2\frac{\cos(\omega T)-1}{\omega} \Big|_{-\infty}^{0} + 2\frac{\cos(\omega T)-1}{\omega} \Big|_{0}^{\infty}\\
-    &=2 \lim_{\omega \to 0} \frac{\cos(\omega T)-1}{\omega} - 2\lim_{\omega \to -\infty} 
-    \frac{\cos(\omega T)-1}{\omega} + 2\lim_{\omega \to \infty}
-    \frac{\cos(\omega T)-1}{\omega} - 2 \lim_{\omega \to 0} \frac{\cos(\omega T)-1}{\omega} \\
-    &= 2T \lim_{x \to 0} \frac{\cos(x)-1}{x} - 2T \lim_{x \to 0} \frac{\cos(x)-1}{x} = 0
-    \end{aligned}
-    $$
-    Desarrollando el segundo termino:\\
-    $$
-    \begin{aligned}
-    &= 2T\text{Si}(\omega T)\Big|_{-\infty}^{\infty} \\
-    &= 2T\text{Si}(\omega T)\Big|_{-\infty}^{0} + 2T\text{Si}(\omega T)
-    \Big|_{0}^{\infty} \\
-    &= 2T(\text{Si}(0)-\lim_{\omega \to -\infty} \text{Si}(\omega T)) +
-    2T(\lim_{\omega \to \infty} \text{Si}(\omega T) - \text{Si}(0))\\
-    &=  2T\frac{\pi}{2} + 2T \frac{\pi}{2} = 2\pi T
-    \end{aligned}
-    $$
-    Reflexionar: ¿Qué ventajas/desventajas encuentra entre el método directo para calcular la energía $E_1, E_2$ de
-    las señales $x_1, x_2$ en la variable de tiempo $t$ y el método que se deriva de la relación de Parseval, en
-    donde los cálculos se realizan en la variable $\omega$?
+        $$
+        \begin{aligned}
+          \int \Bigg[\phantom{/}\frac{2}{\omega} \sin\left(\frac{\omega T}{2}\right)\Bigg]^2 d\omega
+          &=\int \frac{4}{\omega^2} \sin^2\left(\frac{\omega T}{2}\right) d\omega \\
+          &= \sin^2\left(\frac{\omega T}{2}\right) \Big(-\frac{4}{\omega}\Big) - \int \Big(-\frac{4}{\omega}\Big)
+            \frac{T}{2} \sin(\omega T)d\omega \\
+          &= \sin^2\Big(\frac{\omega T}{2}\Big)\Big(-\frac{4}{\omega}\Big) +
+            2 T^2 \int \frac{\sin(\omega T)}{\omega T}d\omega \\
+        \end{aligned}
+        $$
+
+        Apoyandonos en la siguiente sustitución:
+
+        $$
+        \begin{aligned}
+          \omega T &= x \\
+          Td\omega &= dx \\
+          d\omega &= \frac{dx}{T}
+        \end{aligned}
+        $$
+
+        $$
+        \begin{aligned}
+          &= -\sin^2\Big(\frac{\omega T}{2}\Big)\frac{4}{\omega} + 2T \int \frac{\sin(x)}{x} dx\\
+          &=\Big[-\frac{4}{\omega} \Big(\frac{1- \cos(wt)}{2}\Big) + 2T Si(x)\Big]\Big|_{-\infty}^{\infty}\\
+          &=\Big[\frac{2}{\omega} (\cos(wt) - 1) + 2T Si(x)\Big]\Big|_{-\infty}^{\infty}\\
+        \end{aligned}
+        $$
+
+        Desarrollando el primer termino:\\
+
+        $$
+        \begin{aligned}
+          &= 2\frac{\cos(\omega T)-1}{\omega} \Big|_{-\infty}^{\infty} \\
+          &= 2\frac{\cos(\omega T)-1}{\omega} \Big|_{-\infty}^{0} + 2\frac{\cos(\omega T)-1}{\omega} \Big|_{0}^{\infty}\\
+          &=2 \lim_{\omega \to 0} \frac{\cos(\omega T)-1}{\omega} - 2\lim_{\omega \to -\infty} 
+          \frac{\cos(\omega T)-1}{\omega} + 2\lim_{\omega \to \infty}
+          \frac{\cos(\omega T)-1}{\omega} - 2 \lim_{\omega \to 0} \frac{\cos(\omega T)-1}{\omega} \\
+          &= 2T \lim_{x \to 0} \frac{\cos(x)-1}{x} - 2T \lim_{x \to 0} \frac{\cos(x)-1}{x} = 0
+          \end{aligned}
+        $$
+
+        Desarrollando el segundo termino:\\
+
+        $$
+        \begin{aligned}
+          &= 2T\text{Si}(\omega T)\Big|_{-\infty}^{\infty} \\
+          &= 2T\text{Si}(\omega T)\Big|_{-\infty}^{0} + 2T\text{Si}(\omega T)
+          \Big|_{0}^{\infty} \\
+          &= 2T(\text{Si}(0)-\lim_{\omega \to -\infty} \text{Si}(\omega T)) +
+          2T(\lim_{\omega \to \infty} \text{Si}(\omega T) - \text{Si}(0))\\
+          &=  2T\frac{\pi}{2} + 2T \frac{\pi}{2} = 2\pi T
+          \end{aligned}
+        $$
+
+        Reflexionar: ¿Qué ventajas/desventajas encuentra entre el método directo para calcular la energía $E_1, E_2$ de
+        las señales $x_1, x_2$ en la variable de tiempo $t$ y el método que se deriva de la relación de Parseval, en
+        donde los cálculos se realizan en la variable $\omega$?
 
   \end{itemize}
 
