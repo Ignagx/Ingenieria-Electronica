@@ -11,6 +11,7 @@
 \usepackage{cancel}
 \usepackage{enumitem}
 \usepackage{lmodern}
+\usepackage{tikz}
 
 \pagestyle{fancy}
 \fancyhf{} 
@@ -23,6 +24,8 @@
 \patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
 
 \renewcommand{\chaptername}{Ejercicio}
+
+\usetikzlibrary{shapes,arrows,positioning,calc}
 
 \titleformat{\chapter}[display]
   {\normalfont\bfseries}{\chaptertitlename\ \thechapter}{15pt}{}
@@ -52,6 +55,14 @@ Leonardo Ramos\\
 \date{19 / 08 / 2024}
 
 \begin{document}
+\tikzset{
+block/.style = {draw, fill=white, rectangle, minimum height=3em, minimum width=3em},
+tmp/.style  = {coordinate},
+sum/.style= {draw, fill=white, circle, node distance=1cm},
+input/.style = {coordinate},
+output/.style= {coordinate},
+pinstyle/.style = {pin edge={to-,thin,black}}
+}
 \maketitle
 
 \chapter{}%ejercicio 1
@@ -272,7 +283,8 @@ $T$ y amplitud unitaria.
   \textbf{Circuito Eléctrico RC:} circuito eléctrico correspondiente a un sistema de 1° orden y su ecuación
   característica:
   $$v(t) = R\cdot i(t) + \frac{1}{C} \cdot \int_{0}^{t} i(\tau) d\tau$$
-
+  
+  \vspace{-1cm}
   \noindent
   \begin{figure}[h]
     \centering
@@ -287,6 +299,24 @@ $T$ y amplitud unitaria.
     \item Obtener una representación del circuito con Ecuaciones Diferenciales de primer orden y coeficientes
       constantes, y con ello, definir un Sistema en tiempo continuo con entrada $x(t) = v(t)$ y salida $y(t) = i(t)$.
       Luego, hacer un diagrama de bloques de la E.D; exponiendo los integradores que la conforma.
+
+      El circuito RC esta descrito por la ecuacion caracteristica:
+
+      $$v(t) = R\cdot i(t) + \frac{1}{C} \cdot \int_{0}^{t} i(\tau) d\tau$$\\[2pt]
+
+      Para tener una nomenclatura mas generica, sustituimos la entrada $v(t)$ con $x(t)$ y la salida $i(t)$ con $y(t)$:
+
+      $$x(t) = R\cdot y(t) + \frac{1}{C} \cdot \int_{0}^{t} y(\tau) d\tau$$
+
+      Teniendo en cuenta que $y(t)$ es la salida e $x(t)$ la entrada, las ecuaciones diferenciales toman la forma:
+
+      $$\left(D^N + \sum_{i=0}^{N-1} a_i D^i\right) \cdot y(t) = \left(\sum_{i=0}^{M} b_i D^i\right) \cdot x(t)$$
+
+      Reacomodando la ecuacion caracteristica generalizada, nos queda:
+
+      $$y(t) + D^{-1} \left\{\frac{1}{RC} \cdot y(t) \right\} = x(t) \cdot \frac{1}{R}$$
+      $$D^1\Bigl\{y(t) \Bigl\} + \frac{1}{RC} \cdot y(t) = D^1\left\{x(t) \cdot \frac{1}{R} \right\}$$
+      $$\frac{dy(t)}{dt} + \frac{1}{RC} \cdot y(t) = \frac{dx(t)}{dt} \cdot \frac{1}{R}$$
 
     \item Teniendo en cuenta el siguiente resultado matemático, obtener una descripción explicita
       de la respuesta $y(t)$ del sistema obtenido en el inciso anterior:
