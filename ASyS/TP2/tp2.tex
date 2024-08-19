@@ -229,6 +229,24 @@ $T$ y amplitud unitaria.
   \item Realizar el gráfico de las señales $x_1 = G_1(t)$ y $x_2 = G_{0.1}(t)$, luego, calcular la energía $E_1$ de 
     $x_1$, y similarmente $E_2$ de $x_2$.
 
+    \begin{figure}[h!]
+      \centering
+      \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/ej3.1}
+        \caption{Grafico de la señal $x_1$}
+        \label{fig:imagen1}
+      \end{minipage}
+      \hfill
+      \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/ej3.2}
+        \caption{Grafico de la señal $x_2$}
+        \label{fig:imagen2}
+      \end{minipage}
+    \end{figure}
+
+
     Para calcular la energia de cada respectiva señal aplicamos la definición:
     $$E_x = \int_{-\infty}^{\infty}x_t^2dt$$
     En este caso, por ser una señal de amplitud 1, simplemente es el area encerrada bajo cada una de las curvas
@@ -251,37 +269,101 @@ $T$ y amplitud unitaria.
       \mathcal{F}\{G_T\} &= -\frac{e^{-jwt}}{jw}\Big|^{\frac{T}{2}}_{-\frac{T}{2}} \\[6pt]
       \mathcal{F}\{G_T\} &= -\frac{e^{\frac{-jwT}{2}}-e^{\frac{jwT}{2}}}{jw}\\[6pt]
       \text{como:} \hspace{2mm} sin(&x)=\frac{e^{jx}-e^{-jx}}{2j}\\[6pt]
-      \mathcal{F}\{G_T10\} &= \frac{2sin(\frac{wT}{2})}{w}
+      \mathcal{F}\{G_T\} &= \frac{2}{w}sin\Big(\frac{wT}{2}\Big)
     \end{aligned}
     $$
 
-    Por ende para la señal $x_1$ la transformada será
-    $$F_1= \frac{2sin(\frac{w}{2})}{w}$$
+    Por ende para la señal $x_1$ la transformada será:
+    $$F_1= \frac{2}{w}sin\Big(\frac{w}{2}\Big)$$
 
-    Y para $x_2$ la transformada será
-    $$F_1= \frac{2sin(\frac{w}{10})}{w}$$
+    Y para $x_2$ la transformada será:
+    $$F_1= \frac{2}{w}sin\Big(\frac{w}{20}\Big)$$
 
   \begin {itemize}
     \item Graficar el espectro de frecuencia en fase para $F_1, F_2$, esto es, graficar los pares ordenados
     $$\{(\omega, \text{Arg}(F)) \mid \omega \in \mathbb{R}\}$$
-
     Para cada una de las funciones $F_1, F_2$.\newline
+
+    \begin{figure}[h!]
+      \centering
+      \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/ej3.3}
+        \caption{Espectro de frecuencia en fase para $x_1$}
+        \label{fig:imagen1}
+      \end{minipage}
+      \hfill
+      \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/ej3.4}
+        \caption{Espectro de frecuencia en fase para $x_2$}
+        \label{fig:imagen2}
+      \end{minipage}
+    \end{figure}
+
     \textbf{Reflexionar:} ¿El espectro de frecuencia en fase es discreto o continuo? ¿El gráfico admite una simetría
-    par, impar o ninguna?
+    par, impar o ninguna?\\
+
+    En ambos casos, el espectro de la frecuencia en fase es una señal de tiempo continuo y admite simetria par.\\
+
     \item Graficar el espectro de frecuencia en módulo para $F_1, F_2$, esto es, graficar los pares ordenados
     $$\{(\omega, |F|) \mid \omega \in \mathbb{R}\}$$
-
     Para cada una de las funciones $F_1, F_2$.\newline
+
+    \begin{figure}[h!]
+      \centering
+      \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/ej3.5}
+        \caption{Espectro de frecuencia en módulo para $x_1$}
+        \label{fig:imagen1}
+      \end{minipage}
+      \hfill
+      \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/ej3.6}
+        \caption{Espectro de frecuencia en módulo para $x_2$}
+        \label{fig:imagen2}
+      \end{minipage}
+    \end{figure}
+
     \textbf{Reflexionar:} ¿El espectro de frecuencia en módulo es discreto o continuo? ¿El gráfico admite una 
-    simetría par, impar o ninguna?
+    simetría par, impar o ninguna?\\
+
+    Para ambas señales el espectro de frecuencia en modulo es una señal de tiempo continuo, y admiten simtria par.\\
+
     \item Graficar la densidad espectral para $F_1, F_2$, esto es, graficar los pares ordenados
     $$\{(\omega, |F|^2) \mid \omega \in \mathbb{R}\}$$
+    Para cada una de las funciones $F_1$, $F_2$.\\
 
-    Para cada una de las funciones $F_1$, $F_2$.\newline
+    \begin{figure}[h!]
+      \centering
+      \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/ej3.7}
+        \caption{Densidad espectral para $x_1$}
+        \label{fig:imagen1}
+      \end{minipage}
+      \hfill
+      \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/ej3.8}
+        \caption{Densidad espectral para $x_2$}
+        \label{fig:imagen2}
+      \end{minipage}
+    \end{figure}
+
     \textbf{Reflexionar:} ¿La densidad espectral es discreta o continua? ¿El gráfico admite una simetría par, impar o
-    ninguna?
+    ninguna?\\
+
+    La densidad espectral tambien es una señal de tiempo continuo, y no acepta simetria par.\\
 
     \item Calcular la energía $E_1, E_2$ haciendo uso de la relación de Parseval.
+
+    La relacion de Parseval indica que:
+
+    $$E_x=\frac{1}{2\pi}\int_{-\infty}^{\infty}|\mathcal{F}\{x\}|^2$$
+
     Reflexionar: ¿Qué ventajas/desventajas encuentra entre el método directo para calcular la energía $E_1, E_2$ de
     las señales $x_1, x_2$ en la variable de tiempo $t$ y el método que se deriva de la relación de Parseval, en
     donde los cálculos se realizan en la variable $\omega$?
