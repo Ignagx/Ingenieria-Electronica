@@ -365,57 +365,38 @@ $T$ y amplitud unitaria.
 
         $$E_x=\frac{1}{2\pi}\int_{-\infty}^{\infty}|\mathcal{F}\{x\}|^2$$
 
+        Primero resolveremos la integral:
+
         $$
         \begin{aligned}
-          \int \Bigg[\phantom{/}\frac{2}{\omega} \sin\left(\frac{\omega T}{2}\right)\Bigg]^2 d\omega
-          &=\int \frac{4}{\omega^2} \sin^2\left(\frac{\omega T}{2}\right) d\omega \\
-          &= \sin^2\left(\frac{\omega T}{2}\right) \Big(-\frac{4}{\omega}\Big) - \int \Big(-\frac{4}{\omega}\Big)
-            \frac{T}{2} \sin(\omega T)d\omega \\
+          \int_{-\infty}^{\infty} \Bigg[\hspace{1mm}\frac{2}{\omega} \sin\left(\frac{\omega T}{2}\right)\Bigg]^2 d\omega
+          &=\int_{-\infty}^{\infty} \frac{4}{\omega^2} \sin^2\left(\frac{\omega T}{2}\right) d\omega \\[6pt]
+          &= \sin^2\left(\frac{\omega T}{2}\right) \Big(-\frac{4}{\omega}\Big) - \int_{-\infty}^{\infty} \Big(-\frac{4}{\omega}\Big)
+            \frac{T}{2} \sin(\omega T)d\omega \\[6pt]
           &= \sin^2\Big(\frac{\omega T}{2}\Big)\Big(-\frac{4}{\omega}\Big) +
-            2 T^2 \int \frac{\sin(\omega T)}{\omega T}d\omega \\
+            2 T^2 \int \frac{\sin(\omega T)}{\omega T}d\omega \\[6pt]
+          &\text{Apoyandonos en la sustitución $\omega T=x$}\\[6pt]
+          &= -\sin^2\Big(\frac{\omega T}{2}\Big)\frac{4}{\omega} + 2T \int_{-\infty}^{\infty} \frac{\sin(x)}{x} dx\\[6pt]
+          &=\Big[-\frac{4}{\omega} \Big(\frac{1- \cos(\omega t)}{2}\Big) + 2T Si(x)\Big]\Big|_{-\infty}^{\infty}\\[6pt]
+          &=\Big[\frac{2}{\omega} (\cos(wt) - 1) + 2T Si(\omega T)\Big]\Big|_{-\infty}^{\infty}\\[6pt]
         \end{aligned}
         $$
 
-        Apoyandonos en la siguiente sustitución:
-
+        Desarrollando el primer termino:
         $$
         \begin{aligned}
-          \omega T &= x \\
-          Td\omega &= dx \\
-          d\omega &= \frac{dx}{T}
+          2\frac{\cos(\omega T)-1}{\omega} \Big|_{-\infty}^{\infty}&=2\frac{\cos(\omega T)-1}{\omega} \Big|_{-\infty}^{0} + 2\frac{\cos(\omega T)-1}{\omega} \Big|_{0}^{\infty}\\[6pt]
+          &= 0
         \end{aligned}
         $$
 
+        Desarrollando el segundo termino:
         $$
         \begin{aligned}
-          &= -\sin^2\Big(\frac{\omega T}{2}\Big)\frac{4}{\omega} + 2T \int \frac{\sin(x)}{x} dx\\
-          &=\Big[-\frac{4}{\omega} \Big(\frac{1- \cos(wt)}{2}\Big) + 2T Si(x)\Big]\Big|_{-\infty}^{\infty}\\
-          &=\Big[\frac{2}{\omega} (\cos(wt) - 1) + 2T Si(x)\Big]\Big|_{-\infty}^{\infty}\\
-        \end{aligned}
-        $$
-
-        Desarrollando el primer termino:\\
-
-        $$
-        \begin{aligned}
-          &= 2\frac{\cos(\omega T)-1}{\omega} \Big|_{-\infty}^{\infty} \\
-          &= 2\frac{\cos(\omega T)-1}{\omega} \Big|_{-\infty}^{0} + 2\frac{\cos(\omega T)-1}{\omega} \Big|_{0}^{\infty}\\
-          &=2 \lim_{\omega \to 0} \frac{\cos(\omega T)-1}{\omega} - 2\lim_{\omega \to -\infty} 
-          \frac{\cos(\omega T)-1}{\omega} + 2\lim_{\omega \to \infty}
-          \frac{\cos(\omega T)-1}{\omega} - 2 \lim_{\omega \to 0} \frac{\cos(\omega T)-1}{\omega} \\
-          &= 2T \lim_{x \to 0} \frac{\cos(x)-1}{x} - 2T \lim_{x \to 0} \frac{\cos(x)-1}{x} = 0
-          \end{aligned}
-        $$
-
-        Desarrollando el segundo termino:\\
-
-        $$
-        \begin{aligned}
-          &= 2T\text{Si}(\omega T)\Big|_{-\infty}^{\infty} \\
-          &= 2T\text{Si}(\omega T)\Big|_{-\infty}^{0} + 2T\text{Si}(\omega T)
-          \Big|_{0}^{\infty} \\
+          2T\text{Si}(\omega T)\Big|_{-\infty}^{\infty} &= 2T\text{Si}(\omega T)\Big|_{-\infty}^{0} + 2T\text{Si}(\omega T)
+          \Big|_{0}^{\infty} \\[6pt]
           &= 2T(\text{Si}(0)-\lim_{\omega \to -\infty} \text{Si}(\omega T)) +
-          2T(\lim_{\omega \to \infty} \text{Si}(\omega T) - \text{Si}(0))\\
+          2T(\lim_{\omega \to \infty} \text{Si}(\omega T) - \text{Si}(0))\\[6pt]
           &=  2T\frac{\pi}{2} + 2T \frac{\pi}{2} = 2\pi T
           \end{aligned}
         $$
