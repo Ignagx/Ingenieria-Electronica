@@ -3,15 +3,21 @@
 Van a necesitar git , texlive (o algun compilador de latex) y algunos paquetes adicionales.
 **en distribuciones debian**:
 ```
-sudo apt install git
-sudo apt install texlive
-sudo apt install texlive-formats-extra
-sudo apt install texlive-extra-utils
+sudo apt install git texlive texlive-formats-extra texlive-extra-utils
 ```
 ## Empezar :D
+Primero van a necesitar una clave ssh para poder autenticarse en el repositorio
+La crean con 
+```
+shh-keygen
+```
+(recomiendo no poner contraseña ni nada, le dan todo enter)
+y despues en la configuracion de github buscan la seccion de claves ssh y gpg y agregan la clave que crearon pegando el
+contenido del archivo .pub que se les va haber generado en ~/.ssh
+
 En la carpeta que quieran tener el repositorio.
 ```
-git clone https://github.com/Ignagx/Ingenieria-Electronica.git
+git clone git@github.com:Ignagx/Ingenieria-Electronica.git
 cd Ingenieria-Electronica/
 git switch TP2-ASyS
 cd ASyS/TP2/
