@@ -3,10 +3,7 @@
 Van a necesitar git , texlive (o algun compilador de latex) y algunos paquetes adicionales.
 **en distribuciones debian**:
 ```
-sudo apt install git
-sudo apt install texlive
-sudo apt install texlive-formats-extra
-sudo apt install texlive-extra-utils
+sudo apt install git texlive texlive-formats-extra texlive-extra-utils
 ```
 ## Empezar :D
 Primero van a necesitar una clave ssh para poder autenticarse en el repositorio
