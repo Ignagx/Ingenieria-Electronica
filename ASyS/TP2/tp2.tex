@@ -84,11 +84,13 @@ Teniendo como punto de referencia el "suelo", responder las siguientes consignas
 
     Partimos primero de la ecuacion que determina la posicion de un cuerpo con aceleracion uniforme:
     $$Y(t) = Y_0 + V_0 t + \frac{1}{2} g t^2$$
-    Para ambos casos asumimos la velocidad inicial $V_0 = 0$, despreciamos la resistencia del aire y tomamos como valor de aceleracion de la gravedad $g = 9.8 \frac{m}{s^2}$:
+    Para ambos casos asumimos la velocidad inicial $V_0 = 0$, despreciamos la resistencia del aire y tomamos como valor
+    de aceleracion de la gravedad $g = 9.8 \frac{m}{s^2}$:
     $$y_1(t) = Y_0 - \frac{1}{2}9,8\frac{m}{s^2}t^2$$
     $$y_2(t) = \frac{Y_0}{2} - \frac{1}{2}9,8\frac{m}{s^2}t^2$$
 
-    Como se puede observar, las masas no aparecen en las ecuaciones de $y_1(t)$ y $y_2(t)$, por lo que se deduce que las masas no intervienen en la descripcion de las funciones.
+    Como se puede observar, las masas no aparecen en las ecuaciones de $y_1(t)$ y $y_2(t)$, por lo que se deduce que las
+    masas no intervienen en la descripcion de las funciones.
 
   \item Calcular el tiempo de vuelo (total) $T$ del primer cuerpo, en función de $y_0$. Similarmente, calcular el
     tiempo de vuelo $\tau$ del segundo cuerpo. ¿Qué relación aritmética encuentra entre los dos tiempos $T$ y $\tau$?
@@ -101,7 +103,12 @@ Teniendo como punto de referencia el "suelo", responder las siguientes consignas
     $$\frac{T}{\tau} = \frac{\sqrt{2}\sqrt{gh}}{\sqrt{gh}}$$
     $$T = \sqrt{2}\tau$$
 
-    No se puede obtener $y_2(t)$ como un escalonado de tiempo de $y_1(t)$. Al escalar el tiempo de $y_1(t)$ por un factor de $\sqrt{2}$ queda $y_1(t) = Y_0 - \frac{1}{2}g(\sqrt{2}t)^2$. T y $\tau$ coinciden, es decir los tiempo finales son iguales, pero no coinciden las funciones de posicion. Es importante notar que, aunque existe esta relacion entre los tiempos de vuelo, no es fisicamente correcto interpretar la posicion $y_2(t)$ del segundo cuerpo como una version escalada temporalmente de $y_1(t)$. Los dos cuerpos tienen trayectorias y tiempos de vuelo diferentes debido a sus diferentes alturas iniciales, y cada uno debe ser tratado de manera independiente.
+    No se puede obtener $y_2(t)$ como un escalonado de tiempo de $y_1(t)$. Al escalar el tiempo de $y_1(t)$ por un
+    factor de $\sqrt{2}$ queda $y_1(t) = Y_0 - \frac{1}{2}g(\sqrt{2}t)^2$. T y $\tau$ coinciden, es decir los tiempo
+    finales son iguales, pero no coinciden las funciones de posicion. Es importante notar que, aunque existe esta
+    relacion entre los tiempos de vuelo, no es fisicamente correcto interpretar la posicion $y_2(t)$ del segundo cuerpo
+    como una version escalada temporalmente de $y_1(t)$. Los dos cuerpos tienen trayectorias y tiempos de vuelo
+    diferentes debido a sus diferentes alturas iniciales, y cada uno debe ser tratado de manera independiente.
 
 
   \item Calcular el tiempo $t_0$ que le toma al primer cuerpo estar en la posición $\frac{1}{2} y_0$. ¿Qué relación 
@@ -113,7 +120,8 @@ Teniendo como punto de referencia el "suelo", responder las siguientes consignas
     $$\sqrt{\frac{y_0}{g}} = t_0$$
     $$t_0 = t$$
 
-    No se puede obtener $y_2(t)$ como una traslacion temporal de $y_1(t)$, porque al desplazar temporalmente $y_1(t)$, este no coincide con $y_2(t)$, sin embargo para el $t_0 = t$ si coinciden las posiciones.
+    No se puede obtener $y_2(t)$ como una traslacion temporal de $y_1(t)$, porque al desplazar temporalmente $y_1(t)$,
+    este no coincide con $y_2(t)$, sin embargo para el $t_0 = t$ si coinciden las posiciones.
 
   \item \textbf{Reflexionar:} ¿Tiene sentido físico evaluar la señal $y_1$ en tiempos $t > T$? Similarmente, ¿tiene 
     sentido físico evaluar la señal $y_2$ en tiempos $t > \tau$? En caso afirmativo, ¿cuál es la interpretación
@@ -122,7 +130,9 @@ Teniendo como punto de referencia el "suelo", responder las siguientes consignas
     y_2$ en tiempos negativos $t < 0$? En caso afirmativo, ¿qué representa? Y en caso negativo, emplear alguna 
     herramienta para redefinir las señales $y_1, y_2$ de tal forma que la información provista por el pasado sea nula.
 
-    No tiene sentido físico evaluar las señales $y_1(t)$ ni $y_2(t)$ en tiempos mayores a T y $\tau$ respectivamente. A su vez tampoco tiene sentido evaluar las señales en tiempos negativos, menores a cero. Podríamos definir las señales como:
+    No tiene sentido físico evaluar las señales $y_1(t)$ ni $y_2(t)$ en tiempos mayores a T y $\tau$ respectivamente. A
+    su vez tampoco tiene sentido evaluar las señales en tiempos negativos, menores a cero. Podríamos definir las señales
+    como:
     $$y_1(t) = (Y_0 + V_0t - \frac{1}{2}gt^2)u(t)u(T - t)$$
     $$y_2(t) = (\frac{Y_0}{2} + V_0t - \frac{1}{2}gt^2)u(t)u(\tau - t)$$
 
@@ -133,19 +143,26 @@ Teniendo como punto de referencia el "suelo", responder las siguientes consignas
 \begin{enumerate}[label=\alph*)]
     \item Periodicidad
 
-    Las señales $y_1(t)$ y $y_2(t)$ no son periódicas, ya que representan la posición de los cuerpos en caída libre y no se repiten en intervalos regulares de tiempo. Cada cuerpo cae una vez y llega al suelo, después de lo cual la señal es nula.
+    Las señales $y_1(t)$ y $y_2(t)$ no son periódicas, ya que representan la posición de los cuerpos en caída libre y
+    no se repiten en intervalos regulares de tiempo. Cada cuerpo cae una vez y llega al suelo, después de lo cual la
+    señal es nula.
     \item Energia
 
-    Las señales $y_1(t)$ e $y_2(t)$ tienen una duración finita en el tiempo (desde t = 0 hasta t = T para $y_1(t)$ y hasta t = $\tau$ para $y_2(t)$), y son nulas fuera de estos intervalos, por lo tanto su energía es finita.
+    Las señales $y_1(t)$ e $y_2(t)$ tienen una duración finita en el tiempo (desde t = 0 hasta t = T para $y_1(t)$ y
+    hasta t = $\tau$ para $y_2(t)$), y son nulas fuera de estos intervalos, por lo tanto su energía es finita.
     \item Potencia
 
-    Dado que las señales $y_1(t)$ e $y_2(t)$ tienen energía finita, se puede afirmar que tienen una potencia media igual a cero.
+    Dado que las señales $y_1(t)$ e $y_2(t)$ tienen energía finita, se puede afirmar que tienen una potencia media igual
+    a cero.
     \item Causaludad
 
-    Ambas señales son causales por el hecho de estar multiplicadas por los escalones unitarios (u(t)u(T - t) para $y_1(t)$ y  u(t)u($\tau$ - t) para $y_2(t)$) que anulan el pasado y futuro de las mismas.
+    Ambas señales son causales por el hecho de estar multiplicadas por los escalones unitarios (u(t)u(T - t) para
+    $y_1(t)$ y  u(t)u($\tau$ - t) para $y_2(t)$) que anulan el pasado y futuro de las mismas.
     \item Modulo
 
-    Las señales $y_1(t)$ e $y_2(t)$ son acotadas en sus respectivos intervalos de tiempo. Para $y_1(t)$ la máxima magnitud ocurre en t = 0 y es $Y_0$. Para $y_2(t)$ la máxima magnitud también ocurre en t = 0  y es $\frac{1}{2}Y_0$.
+    Las señales $y_1(t)$ e $y_2(t)$ son acotadas en sus respectivos intervalos de tiempo. Para $y_1(t)$ la máxima
+    magnitud ocurre en t = 0 y es $Y_0$. Para $y_2(t)$ la máxima magnitud también ocurre en t = 0  y es
+    $\frac{1}{2}Y_0$.
 \end{enumerate}
 
 \end{enumerate}
@@ -162,13 +179,17 @@ equilibrio, máxima amplitud $A > 0$ y despreciando los efectos de la fricción,
   \item Determinar la ecuación de cinemática para la posición $x(t)$ en función del tiempo. \textbf{Reflexionar:} ¿la
     función $x$ puede interpretarse como una señal de variable de tiempo continua?
 
-    Partiendo de la ecuacion diferencial de un oscilador armonico simple $m \frac{dt^2}{d^2x} + kx = 0$, determinamos la ecuacion de cinematica para la posicion en funcion del tiempo $x(t) = A \sin(\omega t + \phi)$. Si, la funcion $x(t)$ puede interpretarse como una señal de variable de tiempo continuo.
+    Partiendo de la ecuacion diferencial de un oscilador armonico simple $m \frac{dt^2}{d^2x} + kx = 0$, determinamos
+    la ecuacion de cinematica para la posicion en funcion del tiempo $x(t) = A \sin(\omega t + \phi)$. Si, la funcion
+    $x(t)$ puede interpretarse como una señal de variable de tiempo continuo.
 
   \item Es de conocimiento general que la función posición $x(t)$ se puede determinar en función del $seno$ o del
     coseno. Determinar la transformación temporal sobre la señal, la cual permite pasar de la formulación $seno$ a la
     formulación $coseno$.
 
-    Para pasar de la formulación seno a la formulación coseno debe aplicarse una traslación temporal a la señal correspondiente al desfase entre las funciones trigonométricas seno y coseno, es decir sumar $\frac{\pi}{2}$. Entonces:
+    Para pasar de la formulación seno a la formulación coseno debe aplicarse una traslación temporal a la señal
+    correspondiente al desfase entre las funciones trigonométricas seno y coseno, es decir sumar $\frac{\pi}{2}$.
+    Entonces:
 
     $$A \sin(\omega t + \frac{\pi}{2}) = A \cos(\omega t)$$
 
@@ -181,7 +202,8 @@ equilibrio, máxima amplitud $A > 0$ y despreciando los efectos de la fricción,
       Es periodica ya que existe un valor T tal que $x(t) = x (t + nT)$, donde n = 1,2,3..
     \item Energia
 
-    Tiene energia infinita. Para señales periodicas, la energia total en el sentido clasico puede ser infinita debido a que la señal se repite indefinidamente, pero si hablamos de la energia en un periodo T, es finita y es:
+    Tiene energia infinita. Para señales periodicas, la energia total en el sentido clasico puede ser infinita debido a
+    que la señal se repite indefinidamente, pero si hablamos de la energia en un periodo T, es finita y es:
 
     $$E_T = \int_{0}^{T} |A \cos(\omega t)|^2 dt$$
     $$E_T = A^2 \int_{0}^{T} \cos(\omega t)^2 dt$$
@@ -189,14 +211,16 @@ equilibrio, máxima amplitud $A > 0$ y despreciando los efectos de la fricción,
     $$E_T = A^2 \frac{1}{2}\int_{0}^{T}  \cos(2 \omega t)dt$$
     \item Potencia
 
-    Tiene energia infinita si consideramos el intervalo $(-\infty,\infty$, pero la energia es finita en un solo periodo, por lo que la potencia media es finita:
+    Tiene energia infinita si consideramos el intervalo $(-\infty,\infty$, pero la energia es finita en un solo periodo,
+    por lo que la potencia media es finita:
 
     $$P_{med} = \lim_{T \to \infty} \frac{1}{2T} E_T$$
     $$P_{med} = \lim_{T \to \infty} \frac{A^2T}{4T} = \frac{A^2}{4}$$
     $$P_T = 2 P_{med} = \frac{A^2}{2}$$
     \item Acotada
 
-    La señal es acotada ya que para todo t, $x(t) <= A$ siendo A la amplitud. Esto se da ya que las funciones trigonometricas seno o coseno toman valores entre -1 y 1
+    La señal es acotada ya que para todo t, $x(t) <= A$ siendo A la amplitud. Esto se da ya que las funciones
+    trigonometricas seno o coseno toman valores entre -1 y 1
     \item Causal
 
     La señal no es causal porque esta definida para todos los tiempos, $t \in (-\infty,\infty)$
@@ -434,7 +458,8 @@ $T$ y amplitud unitaria.
     \item Teniendo en cuenta el siguiente resultado matemático, obtener una descripción explicita
       de la respuesta $y(t)$ del sistema obtenido en el inciso anterior:
       \begin{itemize}
-        \item Sean $\alpha, \beta_0, \beta_1 \in \mathbb{R}$ constantes; $y(t), x(t)$ funciones con variable de tiempo continuo,
+        \item Sean $\alpha, \beta_0, \beta_1 \in \mathbb{R}$ constantes; $y(t), x(t)$ funciones con variable de tiempo
+        continuo,
           las cuales verifican la ecuación diferencial de primer orden con coeficientes constantes:
 
           $$y_t'+\alpha y_t = \beta_1 x_t' + \beta_0 x_t$$
@@ -585,28 +610,48 @@ $T$ y amplitud unitaria.
 
   \end{enumerate}
 
-  \textbf{Circuito Eléctrico RLC:} circuito eléctrico correspondiente a un sistema de 2° orden y su ecuación caracteristica: $v(t) = Ri_{(t)} + L \frac{d}{dt} i_{(t)} + \frac{1}{C} \int_{0}^{t} i_{(\tau)} d\tau$
+  \textbf{Circuito Eléctrico RLC:} circuito eléctrico correspondiente a un sistema de 2° orden y su ecuación
+  caracteristica: $v(t) = Ri_{(t)} + L \frac{d}{dt} i_{(t)} + \frac{1}{C} \int_{0}^{t} i_{(\tau)} d\tau$
 
   \begin{enumerate}[label=\alph*)]
-  \item Obtener una representación del circuito con Ecuaciones Diferenciales de segundo orden y coeficientes constantes, y con ello, definir un Sistema en tiempo continuo con entrada $x_{(t)} = v_{(t)}$ y salida $y_{(t)} = i_{(t)}$. Luego, hacer un diagrama de bloques de la E.D; exponiendo los integradores que la conforma.
+  \item Obtener una representación del circuito con Ecuaciones Diferenciales de segundo orden y coeficientes constantes,
+  y con ello, definir un Sistema en tiempo continuo con entrada $x_{(t)} = v_{(t)}$ y salida $y_{(t)} = i_{(t)}$. Luego,
+  hacer un diagrama de bloques de la E.D; exponiendo los integradores que la conforma.
 
-  \item Sea $y_t = S\{x_t\}$ el sistema obtenido de las soluciones al sistema de Ecuaciones Diferenciales del inciso anterior. Teniendo en cuenta el siguientes resultado matemático, obtener una descripción explicita de la respuesta transformada $Y_{(s)} = L\{y_t\} = L\{S\{x_t\}\}$:
+  \item Sea $y_t = S\{x_t\}$ el sistema obtenido de las soluciones al sistema de Ecuaciones Diferenciales del inciso
+  anterior. Teniendo en cuenta el siguientes resultado matemático, obtener una descripción explicita de la respuesta
+  transformada $Y_{(s)} = L\{y_t\} = L\{S\{x_t\}\}$:
   \begin{itemize}
-    \item Sean $\alpha_1, \alpha_0, \beta_2, \beta_1, \beta_0 \in \mathbb{R}$ constantes; $y_{(t)}, x_{(t)}$ funciones con variable de tiempo continuo, las cuales verifican la ecuacion diferencial de segundo orden con coeficientes constantes:
+    \item Sean $\alpha_1, \alpha_0, \beta_2, \beta_1, \beta_0 \in \mathbb{R}$ constantes; $y_{(t)}, x_{(t)}$ funciones
+    con variable de tiempo continuo, las cuales verifican la ecuacion diferencial de segundo orden con coeficientes
+    constantes:
     $$y_t^{''} + \alpha_1 y_t^{'} + \alpha_0 y_t = \beta_2 x_t^{''} + \beta_1 x_t^{'} + \beta_0 x_t$$
     Entonces, una Solucion General explicita de la Ecuacion Diferencial Transformada es:
-    $$Y_{(s)} = \frac{\beta_2 s^2 + \beta_1 s + \beta_0}{s^2 + \alpha_1 s + \alpha_0}X_{(s)} + \frac{(y_0 - \beta_2 x_0)s + (\alpha_1 y_0 - \beta_1 x_0 + y_0^{'} - \beta_2 x_0^{'})}{s^2 + \alpha_1 s + \alpha_0}$$
-    donde $Y_{(s)} = L\{y_t\}$, $X_{(s)} = L\{x_t\}$, con $s = \sigma + j \omega$ (variable compleja). Condiciones Iniciales arbitrarias; $y_0 = y(0), y_0^{'} = y^{'}(0), x_0 = x(0), x_0^{'} = x^{'}(0)$.
-    \item Usando las propiedades de la transformada de Laplace, demostrar la igualdad propuesta para la funcion $Y_{(s)}$.
+    $$Y_{(s)} = \frac{\beta_2 s^2 + \beta_1 s + \beta_0}{s^2 + \alpha_1 s + \alpha_0}X_{(s)} + \frac{(y_0 - \beta_2 x_0)
+      s + (\alpha_1 y_0 - \beta_1 x_0 + y_0^{'} - \beta_2 x_0^{'})}{s^2 + \alpha_1 s + \alpha_0}$$
+    donde $Y_{(s)} = L\{y_t\}$, $X_{(s)} = L\{x_t\}$, con $s = \sigma + j \omega$ (variable compleja). Condiciones
+    Iniciales arbitrarias; $y_0 = y(0), y_0^{'} = y^{'}(0), x_0 = x(0), x_0^{'} = x^{'}(0)$.
+    \item Usando las propiedades de la transformada de Laplace, demostrar la igualdad propuesta para la funcion
+    $Y_{(s)}$.
   \end{itemize}
 
-  \item Restringir el sistema anterior a CI nulas y obtener la formula de la respuesta transformada $Y_{(s)} = L\{y\}$. Luego, calcular la Función de transferencia $H_{(s)} = L\{h_t\}$ donde $h_t$ es la respuesta al impulso del sistema linealizado. Luego, graficar en el plano complejo los polos y ceros de dicha función.
+  \item Restringir el sistema anterior a CI nulas y obtener la formula de la respuesta transformada $Y_{(s)} = L\{y\}$.
+  Luego, calcular la Función de transferencia $H_{(s)} = L\{h_t\}$ donde $h_t$ es la respuesta al impulso del sistema
+  linealizado. Luego, graficar en el plano complejo los polos y ceros de dicha función.
 
-  \item Trabajar con el sistema linealizado del inciso anterior, y calcular la transformada $Y_1(s) = L\{S\{3\delta_{(t-2)}\}\}$, y similarmente $Y_2(s) = L\{S\{\mu_{(t+2)}\}\}$. Luego, implementar la técnica de anti-transformada para obtener las señales de respuesta en la variable de tiempo $y_1 = S\{3\delta_{(t-2)}\}$, $y_2 = S\{\mu_{(t+2)}\}$, respectivamente.\\
-  \textbf{Reflexionar}: ¿En que variable están definidas las funciones $Y_1$, $Y_2$? ¿Que tipo de variable es $s$ y que diferencia tiene con la variable $t$? ¿Que diferencias se observan entres las funciones $Y_1$, $Y_2$ y sus señales $y_1$, $y_2$?
+  \item Trabajar con el sistema linealizado del inciso anterior, y calcular la transformada
+  $Y_1(s) = L\{S\{3\delta_{(t-2)}\}\}$, y similarmente $Y_2(s) = L\{S\{\mu_{(t+2)}\}\}$. Luego, implementar la técnica
+  de anti-transformada para obtener las señales de respuesta en la variable de tiempo $y_1 = S\{3\delta_{(t-2)}\}$,
+  $y_2 = S\{\mu_{(t+2)}\}$, respectivamente.\\
+  \textbf{Reflexionar}: ¿En que variable están definidas las funciones $Y_1$, $Y_2$? ¿Que tipo de variable es $s$ y que
+  diferencia tiene con la variable $t$? ¿Que diferencias se observan entres las funciones $Y_1$, $Y_2$ y sus señales
+  $y_1$, $y_2$?
 
-  \item Graficar en diagrama de bloques del sistema en el dominios de la variable compleja.  Determinar el coeficiente de amortiguamiento $\xi$ y la frecuencia natural $\omega_n$ del sistema linealizado.\\
-  \textbf{Reflexionar}: ¿Que diferencias se observan entre el diagrama de bloques del inciso (a) y el diagrama de bloques del inciso (e)? ¿Las variables $s$ y $t$ están presentes de alguna forma en los diagramas mencionados? ¿Tiene algún significado subrayar que el diagrama esta en el dominio del tiempo o en el dominio complejo?
+  \item Graficar en diagrama de bloques del sistema en el dominios de la variable compleja.  Determinar el coeficiente
+  de amortiguamiento $\xi$ y la frecuencia natural $\omega_n$ del sistema linealizado.\\
+  \textbf{Reflexionar}: ¿Que diferencias se observan entre el diagrama de bloques del inciso (a) y el diagrama de
+  bloques del inciso (e)? ¿Las variables $s$ y $t$ están presentes de alguna forma en los diagramas mencionados? ¿Tiene
+  algún significado subrayar que el diagrama esta en el dominio del tiempo o en el dominio complejo?
 
   \end{enumerate}
 \end{document}
