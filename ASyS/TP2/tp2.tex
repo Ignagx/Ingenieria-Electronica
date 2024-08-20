@@ -743,10 +743,23 @@ $T$ y amplitud unitaria.
           \frac{1}{R} \left[t - RC + RC e^{\frac{-t}{RC}}\right]\\[6pt]
       \end{align*}
 
-    \item Usando la descripción explicita de la salida del Sistema $y_t = S_1{x_t}$ (CI arbitrarias), demostrar si el
-      Sistema $S1$ es (o no): Lineal, Homogéneo e Invariante en el Tiempo.
+    \item Usando la descripción explicita de la salida del Sistema $y_t = S_1\{x_t\}$ (CI arbitrarias), demostrar si el
+      Sistema $S_1$ es (o no): Lineal, Homogéneo e Invariante en el Tiempo.
 
-    \item Demostrar que el sistema anterior en reposo gana propiedades, esto es, definir $y_t = S_2{x_t}$ con C.I. 
+      Linealidad: La verificacion de la linealidad del sistema, viene de la mano de la homogeneidad y la aditividad,
+      los cuales se demuestran a continuacion, donde $x_a$ y $x_b$ son dos señales arbitrarias, e $y_5 = S_1\{x_a\},
+      y_6 = S_1\{x_b\}$ y $y_7 = S_1\{x_a + x_b\}$:
+      \begin{align*}
+        y_5(t) &= x_a \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot
+          e^{\frac{-t}{RC}} - \frac{1}{R^2C} \int_{0}^{t} x_a \cdot e^{\frac{-(t-\tau)}{RC}} d\tau\\[6pt]
+        y_6(t) &= x_b \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot
+          e^{\frac{-t}{RC}} - \frac{1}{R^2C} \int_{0}^{t} x_b \cdot e^{\frac{-(t-\tau)}{RC}} d\tau\\[6pt]
+        y_7(t) &= (x_a - x_b) \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot
+          e^{\frac{-t}{RC}} - \frac{1}{R^2C} \int_{0}^{t} (x_a - x_b) \cdot e^{\frac{-(t-\tau)}{RC}} d\tau\\[6pt]
+      \end{align*}
+
+
+    \item Demostrar que el sistema anterior en reposo gana propiedades, esto es, definir $y_t = S_2\{x_t\}$ con C.I. 
       nulas $y_0 = x_0 = 0$, y clasificar el sistema S2 (Aditivo, Homogéneo, Inv. Tiempo).
 
     \item Refinar aun más el sistemas, exijamos C.I nulas y respuesta causal (se elimine el pasado), esto es, definir 
