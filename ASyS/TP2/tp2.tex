@@ -13,6 +13,8 @@
 \usepackage{lmodern}
 \usepackage{tikz}
 
+\allowdisplaybreaks
+
 \pagestyle{fancy}
 \fancyhf{} 
 \fancyhead[L]{UTN-FRC}
@@ -25,7 +27,7 @@
 
 \renewcommand{\chaptername}{Ejercicio}
 
-\usetikzlibrary{shapes,arrows,positioning,calc}
+\usetikzlibrary{calc, arrows.meta, positioning}
 
 \titleformat{\chapter}[display]
   {\normalfont\bfseries}{\chaptertitlename\ \thechapter}{15pt}{}
@@ -55,14 +57,6 @@ Leonardo Ramos\\
 \date{19 / 08 / 2024}
 
 \begin{document}
-\tikzset{
-block/.style = {draw, fill=white, rectangle, minimum height=3em, minimum width=3em},
-tmp/.style  = {coordinate},
-sum/.style= {draw, fill=white, circle, node distance=1cm},
-input/.style = {coordinate},
-output/.style= {coordinate},
-pinstyle/.style = {pin edge={to-,thin,black}}
-}
 \maketitle
 
 \chapter{}%ejercicio 1
@@ -362,7 +356,8 @@ $T$ y amplitud unitaria.
 \chapter{}%ejercicio 4
 
   \textbf{Circuito Eléctrico RC:} circuito eléctrico correspondiente a un sistema de 1° orden y su ecuación
-  característica: $v(t) = Ri_{(t)} + \frac{1}{C} \int_{0}^{t} i_{(\tau)} d\tau$
+  característica:
+  $$v(t) = R\cdot i(t) + \frac{1}{C} \cdot \int_{0}^{t} i(\tau) d\tau$$
 
   \vspace{-1cm}
   \noindent
@@ -381,27 +376,65 @@ $T$ y amplitud unitaria.
       Luego, hacer un diagrama de bloques de la E.D; exponiendo los integradores que la conforma.
 
       El circuito RC esta descrito por la ecuacion caracteristica:
-
-      $$v(t) = R\cdot i(t) + \frac{1}{C} \cdot \int_{0}^{t} i(\tau) d\tau$$\\[2pt]
-
+      $$v(t) = R\cdot i(t) + \frac{1}{C} \cdot \int_{0}^{t} i(\tau) d\tau$$
       Para tener una nomenclatura mas generica, sustituimos la entrada $v(t)$ con $x(t)$ y la salida $i(t)$ con $y(t)$:
-
       $$x(t) = R\cdot y(t) + \frac{1}{C} \cdot \int_{0}^{t} y(\tau) d\tau$$
-
       Teniendo en cuenta que $y(t)$ es la salida e $x(t)$ la entrada, las ecuaciones diferenciales toman la forma:
-
       $$\left(D^N + \sum_{i=0}^{N-1} a_i D^i\right) \cdot y(t) = \left(\sum_{i=0}^{M} b_i D^i\right) \cdot x(t)$$
-
       Reacomodando la ecuacion caracteristica generalizada, nos queda:
+      $$
+      \begin{aligned}
+        y(t) + D^{-1} \left\{\frac{1}{RC} \cdot y(t) \right\} &= x(t) \cdot \frac{1}{R}\\[6pt]
+        D^1\Bigl\{y(t) \Bigl\} + \frac{1}{RC} \cdot y(t) &= D^1\left\{x(t) \cdot \frac{1}{R} \right\}\\[6pt]
+        \frac{dy(t)}{dt} + \frac{1}{RC} \cdot y(t) &= \frac{dx(t)}{dt} \cdot \frac{1}{R}\\[6pt]
+      \end{aligned}
+      $$
 
-      $$y(t) + D^{-1} \left\{\frac{1}{RC} \cdot y(t) \right\} = x(t) \cdot \frac{1}{R}$$
-      $$D^1\Bigl\{y(t) \Bigl\} + \frac{1}{RC} \cdot y(t) = D^1\left\{x(t) \cdot \frac{1}{R} \right\}$$
-      $$\frac{dy(t)}{dt} + \frac{1}{RC} \cdot y(t) = \frac{dx(t)}{dt} \cdot \frac{1}{R}$$
+      Lo cual es la ecuacion diferencial de primer orden a coeficientes constantes que describe el comportamiento del
+      circuito RC.
+
+      Para el diagrama de simulacion, utilizamos la ecuacion caracteristica generalizada del sistema, solo que se
+      despeja y:
+      \begin{figure}[h]
+        \centering
+        \begin{tikzpicture}[auto, node distance=2cm, >=Stealth, thick]
+          % Definición de estilos para los bloques y sumador
+          \tikzstyle{block} = [draw, rectangle, minimum height=1.5em, minimum width=3em]
+          \tikzstyle{sum} = [draw, circle, inner sep=1pt, minimum size=1cm, node distance=2cm]
+          \tikzstyle{connector} = [fill, circle, minimum size=4pt, inner sep=0pt] % Estilo para el punto de conexión
+
+          % Definición de nodos
+          \node at (0,0) [coordinate] (input) {}; % Nodo de entrada
+          \node [coordinate, right=7cm of input] (elbow1) {};
+          \node [block, below=1cm of elbow1] (gain1) {$\frac{1}{R}$};
+          \node [sum, below=1cm of gain1] (sum) {$+$};
+          \node [block, left=2cm of sum] (integrator) {$\int$};
+          \node [coordinate, left=2cm of integrator] (elbow2) {};
+          \node [block, below=1cm of elbow2] (gain2) {$-\frac{1}{RC}$};
+          \node [coordinate, below=1cm of gain2] (elbow3) {};
+          \node [coordinate, right=4cm of sum] (output) {}; % Nodo de salida
+          \node [connector, left=2cm of output] (elbow5) {};
+          \node [coordinate, below=2.7cm of elbow5] (elbow4) {};
+
+          % Conexiones entre nodos
+          \draw [-] (input) -- node {$x(t)$} (elbow1);
+          \draw [-] (elbow1) -- (gain1);
+          \draw [->] (gain1) -- (sum);
+          \draw [->] (sum) -- node {$y(t)$} (output);
+          \draw [->] (integrator) -- (sum);
+          \draw [->] (elbow2) -- (integrator);
+          \draw [-] (gain2) -- (elbow2);
+          \draw [->] (elbow3) -- (gain2);
+          \draw [-] (elbow4) -- (elbow3);
+          \draw [-] (elbow5) -- (elbow4);
+        \end{tikzpicture}
+        $$y_t = \frac{x_t}{R} + D^{-1}\left\{-\frac{y_t}{RC}\right\}$$
+      \end{figure}
 
     \item Teniendo en cuenta el siguiente resultado matemático, obtener una descripción explicita
       de la respuesta $y(t)$ del sistema obtenido en el inciso anterior:
       \begin{itemize}
-        \item Sean $\alpha, \beta_0, \beta_1 \in R$ constantes; $y(t), x(t)$ funciones con variable de tiempo continuo,
+        \item Sean $\alpha, \beta_0, \beta_1 \in \mathbb{R}$ constantes; $y(t), x(t)$ funciones con variable de tiempo continuo,
           las cuales verifican la ecuación diferencial de primer orden con coeficientes constantes:
 
           $$y_t'+\alpha y_t = \beta_1 x_t' + \beta_0 x_t$$
@@ -414,15 +447,101 @@ $T$ y amplitud unitaria.
           donde $y_0 = y(0), x_0 = x(0)$ son Condiciones Iniciales arbitrarias
         \end{itemize}
 
+        Identificando los coeficientes $\alpha, \beta_0, \beta_1$, tenemos lo siguiente:
+        $$\alpha = \frac{1}{RC}; \hspace{1cm}\beta_0 = 0; \hspace{1cm}\beta_1 = \frac{1}{R}$$
+        Por lo tanto, la solucion general explicita para el $S_1\{x_t\}$ es:
+        $$y_t = S_1\{x_t\} = x_t \cdot \frac{1}{R} + \left(y_o - \frac{x_0}{R}\right) \cdot e^{\frac{-t}{RC}} -
+        \frac{1}{R^2C} \int_{0}^{t} x_\tau \cdot e^{\frac{-(t-\tau)}{RC}} d\tau$$
+
+
     \item Usando la descripción explicita de la salida del Sistema $y_t = S_1{x_t}$ (CI arbitrarias) del inciso
       anterior, calcular la respuesta a cada una de las siguientes señales:
-
       $$x_0(t) = 0, \hspace{0.5cm}x_1(t) = \mu_t, \hspace{0.5cm}x_2(t) = \mu(t - t_0), \hspace{0.5cm}x_3(t) =
       \mu_t - \mu(t - t_0), \hspace{0.5cm}x_4(t) = t$$
 
       \textbf{Reflexionar:} ¿La señal $y_0$ es completamente nula? ¿Las señales $y_3, y' = y_1 - y_2$ (iguales o
       distintas)? ¿es suficiente para garantizar la Linealidad del sistema? ¿Las señales $y_1, y_2$ son iguales? ¿es
       suficiente para garantizar la Inv. Tiempo del sistema?.
+
+      Solucion para $x_t = x_0 = 0$:
+      \begin{align*}
+        y_0(t) &= 0 \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot
+          e^{\frac{-t}{RC}} - \frac{1}{R^2C} \int_{0}^{t} 0 \cdot e^{\frac{-(t-\tau)}{RC}} d\tau\\[6pt]
+        y_0(t) &= \left(y_0 - \frac{x_0}{R}\right) \cdot e^{\frac{-t}{RC}}
+      \end{align*}
+      Como se puede ver, la señal $y_0$ no es completamente nula. Esta presenta una exponencial decreciente para
+      $t > 0$. Seria nula en caso de que las C.I. sean nulas, o que se cumpla que $y_0 = x_0/R$.\\
+
+      Solucion para $x_t = x_1 = \mu_t$:
+      \begin{align*}
+        y_1(t) &= \mu_t \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot
+          e^{\frac{-t}{RC}} - \frac{1}{R^2C} \int_{0}^{t} \mu_t \cdot e^{\frac{-(t-\tau)}{RC}} d\tau\\[6pt]
+        y_1(t) &= \mu_t \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot e^{\frac{-t}{RC}} -
+          \frac{1}{R^2C} \int_{0}^{t} e^v \cdot RCdv\\[6pt]
+        y_1(t) &= \mu_t \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot e^{\frac{-t}{RC}} -
+          \frac{1}{R} \left[e^{\frac{-(t-\tau)}{RC}}\right]\Big|_{0}^{t}\\[6pt]
+        y_1(t) &= \mu_t \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot e^{\frac{-t}{RC}} - \frac{1}{R}
+          \left[1 - e^{\frac{-t}{RC}}\right]
+      \end{align*}
+      Solucion para $x_t = x_2 = \mu_{t-1}$:
+      \begin{align*}
+        y_2(t) &= \mu_{t-1} \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot
+          e^{\frac{-t}{RC}} - \frac{1}{R^2C} \int_{0}^{t} \mu_{t-1} \cdot e^{\frac{-(t-\tau)}{RC}} d\tau\\[6pt]
+        y_2(t) &= \mu_{t-1} \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot e^{\frac{-t}{RC}} -
+          \frac{1}{R^2C} \int_{1}^{t} e^v \cdot RCdv\\[6pt]
+        y_2(t) &= \mu_{t-1} \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot e^{\frac{-t}{RC}} -
+          \frac{1}{R} \left[e^{\frac{-(t-\tau)}{RC}}\right]\Big|_{1}^{t}\\[6pt]
+        y_2(t) &= \mu_{t-1} \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot e^{\frac{-t}{RC}} -
+          \frac{1}{R} \left[1 - e^{\frac{1-t}{RC}}\right]
+      \end{align*}
+      Solucion para $x_t = x_3 = \mu_t - \mu_{t-1}$:
+      \begin{align*}
+        y_3(t) &= (\mu_t - \mu_{t-1}) \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot e^{\frac{-t}{RC}} -
+          \frac{1}{R^2C} \int_{0}^{t} (\mu_t - \mu_{t-1}) \cdot e^{\frac{-(t-\tau)}{RC}} d\tau\\[6pt]
+        y_3(t) &= (\mu_t - \mu_{t-1}) \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot e^{\frac{-t}{RC}} -
+          \frac{1}{R^2C} \left[\int_{0}^{t} \mu_t \cdot e^{\frac{-(t-\tau)}{RC}} d\tau -
+          \int_{0}^{t} \mu_{t-1} \cdot e^{\frac{-(t-\tau)}{RC}} d\tau \right]\\[6pt]
+        y_3(t) &= (\mu_t - \mu_{t-1}) \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot e^{\frac{-t}{RC}} -
+        \frac{1}{R^2C} \left[\int_{0}^{t} e^{\frac{-(t-\tau)}{RC}} d\tau -
+          \int_{1}^{t} e^{\frac{-(t-\tau)}{RC}} d\tau \right]\\[6pt]
+        y_3(t) &= (\mu_t - \mu_{t-1}) \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot e^{\frac{-t}{RC}} -
+          \frac{1}{R^2C} RC\left[\int_{0}^{t} e^v dv - \int_{1}^{t} e^v dv \right]\\[6pt]
+        y_3(t) &= (\mu_t - \mu_{t-1}) \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot e^{\frac{-t}{RC}} -
+          \frac{1}{R}\left[e^{\frac{-(t-\tau)}{RC}} \Big|_{0}^{t} -
+          e^{\frac{-(t-\tau)}{RC}} \Big|_{1}^{t} \right]\\[6pt]
+        y_3(t) &= (\mu_t - \mu_{t-1}) \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot e^{\frac{-t}{RC}} -
+          \frac{1}{R} \left[e^{\frac{1-t}{RC}} - e^{\frac{-t}{RC}}\right]
+      \end{align*}
+      Solucion para $y' = y_1 - y_2$:
+      \begin{align*}
+        y' &= \mu_t \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot e^{\frac{-t}{RC}} - \frac{1}{R}
+          \left[1 - e^{\frac{-t}{RC}}\right] - \left(\mu_{t-1} \cdot \frac{1}{R} + \left(y_0 -
+          \frac{x_0}{R}\right) \cdot e^{\frac{-t}{RC}} - \frac{1}{R} \left[1 - e^{\frac{1-t}{RC}}\right]\right)\\[6pt]
+        y' &= (\mu_t - \mu_{t-1}) \cdot \frac{1}{R} - \frac{1}{R} \left[e^{\frac{1-t}{RC}} - e^{\frac{-t}{RC}}\right]
+      \end{align*}
+      Como se puede ver, $y' \neq y_3$. Esto significa que el sistema $S_1\left\{x_t\right\}$ no es lineal. Se puede
+      ver que si las condiciones lineales son nulas, o si $y_0 = x_0/R$, la igualdad se cumple, y el sistema es lineal.
+      Por otro lado, las ecuaciones $y_1 \neq y_2$, ademas, con ellas no se puede demostrar la invarianza en el tiempo,
+      debido a que por un lado, se debe desplazar la señal de entrada, y por otro lado, se debe desplazar la señal de
+      salida, para verificar que el sistema es invariante en el tiempo.\\
+
+      Solucion para $x_t = x_4 = t$:
+      \begin{align*}
+        y_4(t) &= t \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot e^{\frac{-t}{RC}} -
+          \frac{1}{R^2C} \int_{0}^{t} \tau \cdot e^{\frac{-(t-\tau)}{RC}} d\tau\\[6pt]
+        y_4(t) &= t \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot e^{\frac{-t}{RC}} -
+          \frac{1}{R^2C} \left[\tau \cdot RC e^{\frac{-(t-\tau)}{RC}} - RC\int e^{\frac{-(t-\tau)}{RC}} d\tau\right]
+          \Big|_{0}^{t}\\[6pt]
+        y_4(t) &= t \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot e^{\frac{-t}{RC}} -
+          \frac{1}{R} \left[\tau \cdot e^{\frac{-(t-\tau)}{RC}} - RC\int e^v dv\right] \Big|_{0}^{t}\\[6pt]
+        y_4(t) &= t \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot e^{\frac{-t}{RC}} -
+          \frac{1}{R} \left[\tau \cdot e^{\frac{-(t-\tau)}{RC}} - RC e^{\frac{-(t-\tau)}{RC}} \right]
+          \Big|_{0}^{t}\\[6pt]
+        y_4(t) &= t \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot e^{\frac{-t}{RC}} -
+          \frac{1}{R} \left[e^{\frac{-(t-\tau)}{RC}} (\tau - RC)\right] \Big|_{0}^{t}\\[6pt]
+        y_4(t) &= t \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot e^{\frac{-t}{RC}} -
+          \frac{1}{R} \left[t - RC + RC e^{\frac{-t}{RC}}\right]\\[6pt]
+      \end{align*}
 
     \item Usando la descripción explicita de la salida del Sistema $y_t = S_1{x_t}$ (CI arbitrarias), demostrar si el
       Sistema $S1$ es (o no): Lineal, Homogéneo e Invariante en el Tiempo.
