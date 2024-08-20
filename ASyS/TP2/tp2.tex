@@ -362,9 +362,8 @@ $T$ y amplitud unitaria.
 \chapter{}%ejercicio 4
 
   \textbf{Circuito Eléctrico RC:} circuito eléctrico correspondiente a un sistema de 1° orden y su ecuación
-  característica:
-  $$v(t) = R\cdot i(t) + \frac{1}{C} \cdot \int_{0}^{t} i(\tau) d\tau$$
-  
+  característica: $v(t) = Ri_{(t)} + \frac{1}{C} \int_{0}^{t} i_{(\tau)} d\tau$
+
   \vspace{-1cm}
   \noindent
   \begin{figure}[h]
@@ -467,4 +466,28 @@ $T$ y amplitud unitaria.
 
   \end{enumerate}
 
+  \textbf{Circuito Eléctrico RLC:} circuito eléctrico correspondiente a un sistema de 2° orden y su ecuación caracteristica: $v(t) = Ri_{(t)} + L \frac{d}{dt} i_{(t)} + \frac{1}{C} \int_{0}^{t} i_{(\tau)} d\tau$
+
+  \begin{enumerate}[label=\alph*)]
+  \item Obtener una representación del circuito con Ecuaciones Diferenciales de segundo orden y coeficientes constantes, y con ello, definir un Sistema en tiempo continuo con entrada $x_{(t)} = v_{(t)}$ y salida $y_{(t)} = i_{(t)}$. Luego, hacer un diagrama de bloques de la E.D; exponiendo los integradores que la conforma.
+
+  \item Sea $y_t = S\{x_t\}$ el sistema obtenido de las soluciones al sistema de Ecuaciones Diferenciales del inciso anterior. Teniendo en cuenta el siguientes resultado matemático, obtener una descripción explicita de la respuesta transformada $Y_{(s)} = L\{y_t\} = L\{S\{x_t\}\}$:
+  \begin{itemize}
+    \item Sean $\alpha_1, \alpha_0, \beta_2, \beta_1, \beta_0 \in \mathbb{R}$ constantes; $y_{(t)}, x_{(t)}$ funciones con variable de tiempo continuo, las cuales verifican la ecuacion diferencial de segundo orden con coeficientes constantes:
+    $$y_t^{''} + \alpha_1 y_t^{'} + \alpha_0 y_t = \beta_2 x_t^{''} + \beta_1 x_t^{'} + \beta_0 x_t$$
+    Entonces, una Solucion General explicita de la Ecuacion Diferencial Transformada es:
+    $$Y_{(s)} = \frac{\beta_2 s^2 + \beta_1 s + \beta_0}{s^2 + \alpha_1 s + \alpha_0}X_{(s)} + \frac{(y_0 - \beta_2 x_0)s + (\alpha_1 y_0 - \beta_1 x_0 + y_0^{'} - \beta_2 x_0^{'})}{s^2 + \alpha_1 s + \alpha_0}$$
+    donde $Y_{(s)} = L\{y_t\}$, $X_{(s)} = L\{x_t\}$, con $s = \sigma + j \omega$ (variable compleja). Condiciones Iniciales arbitrarias; $y_0 = y(0), y_0^{'} = y^{'}(0), x_0 = x(0), x_0^{'} = x^{'}(0)$.
+    \item Usando las propiedades de la transformada de Laplace, demostrar la igualdad propuesta para la funcion $Y_{(s)}$.
+  \end{itemize}
+
+  \item Restringir el sistema anterior a CI nulas y obtener la formula de la respuesta transformada $Y_{(s)} = L\{y\}$. Luego, calcular la Función de transferencia $H_{(s)} = L\{h_t\}$ donde $h_t$ es la respuesta al impulso del sistema linealizado. Luego, graficar en el plano complejo los polos y ceros de dicha función.
+
+  \item Trabajar con el sistema linealizado del inciso anterior, y calcular la transformada $Y_1(s) = L\{S\{3\delta_{(t-2)}\}\}$, y similarmente $Y_2(s) = L\{S\{\mu_{(t+2)}\}\}$. Luego, implementar la técnica de anti-transformada para obtener las señales de respuesta en la variable de tiempo $y_1 = S\{3\delta_{(t-2)}\}$, $y_2 = S\{\mu_{(t+2)}\}$, respectivamente.\\
+  \textbf{Reflexionar}: ¿En que variable están definidas las funciones $Y_1$, $Y_2$? ¿Que tipo de variable es $s$ y que diferencia tiene con la variable $t$? ¿Que diferencias se observan entres las funciones $Y_1$, $Y_2$ y sus señales $y_1$, $y_2$?
+
+  \item Graficar en diagrama de bloques del sistema en el dominios de la variable compleja.  Determinar el coeficiente de amortiguamiento $\xi$ y la frecuencia natural $\omega_n$ del sistema linealizado.\\
+  \textbf{Reflexionar}: ¿Que diferencias se observan entre el diagrama de bloques del inciso (a) y el diagrama de bloques del inciso (e)? ¿Las variables $s$ y $t$ están presentes de alguna forma en los diagramas mencionados? ¿Tiene algún significado subrayar que el diagrama esta en el dominio del tiempo o en el dominio complejo?
+
+  \end{enumerate}
 \end{document}
