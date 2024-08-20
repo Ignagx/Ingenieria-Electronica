@@ -354,8 +354,8 @@ $T$ y amplitud unitaria.
           \end{minipage}
         \end{figure}
 
-        \textbf{Reflexionar:} ¿La densidad espectral es discreta o continua? ¿El gráfico admite una simetría par, impar o
-        ninguna?\\
+        \textbf{Reflexionar:} ¿La densidad espectral es discreta o continua? ¿El gráfico admite una simetría par, impar
+        o ninguna?\\
 
         La densidad espectral tambien es una señal de tiempo continuo, y acepta simetria par.\\
 
@@ -366,17 +366,16 @@ $T$ y amplitud unitaria.
         $$E_x=\frac{1}{2\pi}\int_{-\infty}^{\infty}|\mathcal{F}\{x\}|^2$$
 
         Primero resolveremos la integral:
-
         $$
         \begin{aligned}
           \int_{-\infty}^{\infty} \Bigg[\hspace{1mm}\frac{2}{\omega} \sin\left(\frac{\omega T}{2}\right)\Bigg]^2 d\omega
           &=\int_{-\infty}^{\infty} \frac{4}{\omega^2} \sin^2\left(\frac{\omega T}{2}\right) d\omega \\[6pt]
-          &= \sin^2\left(\frac{\omega T}{2}\right) \Big(-\frac{4}{\omega}\Big) - \int_{-\infty}^{\infty} \Big(-\frac{4}{\omega}\Big)
-            \frac{T}{2} \sin(\omega T)d\omega \\[6pt]
+          &= \sin^2\left(\frac{\omega T}{2}\right) \Big(-\frac{4}{\omega}\Big) - \int_{-\infty}^{\infty} 
+          \Big(-\frac{4}{\omega}\Big) \frac{T}{2} \sin(\omega T)d\omega \\[6pt]
           &= \sin^2\Big(\frac{\omega T}{2}\Big)\Big(-\frac{4}{\omega}\Big) +
             2 T^2 \int \frac{\sin(\omega T)}{\omega T}d\omega \\[6pt]
           &\text{Apoyandonos en la sustitución $\omega T=x$}\\[6pt]
-          &= -\sin^2\Big(\frac{\omega T}{2}\Big)\frac{4}{\omega} + 2T \int_{-\infty}^{\infty} \frac{\sin(x)}{x} dx\\[6pt]
+          &=-\sin^2\Big(\frac{\omega T}{2}\Big)\frac{4}{\omega} + 2T \int_{-\infty}^{\infty} \frac{\sin(x)}{x} dx\\[6pt]
           &=\Big[-\frac{4}{\omega} \Big(\frac{1- \cos(\omega t)}{2}\Big) + 2T Si(x)\Big]\Big|_{-\infty}^{\infty}\\[6pt]
           &=\Big[\frac{2}{\omega} (\cos(wt) - 1) + 2T Si(\omega T)\Big]\Big|_{-\infty}^{\infty}\\[6pt]
         \end{aligned}
@@ -385,7 +384,8 @@ $T$ y amplitud unitaria.
         Desarrollando el primer termino:
         $$
         \begin{aligned}
-          2\frac{\cos(\omega T)-1}{\omega} \Big|_{-\infty}^{\infty}&=2\frac{\cos(\omega T)-1}{\omega} \Big|_{-\infty}^{0} + 2\frac{\cos(\omega T)-1}{\omega} \Big|_{0}^{\infty}\\[6pt]
+          2\frac{\cos(\omega T)-1}{\omega} \Big|_{-\infty}^{\infty}&=2\frac{\cos(\omega T)-1}{\omega} 
+          \Big|_{-\infty}^{0} + 2\frac{\cos(\omega T)-1}{\omega} \Big|_{0}^{\infty}\\[6pt]
           &= 0
         \end{aligned}
         $$
@@ -393,22 +393,52 @@ $T$ y amplitud unitaria.
         Desarrollando el segundo termino:
         $$
         \begin{aligned}
-          2T\text{Si}(\omega T)\Big|_{-\infty}^{\infty} &= 2T\text{Si}(\omega T)\Big|_{-\infty}^{0} + 2T\text{Si}(\omega T)
+          2T\text{Si}(\omega T)\Big|_{-\infty}^{\infty} &=
+          2T\text{Si}(\omega T)\Big|_{-\infty}^{0} + 2T\text{Si}(\omega T)
           \Big|_{0}^{\infty} \\[6pt]
           &= 2T(\text{Si}(0)-\lim_{\omega \to -\infty} \text{Si}(\omega T)) +
           2T(\lim_{\omega \to \infty} \text{Si}(\omega T) - \text{Si}(0))\\[6pt]
           &=  2T\frac{\pi}{2} + 2T \frac{\pi}{2} = 2\pi T
-          \end{aligned}
+        \end{aligned}
         $$
+
+        De esta forma podemos afirmar que:
+        $$\int_{-\infty}^{\infty} \Bigg[\hspace{1mm}\frac{2}{\omega} 
+        \sin\left(\frac{\omega T}{2}\right)\Bigg]^2 d\omega= 2\pi T$$
+
+        Siendo la energía de cada señal a travez de la relacion de persaval:
+          $$E_1 = \frac{2\pi \cdot 1}{2\pi} = 1 $$
+          $$E_2 = \frac{2\pi \cdot 0.1}{2\pi} = 0.1 $$
+
+        Esto coincidide con la energía calculada en el dominio del tiempo en el punto a.\\
 
         Reflexionar: ¿Qué ventajas/desventajas encuentra entre el método directo para calcular la energía $E_1, E_2$ de
         las señales $x_1, x_2$ en la variable de tiempo $t$ y el método que se deriva de la relación de Parseval, en
         donde los cálculos se realizan en la variable $\omega$?
 
+        En este caso, el metodo sobre la variable $t$ es mucho mas simple, directo y visual. En contra parte el calculo
+        mediante la relación de Parseval es mucho mas tedioso, requiriendo la resolucion de una integral compleja
+        y la ayuda de herramientas como la función $Si()$. Sin embargo, esto se debe a las caracteristicas de nuestra
+        señal en particular, es decir que no es extensible a otros casos.
+
   \end{itemize}
 
   \item Comparar los espectros obtenidos para cada una de las señales $x_1, x_2$, evaluar y proponer las 
     características sobresalientes de ambos espectros.
+
+    Se puede observar claramente en los graficos que los espectros obtenidos obedecen a la relación:
+
+    $$
+    \begin{aligned}
+      x(t) &\leftrightarrow X(w) \\[6pt]
+      x(t\alpha) &\leftrightarrow \frac{1}{|\alpha|}X\Big(\frac{w}{\alpha}\Big)
+    \end{aligned}
+    $$
+
+    Esto se puede interpretar como que al ser la señal $x_1$ mas extensa en el tiempo, y por ende con cambios mas suaves
+    su espectro esta concentrado en señales de frecuencia mas baja en relación al espectro de la señal $x_2$, que al ser
+    mas acotada en el tiempo y por consecuencia variar mas rapidamente, su espectro presenta componentes de frecias mas
+    altas.
 
 \end{enumerate}
 
