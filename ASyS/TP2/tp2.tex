@@ -169,6 +169,33 @@ equilibrio, máxima amplitud $A > 0$ y despreciando los efectos de la fricción,
 
   \item Verificar si la señal $x(t)$ cumple (o no) cada una de las siguientes propiedades: Periódica, Energía finita,
     Potencia finita, causal, acotada.
+
+  \begin{enumerate}[label=\alph*)]
+    \item Periodica
+
+      Es periodica ya que existe un valor T tal que $x(t) = x (t + nT)$, donde n = 1,2,3..
+    \item Energia
+
+    Tiene energia infinita. Para señales periodicas, la energia total en el sentido clasico puede ser infinita debido a que la señal se repite indefinidamente, pero si hablamos de la energia en un periodo T, es finita y es:
+
+    $$E_T = \int_{0}^{T} |A \cos(\omega t)|^2 dt$$
+    $$E_T = A^2 \int_{0}^{T} \cos(\omega t)^2 dt$$
+    $$E_T = A^2 \int_{0}^{T} \frac{1 + \cos(2 \omega t)}{2} dt$$
+    $$E_T = A^2 \frac{1}{2}\int_{0}^{T}  \cos(2 \omega t)dt$$
+    \item Potencia
+
+    Tiene energia infinita si consideramos el intervalo $(-\infty,\infty$, pero la energia es finita en un solo periodo, por lo que la potencia media es finita:
+
+    $$P_{med} = \lim_{T \to \infty} \frac{1}{2T} E_T$$
+    $$P_{med} = \lim_{T \to \infty} \frac{A^2T}{4T} = \frac{A^2}{4}$$
+    $$P_T = 2 P_{med} = \frac{A^2}{2}$$
+    \item Acotada
+
+    La señal es acotada ya que para todo t, $x(t) <= A$ siendo A la amplitud. Esto se da ya que las funciones trigonometricas seno o coseno toman valores entre -1 y 1
+    \item Causal
+
+    La señal no es causal porque esta definida para todos los tiempos, $t \in (-\infty,\infty)$
+  \end{enumerate}
 \end{enumerate}
 
 \chapter{}%ejercicio 2
