@@ -11,6 +11,7 @@
 \usepackage{cancel}
 \usepackage{enumitem}
 \usepackage{lmodern}
+\usepackage{tikz}
 
 \pagestyle{fancy}
 \fancyhf{} 
@@ -23,6 +24,8 @@
 \patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
 
 \renewcommand{\chaptername}{Ejercicio}
+
+\usetikzlibrary{shapes,arrows,positioning,calc}
 
 \titleformat{\chapter}[display]
   {\normalfont\bfseries}{\chaptertitlename\ \thechapter}{15pt}{}
@@ -52,6 +55,14 @@ Leonardo Ramos\\
 \date{19 / 08 / 2024}
 
 \begin{document}
+\tikzset{
+block/.style = {draw, fill=white, rectangle, minimum height=3em, minimum width=3em},
+tmp/.style  = {coordinate},
+sum/.style= {draw, fill=white, circle, node distance=1cm},
+input/.style = {coordinate},
+output/.style= {coordinate},
+pinstyle/.style = {pin edge={to-,thin,black}}
+}
 \maketitle
 
 \chapter{}%ejercicio 1
@@ -349,10 +360,12 @@ $T$ y amplitud unitaria.
 \end{enumerate}
 
 \chapter{}%ejercicio 4
-  
-  \textbf{Circuito Eléctrico RC:} circuito eléctrico correspondiente a un sistema de 1° orden y su ecuación característica: 
-  $$v(t) = R\cdot i(t) + \frac{1}{C} \cdot \int_{0}^{t} i(\tau) d\tau$$
 
+  \textbf{Circuito Eléctrico RC:} circuito eléctrico correspondiente a un sistema de 1° orden y su ecuación
+  característica:
+  $$v(t) = R\cdot i(t) + \frac{1}{C} \cdot \int_{0}^{t} i(\tau) d\tau$$
+  
+  \vspace{-1cm}
   \noindent
   \begin{figure}[h]
     \centering
@@ -364,10 +377,27 @@ $T$ y amplitud unitaria.
   \end{figure}
 
   \begin{enumerate}[label=\alph*)]
-    \item Obtener una representación del circuito con Ecuaciones Diferenciales de primer orden
-      y coeficientes constantes, y con ello, definir un Sistema en tiempo continuo con entrada
-      $x(t) = v(t)$ y salida $y(t) = i(t)$. Luego, hacer un diagrama de bloques de la E.D; exponiendo
-      los integradores que la conforma.
+    \item Obtener una representación del circuito con Ecuaciones Diferenciales de primer orden y coeficientes
+      constantes, y con ello, definir un Sistema en tiempo continuo con entrada $x(t) = v(t)$ y salida $y(t) = i(t)$.
+      Luego, hacer un diagrama de bloques de la E.D; exponiendo los integradores que la conforma.
+
+      El circuito RC esta descrito por la ecuacion caracteristica:
+
+      $$v(t) = R\cdot i(t) + \frac{1}{C} \cdot \int_{0}^{t} i(\tau) d\tau$$\\[2pt]
+
+      Para tener una nomenclatura mas generica, sustituimos la entrada $v(t)$ con $x(t)$ y la salida $i(t)$ con $y(t)$:
+
+      $$x(t) = R\cdot y(t) + \frac{1}{C} \cdot \int_{0}^{t} y(\tau) d\tau$$
+
+      Teniendo en cuenta que $y(t)$ es la salida e $x(t)$ la entrada, las ecuaciones diferenciales toman la forma:
+
+      $$\left(D^N + \sum_{i=0}^{N-1} a_i D^i\right) \cdot y(t) = \left(\sum_{i=0}^{M} b_i D^i\right) \cdot x(t)$$
+
+      Reacomodando la ecuacion caracteristica generalizada, nos queda:
+
+      $$y(t) + D^{-1} \left\{\frac{1}{RC} \cdot y(t) \right\} = x(t) \cdot \frac{1}{R}$$
+      $$D^1\Bigl\{y(t) \Bigl\} + \frac{1}{RC} \cdot y(t) = D^1\left\{x(t) \cdot \frac{1}{R} \right\}$$
+      $$\frac{dy(t)}{dt} + \frac{1}{RC} \cdot y(t) = \frac{dx(t)}{dt} \cdot \frac{1}{R}$$
 
     \item Teniendo en cuenta el siguiente resultado matemático, obtener una descripción explicita
       de la respuesta $y(t)$ del sistema obtenido en el inciso anterior:
@@ -379,19 +409,62 @@ $T$ y amplitud unitaria.
 
           Entonces, una Solución General explicita de la Ecuación Diferencial es
 
-          $$y_t = \beta_1 x_t + (y_0 - \beta_1 x_0) e^{-\alpha t} + (\beta_0 - \alpha \beta_1) \int_{0}^{t} x(\tau) e^{-\alpha(t - \tau)} d\tau$$
+          $$y_t = \beta_1 x_t + (y_0 - \beta_1 x_0) e^{-\alpha t} + (\beta_0 - \alpha \beta_1) \int_{0}^{t} x(\tau)
+          e^{-\alpha(t - \tau)} d\tau$$
 
           donde $y_0 = y(0), x_0 = x(0)$ son Condiciones Iniciales arbitrarias
         \end{itemize}
 
-    \item Usando la descripción explicita de la salida del Sistema $y_t = S_1{x_t}$ (CI arbitrarias) del
-      inciso anterior, calcular la respuesta a cada una de las siguientes señales:
+    \item Usando la descripción explicita de la salida del Sistema $y_t = S_1{x_t}$ (CI arbitrarias) del inciso
+      anterior, calcular la respuesta a cada una de las siguientes señales:
 
-      $$x_0(t) = 0, \hspace{0.5cm}x_1(t) = \mu_t, \hspace{0.5cm}x_2(t) = \mu(t - t_0), \hspace{0.5cm}x_3(t) = \mu_t - \mu(t - t_0), \hspace{0.5cm}x_4(t) = t$$
+      $$x_0(t) = 0, \hspace{0.5cm}x_1(t) = \mu_t, \hspace{0.5cm}x_2(t) = \mu(t - t_0), \hspace{0.5cm}x_3(t) =
+      \mu_t - \mu(t - t_0), \hspace{0.5cm}x_4(t) = t$$
 
-      \textbf{Reflexionar:} ¿La señal $y_0$ es completamente nula? ¿Las señales $y_3, y' = y_1 - y_2$ (iguales
-      o distintas)? ¿es suficiente para garantizar la Linealidad del sistema? ¿Las señales $y_1, y_2$
-      son iguales? ¿es suficiente para garantizar la Inv. Tiempo del sistema?
+      \textbf{Reflexionar:} ¿La señal $y_0$ es completamente nula? ¿Las señales $y_3, y' = y_1 - y_2$ (iguales o
+      distintas)? ¿es suficiente para garantizar la Linealidad del sistema? ¿Las señales $y_1, y_2$ son iguales? ¿es
+      suficiente para garantizar la Inv. Tiempo del sistema?.
+
+    \item Usando la descripción explicita de la salida del Sistema $y_t = S_1{x_t}$ (CI arbitrarias), demostrar si el
+      Sistema $S1$ es (o no): Lineal, Homogéneo e Invariante en el Tiempo.
+
+    \item Demostrar que el sistema anterior en reposo gana propiedades, esto es, definir $y_t = S_2{x_t}$ con C.I. 
+      nulas $y_0 = x_0 = 0$, y clasificar el sistema S2 (Aditivo, Homogéneo, Inv. Tiempo).
+
+    \item Refinar aun más el sistemas, exijamos C.I nulas y respuesta causal (se elimine el pasado), esto es, definir 
+      $y_t = S_3{x_t} = S_2{x_t} \mu_t$. Demostrar que el sistema S3 es LIT (Lineal e Inv. Tiempo). Sintetizar sus 
+      respuestas es una tabla de doble entrada:
+
+      \begin{table}[h!]
+        \centering
+        \begin{tabular}{|c|c|c|c|}
+          \hline
+          \textbf{Entrada $x_t$} & \textbf{Salida $y_t = S_3{x_t}$} & \textbf{Salida $y_t = x_t * h_t$} & \textbf{Comparar}\\
+          \hline
+          $\delta_t$ & $h_t = ??$ & &\\
+          \hline
+          $\mu_t$ & & &\\
+          \hline
+          $\mu_{t-1}$ & & &\\
+          \hline
+          $\mu_t - \mu_{t-1}$ & & &\\
+          \hline
+          $t$ & & &\\
+          \hline
+          $t\mu_{t}$ & & &\\
+          \hline
+          $e^{2t}$ & & &\\
+          \hline
+          $e^{2t}\mu_{-t}$ & & &\\
+          \hline
+
+        \end{tabular}
+      \end{table}
+      \textbf{Reflexionar:} En general, ¿cualquier sistema $S$ admite una descripción del tipo $S{x} = y = x * h$?
+      ¿Cuales son los requerimientos para que esto suceda? ¿El dominio de señales de entrada del sistema linealizado
+      $S_3{x}$, es igual al dominio del sistema $x * h$?
+
+
   \end{enumerate}
 
 \end{document}
