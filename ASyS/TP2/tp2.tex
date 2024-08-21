@@ -766,7 +766,7 @@ $T$ y amplitud unitaria.
       Invarianza en el tiempo: La verificacion de la invarianza en el tiempo involucra realizar un desplazamiento
       temporal en la señal de entrada, y comparar si realizando un desplazamiento temporal en la señal de salida, se
       obtiene la misma señal o no. Para eso, establecemos que $t_0$ es un desplazamiento arbitrario, que $y_1(t) = S_1
-      \{x_{(t-t_0)}\}$ y que $y_2(t) = y_{(t-t_0)} = S_1\{x_t\}$:
+      \{x_{(t-t_0)}\}$ y que $y_2(t) = y_{(t-t_0)}$:
       \begin{align*}
         y_1(t) &= x_{(t - t_0)} \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot
           e^{\frac{-t}{RC}} - \frac{1}{R^2C} \int_{0}^{t} x_{(\tau - t_0)} \cdot e^{\frac{-(t-\tau)}{RC}} d\tau\\[12pt]
@@ -785,6 +785,9 @@ $T$ y amplitud unitaria.
     \item Demostrar que el sistema anterior en reposo gana propiedades, esto es, definir $y_t = S_2\{x_t\}$ con C.I. 
       nulas $y_0 = x_0 = 0$, y clasificar el sistema S2 (Aditivo, Homogéneo, Inv. Tiempo).
 
+      La respuesta del sistema ahora esta dada por la ecuación:
+      $$y(t) = x(t) \cdot \frac{1}{R}- \frac{1}{R^2C} \int_{0}^{t} x(\tau) \cdot e^{\frac{\tau-(t - t_0))}{RC}} d\tau$$
+
       Linealidad: Trayendo el analisis del punto anterior, tenemos que:
       \begin{align*}
         y_3(t) &= k_0\left((x_a + x_b) \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot e^{\frac{-t}{RC}} -
@@ -802,25 +805,43 @@ $T$ y amplitud unitaria.
       Lo cual verifica que el $S_2$ es completamente aditivo y homogeneo, por lo que ahora se lo puede considerar
       lineal.\\
 
-      Invarianza en el tiempo: Trayendo nuevamente el analisis del punto anterior:
-      \begin{align*}
-        y_1(t) &= x_{(t - t_0)} \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot
-          e^{\frac{-t}{RC}} - \frac{1}{R^2C} \int_{0}^{t} x_{(\tau - t_0)} \cdot e^{\frac{-(t-\tau)}{RC}} d\tau\\[12pt]
-        y_2(t) &= x_{(t - t_0)} \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot e^{\frac{-(t-t_0)}{RC}} -
-          \frac{1}{R^2C} \int_{t_0}^{t} x_{(v-t_0)} \cdot e^{\frac{-(t-v)}{RC}} dv\\[12pt]
-        &\hspace{4cm}y_1(t) \neq y_2(t)
-      \end{align*}
-      En este caso, al igual que en la demostracion de linealidad, al ser nulas las C.I., el termino no lineal que
-      involucra las condiciones iniciales es nulo, por lo que queda lo siguiente:
-      \begin{gather*}
-        y_1(t) = x_{(t - t_0)} \cdot \frac{1}{R} - \frac{1}{R^2C} \int_{0}^{t} x_{(\tau - t_0)} \cdot
-          e^{\frac{-(t-\tau)}{RC}} d\tau\\[12pt]
-        y_2(t) = x_{(t - t_0)} \cdot \frac{1}{R} - \frac{1}{R^2C} \int_{t_0}^{t} x_{(v-t_0)} \cdot
-          e^{\frac{-(t-v)}{RC}} dv\\[12pt]
-        y_1(t) \neq y_2(t)
-      \end{gather*}
-      Lo que aun no permite que el sistema sea invariante en el tiempo, por los limites de integracion que son
-      diferentes.
+      \textbf{invarianza en el tiempo:}
+
+      La respuesta del sistema desplazada $t_0$ es:
+      $$y(t - t_0) = x(t - t_0) \cdot \frac{1}{R}- \frac{1}{R^2C} \int_{0}^{t - t_0} x(\tau) \cdot
+      e^{\frac{\tau-(t - t_0))}{RC}} d\tau$$
+
+      Y la respuesta del sistema a una entrada desplazada $t_0$ es:
+      $$y_2(t) = x(t-t_0) \cdot \frac{1}{R}- \frac{1}{R^2C} \int_{0}^{t} x(\tau - t_0) \cdot
+      e^{\frac{\tau-t}{RC}} d\tau$$
+
+      Aplicando un cambio de variable $v= \tau-t$
+      $$y_2(t) = x(t-t_0) \cdot \frac{1}{R}- \frac{1}{R^2C} \int_{-t_0}^{t-t_0} x(v) \cdot
+      e^{\frac{v-(t-t_0)}{RC}} dv$$
+
+      $$y_2(t) \neq y(t-t_0)$$
+
+      Por ende el sistema no es invariante en el tiempo.
+
+%      Invarianza en el tiempo: Trayendo nuevamente el analisis del punto anterior:
+%      \begin{align*}
+%        y_1(t) &= x_{(t - t_0)} \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot
+%          e^{\frac{-t}{RC}} - \frac{1}{R^2C} \int_{0}^{t} x_{(\tau - t_0)} \cdot e^{\frac{-(t-\tau)}{RC}} d\tau\\[12pt]
+%        y_2(t) &= x_{(t - t_0)} \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot e^{\frac{-(t-t_0)}{RC}} -
+%          \frac{1}{R^2C} \int_{t_0}^{t} x_{(v-t_0)} \cdot e^{\frac{-(t-v)}{RC}} dv\\[12pt]
+%        &\hspace{4cm}y_1(t) \neq y_2(t)
+%      \end{align*}
+%      En este caso, al igual que en la demostracion de linealidad, al ser nulas las C.I., el termino no lineal que
+%      involucra las condiciones iniciales es nulo, por lo que queda lo siguiente:
+%      \begin{gather*}
+%        y_1(t) = x_{(t - t_0)} \cdot \frac{1}{R} - \frac{1}{R^2C} \int_{0}^{t} x_{(\tau - t_0)} \cdot
+%          e^{\frac{-(t-\tau)}{RC}} d\tau\\[12pt]
+%        y_2(t) = x_{(t - t_0)} \cdot \frac{1}{R} - \frac{1}{R^2C} \int_{t_0}^{t} x_{(v-t_0)} \cdot
+%          e^{\frac{-(t-v)}{RC}} dv\\[12pt]
+%        y_1(t) \neq y_2(t)
+%      \end{gather*}
+%      Lo que aun no permite que el sistema sea invariante en el tiempo, por los limites de integracion que son
+%      diferentes.
 
     \item Refinar aun más el sistemas, exijamos C.I nulas y respuesta causal (se elimine el pasado), esto es, definir
       $y_t = S_3{x_t} = S_2{x_t} \mu_t$. Demostrar que el sistema S3 es LIT (Lineal e Inv. Tiempo). Sintetizar sus
@@ -829,33 +850,71 @@ $T$ y amplitud unitaria.
       Para el $S_3$, nuevamente trayendo desarrollos de los puntos anteriores, ya sabemos que con C.I. nulas, el $S_2$
       es Lineal, por lo que solamente falta demostrar la invarianza en el tiempo.\\
 
-      Invarianza en el tiempo: Trayendo desarrollos del punto anterior, tenemos:
-      \begin{gather*}
-        y_1(t) = x_{(t - t_0)} \cdot \frac{1}{R} - \frac{1}{R^2C} \int_{0}^{t} x_{(\tau - t_0)} \cdot
-          e^{\frac{-(t-\tau)}{RC}} d\tau\\[12pt]
-        y_2(t) = x_{(t - t_0)} \cdot \frac{1}{R} - \frac{1}{R^2C} \int_{t_0}^{t} x_{(v-t_0)} \cdot
-          e^{\frac{-(t-v)}{RC}} dv\\[12pt]
-        y_1(t) \neq y_2(t)
-      \end{gather*}
-      Si multiplicamos la salida de ambas funciones por $\mu_t$ para que el sistema sea causal, nos quedaria lo
-      siguiente:
-      \begin{gather*}
-        y_1(t) = \mu_t \cdot x_{(t - t_0)} \cdot \frac{1}{R} - \frac{1}{R^2C} \int_{0}^{t} \mu_t \cdot x_{(\tau - t_0)}
-          \cdot e^{\frac{-(t-\tau)}{RC}} d\tau\\[12pt]
-        y_2(t) = \mu_t \cdot x_{(t - t_0)} \cdot \frac{1}{R} - \mu_t \cdot \frac{1}{R^2C} \int_{t_0}^{t}  x_{(v-t_0)}
-          \cdot e^{\frac{-(t-v)}{RC}} dv\\[12pt]
-      \end{gather*}
-      Para que el sistema $S_3$ sea invariante en el tiempo, se necesita que la entrada sea causal. De esa forma,
-      podemos reacomodar la integral para que quede igual que $y_1(t)$:
-      \begin{equation*}
-        y_2(t) = \mu_t \cdot x_{(t - t_0)} \cdot \frac{1}{R} - \frac{1}{R^2C} \left[\underbrace{\int_{0}^{t_0}
-          x_{(v-t_0)} \cdot e^{\frac{-(t-v)}{RC}} dv}_{=0} + \int_{t_0}^{t} x_{(v-t_0)} \cdot
-          e^{\frac{-(t-v)}{RC}} dv\right]\\[12pt]
-      \end{equation*}
-      La nueva integral que se agrego, es igual a cero debido a que, como dijimos, que la señal de entrada es causal,
-      por lo tanto, cuando $v < t_0$, la señal de entrada va a ser evualuada en $t < 0$, por lo que su salida va a ser
-      nula debido a la causalidad. Cuando $v = t_0$, la señal de entrada va a ser evaulada en 0, pero
-      independientemente de lo que valga, el aporte a la integracion va a ser nulo. Esto permite 
+      La respuesta de nuestro sistema es ahora:
+      $$y(t) =\mu_t x(t) \cdot \frac{1}{R}- \frac{1}{R^2C} \mu_t \int_{0}^{t} x(\tau) \cdot e^{\frac{\tau-t}{RC}} d\tau$$
+
+      Esta respuesta con un desplazamiento $t_0$ es:
+      $$y(t - t_0) =\mu_t x(t - t_0) \cdot \frac{1}{R}- \frac{1}{R^2C} \mu_t \int_{0}^{t - t_0} x(\tau) \cdot e^{\frac{\tau-(t - t_0)}{RC}} d\tau$$
+
+      Y la respuesta del sistema a una entrada desplazada $t_0$ es:
+      $$y_2(t) = \mu_t x(t-t_0) \cdot \frac{1}{R}- \frac{1}{R^2C} \mu_t \int_{0}^{t} x(\tau - t_0) \cdot
+      e^{\frac{\tau-t}{RC}} d\tau$$
+
+      Aplicando un cambio de variable $v= \tau-t_0$
+      $$y_2(t) = \mu_t x(t-t_0) \cdot \frac{1}{R}- \frac{1}{R^2C} \mu_t \int_{-t_0}^{t-t_0} x(v) \cdot
+      e^{\frac{v-(t-t_0)}{RC}} dv$$
+
+      en este punto, tenemos dos caminos para tomar.
+
+      para $t_0 < 0$
+      $$y_2(t) = \mu_t x(t-t_0) \cdot \frac{1}{R}- \frac{1}{R^2C} \mu_t \int_{|t_0|}^{t+|t_0|} x(v) \cdot
+      e^{\frac{v-(t-t_0)}{RC}} dv$$
+
+      Por ende:
+      $$y_2(t) \neq y(t-t_0) \hspace{10mm} (\text{para }t_0<0)$$
+
+      para $t_0 > 0$
+      $$y_2(t) = \mu_t x(t-t_0) \cdot \frac{1}{R}- \frac{1}{R^2C} \mu_t \left( \int_{-t_0}^{0} x(v) \cdot 
+      e^{\frac{v-(t-t_0)}{RC}} dv +\int_{0}^{t-t_0} x(v) \cdot e^{\frac{v-(t-t_0)}{RC}} dv \right)$$
+
+      Si bien esta señal no es igual a $y(t-t_0)$. si consideramos a $x(t)$ como una señal causal entonces:
+      $$\int_{-t_0}^{0} x(v) \cdot e^{\frac{v-(t-t_0)}{RC}} dv = 0$$
+
+      y:
+      $$y_2(t) = y(t-t_0) \hspace{10mm} (\text{para }t_0>0 \text{, y } x_t \text{ causal})$$
+
+      De esta forma podemos afirmar que el sistema es el sistema es LTI bajo las condiciones de CI=0, respuesta causal,
+      y entrada causal.
+
+
+%      Desarrollo de Pambi
+%      Invarianza en el tiempo: Trayendo desarrollos del punto anterior, tenemos:
+%      \begin{gather*}
+%        y_1(t) = x_{(t - t_0)} \cdot \frac{1}{R} - \frac{1}{R^2C} \int_{0}^{t} x_{(\tau - t_0)} \cdot
+%          e^{\frac{-(t-\tau)}{RC}} d\tau\\[12pt]
+%        y_2(t) = x_{(t - t_0)} \cdot \frac{1}{R} - \frac{1}{R^2C} \int_{t_0}^{t} x_{(v-t_0)} \cdot
+%          e^{\frac{-(t-v)}{RC}} dv\\[12pt]
+%        y_1(t) \neq y_2(t)
+%      \end{gather*}
+%      Si multiplicamos la salida de ambas funciones por $\mu_t$ para que el sistema sea causal, nos quedaria lo
+%      siguiente:
+%      \begin{gather*}
+%        y_1(t) = \mu_t \cdot x_{(t - t_0)} \cdot \frac{1}{R} - \frac{1}{R^2C} \int_{0}^{t} \mu_t \cdot x_{(\tau - t_0)}
+%          \cdot e^{\frac{-(t-\tau)}{RC}} d\tau\\[12pt]
+%        y_2(t) = \mu_t \cdot x_{(t - t_0)} \cdot \frac{1}{R} - \mu_t \cdot \frac{1}{R^2C} \int_{t_0}^{t}  x_{(v-t_0)}
+%          \cdot e^{\frac{-(t-v)}{RC}} dv\\[12pt]
+%      \end{gather*}
+%      Para que el sistema $S_3$ sea invariante en el tiempo, se necesita que la entrada sea causal. De esa forma,
+%      podemos reacomodar la integral para que quede igual que $y_1(t)$:
+%      \begin{equation*}
+%        y_2(t) = \mu_t \cdot x_{(t - t_0)} \cdot \frac{1}{R} - \frac{1}{R^2C} \left[\underbrace{\int_{0}^{t_0}
+%          x_{(v-t_0)} \cdot e^{\frac{-(t-v)}{RC}} dv}_{=0} + \int_{t_0}^{t} x_{(v-t_0)} \cdot
+%          e^{\frac{-(t-v)}{RC}} dv\right]\\[12pt]
+%      \end{equation*}
+%      La nueva integral que se agrego, es igual a cero debido a que, como dijimos, que la señal de entrada es causal,
+%      por lo tanto, cuando $v < t_0$, la señal de entrada va a ser evualuada en $t < 0$, por lo que su salida va a ser
+%      nula debido a la causalidad. Cuando $v = t_0$, la señal de entrada va a ser evaulada en 0, pero
+%      independientemente de lo que valga, el aporte a la integracion va a ser nulo. Esto permite 
 
       \begin{table}[h]
         \centering
