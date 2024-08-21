@@ -747,24 +747,133 @@ $T$ y amplitud unitaria.
       Sistema $S_1$ es (o no): Lineal, Homogéneo e Invariante en el Tiempo.
 
       Linealidad: La verificacion de la linealidad del sistema, viene de la mano de la homogeneidad y la aditividad,
-      los cuales se demuestran a continuacion, donde $x_a$ y $x_b$ son dos señales arbitrarias, e $y_5 = S_1\{x_a\},
-      y_6 = S_1\{x_b\}$ y $y_7 = S_1\{x_a + x_b\}$:
+      los cuales se demuestran a continuacion, donde $x_a$ y $x_b$ son dos señales arbitrarias, e $y_1(t) = S_1\{k_0x_a\},
+      y_2(t) = S_1\{k_0x_b\}$ y $y_3(t) = k_0S_1\{x_a + x_b\}$:
       \begin{align*}
-        y_5(t) &= x_a \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot
-          e^{\frac{-t}{RC}} - \frac{1}{R^2C} \int_{0}^{t} x_a \cdot e^{\frac{-(t-\tau)}{RC}} d\tau\\[6pt]
-        y_6(t) &= x_b \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot
-          e^{\frac{-t}{RC}} - \frac{1}{R^2C} \int_{0}^{t} x_b \cdot e^{\frac{-(t-\tau)}{RC}} d\tau\\[6pt]
-        y_7(t) &= (x_a - x_b) \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot
-          e^{\frac{-t}{RC}} - \frac{1}{R^2C} \int_{0}^{t} (x_a - x_b) \cdot e^{\frac{-(t-\tau)}{RC}} d\tau\\[6pt]
+        y_1(t) &= k_0x_a \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot
+          e^{\frac{-t}{RC}} - \frac{1}{R^2C} \int_{0}^{t} k_0x_a \cdot e^{\frac{-(t-\tau)}{RC}} d\tau\\[12pt]
+        y_2(t) &= k_0x_b \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot
+          e^{\frac{-t}{RC}} - \frac{1}{R^2C} \int_{0}^{t} k_0x_b \cdot e^{\frac{-(t-\tau)}{RC}} d\tau\\[12pt]
+        y_3(t) &= k_0\left((x_a + x_b) \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot e^{\frac{-t}{RC}} -
+          \frac{1}{R^2C} \int_{0}^{t} (x_a + x_b) \cdot e^{\frac{-(t-\tau)}{RC}} d\tau\right)\\[12pt]
+        y_3(t) &= y_1(t) + y_2(t)\\[6pt]
+        y_3(t) &\neq k_0(x_a + x_b) \cdot \frac{1}{R} + 2\left(y_0 - \frac{x_0}{R}\right) \cdot
+          e^{\frac{-t}{RC}} - \frac{1}{R^2C} \int_{0}^{t} k_0(x_a + x_b) \cdot e^{\frac{-(t-\tau)}{RC}} d\tau
       \end{align*}
+      La desigualdad anterior permite establecer que el $S_1\{x_t\}$ no es ni aditivo ni homogeneo, por lo tanto no es
+      lineal. Esto se debe a causa del termino no lineal que involucra las condiciones iniciales.\\
 
+      Invarianza en el tiempo: La verificacion de la invarianza en el tiempo involucra realizar un desplazamiento
+      temporal en la señal de entrada, y comparar si realizando un desplazamiento temporal en la señal de salida, se
+      obtiene la misma señal o no. Para eso, establecemos que $t_0$ es un desplazamiento arbitrario, que $y_1(t) = S_1
+      \{x_{(t-t_0)}\}$ y que $y_2(t) = y_{(t-t_0)} = S_1\{x_t\}$:
+      \begin{align*}
+        y_1(t) &= x_{(t - t_0)} \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot
+          e^{\frac{-t}{RC}} - \frac{1}{R^2C} \int_{0}^{t} x_{(\tau - t_0)} \cdot e^{\frac{-(t-\tau)}{RC}} d\tau\\[12pt]
+        y_2(t) &= x_{(t - t_0)} \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot e^{\frac{-(t-t_0)}{RC}} -
+          \frac{1}{R^2C} \int_{0}^{t - t_0} x_{(\tau)} \cdot e^{\frac{-(t-t_0-\tau)}{RC}} d\tau\\[6pt]
+        v &= t+\tau; \hspace{7mm} dv = d\tau; \hspace{7mm} \tau \rightarrow t-t_0, v \rightarrow t;
+          \hspace{7mm} \tau \rightarrow 0, v \rightarrow t_0\\[6pt]
+        y_2(t) &= x_{(t - t_0)} \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot e^{\frac{-(t-t_0)}{RC}} -
+          \frac{1}{R^2C} \int_{t_0}^{t} x_{(v-t_0)} \cdot e^{\frac{-(t-v)}{RC}} dv\\[12pt]
+        &\hspace{4cm}y_1(t) \neq y_2(t)
+      \end{align*}
+      Como se puede ver, $y_1(t) \neq y_2(t)$, por lo que el $S_1\{x_t\}$ no es invariante en el tiempo. Esto es debido
+      a los limites de integracion, ya que el resto de los terminos son practicamente iguales, y por el termino no
+      lineal que involucra las condiciones iniciales.
 
     \item Demostrar que el sistema anterior en reposo gana propiedades, esto es, definir $y_t = S_2\{x_t\}$ con C.I. 
       nulas $y_0 = x_0 = 0$, y clasificar el sistema S2 (Aditivo, Homogéneo, Inv. Tiempo).
 
-    \item Refinar aun más el sistemas, exijamos C.I nulas y respuesta causal (se elimine el pasado), esto es, definir 
-      $y_t = S_3{x_t} = S_2{x_t} \mu_t$. Demostrar que el sistema S3 es LIT (Lineal e Inv. Tiempo). Sintetizar sus 
-      respuestas es una tabla de doble entrada:
+      Linealidad: Trayendo el analisis del punto anterior, tenemos que:
+      \begin{align*}
+        y_3(t) &= k_0\left((x_a + x_b) \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot e^{\frac{-t}{RC}} -
+          \frac{1}{R^2C} \int_{0}^{t} (x_a + x_b) \cdot e^{\frac{-(t-\tau)}{RC}} d\tau\right)\\[12pt]
+        y_3(t) &= y_1(t) + y_2(t)\\[6pt]
+        y_3(t) &\neq k_0(x_a + x_b) \cdot \frac{1}{R} + 2\left(y_0 - \frac{x_0}{R}\right) \cdot
+          e^{\frac{-t}{RC}} - \frac{1}{R^2C} \int_{0}^{t} k_0(x_a + x_b) \cdot e^{\frac{-(t-\tau)}{RC}} d\tau
+      \end{align*}
+      Como ahora, para el $S_2$ las C.I. son nulas, la desigualdad ahora se cumple, quedando:
+      \begin{gather*}
+        y_3(t) = y_1(t) + y_2(t)\\[6pt]
+        y_3(t) = k_0\left((x_a + x_b) \cdot \frac{1}{R} - \frac{1}{R^2C} \int_{0}^{t} (x_a + x_b) \cdot
+        e^{\frac{-(t-\tau)}{RC}} d\tau\right)
+      \end{gather*}
+      Lo cual verifica que el $S_2$ es completamente aditivo y homogeneo, por lo que ahora se lo puede considerar
+      lineal.\\
+
+      Invarianza en el tiempo: Trayendo nuevamente el analisis del punto anterior:
+      \begin{align*}
+        y_1(t) &= x_{(t - t_0)} \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot
+          e^{\frac{-t}{RC}} - \frac{1}{R^2C} \int_{0}^{t} x_{(\tau - t_0)} \cdot e^{\frac{-(t-\tau)}{RC}} d\tau\\[12pt]
+        y_2(t) &= x_{(t - t_0)} \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot e^{\frac{-(t-t_0)}{RC}} -
+          \frac{1}{R^2C} \int_{t_0}^{t} x_{(v-t_0)} \cdot e^{\frac{-(t-v)}{RC}} dv\\[12pt]
+        &\hspace{4cm}y_1(t) \neq y_2(t)
+      \end{align*}
+      En este caso, al igual que en la demostracion de linealidad, al ser nulas las C.I., el termino no lineal que
+      involucra las condiciones iniciales es nulo, por lo que queda lo siguiente:
+      \begin{gather*}
+        y_1(t) = x_{(t - t_0)} \cdot \frac{1}{R} - \frac{1}{R^2C} \int_{0}^{t} x_{(\tau - t_0)} \cdot
+          e^{\frac{-(t-\tau)}{RC}} d\tau\\[12pt]
+        y_2(t) = x_{(t - t_0)} \cdot \frac{1}{R} - \frac{1}{R^2C} \int_{t_0}^{t} x_{(v-t_0)} \cdot
+          e^{\frac{-(t-v)}{RC}} dv\\[12pt]
+        y_1(t) \neq y_2(t)
+      \end{gather*}
+      Lo que aun no permite que el sistema sea invariante en el tiempo, por los limites de integracion que son
+      diferentes.
+
+    \item Refinar aun más el sistemas, exijamos C.I nulas y respuesta causal (se elimine el pasado), esto es, definir
+      $y_t = S_3{x_t} = S_2{x_t} \mu_t$. Demostrar que el sistema S3 es LIT (Lineal e Inv. Tiempo). Sintetizar sus
+      respuestas es una tabla de doble entrada.
+
+      Para el $S_3$, nuevamente trayendo desarrollos de los puntos anteriores, ya sabemos que con C.I. nulas, el $S_2$
+      es Lineal, por lo que solamente falta demostrar la invarianza en el tiempo.\\
+
+      Invarianza en el tiempo: Trayendo desarrollos del punto anterior, tenemos:
+      \begin{gather*}
+        y_1(t) = x_{(t - t_0)} \cdot \frac{1}{R} - \frac{1}{R^2C} \int_{0}^{t} x_{(\tau - t_0)} \cdot
+          e^{\frac{-(t-\tau)}{RC}} d\tau\\[12pt]
+        y_2(t) = x_{(t - t_0)} \cdot \frac{1}{R} - \frac{1}{R^2C} \int_{t_0}^{t} x_{(v-t_0)} \cdot
+          e^{\frac{-(t-v)}{RC}} dv\\[12pt]
+        y_1(t) \neq y_2(t)
+      \end{gather*}
+      Si multiplicamos la salida de ambas funciones por $\mu_t$ para que el sistema sea causal, nos quedaria lo
+      siguiente:
+      \begin{gather*}
+        y_1(t) = \mu_t \cdot x_{(t - t_0)} \cdot \frac{1}{R} - \frac{1}{R^2C} \int_{0}^{t} \mu_t \cdot x_{(\tau - t_0)}
+          \cdot e^{\frac{-(t-\tau)}{RC}} d\tau\\[12pt]
+        y_2(t) = \mu_t \cdot x_{(t - t_0)} \cdot \frac{1}{R} - \mu_t \cdot \frac{1}{R^2C} \int_{t_0}^{t}  x_{(v-t_0)}
+          \cdot e^{\frac{-(t-v)}{RC}} dv\\[12pt]
+      \end{gather*}
+      Para que el sistema $S_3$ sea invariante en el tiempo, se necesita que la entrada sea causal. De esa forma,
+      podemos reacomodar la integral para que quede igual que $y_1(t)$:
+      \begin{equation*}
+        y_2(t) = \mu_t \cdot x_{(t - t_0)} \cdot \frac{1}{R} - \frac{1}{R^2C} \left[\underbrace{\int_{0}^{t_0}
+          x_{(v-t_0)} \cdot e^{\frac{-(t-v)}{RC}} dv}_{=0} + \int_{t_0}^{t} x_{(v-t_0)} \cdot
+          e^{\frac{-(t-v)}{RC}} dv\right]\\[12pt]
+      \end{equation*}
+      La nueva integral que se agrego, es igual a cero debido a que, como dijimos, que la señal de entrada es causal,
+      por lo tanto, cuando $v < t_0$, la señal de entrada va a ser evualuada en $t < 0$, por lo que su salida va a ser
+      nula debido a la causalidad. Cuando $v = t_0$, la señal de entrada va a ser evaulada en 0, pero
+      independientemente de lo que valga, el aporte a la integracion va a ser nulo. Esto permite 
+
+      \begin{table}[h]
+        \centering
+        \begin{tabular}{|c|c|c|c|}
+          \hline
+          \textbf{Sistema} & \textbf{Aditivo} & \textbf{Homogeneo} & \textbf{Inv. Tiempo}\\
+          \hline
+          $S_1$ (C.I. arbitrarias) & No & No & No\\
+          \hline
+          $S_2$ (C.I. nulas) & Si & Si & No\\
+          \hline
+          $S-3$ (C.I. nulas y RTA causal) & Si & Si & Si\\
+          \hline
+        \end{tabular}
+      \end{table}
+
+    \item Comparar las respuestas del sistema linealizado $y_t = S_3\{x_t\}$ con su formula en convolución,
+      $y_t = x_t * h_t$, donde $h_t = S\{\delta_t\}$. Para ello, llenar la siguiente tabla:
 
       \begin{table}[h!]
         \centering
@@ -772,7 +881,7 @@ $T$ y amplitud unitaria.
           \hline
           \textbf{Entrada $x_t$} & \textbf{Salida $y_t = S_3{x_t}$} & \textbf{Salida $y_t = x_t * h_t$} & \textbf{Comparar}\\
           \hline
-          $\delta_t$ & $h_t = ??$ & &\\
+          $\delta_t$ & $h_t = \frac{1}{R} \delta_t - \frac{1}{R^2C} e^{\frac{-t}{RC}}$ & &\\
           \hline
           $\mu_t$ & & &\\
           \hline
