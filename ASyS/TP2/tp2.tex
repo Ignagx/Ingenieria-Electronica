@@ -747,7 +747,7 @@ $T$ y amplitud unitaria.
     \item Usando la descripción explicita de la salida del Sistema $y_t = S_1\{x_t\}$ (CI arbitrarias), demostrar si el
       Sistema $S_1$ es (o no): Lineal, Homogéneo e Invariante en el Tiempo.
 
-      Linealidad: La verificacion de la linealidad del sistema, viene de la mano de la homogeneidad y la aditividad,
+      \textbf{Linealidad:} La verificacion de la linealidad del sistema, viene de la mano de la homogeneidad y la aditividad,
       los cuales se demuestran a continuacion, donde $x_a$ y $x_b$ son dos señales arbitrarias, e $y_1(t) = S_1\{k_0x_a\},
       y_2(t) = S_1\{k_0x_b\}$ y $y_3(t) = k_0S_1\{x_a + x_b\}$:
       \begin{align*}
@@ -764,7 +764,7 @@ $T$ y amplitud unitaria.
       La desigualdad anterior permite establecer que el $S_1\{x_t\}$ no es ni aditivo ni homogeneo, por lo tanto no es
       lineal. Esto se debe a causa del termino no lineal que involucra las condiciones iniciales.\\
 
-      Invarianza en el tiempo: La verificacion de la invarianza en el tiempo involucra realizar un desplazamiento
+      \textbf{Invarianza en el tiempo:} La verificacion de la invarianza en el tiempo involucra realizar un desplazamiento
       temporal en la señal de entrada, y comparar si realizando un desplazamiento temporal en la señal de salida, se
       obtiene la misma señal o no. Para eso, establecemos que $t_0$ es un desplazamiento arbitrario, que $y_1(t) = S_1
       \{x_{(t-t_0)}\}$ y que $y_2(t) = y_{(t-t_0)}$:
@@ -789,7 +789,7 @@ $T$ y amplitud unitaria.
       La respuesta del sistema ahora esta dada por la ecuación:
       $$y(t) = x(t) \cdot \frac{1}{R}- \frac{1}{R^2C} \int_{0}^{t} x(\tau) \cdot e^{\frac{\tau-(t - t_0))}{RC}} d\tau$$
 
-      Linealidad: Trayendo el analisis del punto anterior, tenemos que:
+      \textbf{Linealidad:} Trayendo el analisis del punto anterior, tenemos que:
       \begin{align*}
         y_3(t) &= k_0\left((x_a + x_b) \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot e^{\frac{-t}{RC}} -
           \frac{1}{R^2C} \int_{0}^{t} (x_a + x_b) \cdot e^{\frac{-(t-\tau)}{RC}} d\tau\right)\\[12pt]
@@ -806,9 +806,7 @@ $T$ y amplitud unitaria.
       Lo cual verifica que el $S_2$ es completamente aditivo y homogeneo, por lo que ahora se lo puede considerar
       lineal.\\
 
-      \textbf{invarianza en el tiempo:}
-
-      La respuesta del sistema desplazada $t_0$ es:
+      \textbf{Invarianza en el tiempo:} La respuesta del sistema desplazada $t_0$ es:
       $$y(t - t_0) = x(t - t_0) \cdot \frac{1}{R}- \frac{1}{R^2C} \int_{0}^{t - t_0} x(\tau) \cdot
       e^{\frac{\tau-(t - t_0))}{RC}} d\tau$$
 
@@ -992,8 +990,9 @@ $T$ y amplitud unitaria.
       debido a que por un lado tenemos un pulso en $t=0$, y despues tenemos una exponencial decreciente, por lo que
       el sistema en el infinito tiende a 0. Esto implica que con solo evaluar 
 
-      A continuacion mostramos las graficas de respuesta al impulso y al escalon unidad:
-      
+      Teniendo todas las respuestas de todos los sistemas, a continuacion mostramos las graficas de respuesta al
+      impulso y al escalon unidad:
+
       \noindent
       \begin{figure}[h]
         \centering
@@ -1009,6 +1008,67 @@ $T$ y amplitud unitaria.
           \textit{Respuesta a $\delta_t$}
         \end{minipage}
       \end{figure}
+
+      Es importante mencionar cual es la razon de por la que el grafico de la respuesta al impulso es negativa.
+      Esto se debe a que cuando el capacitor recibe el pico de corriente, se carga "instantaneamente"
+      (el pico en $t=0$), y en el momento que deja de haber corriente circulando, el capacitor invierte el flujo de la
+      misma, convirtiendose en "fuente" de corriente y voltaje.
+
+      Una alternativa para poder llegar a calcular la respuesta del sistema por medio de la convolucion, es usar la
+      propiedad de convolucion para la transformada de Laplace. Para ello, es necesario transformar la respuesta del
+      sistema en $t$, a $s$:
+      \begin{gather*}
+        \mathbb{L}\left\{h(t)\right\} = \int_{0^-}^{\infty} \left(\frac{1}{R} \delta_t - \frac{1}{R^2C}e^{\frac{-t}{RC}} 
+          \mu_t\right) \cdot e^{-st} dt\\
+        ...\\
+        \mathbb{L}\left\{h(t)\right\} = \frac{1}{R} - \frac{1}{R+R^2CS}\\
+        \mathbb{L}\left\{h(t)\right\} = \frac{Cs}{1+RCs}
+      \end{gather*}
+      Como se puede ver, la transformada de laplace de la respuesta al impulso presenta un cero en $s = 0$, y solo
+      presenta un polo en el eje real en $\left(-\frac{1}{RC},0\right)$:
+
+      \noindent
+      \begin{figure}[h]
+        \centering
+        \begin{minipage}[h]{0.4\textwidth}
+          \centering
+          \includegraphics[width=1\textwidth]{./images/ej4.4.png}
+          \textit{Polos de $H_s$}
+        \end{minipage}
+      \end{figure}
+
+      Sabiendo el polo, ahora podemos decir con seguridad que la constante de tiempo del sistema, que es aquel $\tau$ 
+      en el que el sistema alcanza el 63\% de su valor final, es:
+      \begin{gather*}
+        \tau = \frac{1}{|polo|} = \frac{1}{|-\frac{1}{RC}|} = RC
+      \end{gather*}
+
+      Ademas, ahora podemos tambien determinar los valores para $y(0)$ e $y(\infty)$ utilizando la transformada de
+      Laplace, y los teoremas del valor inicial y valor final, que a groso modo, son hacer tender $sH(s)$ al
+      infinito y a cero:
+      \begin{align*}
+        y(0^+) =& \lim_{s\to\infty} s \cdot \frac{Cs}{1+RCs} \hspace{3cm} &y(\infty) =& \lim_{s\to0} s \cdot
+          \frac{Cs}{1+RCs}\\[6pt]
+        y(0^+) =& \lim_{s\to\infty} \frac{Cs^2}{1+RCs} \hspace{3cm} &y(\infty) =& \lim_{s\to0} \frac{Cs^2}{1+RCs}\\[6pt]
+        y(0^+) \to& \infty \hspace{3cm} &y(\infty) \to& 0
+      \end{align*}
+      Los valores obtenidos para el sistema tienen mucho sentido. Si le damos un analisis fisico, tiene sentido que
+      cuando el circuito recibe el impulso, la corriente tiende a infinito, debido a que el capacitor "funciona" como
+      un cortocircuito. Obviamente, en una situacion real, esto no se iria al infinito, si no que solamente tenderia a
+      $\frac{V}{R}$, de tal forma que el capacitor actua como un cable.
+      Asi mismo, cuando la funcion tiende al infinito, la corriente tiende a cero, debido a que ya el capacitor deberia
+      estar completamente cargado, comportandose como un circuito abierto, y evitando la totalidad del paso de la
+      corriente por el resto del circuito.
+
+      Sabiendo que podemos aplicar la propiedad de transformada en el dominio del tiempo para Laplace, ahora podemos
+      calcular la respuesta de otras funciones, como por ejemplo $h_t$, pero simplemente multiplicando $H_s$ y
+      $\mathbb{L}\{\mu_t\}$:
+      \begin{gather*}
+        \mu_t * h_t \longleftrightarrow M_s \cdot H_s; \hspace{1cm}\mathbb{L}\{\mu_t\} = \frac{1}{s}\\[6pt]
+        \mu_t * h_t \longleftrightarrow \frac{Cs}{1+RCs} \frac{1}{s}\\[6pt]
+        \mu_t * h_t \longleftrightarrow \frac{Cs}{S+RCs^2}
+      \end{gather*}
+
 
   \end{enumerate}
 
