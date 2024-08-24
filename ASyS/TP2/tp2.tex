@@ -1018,11 +1018,11 @@ $T$ y amplitud unitaria.
       propiedad de convolucion para la transformada de Laplace. Para ello, es necesario transformar la respuesta del
       sistema en $t$, a $s$:
       \begin{gather*}
-        \mathbb{L}\left\{h(t)\right\} = \int_{0^-}^{\infty} \left(\frac{1}{R} \delta_t - \frac{1}{R^2C}e^{\frac{-t}{RC}} 
+        \mathcal{L}\left\{h(t)\right\} = \int_{0^-}^{\infty} \left(\frac{1}{R} \delta_t - \frac{1}{R^2C}e^{\frac{-t}{RC}} 
           \mu_t\right) \cdot e^{-st} dt\\
         ...\\
-        \mathbb{L}\left\{h(t)\right\} = \frac{1}{R} - \frac{1}{R+R^2CS}\\
-        \mathbb{L}\left\{h(t)\right\} = \frac{Cs}{1+RCs}
+        \mathcal{L}\left\{h(t)\right\} = \frac{1}{R} - \frac{1}{R+R^2CS}\\
+        \mathcal{L}\left\{h(t)\right\} = \frac{Cs}{1+RCs}
       \end{gather*}
       Como se puede ver, la transformada de laplace de la respuesta al impulso presenta un cero en $s = 0$, y solo
       presenta un polo en el eje real en $\left(-\frac{1}{RC},0\right)$:
@@ -1062,9 +1062,9 @@ $T$ y amplitud unitaria.
 
       Sabiendo que podemos aplicar la propiedad de transformada en el dominio del tiempo para Laplace, ahora podemos
       calcular la respuesta de otras funciones, como por ejemplo $h_t$, pero simplemente multiplicando $H_s$ y
-      $\mathbb{L}\{\mu_t\}$:
+      $\mathcal{L}\{\mu_t\}$:
       \begin{gather*}
-        \mu_t * h_t \longleftrightarrow M_s \cdot H_s; \hspace{1cm}\mathbb{L}\{\mu_t\} = \frac{1}{s}\\[6pt]
+        \mu_t * h_t \longleftrightarrow M_s \cdot H_s; \hspace{1cm}\mathcal{L}\{\mu_t\} = \frac{1}{s}\\[6pt]
         \mu_t * h_t \longleftrightarrow \frac{Cs}{1+RCs} \frac{1}{s}\\[6pt]
         \mu_t * h_t \longleftrightarrow \frac{Cs}{S+RCs^2}
       \end{gather*}
@@ -1167,7 +1167,7 @@ $T$ y amplitud unitaria.
 
   \item Sea $y_t = S\{x_t\}$ el sistema obtenido de las soluciones al sistema de Ecuaciones Diferenciales del inciso
     anterior. Teniendo en cuenta el siguientes resultado matemático, obtener una descripción explicita de la respuesta
-    transformada $Y_{(s)} = L\{y_t\} = L\{S\{x_t\}\}$:
+    transformada $Y_{(s)} = \mathcal{L}\{y_t\} = \mathcal{L}\{S\{x_t\}\}$:
   \begin{itemize}
     \item Sean $\alpha_1, \alpha_0, \beta_2, \beta_1, \beta_0 \in \mathbb{R}$ constantes; $y_{(t)}, x_{(t)}$ funciones
       con variable de tiempo continuo, las cuales verifican la ecuacion diferencial de segundo orden con coeficientes
@@ -1176,18 +1176,18 @@ $T$ y amplitud unitaria.
       Entonces, una Solucion General explicita de la Ecuacion Diferencial Transformada es:
       $$Y_{(s)} = \frac{\beta_2 s^2 + \beta_1 s + \beta_0}{s^2 + \alpha_1 s + \alpha_0}X_{(s)} + \frac{(y_0 - \beta_2 x_0)
         s + (\alpha_1 y_0 - \beta_1 x_0 + y_0^{'} - \beta_2 x_0^{'})}{s^2 + \alpha_1 s + \alpha_0}$$
-      donde $Y_{(s)} = L\{y_t\}$, $X_{(s)} = L\{x_t\}$, con $s = \sigma + j \omega$ (variable compleja). Condiciones
+        donde $Y_{(s)} = \mathcal{L}\{y_t\}$, $X_{(s)} = \mathcal{L}\{x_t\}$, con $s = \sigma + j \omega$ (variable compleja). Condiciones
       Iniciales arbitrarias; $y_0 = y(0), y_0^{'} = y^{'}(0), x_0 = x(0), x_0^{'} = x^{'}(0)$.
     \item Usando las propiedades de la transformada de Laplace, demostrar la igualdad propuesta para la funcion
      $Y_{(s)}$.
   \end{itemize}
 
-  \item Restringir el sistema anterior a CI nulas y obtener la formula de la respuesta transformada $Y_{(s)} = L\{y\}$.
-    Luego, calcular la Función de transferencia $H_{(s)} = L\{h_t\}$ donde $h_t$ es la respuesta al impulso del sistema
+\item Restringir el sistema anterior a CI nulas y obtener la formula de la respuesta transformada $Y_{(s)} = \mathcal{L}\{y\}$.
+  Luego, calcular la Función de transferencia $H_{(s)} = \mathcal{L}\{h_t\}$ donde $h_t$ es la respuesta al impulso del sistema
     linealizado. Luego, graficar en el plano complejo los polos y ceros de dicha función.
 
   \item Trabajar con el sistema linealizado del inciso anterior, y calcular la transformada
-    $Y_1(s) = L\{S\{3\delta_{(t-2)}\}\}$, y similarmente $Y_2(s) = L\{S\{\mu_{(t+2)}\}\}$. Luego, implementar la técnica
+    $Y_1(s) = \mathcal{L}\{S\{3\delta_{(t-2)}\}\}$, y similarmente $Y_2(s) = \mathcal{L}\{S\{\mu_{(t+2)}\}\}$. Luego, implementar la técnica
     de anti-transformada para obtener las señales de respuesta en la variable de tiempo $y_1 = S\{3\delta_{(t-2)}\}$,
     $y_2 = S\{\mu_{(t+2)}\}$, respectivamente.\\
     \textbf{Reflexionar}: ¿En que variable están definidas las funciones $Y_1$, $Y_2$? ¿Que tipo de variable es $s$ y que
