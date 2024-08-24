@@ -944,7 +944,7 @@ $T$ y amplitud unitaria.
         \centering
         \begin{tabular}{|c|c|c|c|}
           \hline
-          \textbf{$x_t$} & \textbf{$y_t = S_3\{x_t\}$} & \textbf{$y_t = x_t * h_t$} & \textbf{Comparar}\\
+          \boldmath{$x_t$} & \boldmath{$y_t = S_3\{x_t\}$} & \boldmath{$y_t = x_t * h_t$} & \textbf{Comparar}\\
           \hline
             $\delta_t$ & $h_t = \frac{1}{R} \delta_t - \mu_t \cdot \frac{1}{R^2C} e^{\frac{-t}{RC}}$
                      & $\frac{1}{R} \delta_t - \mu_t \cdot \frac{1}{R^2C} e^{\frac{-t}{RC}}$
@@ -965,16 +965,16 @@ $T$ y amplitud unitaria.
                               & Igual\\
           \hline
             $t$ & $\frac{t}{R} - \frac{1}{R} \cdot \mu_t \left(t - RC + RC e^{\frac{-t}{RC}} \right)$
-                & $\int_{-\infty}^{\infty} t dt \rightarrow \infty$
+                & $\int_{-\infty}^{\infty} |t| dt \rightarrow \infty$
                 & No Comp.\\
           \hline
             $t\mu_{t}$ & $\frac{t}{R} \mu_t - \frac{1}{R} \cdot \mu_t \left(t - RC + RC e^{\frac{-t}{RC}} \right)$
-                       & $\int_{-\infty}^{\infty} t \cdot \mu_t dt \rightarrow \infty$
+                       & $\int_{-\infty}^{\infty} |t \cdot \mu_t| dt \rightarrow \infty$
                        & No Comp.\\
           \hline
             $e^{2t}$ & $\frac{1}{R} e^{2t} - \frac{1}{R^2C\left(2+\frac{1}{RC}\right)}\left(e^{2t} -
               e^{\frac{-t}{RC}}\right)$
-                     & $\int_{-\infty}^{\infty} e^{2t} dt \rightarrow \infty$
+                     & $\int_{-\infty}^{\infty} |e^{2t}| dt \rightarrow \infty$
                      & No Comp.\\
           \hline
               $e^{2t}\mu_{-t}$ & $\frac{e^{2t} \cdot \mu_(-t)}{R}$
@@ -1109,9 +1109,9 @@ $T$ y amplitud unitaria.
     \end{equation*}
     Reacomodando la ecuacion caracteristica generalizada, nos queda:
     \begin{align*}
-      D^1\left\{x_t\right\} &= D^1\left\{R y_t\right\} + D^2\left\{L y_t\right\} + \frac{1}{C} y_t\\
-      D^1\left\{\frac{1}{L} x_t\right\} &= D^2\left\{y_t\right\} + D^1\left\{\frac{1}{RL} y_t\right\} + \frac{1}{LC} y_t\\
-      \frac{dx_t}{dt} \frac{1}{L} &= \frac{d^2 y_t}{dt^2} + \frac{dy_t}{dt} \frac{1}{RL} + \frac{1}{LC} y_t
+      D^1\left\{x_t\right\} &= D^1\left\{R y_t\right\} + D^2\left\{L y_t\right\} + \frac{1}{C} y_t\\[6pt]
+      D^1\left\{\frac{1}{L} x_t\right\} &= D^2\left\{y_t\right\} + D^1\left\{\frac{R}{L} y_t\right\} + \frac{1}{LC} y_t\\[6pt]
+      \frac{dx_t}{dt} \frac{1}{L} &= \frac{d^2 y_t}{dt^2} + \frac{dy_t}{dt} \frac{R}{L} + \frac{1}{LC} y_t
     \end{align*}
     Lo cual es la ecuacion diferencial de segundo orden a coeficientes constantes que describe el comportamiento
     del circuito RCL.
@@ -1129,17 +1129,17 @@ $T$ y amplitud unitaria.
          % Definición de nodos
         \node at (0,0) [coordinate] (input) {}; % Nodo de entrada
         \node [coordinate, on grid, right=7cm of input] (elbowInput1) {};
-        \node [block, on grid, below=2cm of elbowInput1] (gainInput1) {$\frac{1}{C}$};
+        \node [block, on grid, below=1cm of elbowInput1] (gainInput1) {$\frac{1}{C}$};
         \node [sum, on grid, below=2cm of gainInput1] (sum1) {$+$};
         \node [block, on grid, left=3cm of sum1] (integrator1) {$\int$};
         \node [block, on grid, right=3cm of sum1] (integrator2) {$\int$};
         \node [connector, on grid, left=3cm of integrator1] (elbowOutput1) {};
         \node [block, on grid, below=2cm of elbowOutput1] (gainOutput1) {$-\frac{1}{LC}$};
         \node [block, on grid, below=2cm of sum1] (gainOutput2) {$-\frac{R}{L}$};
-        \node [coordinate, on grid, below=2cm of gainOutput1] (elbowOutput2) {};
-        \node [connector, on grid, below=2cm of gainOutput2] (elbowOutput3) {};
+        \node [coordinate, on grid, below=1.5cm of gainOutput1] (elbowOutput2) {};
+        \node [connector, on grid, below=1.5cm of gainOutput2] (elbowOutput3) {};
         \node [coordinate, on grid, right=5cm of elbowOutput3] (elbowOutput4) {};
-        \node [coordinate, on grid, above=4cm of elbowOutput4] (elbowOutput5) {};
+        \node [coordinate, on grid, above=3.5cm of elbowOutput4] (elbowOutput5) {};
         \node [coordinate, on grid, right=2cm of elbowOutput5] (output) {};
 
         % Conexiones entre nodos
@@ -1160,7 +1160,7 @@ $T$ y amplitud unitaria.
         \draw [-] (elbowOutput5) -- (elbowOutput4);
       \end{tikzpicture}
       \begin{equation*}
-        y_t = D^{-2}\left\{-\frac{1}{RC} y_t\right\} + D^{-1}\left\{\frac{1}{C} x_t - \frac{R}{L}\right\}
+        y_t = D^{-2}\left\{-\frac{1}{RC} y_t\right\} + D^{-1}\left\{\frac{1}{C} x_t - \frac{R}{L} y_t\right\}
       \end{equation*}
     \end{figure}
 
@@ -1168,23 +1168,123 @@ $T$ y amplitud unitaria.
   \item Sea $y_t = S\{x_t\}$ el sistema obtenido de las soluciones al sistema de Ecuaciones Diferenciales del inciso
     anterior. Teniendo en cuenta el siguientes resultado matemático, obtener una descripción explicita de la respuesta
     transformada $Y_{(s)} = \mathcal{L}\{y_t\} = \mathcal{L}\{S\{x_t\}\}$:
-  \begin{itemize}
-    \item Sean $\alpha_1, \alpha_0, \beta_2, \beta_1, \beta_0 \in \mathbb{R}$ constantes; $y_{(t)}, x_{(t)}$ funciones
-      con variable de tiempo continuo, las cuales verifican la ecuacion diferencial de segundo orden con coeficientes
-      constantes:
-      $$y_t^{''} + \alpha_1 y_t^{'} + \alpha_0 y_t = \beta_2 x_t^{''} + \beta_1 x_t^{'} + \beta_0 x_t$$
-      Entonces, una Solucion General explicita de la Ecuacion Diferencial Transformada es:
-      $$Y_{(s)} = \frac{\beta_2 s^2 + \beta_1 s + \beta_0}{s^2 + \alpha_1 s + \alpha_0}X_{(s)} + \frac{(y_0 - \beta_2 x_0)
-        s + (\alpha_1 y_0 - \beta_1 x_0 + y_0^{'} - \beta_2 x_0^{'})}{s^2 + \alpha_1 s + \alpha_0}$$
-        donde $Y_{(s)} = \mathcal{L}\{y_t\}$, $X_{(s)} = \mathcal{L}\{x_t\}$, con $s = \sigma + j \omega$ (variable compleja). Condiciones
-      Iniciales arbitrarias; $y_0 = y(0), y_0^{'} = y^{'}(0), x_0 = x(0), x_0^{'} = x^{'}(0)$.
-    \item Usando las propiedades de la transformada de Laplace, demostrar la igualdad propuesta para la funcion
-     $Y_{(s)}$.
-  \end{itemize}
+    \begin{itemize}
+      \item Sean $\alpha_1, \alpha_0, \beta_2, \beta_1, \beta_0 \in \mathbb{R}$ constantes; $y_{(t)}, x_{(t)}$ funciones
+        con variable de tiempo continuo, las cuales verifican la ecuacion diferencial de segundo orden con coeficientes
+        constantes:
+        $$y_t'' + \alpha_1 y_t' + \alpha_0 y_t = \beta_2 x_t'' + \beta_1 x_t' + \beta_0 x_t$$
+        Entonces, una Solucion General explicita de la Ecuacion Diferencial Transformada es:
+        $$Y_{(s)} = \frac{\beta_2 s^2 + \beta_1 s + \beta_0}{s^2 + \alpha_1 s + \alpha_0}X_{(s)} + \frac{(y_0 - \beta_2 x_0)
+          s + (\alpha_1 y_0 - \beta_1 x_0 + y_0' - \beta_2 x_0')}{s^2 + \alpha_1 s + \alpha_0}$$
+        donde $Y_{(s)} = L\{y_t\}$, $X_{(s)} = L\{x_t\}$, con $s = \sigma + j \omega$ (variable compleja). Condiciones
+        Iniciales arbitrarias; $y_0 = y(0), y_0' = y'(0), x_0 = x(0), x_0' = x'(0)$.
+      \item Usando las propiedades de la transformada de Laplace, demostrar la igualdad propuesta para la funcion
+      $Y_{(s)}$.
+    \end{itemize}
+
+    Identificando los coeficientes $\alpha_1, \alpha_0, \beta_2, \beta_1, \beta_0$, tenemos lo siguiente:
+    \begin{equation*}
+      \alpha_1 = \frac{R}{L}; \hspace{1cm}\alpha_0 = \frac{1}{LC}; \hspace{1cm}\beta_1 = \frac{1}{L};
+        \hspace{1cm}\beta_2 = \beta_0 = 0
+    \end{equation*}
+    Por lo tanto, la solucion general explicita de la ecuacion diferencial transformada es:
+    \begin{equation*}
+      Y_s = \frac{\frac{s}{L}}{s^2 + \frac{R}{L}s + \frac{1}{LC}} X_s + \frac{y_0 s +
+        \frac{R}{L} y_0 - \frac{1}{L} x_0 + y_0'}{s^2 + \frac{R}{L}s + \frac{1}{LC}}
+    \end{equation*}
+    Esto se puede verificar, tomando la ecuacion diferencial de segundo orden a coeficientes constantes, y aplicandole
+    su transformada de Laplace, utilizando la propiedad de derivacion en el dominio del tiempo, y luego despejando para
+    $Y_s$:
+    \begin{gather*}
+      x_t' \frac{1}{L} = y_t'' + y_t' \frac{R}{L} + y_t \frac{1}{LC}\\[6pt]
+      \frac{X_s}{L}s - \frac{x_0}{L} = s^2 Y_s - y_0 s - y_0' + \frac{R}{L} s Y_s - \frac{R}{L} y_0 +
+        \frac{1}{LC} Y_s\\[6pt]
+      \frac{X_s}{L}s - \frac{x_0}{L} + y_0 s + y_0' + \frac{R}{L} y_0 = Y_s \left(s^2 + \frac{R}{L} s +
+        \frac{1}{LC}\right)\\[6pt]
+        \frac{\frac{s}{L}}{s^2 + \frac{R}{L} s + \frac{1}{LC}} X_s + \frac{s y_0 + y_0' + \frac{R}{L} y_0 -
+          \frac{1}{L} x_0}{s^2 + \frac{R}{L} s + \frac{1}{LC}} = Y_s
+    \end{gather*}
+>>>>>>> 0abba40 (Pasa casi todo el ej4.B)
 
 \item Restringir el sistema anterior a CI nulas y obtener la formula de la respuesta transformada $Y_{(s)} = \mathcal{L}\{y\}$.
   Luego, calcular la Función de transferencia $H_{(s)} = \mathcal{L}\{h_t\}$ donde $h_t$ es la respuesta al impulso del sistema
     linealizado. Luego, graficar en el plano complejo los polos y ceros de dicha función.
+    
+    La nueva transformada con C.I. nulas es la siguiente:
+    \begin{equation*}
+      Y_s = \frac{\frac{s}{L}}{s^2 + \frac{R}{L} s + \frac{1}{LC}} X_s
+    \end{equation*}
+    La funcion de transferencia $H_s$ se obtiene despejando la funcion anterior para $\frac{Y_s}{X_s}$:
+    \begin{equation*}
+      \frac{Y_s}{X_s} = H_s = \frac{\frac{s}{L}}{s^2 + \frac{R}{L} s + \frac{1}{LC}}
+    \end{equation*}
+    Con la funcion de transferencia, si aplicamos la antitransformada, podemos obtener la respuesta al impulso en el
+    dominio del tiempo. Para ello, se utiliza Bhaskara para saber cuales son los polos de $H_s$, y despejamos para los
+    ceros:
+    
+    \noindent
+    \begin{figure}[h]
+      \centering
+      \begin{minipage}[h]{0.4\textwidth}
+        \begin{align*}
+          s_n &= \frac{-\frac{R}{L} \pm \sqrt{\left(\frac{R}{L}\right)^2 - \frac{4}{LC}}}{2}\\[6pt]
+          s_n &= \frac{-\frac{R}{L} \pm \sqrt{\frac{R^2LC - 4L^2}{L^3C}}}{2}\\[6pt]
+          s_n &= \frac{R\sqrt{LC} \pm \sqrt{R^2LC - 4L^2}}{2\sqrt{LC}}
+        \end{align*}
+        Para $R = 3$, $C = \frac{1}{2}$ y $L = 1$:
+        \begin{equation*}
+          s_0 = -1; \hspace{1cm}s_1 = -2
+        \end{equation*}
+      \end{minipage}
+      \begin{minipage}[h]{0.4\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{./images/ej4.6.png}
+        \textit{Polos y Ceros de $H_s$}
+      \end{minipage}
+    \end{figure}
+    
+    Con los polos determinados, podemos pasar a hacer la antitransformada de la funcion de transferencia para obtener
+    $h(t)$:
+    \begin{equation*}
+      \mathcal{L}^{-1}\left\{H_s\right\} = \frac{1}{2\pi j} \int_{\sigma - j\infty}^{\sigma + j\infty}
+        \frac{\frac{s}{L}}{s^2 + \frac{R}{L} s + \frac{1}{LC}} e^{st} ds\\[6pt]
+    \end{equation*}
+    Viendo que esta funcion tiene un polinomio de grado 2 en el denominador, uno pensaria que la integral se podria
+    realizar utilizando descomposicion de fracciones. Pero en realidad, no es posible debido a la existencia de la
+    funcion $e^{st}$. Debido a esto, el unico camino que se puede tomar es utilizar el teorema del residuo para obtener
+    el resultado de dicha integral. Para eso, debemos clasificar los polos que obtuvimos previamente. De antemano nos
+    podemos dar cuenta que los polos no son evitables, debido a que no hay forma de simplificarlos con lo que ya tiene
+    la funcion, por lo tanto, vamos a obtener el orden de los polos:
+    \begin{align*}
+      \lim_{s \to s_0}& \frac{\frac{s e^{st}}{s - s_1}}{s - s_0} (s - s_0) \hspace{3cm}
+                      &\lim_{s \to s_1}& \frac{\frac{s e^{st}}{s - s_0}}{s - s_1} (s - s_1)\\[6pt]
+      \lim_{s \to s_0}& \frac{s e^{st}}{s - s_1} = \frac{s_0 e^{s_0t}}{s_0 - s_1} 
+                      &\lim_{s \to s_1}& \frac{s e^{st}}{s - s_0} = \frac{s_1 e^{s_1t}}{s_1 - s_0}\\[6pt]
+    \end{align*}
+    Lo cual, para $R = 3$, $C = \frac{1}{2}$ y $L = 1$, queda que:
+    \begin{align*}
+      \lim_{s \to s_0}& \frac{s e^{st}}{s - s_1} = -e^{-t} \hspace{3cm}
+                      &\lim_{s \to s_1}& \frac{s e^{st}}{s - s_0} = 2e^{-2t}
+    \end{align*}
+    Con lo que nos queda que ambos polos son de primer orden. Segun el teorema del residuo, tenemos que:
+    \begin{equation*}
+      \oint_C f(z) = 2\pi j \sum_{k=1}^{n} Res(f(z), z_k)
+    \end{equation*}
+    En el caso de la antitransformada, no tenemos una integral de contorno cerrado. Para circundar este problema, vamos
+    a suponer una trayectoria de integracion cerrada C, la cual cuando esta cerca de $\pm j \infty$, esta se cierra, de
+    tal forma que todos los polos quedan encerrados en el contorno. Algo que es importante destacar,
+    es que para que el teorema del residuo se pueda usar, debemos seleccionar un valor de $\sigma = Re\{s\}$, tal que
+    todos los polos queden a la izquierda del mismo. Teniendo esto en cuenta, procedemos a aplicar el teorema:
+    \begin{gather*}
+      h(t) = \frac{1}{2\pi j} \oint_c \frac{\frac{s}{L}}{s^2 + \frac{R}{L} s + \frac{1}{LC}} e^{st} ds\\[6pt]
+      h(t) = \frac{1}{2\pi j L} \left(2\pi j \frac{s_0 e^{s_0t}}{s_0 - s_1} +
+        2\pi j \frac{s_1 e^{s_1t}}{s_1 - s_0}\right)\\[6pt]
+      h(t) = \frac{1}{L} \left(\frac{s_0 e^{s_0t}}{s_0 - s_1} + \frac{s_1 e^{s_1t}}{s_1 - s_0}\right)\\[6pt]
+    \end{gather*}
+    Para $R = 3$, $C = \frac{1}{2}$ y $L = 1$, queda que:
+    \begin{equation*}
+      h(t) = -e^{-t} + 2e^{-2t}\\[6pt]
+    \end{equation*}
 
   \item Trabajar con el sistema linealizado del inciso anterior, y calcular la transformada
     $Y_1(s) = \mathcal{L}\{S\{3\delta_{(t-2)}\}\}$, y similarmente $Y_2(s) = \mathcal{L}\{S\{\mu_{(t+2)}\}\}$. Luego, implementar la técnica
@@ -1193,6 +1293,46 @@ $T$ y amplitud unitaria.
     \textbf{Reflexionar}: ¿En que variable están definidas las funciones $Y_1$, $Y_2$? ¿Que tipo de variable es $s$ y que
     diferencia tiene con la variable $t$? ¿Que diferencias se observan entres las funciones $Y_1$, $Y_2$ y sus señales
     $y_1$, $y_2$?
+
+    Para $Y_1(s) = L\{S\{3\delta_{(t-2)}\}\}$:
+    \begin{align*}
+      \mathcal{L} \left\{3\delta (t-2)\right\} &= 3\mathcal{L}\left\{3\delta (t-2)\right\} \hspace{1cm} &Y_1(s) 
+                                               &= \frac{\frac{s}{L}}{s^2 + \frac{R}{L} s + \frac{1}{LC}} 3e^{-2s}\\[6pt]
+      \mathcal{L} \left\{3\delta (t-2)\right\} &= 3 e^{-2s}\mathcal{L}\left\{\delta (t)\right\} &Y_1(s) 
+                                               &= \frac{3}{L}\frac{se^{-2s}}{s^2 + \frac{R}{L} s + \frac{1}{LC}}\\[6pt]
+      \mathcal{L} \left\{3\delta (t-2)\right\} &= 3 e^{-2s}
+    \end{align*}
+    La antitransformada para $Y_1(s)$ tiene exactamente los mismos polos que para $H_s$, lo unico que cambia es la
+    funcion en el numerador, por lo que se va a utilizar el desarrollo anterior para obtener la antitransformada $y_1(t)$
+    \begin{align*}
+      y_1(t) &= \frac{1}{2\pi j} \frac{3}{L} \oint_C \frac{se^{-2s}}{s^2 + \frac{R}{L} s + \frac{1}{LC}} e^{st} ds\\[6pt]
+      y_1(t) &= \frac{1}{2\pi j} \frac{3}{L} \oint_C \frac{se^{s(t-2)}}{s^2 + \frac{R}{L} s + \frac{1}{LC}} ds\\[6pt]
+      y_1(t) &= \frac{3}{L} \left(\frac{s_0 e^{s_0(t-2)}}{s_0 - s_1} + \frac{s_1 e^{s_1(t-2)}}{s_1 - s_0}\right)
+    \end{align*}
+    Para $R = 3$, $C = \frac{1}{2}$ y $L = 1$, queda que:
+    \begin{equation*}
+      y_1(t) = 3\left(-e^{-(t-2)} + 2e^{-2(t-2)}\right)\\[6pt]
+    \end{equation*}
+
+    Para $Y_2(s) = L\{S\{\mu_{(t+2)}\}\}$:
+    \begin{align*}
+      \mathcal{L} \left\{\mu (t+2)\right\} &= e^{2s}\mathcal{L}\left\{\mu_t\right\} \hspace{1cm} &Y_2(s)
+        &= \frac{\frac{s}{L}}{s^2 + \frac{R}{L} s + \frac{1}{LC}} \frac{e^{2s}}{s}\\[6pt]
+      \mathcal{L} \left\{\mu (t+2)\right\} &= \frac{e^{2s}}{s} &Y_2(s)
+        &= \frac{1}{L} \frac{se^{2s}}{s^3 + \frac{R}{L} s^2 + \frac{1}{LC}s}
+    \end{align*}
+    La antitransformada para $Y_2(s)$ tiene exactamente los mismos polos que para $H_s$, mas un extra polo en $s = 0$.
+    Por suerte, este nuevo polo es uno evitable, por lo que no se agrega ningun termino nuevo al teorema del residuo.
+    Por lo tanto, se va a utilizar el desarrollo anterior para obtener la antitransformada $y_2(t)$
+    \begin{align*}
+      y_2(t) &= \frac{1}{2\pi j} \frac{1}{L} \oint_C \frac{se^{2s}}{s^3 + \frac{R}{L} s^2 + \frac{1}{LC}s} e^{st} ds\\[6pt]
+      y_2(t) &= \frac{1}{2\pi j} \frac{1}{L} \oint_C \frac{se^{s(t+2)}}{s^3 + \frac{R}{L} s^2 + \frac{1}{LC}s} ds\\[6pt]
+      y_2(t) &= \frac{1}{L} \left(\frac{e^{s_0(t+2)}}{s_0 - s_1} + \frac{e^{s_1(t+2)}}{s_1 - s_0}\right)
+    \end{align*}
+    Para $R = 3$, $C = \frac{1}{2}$ y $L = 1$, queda que:
+    \begin{equation*}
+      y_2(t) = e^{-(t+2)} - e^{-2(t+2)}\\[6pt]
+    \end{equation*}
 
   \item Graficar en diagrama de bloques del sistema en el dominios de la variable compleja.  Determinar el coeficiente
     de amortiguamiento $\xi$ y la frecuencia natural $\omega_n$ del sistema linealizado.\\
