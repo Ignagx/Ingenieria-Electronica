@@ -242,40 +242,47 @@ Considerar las siguientes señales proporcionadas por un rectificador de onda co
   \item Calcular el periodo fundamental $T_0$ de las señales $x_1, x_2$. ¿Las señales tienen energía finita? Calcular
     la energía relativa a un intervalo con longitud un periodo fundamental $T_0$.
 
-\textbf{2) a)}
-$$
-\begin{aligned}{l}
-  E&=\int _{0}^{\pi } ||sen( t) ||^{2} dt\\
-  &=\int _{0}^{\pi } |sen( t) |^{2} dt\\
-  &=\int _{0}^{\pi } sen( t)^{2} dt
-  \end{aligned}
-$$
-  \textbf{Como}
-$$
-   \begin{aligned}{l}
-  \sin( t)^{2} &=\frac{1-\cos( 2t)}{2}\\
-  \Longrightarrow \ &=\int _{0}^{\pi }\frac{1-\cos( 2t)}{2} dt\\
-  &=\frac{1}{2} *\int _{0}^{\pi } 1-\cos( 2t) dt\\
-  &=\frac{1}{2} *\left(\int _{0}^{\pi } dt\ -\int _{0}^{\pi }\cos( 2t) dt\right)
-  \end{aligned}
-  \textbf{Resuelvo integrando por sustitución}
-$$
-   \begin{aligned}{l}
-  $$ u&=2t, du&=2dt ⟹ dt&=\frac{du|2} &&
-  \end{aligned}
-$$
-$$
-   \begin{aligned}{l}
-  \therefore \ &=\frac{1}{2} *\left(\int _{0}^{\pi } dt\ -\int _{0}^{\pi }\frac{\cos( u)}{2} du\right)\\
-  &=\frac{1}{2} *\left(( \pi -0) -\frac{1}{2}\int _{0}^{\pi }\cos( u) du\right) \ \ \\
-  &=\frac{\pi }{2} -\left(\frac{1}{4} *\int _{0}^{\pi }\cos( u) du\right)\\
-  &=\frac{\pi }{2} -\left(\frac{1}{4} *(\sin( 2\pi ) -\sin( 2*0))\right)\\
-  &=\frac{\pi }{2} -\left(\frac{1}{4} *( 0-0)\right)\\
-  &=\frac{\pi }{2}
-  \end{aligned}
-&&
-  \textbf{Energia en periodo}
-  T_{0} =\pi
+    \textbf{2) a)}
+
+    $$
+    \begin{aligned}
+      E &= \int_{0}^{\pi} |\sin(t)|^2 \, dt \\
+        &= \int_{0}^{\pi} \sin(t)^2 \, dt
+    \end{aligned}
+    $$
+    
+    \textbf{Como}
+    
+    $$
+    \begin{aligned}
+      \sin(t)^2 &= \frac{1 - \cos(2t)}{2} \\
+      \Longrightarrow E &= \int_{0}^{\pi} \frac{1 - \cos(2t)}{2} \, dt \\
+        &= \frac{1}{2} \int_{0}^{\pi} (1 - \cos(2t)) \, dt \\
+        &= \frac{1}{2} \left( \int_{0}^{\pi} dt - \int_{0}^{\pi} \cos(2t) \, dt \right)
+    \end{aligned}
+    $$
+    
+    \textbf{Resolviendo la integral por sustitución}
+    
+    $$
+    \begin{aligned}
+      u &= 2t, \quad du = 2dt \quad \Rightarrow \quad dt = \frac{du}{2}
+    \end{aligned}
+    $$
+    
+    $$
+    \begin{aligned}
+      \therefore E &= \frac{1}{2} \left( \pi - \frac{1}{2} \int_{0}^{2\pi} \cos(u) \, du \right) \\
+        &= \frac{\pi}{2} - \frac{1}{4} \left( \sin(2\pi) - \sin(0) \right) \\
+        &= \frac{\pi}{2} - 0 \\
+        &= \frac{\pi}{2}
+    \end{aligned}
+    $$
+    
+    \textbf{Energía en el período:}
+    $$
+    T_0 = \pi
+    $$
 
   \item Teniendo en cuenta que la potencia media de una señal se define como
 
