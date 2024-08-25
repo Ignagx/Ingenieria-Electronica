@@ -1145,7 +1145,7 @@ $T$ y amplitud unitaria.
          % Definición de nodos
         \node at (0,0) [coordinate] (input) {}; % Nodo de entrada
         \node [coordinate, on grid, right=7cm of input] (elbowInput1) {};
-        \node [block, on grid, below=1cm of elbowInput1] (gainInput1) {$\frac{1}{C}$};
+        \node [block, on grid, below=1cm of elbowInput1] (gainInput1) {$\frac{1}{L}$};
         \node [sum, on grid, below=2cm of gainInput1] (sum1) {$+$};
         \node [block, on grid, left=3cm of sum1] (integrator1) {$\int$};
         \node [block, on grid, right=3cm of sum1] (integrator2) {$\int$};
@@ -1159,14 +1159,14 @@ $T$ y amplitud unitaria.
         \node [coordinate, on grid, right=2cm of elbowOutput5] (output) {};
 
         % Conexiones entre nodos
-        \draw [>-] (input) -- node {$x_t(t)$} (elbowInput1);
+        \draw [>-] (input) -- node {$x_t$} (elbowInput1);
         \draw [->] (elbowInput1) -- (gainInput1);
         \draw [->] (gainInput1) -- (sum1);
         \draw [->] (elbowOutput1) -- (integrator1);
         \draw [->] (integrator1) -- (sum1);
         \draw [->] (sum1) -- (integrator2);
         \draw [-] (integrator2) -- (elbowOutput5);
-        \draw [->] (elbowOutput5) -- node {$y_t(t)$} (output);
+        \draw [->] (elbowOutput5) -- node {$y_t$} (output);
         \draw [-] (elbowOutput1) -- (gainOutput1);
         \draw [->] (elbowOutput2) -- (gainOutput1);
         \draw [-] (elbowOutput2) -- (elbowOutput3);
@@ -1176,7 +1176,7 @@ $T$ y amplitud unitaria.
         \draw [-] (elbowOutput5) -- (elbowOutput4);
       \end{tikzpicture}
       \begin{equation*}
-        y_t = D^{-2}\left\{-\frac{1}{RC} y_t\right\} + D^{-1}\left\{\frac{1}{C} x_t - \frac{R}{L} y_t\right\}
+        y_t = D^{-2}\left\{-\frac{1}{LC} y_t\right\} + D^{-1}\left\{\frac{1}{L} x_t - \frac{R}{L} y_t\right\}
       \end{equation*}
     \end{figure}
 
@@ -1205,7 +1205,7 @@ $T$ y amplitud unitaria.
     \end{equation*}
     Por lo tanto, la solucion general explicita de la ecuacion diferencial transformada es:
     \begin{equation*}
-      Y_s = \frac{\frac{s}{L}}{s^2 + \frac{R}{L}s + \frac{1}{LC}} X_s + \frac{y_0 s +
+      Y_s = \frac{\frac{1}{L}s}{s^2 + \frac{R}{L}s + \frac{1}{LC}} X_s + \frac{y_0 s +
         \frac{R}{L} y_0 - \frac{1}{L} x_0 + y_0'}{s^2 + \frac{R}{L}s + \frac{1}{LC}}
     \end{equation*}
     Esto se puede verificar, tomando la ecuacion diferencial de segundo orden a coeficientes constantes, y aplicandole
@@ -1360,6 +1360,53 @@ $T$ y amplitud unitaria.
 
   \item Graficar en diagrama de bloques del sistema en el dominios de la variable compleja.  Determinar el coeficiente
     de amortiguamiento $\xi$ y la frecuencia natural $\omega_n$ del sistema linealizado.\\
+
+    \begin{figure}[h]
+      \centering
+      \begin{tikzpicture}[auto, node distance=2cm, >=Stealth, thick]
+        % Definición de estilos para los bloques y sumador
+        \tikzstyle{block} = [draw, rectangle, minimum height=1.5em, minimum width=3em]
+        \tikzstyle{sum} = [draw, circle, inner sep=1pt, minimum size=1cm, node distance=2cm]
+        \tikzstyle{connector} = [draw, fill, circle, minimum size=4pt, inner sep=0pt] % Estilo para el punto de conexión
+
+         % Definición de nodos
+        \node at (0,0) [coordinate] (input) {}; % Nodo de entrada
+        \node [coordinate, on grid, right=7cm of input] (elbowInput1) {};
+        \node [block, on grid, below=1cm of elbowInput1] (gainInput1) {$\frac{1}{L}$};
+        \node [sum, on grid, below=2cm of gainInput1] (sum1) {$+$};
+        \node [block, on grid, left=3cm of sum1] (integrator1) {$\frac{1}{s}$};
+        \node [block, on grid, right=3cm of sum1] (integrator2) {$\frac{1}{s}$};
+        \node [connector, on grid, left=3cm of integrator1] (elbowOutput1) {};
+        \node [block, on grid, below=2cm of elbowOutput1] (gainOutput1) {$-\frac{1}{LC}$};
+        \node [block, on grid, below=2cm of sum1] (gainOutput2) {$-\frac{R}{L}$};
+        \node [coordinate, on grid, below=1.5cm of gainOutput1] (elbowOutput2) {};
+        \node [connector, on grid, below=1.5cm of gainOutput2] (elbowOutput3) {};
+        \node [coordinate, on grid, right=5cm of elbowOutput3] (elbowOutput4) {};
+        \node [coordinate, on grid, above=3.5cm of elbowOutput4] (elbowOutput5) {};
+        \node [coordinate, on grid, right=2cm of elbowOutput5] (output) {};
+
+        % Conexiones entre nodos
+        \draw [>-] (input) -- node {$X_s$} (elbowInput1);
+        \draw [->] (elbowInput1) -- (gainInput1);
+        \draw [->] (gainInput1) -- (sum1);
+        \draw [->] (elbowOutput1) -- (integrator1);
+        \draw [->] (integrator1) -- (sum1);
+        \draw [->] (sum1) -- (integrator2);
+        \draw [-] (integrator2) -- (elbowOutput5);
+        \draw [->] (elbowOutput5) -- node {$Y_s$} (output);
+        \draw [-] (elbowOutput1) -- (gainOutput1);
+        \draw [->] (elbowOutput2) -- (gainOutput1);
+        \draw [-] (elbowOutput2) -- (elbowOutput3);
+        \draw [-] (elbowOutput3) -- (elbowOutput4);
+        \draw [->] (elbowOutput3) -- (gainOutput2);
+        \draw [->] (gainOutput2) -- (sum1);
+        \draw [-] (elbowOutput5) -- (elbowOutput4);
+      \end{tikzpicture}
+      \begin{equation*}
+        Y_s = \frac{1}{s^2}\left(-\frac{1}{LC} Y_s\right) + \frac{1}{s}\left(\frac{1}{L} X_s - \frac{R}{L} Y_s\right)
+      \end{equation*}
+    \end{figure}
+
     \textbf{Reflexionar}: ¿Que diferencias se observan entre el diagrama de bloques del inciso (a) y el diagrama de
     bloques del inciso (e)? ¿Las variables $s$ y $t$ están presentes de alguna forma en los diagramas mencionados? ¿Tiene
     algún significado subrayar que el diagrama esta en el dominio del tiempo (−∞, ∞,o en el dominio complejo?
