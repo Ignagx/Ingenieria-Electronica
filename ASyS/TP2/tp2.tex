@@ -252,8 +252,6 @@ Considerar las siguientes señales proporcionadas por un rectificador de onda co
         $$
         \\
 
-<<<<<<< HEAD
-    \textbf{2) a)}
 
     $$
     \begin{aligned}
@@ -266,10 +264,10 @@ Considerar las siguientes señales proporcionadas por un rectificador de onda co
     
     $$
     \begin{aligned}
-      \sin(t)^2 &= \frac{1 - \cos(2t)}{2} \\
+              \sin(t)^2 &= \frac{1 - \cos(2t)}{2} \\
       \Longrightarrow E &= \int_{0}^{\pi} \frac{1 - \cos(2t)}{2} \, dt \\
-        &= \frac{1}{2} \int_{0}^{\pi} (1 - \cos(2t)) \, dt \\
-        &= \frac{1}{2} \left( \int_{0}^{\pi} dt - \int_{0}^{\pi} \cos(2t) \, dt \right)
+                        &= \frac{1}{2} \int_{0}^{\pi} (1 - \cos(2t)) \, dt \\
+                        &= \frac{1}{2} \left( \int_{0}^{\pi} dt - \int_{0}^{\pi} \cos(2t) \, dt \right)
     \end{aligned}
     $$
     
@@ -277,16 +275,16 @@ Considerar las siguientes señales proporcionadas por un rectificador de onda co
     
     $$
     \begin{aligned}
-      u &= 2t, \quad du = 2dt \quad \Rightarrow \quad dt = \frac{du}{2}
+      u = 2t, \quad du = 2dt \quad \Rightarrow \quad dt = \frac{du}{2}
     \end{aligned}
     $$
     
     $$
     \begin{aligned}
       \therefore E &= \frac{1}{2} \left( \pi - \frac{1}{2} \int_{0}^{2\pi} \cos(u) \, du \right) \\
-        &= \frac{\pi}{2} - \frac{1}{4} \left( \sin(2\pi) - \sin(0) \right) \\
-        &= \frac{\pi}{2} - 0 \\
-        &= \frac{\pi}{2}
+                  &= \frac{\pi}{2} - \frac{1}{4} \left( \sin(2\pi) - \sin(0) \right) \\
+                  &= \frac{\pi}{2} - 0 \\
+                  &= \frac{\pi}{2}
     \end{aligned}
     $$
     
@@ -353,6 +351,49 @@ que 2L sea un múltiplo entero del período  $2T=mr$, la energía total de x(t) 
 
 
   \end{itemize}
+
+  $$
+P = \frac{1}{T_0} \int_{t_0}^{t_0 + T_0} |x(t)|^2 \, dt
+$$
+
+\textbf{Donde}
+
+$$
+\begin{aligned}
+  t_0 &= 0 \quad \text{y} \quad T_0 = \pi \\
+  \Longrightarrow P &= \frac{1}{\pi} \int_{0}^{\pi} |\sin(t)|^2 \, dt \\
+      &= \frac{1}{\pi} \int_{0}^{\pi} \sin^2(t) \, dt
+\end{aligned}
+$$
+
+\textbf{Como}
+
+$$
+\sin^2(t) = \frac{1 - \cos(2t)}{2}
+$$
+
+\textbf{Resuelvo integrando por sustitución}
+
+$$
+\begin{aligned}
+  u &= 2t, \quad du = 2 \, dt \quad \Longrightarrow \quad dt = \frac{du}{2}
+\end{aligned}
+$$
+
+$$
+P = \frac{1}{2\pi} \left( \int_{0}^{\pi} dt - \frac{1}{2} \int_{0}^{2\pi} \cos(u) \, du \right)
+$$
+
+Resolvemos las integrales:
+
+$$
+\begin{aligned}
+  P &= \frac{1}{2\pi} \left( \pi - \frac{1}{2} \left( \sin(2\pi) - \sin(0) \right) \right) \\
+     &= \frac{1}{2\pi} \left( \pi - 0 \right) \\
+     &= \frac{1}{2\pi} \times \pi \\
+     &= \frac{1}{2}
+\end{aligned}
+$$
 
   \item Considerar el conjunto de señales básicas
 
