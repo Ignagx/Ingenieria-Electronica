@@ -61,6 +61,8 @@ el .tex.
 ```
 pdflatex tp2.tex
 ```
+Por ultimo, cuando terminen de trabajar en su rama deben crear un pull request desde la pagina de github.
+El pull request seria desde su rama TP2-ASyS-ej* hacia la rama TP2-ASyS.
 # Normas de convivencia !!
 + Por favor no hacer lineas infinitas, maximo 120 caracteres. en vim pueden marcar el caracter con :
 ```
