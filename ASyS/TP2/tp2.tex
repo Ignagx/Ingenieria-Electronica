@@ -951,31 +951,31 @@ $T$ y amplitud unitaria.
                      & Igual\\
           \hline
             $\mu_t$ & $\frac{1}{R} \cdot e^{\frac{-t}{RC}} \cdot \mu_t$
-                  & $\frac{1}{R} \cdot e^{\frac{-t}{RC}} \cdot \mu_t$
-                  & Igual\\
+                    & $\frac{1}{R} \mu_t - \frac{1}{R}\left[1 - e^{\frac{-t}{RC}}\right]$
+                    & Diferente\\
           \hline
             $\mu_{t-1}$ & $\frac{1}{R}\left(\mu_{(t-1)} - 1 + e^{\frac{1-t}{RC}}\right) \mu_t$
-                      & $\frac{1}{R}\left(\mu_{(t-1)} - 1 + e^{\frac{1-t}{RC}}\right) \mu_t$
-                      & Igual\\
+                        & $\frac{1}{R} \left(\mu_{(t-1)} + 1 - e^{\frac{1-t}{RC}}\right)$%$\frac{1}{R}\left(\mu_{(t-1)} - 1 + e^{\frac{1-t}{RC}}\right) \mu_t$
+                        & Diferente\\
           \hline
             $\mu_t - \mu_{t-1}$ & $\frac{1}{R} \left[\mu_t \left(1 + e^{\frac{-t}{RC}} - e^{\frac{1-t}{RC}}\right) -
             \mu_{(t-1)} \right]$
-                              & $\frac{1}{R} \left[\mu_t \left(1 + e^{\frac{-t}{RC}} - e^{\frac{1-t}{RC}}\right) -
-            \mu_{(t-1)} \right]$
-                              & Igual\\
+                                & $ \frac{1}{R}\left(\mu_t - \mu_{(t-1)} - 2 + e^{\frac{-t}{RC}} + e^{\frac{1-t}{RC}}\right)$%$\frac{1}{R} \left[\mu_t \left(1 + e^{\frac{-t}{RC}} - e^{\frac{1-t}{RC}}\right) -
+           %\mu_{(t-1)} \right]$
+                                & Diferente\\
           \hline
             $t$ & $\frac{t}{R} - \frac{1}{R} \cdot \mu_t \left(t - RC + RC e^{\frac{-t}{RC}} \right)$
                 & $\int_{-\infty}^{\infty} |t| dt \rightarrow \infty$
                 & No Comp.\\
           \hline
             $t\mu_{t}$ & $\frac{t}{R} \mu_t - \frac{1}{R} \cdot \mu_t \left(t - RC + RC e^{\frac{-t}{RC}} \right)$
-                       & $\int_{-\infty}^{\infty} |t \cdot \mu_t| dt \rightarrow \infty$
-                       & No Comp.\\
+                       & $\frac{1}{R} t \mu_t - \frac{e^{\frac{-t}{RC}}}{R^2C}\left[RCt e^t - e^t + 1\right]$
+                       & Diferente.\\
           \hline
             $e^{2t}$ & $\frac{1}{R} e^{2t} - \frac{1}{R^2C\left(2+\frac{1}{RC}\right)}\left(e^{2t} -
               e^{\frac{-t}{RC}}\right)$
-                     & $\int_{-\infty}^{\infty} |e^{2t}| dt \rightarrow \infty$
-                     & No Comp.\\
+                     & $\frac{e^{2t}}{R} - \frac{e^{2t}}{R(2RC + 1)}$
+                     & Diferente\\
           \hline
               $e^{2t}\mu_{-t}$ & $\frac{e^{2t} \cdot \mu_(-t)}{R}$
                                & $\mu(-t)\left(\frac{e^{2t}}{R} - \frac{e^{\frac{-t}{RC}}}{2RC+1}\right)$
@@ -985,16 +985,16 @@ $T$ y amplitud unitaria.
         \end{tabular}
       \end{table}
 
-      Como se pudo ver, no todos los sistemas admiten la descripcion por convolucion, solo aquellos sistemas que son
-      totalmente integrables y permiten que el sistema permanezca LIT. Debido al analisis previo, determinamos que el
-      sistema es LIT, solamente si sus condiciones iniciales son nulas, su salida es causal, y su entrada tambien es
-      causal. Por lo tanto, aquellas entradas que presentan un pasado, independientemente de si son o no totalmente
-      integrables, su representacion por convolucion va a ser erronea, debido a que no asegura que la respuesta al
-      impulso sea la misma para cualquier desplazamiento temporal, lo cual es la base de la convolucion, el desplazamiento
-      temporal.
+      Como se pudo ver, ningun sistema admite la descripcion por convolucion, excepto el sistema donde $x_t = \delta_t$.
+      Esto es porque el sistema no es invariante en el tiempo. Anteriormente mostramos que es posible que el sistema se
+      comporte como un LIT, causalizando su entrada. Por lo tanto, debido a la no invarianza en el tiempo del sustema,
+      cualquier representacion por convolucion va a ser erronea, debido a que no asegura que la respuesta al sea la
+      misma para cualquier desplazamiento temporal del sistema, lo cual es la base de la convolucion. Ademas, el sistema
+      donde $x_t = t$ no es comparable, debido a que su convolucion tiende a infinito, debido a que $t$, no es
+      absolutamente integrable.
 
       Teniendo todas las respuestas de todos los sistemas, a continuacion mostramos las graficas de respuesta al
-      impulso y al escalon unidad:
+      impulso y al escalon unidad obtenidas a partir de $S_3\{x_t\}$:
 
       \noindent
       \begin{figure}[h]
