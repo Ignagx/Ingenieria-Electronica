@@ -14,7 +14,7 @@
 \usepackage{tikz}
 
 \allowdisplaybreaks
-\def\arraystretch{1.5}% 
+\def\arraystretch{1.7}
 
 \pagestyle{fancy}
 \fancyhf{} 
@@ -938,7 +938,7 @@ $T$ y amplitud unitaria.
 
       Los desarrollos de este ejercicio resultaron ser bastante repetitivos y en la mayoria de los casos las
       propiedades utilizadas eran las mismas. Las unicas diferencias en los desarrollos fueron algunas integrales que
-      se convirtieron en integrales por partes. A continuacion esta el cuadro de comparacion:\\
+      se convirtieron en integrales por partes. A continuacion esta el cuadro de comparacion:
       
       \begin{table}[h!]
         \centering
@@ -978,17 +978,20 @@ $T$ y amplitud unitaria.
                      & No Comp.\\
           \hline
               $e^{2t}\mu_{-t}$ & $\frac{e^{2t} \cdot \mu_(-t)}{R}$
-                             & 
-                             &\\
+                               & $\mu(-t)\left(\frac{e^{2t}}{R} - \frac{e^{\frac{-t}{RC}}}{2RC+1}\right)$
+                               & Diferente\\
           \hline
 
         \end{tabular}
       \end{table}
 
       Como se pudo ver, no todos los sistemas admiten la descripcion por convolucion, solo aquellos sistemas que son
-      totalmente integrables. Ya de antemano podemos determinar que la respuesta al impulso es totalmente integrable,
-      debido a que por un lado tenemos un pulso en $t=0$, y despues tenemos una exponencial decreciente, por lo que
-      el sistema en el infinito tiende a 0. Esto implica que con solo evaluar 
+      totalmente integrables y permiten que el sistema permanezca LIT. Debido al analisis previo, determinamos que el
+      sistema es LIT, solamente si sus condiciones iniciales son nulas, su salida es causal, y su entrada tambien es
+      causal. Por lo tanto, aquellas entradas que presentan un pasado, independientemente de si son o no totalmente
+      integrables, su representacion por convolucion va a ser erronea, debido a que no asegura que la respuesta al
+      impulso sea la misma para cualquier desplazamiento temporal, lo cual es la base de la convolucion, el desplazamiento
+      temporal.
 
       Teniendo todas las respuestas de todos los sistemas, a continuacion mostramos las graficas de respuesta al
       impulso y al escalon unidad:
@@ -1204,7 +1207,6 @@ $T$ y amplitud unitaria.
         \frac{\frac{s}{L}}{s^2 + \frac{R}{L} s + \frac{1}{LC}} X_s + \frac{s y_0 + y_0' + \frac{R}{L} y_0 -
           \frac{1}{L} x_0}{s^2 + \frac{R}{L} s + \frac{1}{LC}} = Y_s
     \end{gather*}
->>>>>>> 0abba40 (Pasa casi todo el ej4.B)
 
 \item Restringir el sistema anterior a CI nulas y obtener la formula de la respuesta transformada $Y_{(s)} = \mathcal{L}\{y\}$.
   Luego, calcular la Función de transferencia $H_{(s)} = \mathcal{L}\{h_t\}$ donde $h_t$ es la respuesta al impulso del sistema
@@ -1306,7 +1308,7 @@ $T$ y amplitud unitaria.
     funcion en el numerador, por lo que se va a utilizar el desarrollo anterior para obtener la antitransformada $y_1(t)$
     \begin{align*}
       y_1(t) &= \frac{1}{2\pi j} \frac{3}{L} \oint_C \frac{se^{-2s}}{s^2 + \frac{R}{L} s + \frac{1}{LC}} e^{st} ds\\[6pt]
-      y_1(t) &= \frac{1}{2\pi j} \frac{3}{L} \oint_C \frac{se^{s(t-2)}}{s^2 + \frac{R}{L} s + \frac{1}{LC}} ds\\[6pt]
+      y_1(t) &= \frac{1}{2\pi j} \frac{3}{L} \oint_C \frac{se^{s(t-2)}}{(s-s_0)(s-s_1)} ds\\[6pt]
       y_1(t) &= \frac{3}{L} \left(\frac{s_0 e^{s_0(t-2)}}{s_0 - s_1} + \frac{s_1 e^{s_1(t-2)}}{s_1 - s_0}\right)
     \end{align*}
     Para $R = 3$, $C = \frac{1}{2}$ y $L = 1$, queda que:
@@ -1326,19 +1328,82 @@ $T$ y amplitud unitaria.
     Por lo tanto, se va a utilizar el desarrollo anterior para obtener la antitransformada $y_2(t)$
     \begin{align*}
       y_2(t) &= \frac{1}{2\pi j} \frac{1}{L} \oint_C \frac{se^{2s}}{s^3 + \frac{R}{L} s^2 + \frac{1}{LC}s} e^{st} ds\\[6pt]
-      y_2(t) &= \frac{1}{2\pi j} \frac{1}{L} \oint_C \frac{se^{s(t+2)}}{s^3 + \frac{R}{L} s^2 + \frac{1}{LC}s} ds\\[6pt]
+      y_2(t) &= \frac{1}{2\pi j} \frac{1}{L} \oint_C \frac{se^{s(t+2)}}{s(s-s_0)(s-s_1)} ds\\[6pt]
       y_2(t) &= \frac{1}{L} \left(\frac{e^{s_0(t+2)}}{s_0 - s_1} + \frac{e^{s_1(t+2)}}{s_1 - s_0}\right)
     \end{align*}
     Para $R = 3$, $C = \frac{1}{2}$ y $L = 1$, queda que:
     \begin{equation*}
       y_2(t) = e^{-(t+2)} - e^{-2(t+2)}\\[6pt]
     \end{equation*}
+    Como se pudo ver, las funciones $Y_1(s)$ e $Y_2(s)$, ambas estan definidas en el dominio $s$, el cual es un dominio
+    que relaciona un factor de atenuacion o crecimiento y frecuencia angular ($\sigma$ y $jw$ respectivamente). Esto
+    significa que la funcion resultante, no se puede graficar en un plano, lo cual puede dificultar su visualizacion y
+    el analisis de las caracteristicas. En contraparte, las funciones $y_1(t)$ e $y_2(t)$, las cuales estan en el
+    dominio del tiempo, si se pueden graficar, y si se pueden analizar sus caracteristicas de una forma mas visual. Uno
+    puede pensar de las funciones en el dominio del tiempo, como aquellas que presentan toda la informacion, pero cruda.
+    Aplicando herramientas sobre esas funciones, como las transformadas, uno puede condensar informacion especifica
+    sobre la funcion, como componentes de frecuencia, o detalles de la estabilidad del mismo sistema. No se pueden
+    establecer diferencias concretas fuera de la variable independiente de las funciones $Y_n(s)$ e $y_n(t)$.
 
   \item Graficar en diagrama de bloques del sistema en el dominios de la variable compleja.  Determinar el coeficiente
     de amortiguamiento $\xi$ y la frecuencia natural $\omega_n$ del sistema linealizado.\\
     \textbf{Reflexionar}: ¿Que diferencias se observan entre el diagrama de bloques del inciso (a) y el diagrama de
     bloques del inciso (e)? ¿Las variables $s$ y $t$ están presentes de alguna forma en los diagramas mencionados? ¿Tiene
     algún significado subrayar que el diagrama esta en el dominio del tiempo o en el dominio complejo?
+
+    El coeficiente de amortiguamiento de una ecuacion diferencial de segundo orden, es un factor que indica cual es la
+    reaccion del sistema al paso del tiempo. Un coeficiente de amortiguacion igual a cero, describe un sistema
+    que va a permanecer en oscilacion por un tiempo indefinido. Asi mismo, un coeficiente entre 0 y
+    1, describe un sistema que con oscilacion, pero con el paso del tiempo esta disminuye en amplitud pico-pico,
+    hasta llegar a un valor estable. Un coeficiente igual a uno describe un sistema totalmente amortiguado, el cual no
+    describe ninguna oscilacion, y llega a su valor maximo en poco tiempo. Un coeficiente mayor a uno describe un sistema
+    sobreamortiguado, el cual tiene un tiempo mas extenso para llegar a su valor maximo.
+
+    Teniendo la transformada de Laplace de la solucion general de una ecuacion diferencial de segundo orden a
+    coeficientes constantes como la siguiente:
+    \begin{equation*}
+      F(s) = \frac{b}{s^2+as+b}
+    \end{equation*}
+    Entonces, su coeficiente de amortiguamiento $\xi$ esta descrito por:
+    \begin{equation*}
+      \xi = \frac{a}{2\sqrt{b}}
+    \end{equation*}
+    Para $R = 3$, $C = \frac{1}{2}$ y $L = 1$, queda que:
+    \begin{equation*}
+      \xi = \frac{a}{2\sqrt{b}} = \frac{3\sqrt{2}}{4} \approx 1,\!06
+    \end{equation*}
+
+    Lo que justifica por que el sistema describe esta grafica:
+    \noindent
+    \begin{figure}[h]
+      \centering
+      \begin{minipage}[h]{0.5\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{./images/ej4.7.png}
+        \textit{Grafica $h(t)$}
+      \end{minipage}
+    \end{figure}
+
+    Asi como el coeficiente de amortiguamiento, la frecuencia natural es otra constante que describe el sistema que se
+    esta analizando. La frecuencia natural es la frecuencia a la cual oscilaria el sistema, en caso de que no hubiese
+    ningun tipo de amortiguacion.
+
+    Teniendo la transformada de Laplace de la solucion general de una ecuacion diferencial de segundo orden a
+    coeficientes constantes como la siguiente:
+    \begin{equation*}
+      F(s) = \frac{b}{s^2+as+b}
+    \end{equation*}
+    Entonces, la frecuencia natural es:
+    \begin{equation*}
+      \omega_n = \sqrt{b}
+    \end{equation*}
+    Para $R = 3$, $C = \frac{1}{2}$ y $L = 1$, queda que:
+    \begin{equation*}
+      \omega_n = \sqrt{b} = \sqrt{\frac{1}{\frac{1}{2}}} = \sqrt{2} \approx 1,\!41 Hz
+    \end{equation*}
+
+
+
 
   \end{enumerate}
 \end{document}
