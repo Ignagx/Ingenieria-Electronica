@@ -90,8 +90,10 @@ Teniendo como punto de referencia el "suelo", responder las siguientes consignas
     $$y_1(t) = Y_0 - \frac{1}{2}9,8\frac{m}{s^2}t^2$$
     $$y_2(t) = \frac{Y_0}{2} - \frac{1}{2}9,8\frac{m}{s^2}t^2$$
 
-    Como se puede observar, las masas no aparecen en las ecuaciones de $y_1(t)$ y $y_2(t)$, por lo que se deduce que las
-    masas no intervienen en la descripcion de las funciones.
+
+    Como se puede observar, las masas no aparecen en las ecuaciones de $y_1(t)$ y $y_2(t)$, por lo que se deduce que
+    las masas no intervienen en la descripcion de las funciones.
+
 
   \item Calcular el tiempo de vuelo (total) $T$ del primer cuerpo, en función de $y_0$. Similarmente, calcular el
     tiempo de vuelo $\tau$ del segundo cuerpo. ¿Qué relación aritmética encuentra entre los dos tiempos $T$ y $\tau$?
@@ -104,11 +106,13 @@ Teniendo como punto de referencia el "suelo", responder las siguientes consignas
     $$\frac{T}{\tau} = \frac{\sqrt{2}\sqrt{gh}}{\sqrt{gh}}$$
     $$T = \sqrt{2}\tau$$
 
-    No se puede obtener $y_2(t)$ como un escalonado de tiempo de $y_1(t)$. Al escalar el tiempo de $y_1(t)$ por un
-    factor de $\sqrt{2}$ queda $y_1(t) = Y_0 - \frac{1}{2}g(\sqrt{2}t)^2$. T y $\tau$ coinciden, es decir los tiempo
-    finales son iguales, pero no coinciden las funciones de posicion. Es importante notar que, aunque existe esta
+
+    No se puede obtener $y_2(t)$ como un escalonado de tiempo de $y_1(t)$. Al escalar el tiempo de $y_1(t)$ por un 
+    factor de $\sqrt{2}$ queda $y_1(t) = Y_0 - \frac{1}{2}g(\sqrt{2}t)^2$. T y $\tau$ coinciden, es decir los tiempos 
+    finales son iguales, pero no coinciden las funciones de posicion. Es importante notar que, aunque existe esta 
     relacion entre los tiempos de vuelo, no es fisicamente correcto interpretar la posicion $y_2(t)$ del segundo cuerpo
-    como una version escalada temporalmente de $y_1(t)$. Los dos cuerpos tienen trayectorias y tiempos de vuelo
+    como una version escalada temporalmente de $y_1(t)$. Los dos cuerpos tienen trayectorias y tiempos de vuelo 
+
     diferentes debido a sus diferentes alturas iniciales, y cada uno debe ser tratado de manera independiente.
 
 
@@ -124,16 +128,17 @@ Teniendo como punto de referencia el "suelo", responder las siguientes consignas
     No se puede obtener $y_2(t)$ como una traslacion temporal de $y_1(t)$, porque al desplazar temporalmente $y_1(t)$,
     este no coincide con $y_2(t)$, sin embargo para el $t_0 = t$ si coinciden las posiciones.
 
-  \item \textbf{Reflexionar:} ¿Tiene sentido físico evaluar la señal $y_1$ en tiempos $t > T$? Similarmente, ¿tiene 
+  \item \textbf{Reflexionar:} ¿Tiene sentido físico evaluar la señal $y_1$ en tiempos $t > T$? Similarmente, ¿tiene
     sentido físico evaluar la señal $y_2$ en tiempos $t > \tau$? En caso afirmativo, ¿cuál es la interpretación
-    física? Y en caso negativo, emplear alguna herramienta para redefinir las señales $y_1, y_2$, de tal forma que la 
+    física? Y en caso negativo, emplear alguna herramienta para redefinir las señales $y_1, y_2$, de tal forma que la
     información provista por el futuro sea nula. Por otra parte, ¿tiene sentido físico evaluar a las señales $y_1,
     y_2$ en tiempos negativos $t < 0$? En caso afirmativo, ¿qué representa? Y en caso negativo, emplear alguna 
     herramienta para redefinir las señales $y_1, y_2$ de tal forma que la información provista por el pasado sea nula.
 
     No tiene sentido físico evaluar las señales $y_1(t)$ ni $y_2(t)$ en tiempos mayores a T y $\tau$ respectivamente. A
-    su vez tampoco tiene sentido evaluar las señales en tiempos negativos, menores a cero. Podríamos definir las señales
-    como:
+    su vez tampoco tiene sentido evaluar las señales en tiempos negativos, menores a cero. Podríamos definir las
+    señales como:
+
     $$y_1(t) = (Y_0 + V_0t - \frac{1}{2}gt^2)u(t)u(T - t)$$
     $$y_2(t) = (\frac{Y_0}{2} + V_0t - \frac{1}{2}gt^2)u(t)u(\tau - t)$$
 
@@ -153,12 +158,14 @@ Teniendo como punto de referencia el "suelo", responder las siguientes consignas
     hasta t = $\tau$ para $y_2(t)$), y son nulas fuera de estos intervalos, por lo tanto su energía es finita.
     \item Potencia
 
-    Dado que las señales $y_1(t)$ e $y_2(t)$ tienen energía finita, se puede afirmar que tienen una potencia media igual
-    a cero.
-    \item Causaludad
 
-    Ambas señales son causales por el hecho de estar multiplicadas por los escalones unitarios (u(t)u(T - t) para
-    $y_1(t)$ y  u(t)u($\tau$ - t) para $y_2(t)$) que anulan el pasado y futuro de las mismas.
+    Dado que las señales $y_1(t)$ e $y_2(t)$ tienen energía finita, se puede afirmar que tienen una potencia media
+    igual a cero.
+    \item Causalidad
+
+    Ambas señales son causales por el hecho de estar multiplicadas por los escalones unitarios $(\mu(t)\mu(T - t)$ para
+    $y_1(t)$ y $\mu(t)$ $\mu(\tau - t) $ para $ y_2(t)$) que anulan el pasado y futuro de las mismas.
+
     \item Modulo
 
     Las señales $y_1(t)$ e $y_2(t)$ son acotadas en sus respectivos intervalos de tiempo. Para $y_1(t)$ la máxima
@@ -180,16 +187,19 @@ equilibrio, máxima amplitud $A > 0$ y despreciando los efectos de la fricción,
   \item Determinar la ecuación de cinemática para la posición $x(t)$ en función del tiempo. \textbf{Reflexionar:} ¿la
     función $x$ puede interpretarse como una señal de variable de tiempo continua?
 
-    Partiendo de la ecuacion diferencial de un oscilador armonico simple $m \frac{dt^2}{d^2x} + kx = 0$, determinamos
+
+    Partiendo de la ecuacion diferencial de un oscilador armonico simple $m \frac{dx^2}{d^2t} + kx = 0$, determinamos
+
     la ecuacion de cinematica para la posicion en funcion del tiempo $x(t) = A \sin(\omega t + \phi)$. Si, la funcion
     $x(t)$ puede interpretarse como una señal de variable de tiempo continuo.
 
   \item Es de conocimiento general que la función posición $x(t)$ se puede determinar en función del $seno$ o del
-    coseno. Determinar la transformación temporal sobre la señal, la cual permite pasar de la formulación $seno$ a la
+    $coseno$. Determinar la transformación temporal sobre la señal, la cual permite pasar de la formulación $seno$ a la
     formulación $coseno$.
 
-    Para pasar de la formulación seno a la formulación coseno debe aplicarse una traslación temporal a la señal
-    correspondiente al desfase entre las funciones trigonométricas seno y coseno, es decir sumar $\frac{\pi}{2}$.
+    Para pasar de la formulación $seno$ a la formulación $coseno$ debe aplicarse una traslación temporal a la señal
+    correspondiente al desfase entre las funciones trigonométricas $seno$ y $coseno$, es decir sumar $\frac{\pi}{2}$.
+
     Entonces:
 
     $$A \sin(\omega t + \frac{\pi}{2}) = A \cos(\omega t)$$
@@ -212,15 +222,18 @@ equilibrio, máxima amplitud $A > 0$ y despreciando los efectos de la fricción,
     $$E_T = A^2 \frac{1}{2}\int_{0}^{T}  \cos(2 \omega t)dt$$
     \item Potencia
 
-    Tiene energia infinita si consideramos el intervalo $(-\infty,\infty$, pero la energia es finita en un solo periodo,
-    por lo que la potencia media es finita:
+
+    Tiene energia infinita si consideramos el intervalo $(-\infty,\infty)$, pero la energia es finita en un solo
+    periodo, por lo que la potencia media es finita:
 
     $$P_{med} = \lim_{T \to \infty} \frac{1}{2T} E_T$$
     $$P_{med} = \lim_{T \to \infty} \frac{A^2T}{4T} = \frac{A^2}{4}$$
     $$P_T = 2 P_{med} = \frac{A^2}{2}$$
     \item Acotada
 
-    La señal es acotada ya que para todo t, $x(t) <= A$ siendo A la amplitud. Esto se da ya que las funciones
+
+    La señal es acotada ya que para todo t, $x(t) \leq A$ siendo A la amplitud. Esto se da ya que las funciones
+
     trigonometricas seno o coseno toman valores entre -1 y 1
     \item Causal
 
@@ -389,7 +402,7 @@ $T$ y amplitud unitaria.
     $$F_1= \frac{2}{w}sin\Big(\frac{w}{2}\Big)$$
 
     Y para $x_2$ la transformada será:
-    $$F_1= \frac{2}{w}sin\Big(\frac{w}{20}\Big)$$
+    $$F_2= \frac{2}{w}sin\Big(\frac{w}{20}\Big)$$
 
     \begin {itemize}[left=0pt]
 
@@ -518,7 +531,7 @@ $T$ y amplitud unitaria.
         $$\int_{-\infty}^{\infty} \Bigg[\hspace{1mm}\frac{2}{\omega} 
         \sin\left(\frac{\omega T}{2}\right)\Bigg]^2 d\omega= 2\pi T$$
 
-        Siendo la energía de cada señal a travez de la relacion de persaval:
+        Siendo la energía de cada señal a través de la relacion de persaval:
           $$E_1 = \frac{2\pi \cdot 1}{2\pi} = 1 $$
           $$E_2 = \frac{2\pi \cdot 0.1}{2\pi} = 0.1 $$
 
@@ -528,8 +541,8 @@ $T$ y amplitud unitaria.
         E_2$ de las señales $x_1, x_2$ en la variable de tiempo $t$ y el método que se deriva de la relación de Parseval
         , en donde los cálculos se realizan en la variable $\omega$?
 
-        En este caso, el metodo sobre la variable $t$ es mucho mas simple, directo y visual. En contra parte el calculo
-        mediante la relación de Parseval es mucho mas tedioso, requiriendo la resolucion de una integral compleja
+        En este caso, el metodo sobre la variable $t$ es mucho más simple, directo y visual. En contra parte el calculo
+        mediante la relación de Parseval es mucho más tedioso, requiriendo la resolución de una integral compleja
         y la ayuda de herramientas como la función $Si()$. Sin embargo, esto se debe a las caracteristicas de nuestra
         señal en particular, es decir que no es extensible a otros casos.
 
@@ -575,9 +588,9 @@ $T$ y amplitud unitaria.
       constantes, y con ello, definir un Sistema en tiempo continuo con entrada $x(t) = v(t)$ y salida $y(t) = i(t)$.
       Luego, hacer un diagrama de bloques de la E.D; exponiendo los integradores que la conforma.
 
-      El circuito RC esta descrito por la ecuacion caracteristica:
+      El circuito RC esta descrito por la ecuación característica:
       $$v(t) = R\cdot i(t) + \frac{1}{C} \cdot \int_{0}^{t} i(\tau) d\tau$$
-      Para tener una nomenclatura mas generica, sustituimos la entrada $v(t)$ con $x(t)$ y la salida $i(t)$ con $y(t)$:
+      Para tener una nomenclatura más genérica, sustituimos la entrada $v(t)$ con $x(t)$ y la salida $i(t)$ con $y(t)$:
       $$x(t) = R\cdot y(t) + \frac{1}{C} \cdot \int_{0}^{t} y(\tau) d\tau$$
       Teniendo en cuenta que $y(t)$ es la salida e $x(t)$ la entrada, las ecuaciones diferenciales toman la forma:
       $$\left(D^N + \sum_{i=0}^{N-1} a_i D^i\right) \cdot y(t) = \left(\sum_{i=0}^{M} b_i D^i\right) \cdot x(t)$$
@@ -1349,7 +1362,7 @@ $T$ y amplitud unitaria.
     de amortiguamiento $\xi$ y la frecuencia natural $\omega_n$ del sistema linealizado.\\
     \textbf{Reflexionar}: ¿Que diferencias se observan entre el diagrama de bloques del inciso (a) y el diagrama de
     bloques del inciso (e)? ¿Las variables $s$ y $t$ están presentes de alguna forma en los diagramas mencionados? ¿Tiene
-    algún significado subrayar que el diagrama esta en el dominio del tiempo o en el dominio complejo?
+    algún significado subrayar que el diagrama esta en el dominio del tiempo (−∞, ∞,o en el dominio complejo?
 
     El coeficiente de amortiguamiento de una ecuacion diferencial de segundo orden, es un factor que indica cual es la
     reaccion del sistema al paso del tiempo. Un coeficiente de amortiguacion igual a cero, describe un sistema
