@@ -240,8 +240,19 @@ Considerar las siguientes señales proporcionadas por un rectificador de onda co
 
 \begin{enumerate}[label=\alph*),left=0pt]
   \item Calcular el periodo fundamental $T_0$ de las señales $x_1, x_2$. ¿Las señales tienen energía finita? Calcular
-    la energía relativa a un intervalo con longitud un periodo fundamental $T_0$.
+    la energía relativa a un intervalo con longitud un periodo fundamental $T_0$.\\
+	\textbf{Señal sinusoidal rectificada de media onda}
+        \\
+        Esta señal tiene la siguiente representación analítica:
+        $$x(t)=
+        \begin{cases}
+            sen(t), & 0<t<\pi\\
+            0, & \pi<t<2\pi
+        \end{cases}
+        $$
+        \\
 
+<<<<<<< HEAD
     \textbf{2) a)}
 
     $$
@@ -284,6 +295,28 @@ Considerar las siguientes señales proporcionadas por un rectificador de onda co
     T_0 = \pi
     $$
 
+        El período fundamental $T_0>0$, se determina por:
+
+          $$
+        \begin{aligned}
+        x(t) &= x(t+T_0)\\
+        sen(t)&=sen(t+T_0) \Rightarrow T_0=2\pi
+        \end{aligned}
+        $$  
+
+        
+        Las señales son periódicas y por lo tanto tienen energía infinita. 
+        \\
+
+        Energía relativa a un periódo $T_0$:
+        $$
+	\begin{aligned}
+		E_{T_{0}}&=\int_0^{2\pi}|x(t)|^2=\int _0^\pi sen(t)^2dt=\int_0^\pi \frac{1}{2}(1-cos(2t) dt\\
+        E_{T_0}&=\frac{t|^\pi_0}{2}-\frac{sen(2t)|^\pi_0}{2}\\
+	E_{T_0}&=\frac{\pi}{2}
+	\end{aligned}
+	$$
+	
   \item Teniendo en cuenta que la potencia media de una señal se define como
 
   $$P_1 = \lim_{r \to \infty} \frac{1}{2r} \int_{-r}^{r} |x(t)|^2 \, dt$$
@@ -293,8 +326,31 @@ Considerar las siguientes señales proporcionadas por un rectificador de onda co
       intervalo con longitud un periodo fundamental $T_0$ coincide con la potencia media, es decir:
 
      $$P_1 = \frac{1}{T_0} \int_{t_0}^{t_0 + T_0} |x(t)|^2 \, dt$$
+	\textbf{Demostración}
+Sea la potencia media definida como:
+        $$
+        P_m=\lim _{r \to \infty} \frac{1}{2r}\int_{-r}^{r}|x(t)|^2dt
+	$$
+	Si x(t) es periódica con período T, entonces el integrando de la potencia media es igual
+	para cualquier intervalo de longitud T, permitiendo que el límite se tome de manera tal 
+que 2L sea un múltiplo entero del período  $2T=mr$, la energía total de x(t) sobre un intervalo de longitud $2r$ is m veces la energía sobre un período. Por lo tanto la potencia media es:
+        $$P_m=\lim_{r to \infty}[\frac{1}{mT}m\int_{t_0}^{t_0+T} |x(t)|^2 dt]=\frac{1}{T}\int_{t_0}^{t_0+T} |x(t)|^2 dt$$
+    \item Calcular la potencia media $P_1$ de la señal $x_1$ y similarmente, $P_2$ de la señal $x_2$\\
+   La potencia media para la señal 2 es:
 
-    \item Calcular la potencia media $P_1$ de la señal $x_1$ y similarmente, $P_2$ de la señal $x_2$.
+        $$
+        \begin{aligned}
+        P_{2m}&=\frac{1}{2\pi}\int_0^{\pi}|sen(t)|^2dt
+        =\frac{1}{2\pi}\int_0^{\pi}sen(t)^2dt\\
+        &=\frac{1}{2\pi}\int_0^{\pi}\frac{1}{2}(1-\cos (2t))dt
+        =\frac{1}{4\pi}\{t\vert_0^\pi-\frac{1}{2}senz(2t)\vert_0^\pi\}\\
+        &=\frac{1}{4\pi}[\pi-0+1-1]\\
+        P_{2m}&=\frac{\pi}{4\pi}
+        =\frac{1}{4}
+        \end{aligned}
+        $$
+		
+
 
   \end{itemize}
 
@@ -306,19 +362,155 @@ Considerar las siguientes señales proporcionadas por un rectificador de onda co
     \item Calcular la energía relativa a un intervalo con longitud un periodo fundamental $T_0$ y el periodo $T_n$
       de cada señal del conjunto, y luego, demostrar que (dos a dos) forman un conjunto de señales ortogonales más no
       ortonormales.
+	$$
+	\begin{aligned}	
+			E_{T_0}&=\int^{\frac{2\pi}{\omega_0}}_0 sen^2(nw_0t)dt
+			\\
+			&=\int^{\frac{2\pi}{\omega_0}}_0\frac{1}{2}(1-cos(2nw_0t)dt\\
+			E_{T_0}&=\frac{t|^{\frac{2\pi}{\omega_0}}_0}{2}-\frac{cos(2n\omega_0t)|^{\frac{2\pi}{\omega_0}}_0}{2n\omega_0}\hspace{1cm}(1)
+	\end{aligned}
+	$$
+  Para todo n la segunda parte de la ecuación es 0, ya que es una función coseno que se integra en $2n$ periódos, lo cual da 0. Por lo tanto:
 
-      \textbf{Reflexión:} ¿si los periodos $T_n$ de cada señal del conjunto básico son distintos, por qué la suma 
-      (finita/infinita) es periódica? ¿Por qué se restringe el dominio del tiempo en un intervalo del tipo 
-      $t_0 \leq t \leq t_0 + T_0$, si las señales básicas están bien definidas en todo el eje temporal?
+        $$
+        E_{T_0}=\frac{\pi}{\omega_0}
+        $$
+        En el caso de calcular la energía relativa a $T_n$, lo único que cambia son los límtes 
+    	de integración, de todos modos la segunda parte de la ecuación sigue siendo 0, ya que se 
+	integra una función coseno en 2 períodos. y la energía relativa a $T_n$ es por lo tanto:
+        $$
+        E_{T_n}=\frac{t|^{\frac{2n\pi}{\omega_0}}_0}{2}=\frac{2n\pi}{2\omega_0}=\frac{n\pi}{\omega_0}
+        $$
 
+        Se dice que un conjunto de señales es ortogonal sobre un intervalo $(a,b)$ si:
+        
+        $$
+        I=\int^b_a\phi_l(t)\phi^*_kdt=\begin{cases}
+            E_k,& l=k\\
+            0, & l\neq k
+        \end{cases}
+        $$
+        
+        Se dice que es ortonormal en el caso en que $E_k=1$.
+        \\
+        
+        En nuestro caso sobre un intervalo $T_0=\frac{2\pi}{\omega_0}$, debemos calcular si el conjunto es ortogonal.
+        $$
+        E_{T_0}=\int_0^{T_0}sen(n\omega_0t)sen(m\omega_0t)dt
+        $$
+        
+        $$
+        =\frac{1}{2}\int_0^{T_0}[cos((m-n)\omega_0 t)-cos((m+n)\omega_0 t)]dt
+        $$
+
+        En el caso en que $m=n$ estamos en el mismo caso que en (1) del inciso anterior, por lo tanto 
+
+        $$
+        I=\frac{\pi}{\omega_0}, \hspace{1cm}n=m
+        $$
+
+        En el caso en que $m\neq n$:
+        $$
+        I=\frac{1}{2}(\frac{sen((m-n)\omega_0t)}{(m-n)\omega_0}-\frac{sen((m+n)\omega_0t)}{(m+n)\omega_0})|^{t_0+T_0}_{t_0}
+        $$
+
+        Tanto $m-n$ como $m+n$ son números enteros, por lo tanto se integra un número entero de veces sobre un período, es decir que ambas integrales valuadas dan 0. Por lo tanto:
+        $$
+        I=\begin{cases}
+            \frac{\pi}{\omega_0},&n=m\\
+            0,&\forall n\neq m
+        \end{cases}
+        $$
+        No son ortonormales porque $\frac{\pi}{\omega_0}\neq 0$	
+
+
+	\textbf{Reflexión:} ¿si los periodos $T_n$ de cada señal del conjunto básico son distintos, por qué la suma 
+      (finita/infinita) es periódica? \\
+	Porque el periodo $T_0$ es n veces el periodo de la señal enésima, por lo tanto todas comparten el periodo $T_0$, por lo tanto su suma finita/infinita es periódica de periodo $T_0$.\\
+
+	¿Por qué se restringe el dominio del tiempo en un intervalo del tipo 
+      $t_0 \leq t \leq t_0 + T_0$, si las señales básicas están bien definidas en todo el eje temporal?\\
+		Porque si definimos la señal en todo el eje temporal, la energía de dicha señal es infinita.
    \item Obtener la representación de las señales $x_1, x_2$ como una combinación lineal de las señales básicas, 
      esto es, calcular coeficientes $(a_n, b_n)$ en $\mathbb{R}$ tales que:
 
      $$x_1 = \sum_{n=0}^{\infty} a_n \psi_n + \sum_{n=1}^{\infty} b_n \varphi_n$$
-     Similarmente para la señal $x_2$.
+     Similarmente para la señal $x_2$.\\
+	\textbf{Señal $x_2$}\\
+
+Para calcular los coeficientes $a_n$ y $b_n$ podemos hacer uso de los coeficientes $c_n$ de la serie exponencial de la serie de Fourier y luego aplicar el cambio de coordenadas para hallarlos:
+            $$
+            \begin{aligned}
+                c_n &= \frac{1}{T} \int_0^T \sin t \exp\left(-j\frac{2\pi n t}{T}\right) dt\\
+                &= \frac{1}{2\pi} \int_0^{\pi} \frac{1}{2j}\left(e^{jt} - e^{-jt}\right) e^{-jnt} dt\\
+                &= \frac{1}{4\pi j} \int_0^{\pi} \left(e^{-j(n-1)t} - e^{-j(n+1)t}\right) dt \hspace{1cm}(1)\\
+                &= \frac{e^{-jn\pi/2}}{2\pi(1-n^2)} \left(e^{-jn\pi/2} + e^{jn\pi/2}\right)\\
+                & = \frac{1}{\pi(1-n^2)} \cos\left(\frac{n\pi}{2}\right)e^{-jn\pi/2}, \quad n \neq \pm 1\\
+                c_n &= \begin{cases}
+            \frac{1}{\pi(1-n^2)}, & n \text{ even} \\[5pt]
+            0, & n \text{ odd}, \quad n \neq \pm 1
+            \end{cases}
+            \end{aligned}
+            $$
+
+       Para el caso en donde n=-1,1, necesitamos evaluar la integral primero y resolver despuésde tal forma utilizando (1), calculamos:
+
+       $$
+       \begin{aligned}
+       c_1&=\frac{1}{4\pi j}\int_0^\pi(e^{-j(1-1)}-e^{-j(1+1)t})dt\\
+       &=\frac{1}{4\pi j}\int^\pi_0 (1-e^{-j2t})dt=\frac{t|^\pi_0}{4\pi j}-\frac{e^{-2jt}|^\pi_0}{4\pi j (-2j)}\\
+       c_1&=\frac{\pi}{4\pi j}-0=\frac{1}{4j}=\frac{-j}{4}
+       \end{aligned}
+       $$
+     
+       $$
+        \begin{aligned}
+        c_{-1}&=\frac{1}{4\pi j}\int^\pi_0(e^{-j(-1-1)}-e^{-j(-1+1)t})dt\\
+       c_{-1}&=\frac{1}{4\pi j}(0-\pi)=\frac{-1}{4j}=\frac{j}{4}     
+        \end{aligned}
+       $$
+
+       De esta forma:
+       $$
+       c_n = \begin{cases}
+            \frac{1}{\pi(1-n^2)}, & n \text{ even} \\[5pt]
+            0, & n \text{ odd}, \quad n \neq \pm 1 \\
+            \frac{j}{4}, & n=-1 \\
+            \frac{-j}{4} & n=1
+            \end{cases}$$
+
+        Para calcular los coeficientes $a_n$ y $b_n$ simplemente debemos conocer la matriz de cambio de base la cual es $a_0=c_0,\hspace{0.3cm}a_n=2Re(C_n)\hspace{0.3cm}b_n=-2Im(C_n)$.
+        Por lo tanto:
+        $$
+        \begin{aligned}
+            b_n&=\begin{cases}
+            \frac{1}{2},& n=1\\
+            0, & \forall n >1
+        \end{cases}\\
+        a_0&=\frac{1}{\pi}\\
+        a_n&=\begin{cases}
+            0,&\forall n \hspace{0.1cm}impar\\
+            \frac{2}{\pi(1-n^2)},& \forall n \hspace{0.1cm} par
+        \end{cases}\\  
+        \end{aligned}
+        $$
+        Entonces podemos representar a $x(t)$ como:
+        $$
+        x(t)=\frac{1}{\pi}+\frac{1}{2}sen(t)+\frac{2}{\pi}[\frac{1}{1-4}cos(2t)+\frac{1}{1-16}cos(4t)+\dots]
+        $$
+
 
    \item Truncar la suma infinita del inciso anterior en $n = 5$ y hacer un gráfico comparativo entre la señal 
-     original $x_1$ y su aproximación trigonométrica. Similarmente para la señal $x_2$.
+     original $x_1$ y su aproximación trigonométrica. Similarmente para la señal $x_2$.\\
+\textbf{Señal $x_2$}\\
+
+Si truncamos la suma en $n=5$ entonces podemos aproximar a la señal como:
+        $$
+        x(t)=\frac{1}{\pi}+\frac{1}{2}sen(t)+\frac{2}{\pi}[\frac{1}{1-4}cos(2t)+\frac{1}{1-16}cos(4t)]
+        $$
+ El gráfico de dicha señal comparada con la original es:
+%grafico aprox senal 2
+%\includegraphics[width=0.9\textwidth]{}  
 
   \end{itemize}
 
@@ -334,10 +526,51 @@ Considerar las siguientes señales proporcionadas por un rectificador de onda co
 
     \item Calcular la energía relativa a un intervalo con longitud un periodo fundamental $T_0$ y el periodo $T_n$ de
       cada señal del conjunto, y luego, demostrar que (dos a dos) forman un conjunto de señales ortogonales más no
-      ortonormales.\newline
-      \textbf{Reflexión:} ¿si los periodos $T_n$ de cada señal del conjunto básico son distintos, por qué la suma
-      (finita/infinita) es periódica? ¿Por qué se restringe el dominio del tiempo en un intervalo del tipo 
-      $t_0 \leq t \leq t_0 + T_0$, si las señales básicas están bien definidas en todo el eje temporal?
+      ortonormales.\\
+
+	Energía relativa a $T_0$:
+	$$
+	E_{T_0}=\int_0^{\frac{2\pi}{\omega_0}}e^{jnwt}e^{-jnwt}dt=\int_0^{\frac{2\pi}{\omega_0}}e^0dt=\int^{\frac{2\pi}{\omega_0}}_01dt=
+		  t|^{\frac{2\pi}{\omega_0}}_0=\frac{2\pi}{\omega_0}
+	$$
+Energía relativa a $T_n$:
+	$$
+	    \int^{T_n}_0e^{jn\omega t}e^{-jn\omega t}dt=t|^{T_n}_0=T_n=\frac{2\pi}{\omega_0n}
+	$$
+
+\textbf{Demostración ortogonalidad:}
+$$
+\begin{aligned}
+	I&=\int^{T_0}_0e^{jn\omega t}e^{-jm\omega t}dt\\
+	&=\int_0^{T_0}e^{j\omega t(n-m)}dt\\
+\end{aligned}
+$$
+	En el caso en que $n=m$ estamos en el mismo caso que cuando calculamos la energía relativa a $T_0$
+	, por lo tanto $I=T_0$.\\
+	Cuando $n\neq m$ entonces:
+		  $$
+		  \begin{aligned}
+			  I&=\frac{e^{j\omega t(n-m)}}{\omega(n-m)}|^{T_0}_0
+			    =\frac{e^{j\omega T_0(n-m)}}{\omega(n-m)}-\frac{e^{j\omega 0(n-m)}}{\omega(n-m)}
+			    =\frac{e^{j\frac{2\pi}{T_0}T_0(n-m)}}{\omega(n-m)}-1\\
+			  I&=\frac{e^{j2\pi(n-m)}}{\omega(n-m)}-1
+		  \end{aligned}
+		  $$
+
+	$n-m$ es un número entero por lo tanto el primer término también es 1, por lo tanto:
+		  $$
+		  	I=\begin{cases}
+				T_0,&n=m\\
+				0,&\forall n \neq m
+			\end{cases}
+		  $$
+
+	\textbf{Reflexión:} ¿si los periodos $T_n$ de cada señal del conjunto básico son distintos, por qué la suma
+      (finita/infinita) es periódica? \\
+		  Nuevamente las señales son periódicas con periodo $T_n=\frac{T_0}{n}$, de tal forma todas compartenel periodo $T_0$, y la suma finita/infinita de señales periódicas con un periodo comun es periódica con dicho periodo.\\
+		  ¿Por qué se restringe el dominio del tiempo en un intervalo del tipo 
+      $t_0 \leq t \leq t_0 + T_0$, si las señales básicas están bien definidas en todo el eje temporal?\\
+		  Nuevamente si no se restringe el dominio la energía de dichas señales sería infinito.
 
     \item Obtener la representación de las señales $x_1, x_2$ como una combinación lineal de las señales básicas, esto 
       es, obtener coeficientes $C_n$ en $\mathbb{C}$ tales que
@@ -345,13 +578,26 @@ Considerar las siguientes señales proporcionadas por un rectificador de onda co
       $$x_1 = \sum_{-\infty < n < \infty} C_n \phi_n =
       \sum_{n=1}^{\infty} C_{-n} \phi_n^* + C_0 \phi_0 + \sum_{n=1}^{\infty} C_n \phi_n$$
 
-      Similarmente para la señal $x_2$.
+      Similarmente para la señal $x_2$.\\
+      \textbf{Señal $x_2$:}\\
+      En el punto b) se procedió a calcular dichos coeficientes, los cuales eran:
+      $$
+      c_n = \begin{cases}
+	      \frac{1}{\pi(1-n^2)}, & n \text{ even} \\[5pt]
+	      0, & n \text{ odd}, \quad n \neq \pm 1 \\
+	      \frac{j}{4}, & n=-1 \\
+	      \frac{-j}{4} & n=1
+      \end{cases}
+      $$
 
     \item Considerar $|n| \leq 5$ y realizar el espectro de frecuencias de ambas señales en fase, esto es, graficar los 
       pares ordenados
 
       $$\{(n, \text{Arg}(C_n)) \mid -5 \leq n \leq 5\}$$
       correspondientes a cada señal $x_1, x_2$.
+	\textbf{Señal $x_2$}
+      %\includegraphics[width=1\textwidth]{}	
+      %graficos amplitud señal 2
 
       \item Considerar $|n| \leq 5$ y realizar el espectro de frecuencias de ambas señales en módulo, esto es, graficar 
         los pares ordenados
@@ -359,15 +605,38 @@ Considerar las siguientes señales proporcionadas por un rectificador de onda co
       $$\{(n, |C_n|) \mid -5 \leq n \leq 5\}$$
 
       correspondientes a cada señal $x_1, x_2$.\newline
+      \textbf{Señal $x_2$}
+      %\includegraphics[width=1\textwidth]{}	
+      %graficos amplitud señal 2
+
 
     \item Calcular una aproximación a las potencias medias $P_1, P_2$, por medio de la relación de Parseval con los 
       espectros de frecuencia de ambas señales en módulo (usar la información de los incisos anteriores) y discriminar 
       el aporte de las componentes (CC, AC).
 
+	Potencia media por medio de Parseval:
+	$$
+	P_m=\sum^\infty_{-\infty}|C_n|^2
+	$$
+            Si truncamos la suma, obtenemos una aproximación de la misma, en este caso la truncamos en n=5\\
+	\textbf{Señal $x_2$}
+	$$
+	P_m=\sum^5_{-5}|C_n|^2=|\frac{1}{\pi}|^2+2|\frac{j}{4}|^2+2|-\frac{1}{3\pi}|^2+2|-\frac{1}{15\pi}|^2
+	$$
+            
+	$$
+	=\frac{1}{\pi^2}+\frac{1}{16}+\frac{1}{9\pi^2}+\frac{1}{225\pi^2}\approx 0.2497 \approx =0.25
+	$$
+	El aporte del componente es de $\frac{1}{\pi^2}\approx0.101$ y el del componente AC es $P_m-DC\approx 0.1484$
+
+
       \textbf{Reflexionar:} ¿Qué ventajas/desventajas encuentra entre el método directo para calcular la potencia media 
       $P_1, P_2$ de las señales $x_1, x_2$ en la variable de tiempo $t$ y el método que se deriva de la relación de 
       Parseval, en donde los cálculos se realizan en la variable $n \in \mathbb{Z}$?
 
+      Con el método directo puede ocurrir que calcular la potencia no sea sencillo debido a la forma analítica de
+      la función en el dominio del tiempo, y además no hay información del aporte de cada armónico en la potencia 
+      de la señal.  
   \end{itemize}
 
   \item Comparar los espectros obtenidos para cada una de las señales $x_1, x_2$, evaluar y proponer las 
@@ -1240,7 +1509,7 @@ $T$ y amplitud unitaria.
     de amortiguamiento $\xi$ y la frecuencia natural $\omega_n$ del sistema linealizado.\\
     \textbf{Reflexionar}: ¿Que diferencias se observan entre el diagrama de bloques del inciso (a) y el diagrama de
     bloques del inciso (e)? ¿Las variables $s$ y $t$ están presentes de alguna forma en los diagramas mencionados? ¿Tiene
-    algún significado subrayar que el diagrama esta en el dominio del tiempo o en el dominio complejoa?
+    algún significado subrayar que el diagrama esta en el dominio del tiempo o en el dominio complejo?
 
   \end{enumerate}
 \end{document}
