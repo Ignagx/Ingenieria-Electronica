@@ -374,7 +374,7 @@ $$
 \sin^2(t) = \frac{1 - \cos(2t)}{2}
 $$
 
-\textbf{Resuelvo integrando por sustitución}
+\text{Resuelvo integrando por sustitución}
 
 $$
 \begin{aligned}
@@ -479,6 +479,124 @@ $$
 
      $$x_1 = \sum_{n=0}^{\infty} a_n \psi_n + \sum_{n=1}^{\infty} b_n \varphi_n$$
      Similarmente para la señal $x_2$.\\
+
+  \textbf{Señal $x_1$}\\
+  Para calcular los coeficientes \(a_n\) y \(b_n\) de la serie de Fourier, seguimos los siguientes pasos:
+
+  $$
+  \begin{aligned}
+    a_0 &= \frac{1}{\pi} \int_0^\pi |\sin(t)| \, dt \\
+        &= \frac{1}{\pi} \int_0^\pi \sin(t) \, dt \\
+        &= \frac{1}{\pi} \left[ -\cos(t) \right]_0^\pi \\
+        &= \frac{1}{\pi} \left[ -\cos(\pi) - (-\cos(0)) \right] \\
+        &= \frac{1}{\pi} \left[ -(-1) - (-1) \right] \\
+        &= \frac{1}{\pi} \left[ 1 + 1 \right] \\
+        &= \frac{2}{\pi}
+  \end{aligned}
+  $$
+  
+  Ahora calculamos \(a_n\):
+  
+  $$
+  \begin{aligned}
+    a_n &= \frac{2}{\pi} \int_0^\pi \sin(t) \cos(2nt) \, dt \\
+        &= \frac{1}{\pi} \int_0^\pi 2 \sin(t) \cos(2nt) \, dt \\
+        &= \frac{1}{\pi} \int_0^\pi \left[ \sin(t + 2nt) + \sin(t - 2nt) \right] \, dt \\
+        &= \frac{1}{\pi} \left[ \int_0^\pi \sin(t(1 + 2n)) \, dt + \int_0^\pi \sin(t(1 - 2n)) \, dt \right]
+  \end{aligned}
+  $$
+  
+  Integrando por sustitución:
+  
+  $$
+  \begin{aligned}
+    u &= t(1 + 2n) \quad \text{entonces} \quad du = (1 + 2n) \, dt \quad \Longrightarrow \quad dt = \frac{du}{1 + 2n} \\
+    v &= t(1 - 2n) \quad \text{entonces} \quad dv = (1 - 2n) \, dt \quad \Longrightarrow \quad dt = \frac{dv}{1 - 2n} \\
+    &= \frac{1}{\pi} \left[ \int_0^{\pi(1+2n)} \frac{\sin(u)}{1+2n} \, du + \int_0^{\pi(1-2n)} \frac{\sin(v)}{1-2n} \, dv \right] \\
+    &= \frac{1}{\pi} \left[ \frac{-\cos(\pi(1+2n)) + \cos(0)}{1+2n} + \frac{-\cos(\pi(1-2n)) + \cos(0)}{1-2n} \right] \\
+    &= \frac{1}{\pi} \left[ \frac{-\cos(\pi(1+2n)) + 1}{1+2n} + \frac{-\cos(\pi(1-2n)) + 1}{1-2n} \right]
+  \end{aligned}
+  $$
+  
+  
+  
+  \text{Sabiendo que:}
+
+  $$
+  \begin{aligned}
+  \cos(\pi(1+2n)) = \cos(\pi + 2n\pi) = -\cos(2n\pi) \\
+  \cos(\pi(1-2n)) = \cos(\pi - 2n\pi) = -\cos(2n\pi) \\
+  \end{aligned}
+  $$
+
+  $$
+  \begin{aligned}
+    &= \frac{1}{\pi} \left[ \frac{-(-\cos(2n\pi)) + 1}{1+2n} + \frac{-(-\cos(2n\pi)) + 1}{1-2n} \right] \\
+    &= \frac{1}{\pi} \left[ \frac{\cos(2n\pi) + 1}{1+2n} + \frac{\cos(2n\pi) + 1}{1-2n} \right] \\
+    &= \frac{1}{\pi} \left[ \frac{2\cos(2n\pi) + 2}{1 - 4n^2} \right] \\
+    &= \frac{2}{\pi} \left[ \frac{\cos(2n\pi) + 1}{1 - 4n^2} \right] \\
+    &= \frac{2}{\pi} \left[ -\frac{\cos(2n\pi) + 1}{4n^2 - 1} \right] \\
+    &= -\frac{2}{\pi (4n^2 - 1)} (\cos(2n\pi) + 1)
+  \end{aligned}
+  $$
+  
+  Dado que \(\cos(2n\pi) = 1\) para todo \(n \in \mathbb{N}\):
+  
+  $$
+  \begin{aligned}
+    a_n &= -\frac{2}{\pi (4n^2 - 1)} (1 + 1) \\
+        &= -\frac{4}{\pi (4n^2 - 1)}
+  \end{aligned}
+  $$
+  
+  Finalmente, calculamos los coeficientes \(b_n\):
+  
+  $$
+  \begin{aligned}
+    b_n &= \frac{1}{\pi} \int_0^\pi \sin(t) \sin(2nt) \, dt \\
+        &= \frac{1}{\pi} \int_0^\pi \sin(t) \sin(2nt) \, dt \\
+  \end{aligned}
+  $$
+
+  $$
+  \text{utilizando la siguiente identidad: }
+  \sin(A)\sin(B) = \frac{1}{2} (\cos(A - B) - \cos(A + B)) \\
+  $$
+
+  $$
+  \begin{aligned}
+    &= \frac{1}{\pi} \int_0^\pi \frac{1}{2} (\cos(t - 2nt) - \cos(t + 2nt)) \, dt \\
+    &= \frac{1}{2\pi} \left[ \int_0^\pi \cos(t - 2nt) \, dt - \int_0^\pi \cos(t + 2nt) \, dt \right]
+  \end{aligned}
+  $$
+  
+  Integrando por sustitución:
+  
+  $$
+  \begin{aligned}
+    u &= t(1 - 2n) \quad \text{entonces} \quad du = (1 - 2n) \, dt \quad \Longrightarrow \quad dt = \frac{du}{1 - 2n} \\
+    v &= t(1 + 2n) \quad \text{entonces} \quad dv = (1 + 2n) \, dt \quad \Longrightarrow \quad dt = \frac{dv}{1 + 2n} \\
+    &= \frac{1}{2\pi} \left[ \frac{1}{1 - 2n} \int_0^{\pi(1 - 2n)} \cos(u) \, du - \frac{1}{1 + 2n} \int_0^{\pi(1 + 2n)} \cos(v) \, dv \right] \\
+    &= \frac{1}{2\pi} \left[ \frac{1}{1 - 2n} (\sin(\pi (1 - 2n)) - \sin(0)) - \frac{1}{1 + 2n} (\sin(\pi (1 + 2n)) - \sin(0)) \right]
+  \end{aligned}
+  $$
+  
+  Dado que \(\sin(\pi (1 - 2n)) = 0\) y \(\sin(\pi (1 + 2n)) = 0\) para todo \(n\):
+  
+  $$
+  \begin{aligned}
+    &= \frac{1}{2\pi} \left[ \frac{1}{1 - 2n} \cdot 0 - \frac{1}{1 + 2n} \cdot 0 \right] \\
+    &= 0
+  \end{aligned}
+  $$
+  
+  Por lo tanto, los coeficientes \(b_n\) son cero para todo \(n\):
+  
+  $$
+  b_n = 0 \quad \forall \, n
+  $$
+  
+
 	\textbf{Señal $x_2$}\\
 
 Para calcular los coeficientes $a_n$ y $b_n$ podemos hacer uso de los coeficientes $c_n$ de la serie exponencial de la serie de Fourier y luego aplicar el cambio de coordenadas para hallarlos:
@@ -545,6 +663,21 @@ Para calcular los coeficientes $a_n$ y $b_n$ podemos hacer uso de los coeficient
 
    \item Truncar la suma infinita del inciso anterior en $n = 5$ y hacer un gráfico comparativo entre la señal 
      original $x_1$ y su aproximación trigonométrica. Similarmente para la señal $x_2$.\\
+
+\textbf{Señal $x_1$}\\
+     Finalmente, truncamos la serie hasta \(n = 5\) y obtenemos los siguientes coeficientes \(a_n\):
+  
+     $$
+     \begin{aligned}
+       a_0 &= \frac{2}{\pi} \\
+       a_1 &= \frac{4}{3\pi} \\
+       a_2 &= \frac{4}{15\pi} \\
+       a_3 &= \frac{4}{35\pi} \\
+       a_4 &= \frac{4}{63\pi} \\
+       a_5 &= \frac{4}{99\pi}
+     \end{aligned}
+     $$
+
 \textbf{Señal $x_2$}\\
 
 Si truncamos la suma en $n=5$ entonces podemos aproximar a la señal como:
