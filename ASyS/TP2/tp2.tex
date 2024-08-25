@@ -252,26 +252,27 @@ Considerar las siguientes señales proporcionadas por un rectificador de onda co
         $$
         \\
 
-
     $$
     \begin{aligned}
       E &= \int_{0}^{\pi} |\sin(t)|^2 \, dt \\
         &= \int_{0}^{\pi} \sin(t)^2 \, dt
     \end{aligned}
     $$
-    
-    \textbf{Como}
-    
+
+    $$
+    \text{utilizando la siguiente identidad: }
+    \sin(t)^2 = \frac{1 - \cos(2t)}{2}
+    $$
+
     $$
     \begin{aligned}
-              \sin(t)^2 &= \frac{1 - \cos(2t)}{2} \\
-      \Longrightarrow E &= \int_{0}^{\pi} \frac{1 - \cos(2t)}{2} \, dt \\
+                      E &= \int_{0}^{\pi} \frac{1 - \cos(2t)}{2} \, dt \\
                         &= \frac{1}{2} \int_{0}^{\pi} (1 - \cos(2t)) \, dt \\
                         &= \frac{1}{2} \left( \int_{0}^{\pi} dt - \int_{0}^{\pi} \cos(2t) \, dt \right)
     \end{aligned}
     $$
     
-    \textbf{Resolviendo la integral por sustitución}
+    \text{Resolviendo la integral por sustitución}
     
     $$
     \begin{aligned}
@@ -281,10 +282,10 @@ Considerar las siguientes señales proporcionadas por un rectificador de onda co
     
     $$
     \begin{aligned}
-      \therefore E &= \frac{1}{2} \left( \pi - \frac{1}{2} \int_{0}^{2\pi} \cos(u) \, du \right) \\
-                  &= \frac{\pi}{2} - \frac{1}{4} \left( \sin(2\pi) - \sin(0) \right) \\
-                  &= \frac{\pi}{2} - 0 \\
-                  &= \frac{\pi}{2}
+       E &= \frac{1}{2} \left( \pi - \frac{1}{2} \int_{0}^{2\pi} \cos(u) \, du \right) \\
+         &= \frac{\pi}{2} - \frac{1}{4} \left( \sin(2\pi) - \sin(0) \right) \\
+         &= \frac{\pi}{2} - 0 \\
+         &= \frac{\pi}{2}
     \end{aligned}
     $$
     
