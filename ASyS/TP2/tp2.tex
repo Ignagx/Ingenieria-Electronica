@@ -1300,10 +1300,10 @@ $T$ y amplitud unitaria.
           \node [coordinate, below=2.7cm of elbow5] (elbow4) {};
 
           % Conexiones entre nodos
-          \draw [-] (input) -- node {$x(t)$} (elbow1);
+          \draw [-] (input) -- node {$x_t$} (elbow1);
           \draw [-] (elbow1) -- (gain1);
           \draw [->] (gain1) -- (sum);
-          \draw [->] (sum) -- node {$y(t)$} (output);
+          \draw [->] (sum) -- node {$y_t$} (output);
           \draw [->] (integrator) -- (sum);
           \draw [->] (elbow2) -- (integrator);
           \draw [-] (gain2) -- (elbow2);
@@ -1719,6 +1719,44 @@ $T$ y amplitud unitaria.
         \mathcal{L}\left\{h(t)\right\} = \frac{Cs}{1+RCs}
       \end{gather*}
 
+      El correspondiente diagrama de simulación es:
+
+      \begin{figure}[h]
+        \centering
+        \begin{tikzpicture}[auto, node distance=2cm, >=Stealth, thick]
+          % Definición de estilos para los bloques y sumador
+          \tikzstyle{block} = [draw, rectangle, minimum height=1.5em, minimum width=3em]
+          \tikzstyle{sum} = [draw, circle, inner sep=1pt, minimum size=1cm, node distance=2cm]
+          \tikzstyle{connector} = [fill, circle, minimum size=4pt, inner sep=0pt] % Estilo para el punto de conexión
+
+          % Definición de nodos
+          \node at (0,0) [coordinate] (input) {}; % Nodo de entrada
+          \node [coordinate, right=7cm of input] (elbow1) {};
+          \node [block, below=1cm of elbow1] (gain1) {$\frac{1}{R}$};
+          \node [sum, below=1cm of gain1] (sum) {$+$};
+          \node [block, left=2cm of sum] (integrator) {$\frac{1}{s}$};
+          \node [coordinate, left=2cm of integrator] (elbow2) {};
+          \node [block, below=1cm of elbow2] (gain2) {$-\frac{1}{RC}$};
+          \node [coordinate, below=1cm of gain2] (elbow3) {};
+          \node [coordinate, right=4cm of sum] (output) {}; % Nodo de salida
+          \node [connector, left=2cm of output] (elbow5) {};
+          \node [coordinate, below=2.7cm of elbow5] (elbow4) {};
+
+          % Conexiones entre nodos
+          \draw [-] (input) -- node {$X_s$} (elbow1);
+          \draw [-] (elbow1) -- (gain1);
+          \draw [->] (gain1) -- (sum);
+          \draw [->] (sum) -- node {$Y_s$} (output);
+          \draw [->] (integrator) -- (sum);
+          \draw [->] (elbow2) -- (integrator);
+          \draw [-] (gain2) -- (elbow2);
+          \draw [->] (elbow3) -- (gain2);
+          \draw [-] (elbow4) -- (elbow3);
+          \draw [-] (elbow5) -- (elbow4);
+        \end{tikzpicture}
+        $$Y_s = \frac{X_s}{R} + \frac{1}{s}\left(-\frac{Y_s}{RC}\right)$$
+      \end{figure}
+
       \newpage
       Como se puede ver, la transformada de Laplace de la respuesta al impulso presenta un cero en $s = 0$, y solo
       presenta un polo en el eje real en $\left(-\frac{1}{RC},0\right)$:
@@ -1816,7 +1854,7 @@ $T$ y amplitud unitaria.
       del circuito RCL.
 
       Para el diagrama de simulación solo tuvimos que integrar la ecuación diferencial hasta que no hubo mas derivadores:
-        
+
       \begin{figure}[h]
         \centering
         \begin{tikzpicture}[auto, node distance=2cm, >=Stealth, thick]
