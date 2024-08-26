@@ -582,14 +582,14 @@ Considerar las siguientes señales proporcionadas por un rectificador de onda co
 Para calcular los coeficientes $a_n$ y $b_n$ podemos hacer uso de los coeficientes $c_n$ de la serie exponencial de la serie de Fourier y luego aplicar el cambio de coordenadas para hallarlos:
             $$
             \begin{aligned}
-                c_n &= \frac{1}{T} \int_0^T \sin t \exp\left(-j\frac{2\pi n t}{T}\right) dt\\
+            c_n &= \frac{1}{T} \int_0^T \sin t \cdot e^{-j\frac{2\pi n t}{T}} dt\\
                 &= \frac{1}{2\pi} \int_0^{\pi} \frac{1}{2j}\left(e^{jt} - e^{-jt}\right) e^{-jnt} dt\\
                 &= \frac{1}{4\pi j} \int_0^{\pi} \left(e^{-j(n-1)t} - e^{-j(n+1)t}\right) dt \hspace{1cm}(1)\\
                 &= \frac{e^{-jn\pi/2}}{2\pi(1-n^2)} \left(e^{-jn\pi/2} + e^{jn\pi/2}\right)\\
                 & = \frac{1}{\pi(1-n^2)} \cos\left(\frac{n\pi}{2}\right)e^{-jn\pi/2}, \quad n \neq \pm 1\\
                 c_n &= \begin{cases}
-            \frac{1}{\pi(1-n^2)}, & n \text{ even} \\[5pt]
-            0, & n \text{ odd}, \quad n \neq \pm 1
+            \frac{1}{\pi(1-n^2)}, & n \text{ par} \\[5pt]
+            0, & n \text{ impar}, \quad n \neq \pm 1
             \end{cases}
             \end{aligned}
             $$
@@ -614,8 +614,8 @@ Para calcular los coeficientes $a_n$ y $b_n$ podemos hacer uso de los coeficient
        De esta forma:
        $$
        c_n = \begin{cases}
-            \frac{1}{\pi(1-n^2)}, & n \text{ even} \\[5pt]
-            0, & n \text{ odd}, \quad n \neq \pm 1 \\
+            \frac{1}{\pi(1-n^2)}, & n \text{  par} \\[5pt]
+            0, & n \text{  impar}, \quad n \neq \pm 1 \\
             \frac{j}{4}, & n=-1 \\
             \frac{-j}{4} & n=1
             \end{cases}$$
@@ -646,17 +646,14 @@ Para calcular los coeficientes $a_n$ y $b_n$ podemos hacer uso de los coeficient
 
 \textbf{Señal $x_1$}\\
      Finalmente, truncamos la serie hasta \(n = 5\) y obtenemos los siguientes coeficientes \(a_n\):
-  
-     $$
-     \begin{aligned}
-       a_0 &= \frac{2}{\pi} \\
-       a_1 &= \frac{4}{3\pi} \\
-       a_2 &= \frac{4}{15\pi} \\
-       a_3 &= \frac{4}{35\pi} \\
-       a_4 &= \frac{4}{63\pi} \\
-       a_5 &= \frac{4}{99\pi}
-     \end{aligned}
-     $$
+ 
+$$
+\begin{aligned}
+a_{n} &=\frac{-4}{4\pi n^{2} -\pi }\\
+a_{n} &=\left\{\frac{2}{\pi } ,\frac{4}{3\pi } ,\frac{4}{15\pi } ,\frac{4}{35\pi } ,\frac{4}{63\pi } ,\frac{4}{99\pi }\right\}
+\end{aligned}
+$$
+
 \begin{center}
 \includegraphics[width=0.4\textwidth]{images/ej2.1.png}
 \end{center}
@@ -814,8 +811,8 @@ $$
       En el punto b) se procedió a calcular dichos coeficientes, los cuales eran:
       $$
       c_n = \begin{cases}
-	      \frac{1}{\pi(1-n^2)}, & n \text{ even} \\[5pt]
-	      0, & n \text{ odd}, \quad n \neq \pm 1 \\
+	      \frac{1}{\pi(1-n^2)}, & n \text{ par} \\[5pt]
+	      0, & n \text{ impar}, \quad n \neq \pm 1 \\
 	      \frac{j}{4}, & n=-1 \\
 	      \frac{-j}{4} & n=1
       \end{cases}
@@ -826,6 +823,33 @@ $$
 
       $$\{(n, \text{Arg}(C_n)) \mid -5 \leq n \leq 5\}$$
       correspondientes a cada señal $x_1, x_2$.\\
+
+      \textbf{Señal $x_1$}
+          Como los coeficientes \( b_{n} \) son todos 0, las fases de los coeficientes son:
+  $$
+    \begin{aligned}
+      \angle C_{n} &= \pi \quad \text{para} \quad n > 0 \\
+      \angle C_{n} &= 0 \quad \text{para} \quad n = 0 \\
+      \angle C_{n} &= \pi \quad \text{para} \quad n < 0
+    \end{aligned}
+  $$
+      \begin{center}
+      \includegraphics[width=0.4\textwidth]{images/ej.2.5}\\
+      \end{center}
+ 
+
+      \textbf{Señal $x_2$}\\
+      \includegraphics[width=1\textwidth]{images/ej2.4.png}	
+      %graficos arg cn señal 2
+
+      \item Considerar $|n| \leq 5$ y realizar el espectro de frecuencias de ambas señales en módulo, esto es, graficar 
+        los pares ordenados
+
+      $$\{(n, |C_n|) \mid -5 \leq n \leq 5\}$$
+
+      correspondientes a cada señal $x_1, x_2$.\newline
+
+      %graficos amplitud
 
   \textbf{Señal $x_1$}\\
       $$
@@ -839,35 +863,7 @@ $$
       \includegraphics[width=0.5\textwidth]{images/ej.2.3.png}
       \end{center}
 
-      \textbf{Señal $x_2$}\\
-
-      \includegraphics[width=1\textwidth]{images/ej2.4.png}	
-      %graficos arg cn señal 2
-
-      \item Considerar $|n| \leq 5$ y realizar el espectro de frecuencias de ambas señales en módulo, esto es, graficar 
-        los pares ordenados
-
-      $$\{(n, |C_n|) \mid -5 \leq n \leq 5\}$$
-
-      correspondientes a cada señal $x_1, x_2$.\newline
-
-  \textbf{Señal $x_1$}\\
-    
-      Como los coeficientes \( b_{n} \) son todos 0, las fases de los coeficientes son:
-
-  $$
-    \begin{aligned}
-      \angle C_{n} &= \pi \quad \text{para} \quad n > 0 \\
-      \angle C_{n} &= 0 \quad \text{para} \quad n = 0 \\
-      \angle C_{n} &= \pi \quad \text{para} \quad n < 0
-    \end{aligned}
-  $$
-
-      %graficos amplitud
-      \begin{center}
-      \includegraphics[width=0.4\textwidth]{images/ej.2.5}\\
-      \end{center}
-      \textbf{Señal $x_2$}\\
+     \textbf{Señal $x_2$}\\
       \includegraphics[width=0.8\textwidth]{images/ej2.6.png}	\\
 
 
