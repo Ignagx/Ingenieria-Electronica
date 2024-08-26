@@ -42,7 +42,7 @@
 
 \title{%
   \fontsize{25}{0}\selectfont Universidad Tecnológica Nacional \\
-  \fontsize{22}{30}\selectfont Analisis de Señales y Sistemas \\
+  \fontsize{22}{30}\selectfont Análisis de Señales y Sistemas \\
   \fontsize{20}{25}\selectfont Trabajo Practico 2
 }
 \author{
@@ -83,16 +83,16 @@ Teniendo como punto de referencia el "suelo", responder las siguientes consignas
     señales de variable de tiempo continuo? ¿Las masas de los cuerpos intervienen en la descripción de las funciones
     $y_1(t),y_2(t)$?
 
-    Partimos primero de la ecuacion que determina la posicion de un cuerpo con aceleracion uniforme:
+    Partimos primero de la ecuación que determina la posición de un cuerpo con aceleración uniforme:
     $$Y(t) = Y_0 + V_0 t + \frac{1}{2} g t^2$$
     Para ambos casos asumimos la velocidad inicial $V_0 = 0$, despreciamos la resistencia del aire y tomamos como valor
-    de aceleracion de la gravedad $g = 9.8 \frac{m}{s^2}$:
+    de aceleración de la gravedad $g = 9.8 \frac{m}{s^2}$:
     $$y_1(t) = Y_0 - \frac{1}{2}9,8\frac{m}{s^2}t^2$$
     $$y_2(t) = \frac{Y_0}{2} - \frac{1}{2}9,8\frac{m}{s^2}t^2$$
 
 
     Como se puede observar, las masas no aparecen en las ecuaciones de $y_1(t)$ y $y_2(t)$, por lo que se deduce que
-    las masas no intervienen en la descripcion de las funciones.
+    las masas no intervienen en la descripción de las funciones.
 
 
   \item Calcular el tiempo de vuelo (total) $T$ del primer cuerpo, en función de $y_0$. Similarmente, calcular el
@@ -102,17 +102,16 @@ Teniendo como punto de referencia el "suelo", responder las siguientes consignas
     Se obtienen los tiempos $T$ y $\tau$ como:
     $$T = \sqrt{\frac{2h}{g}}$$
     $$\tau = \sqrt{\frac{h}{g}}$$
-    La relacion aritmetica entonces:
+    La relación aritmética entonces:
     $$\frac{T}{\tau} = \frac{\sqrt{2}\sqrt{gh}}{\sqrt{gh}}$$
     $$T = \sqrt{2}\tau$$
 
 
     No se puede obtener $y_2(t)$ como un escalonado de tiempo de $y_1(t)$. Al escalar el tiempo de $y_1(t)$ por un 
     factor de $\sqrt{2}$ queda $y_1(t) = Y_0 - \frac{1}{2}g(\sqrt{2}t)^2$. T y $\tau$ coinciden, es decir los tiempos 
-    finales son iguales, pero no coinciden las funciones de posicion. Es importante notar que, aunque existe esta 
-    relacion entre los tiempos de vuelo, no es fisicamente correcto interpretar la posicion $y_2(t)$ del segundo cuerpo
-    como una version escalada temporalmente de $y_1(t)$. Los dos cuerpos tienen trayectorias y tiempos de vuelo 
-
+    finales son iguales, pero no coinciden las funciones de posición. Es importante notar que, aunque existe esta 
+    relación entre los tiempos de vuelo, no es físicamente correcto interpretar la posición $y_2(t)$ del segundo cuerpo
+    como una versión escalada temporalmente de $y_1(t)$. Los dos cuerpos tienen trayectorias y tiempos de vuelo 
     diferentes debido a sus diferentes alturas iniciales, y cada uno debe ser tratado de manera independiente.
 
 
@@ -125,7 +124,7 @@ Teniendo como punto de referencia el "suelo", responder las siguientes consignas
     $$\sqrt{\frac{y_0}{g}} = t_0$$
     $$t_0 = t$$
 
-    No se puede obtener $y_2(t)$ como una traslacion temporal de $y_1(t)$, porque al desplazar temporalmente $y_1(t)$,
+    No se puede obtener $y_2(t)$ como una traslación temporal de $y_1(t)$, porque al desplazar temporalmente $y_1(t)$,
     este no coincide con $y_2(t)$, sin embargo para el $t_0 = t$ si coinciden las posiciones.
 
   \item \textbf{Reflexionar:} ¿Tiene sentido físico evaluar la señal $y_1$ en tiempos $t > T$? Similarmente, ¿tiene
@@ -152,7 +151,7 @@ Teniendo como punto de referencia el "suelo", responder las siguientes consignas
     Las señales $y_1(t)$ y $y_2(t)$ no son periódicas, ya que representan la posición de los cuerpos en caída libre y
     no se repiten en intervalos regulares de tiempo. Cada cuerpo cae una vez y llega al suelo, después de lo cual la
     señal es nula.
-    \item Energia
+    \item Energía
 
     Las señales $y_1(t)$ e $y_2(t)$ tienen una duración finita en el tiempo (desde t = 0 hasta t = T para $y_1(t)$ y
     hasta t = $\tau$ para $y_2(t)$), y son nulas fuera de estos intervalos, por lo tanto su energía es finita.
@@ -188,9 +187,8 @@ equilibrio, máxima amplitud $A > 0$ y despreciando los efectos de la fricción,
     función $x$ puede interpretarse como una señal de variable de tiempo continua?
 
 
-    Partiendo de la ecuacion diferencial de un oscilador armonico simple $m \frac{dx^2}{d^2t} + kx = 0$, determinamos
-
-    la ecuacion de cinematica para la posicion en funcion del tiempo $x(t) = A \sin(\omega t + \phi)$. Si, la funcion
+    Partiendo de la ecuación diferencial de un oscilador armónico simple $m \frac{dx^2}{d^2t} + kx = 0$, determinamos
+    la ecuación de cinemática para la posición en función del tiempo $x(t) = A \sin(\omega t + \phi)$. Si, la función
     $x(t)$ puede interpretarse como una señal de variable de tiempo continuo.
 
   \item Es de conocimiento general que la función posición $x(t)$ se puede determinar en función del $seno$ o del
@@ -208,13 +206,13 @@ equilibrio, máxima amplitud $A > 0$ y despreciando los efectos de la fricción,
     Potencia finita, causal, acotada.
 
   \begin{enumerate}[label=\alph*)]
-    \item Periodica
+    \item Periódica
 
-      Es periodica ya que existe un valor T tal que $x(t) = x (t + nT)$, donde n = 1,2,3..
-    \item Energia
+      Es periódica ya que existe un valor T tal que $x(t) = x (t + nT)$, donde n = 1,2,3..
+    \item Energía
 
-    Tiene energia infinita. Para señales periodicas, la energia total en el sentido clasico puede ser infinita debido a
-    que la señal se repite indefinidamente, pero si hablamos de la energia en un periodo T, es finita y es:
+    Tiene energía infinita. Para señales periódicas, la energía total en el sentido clásico puede ser infinita debido a
+    que la señal se repite indefinidamente, pero si hablamos de la energía en un periodo T, es finita y es:
 
     $$E_T = \int_{0}^{T} |A \cos(\omega t)|^2 dt$$
     $$E_T = A^2 \int_{0}^{T} \cos(\omega t)^2 dt$$
@@ -223,7 +221,7 @@ equilibrio, máxima amplitud $A > 0$ y despreciando los efectos de la fricción,
     \item Potencia
 
 
-    Tiene energia infinita si consideramos el intervalo $(-\infty,\infty)$, pero la energia es finita en un solo
+    Tiene energía infinita si consideramos el intervalo $(-\infty,\infty)$, pero la energía es finita en un solo
     periodo, por lo que la potencia media es finita:
 
     $$P_{med} = \lim_{T \to \infty} \frac{1}{2T} E_T$$
@@ -234,7 +232,7 @@ equilibrio, máxima amplitud $A > 0$ y despreciando los efectos de la fricción,
 
     La señal es acotada ya que para todo t, $x(t) \leq A$ siendo A la amplitud. Esto se da ya que las funciones
 
-    trigonometricas seno o coseno toman valores entre -1 y 1
+    Trigonométricas seno o coseno toman valores entre -1 y 1
     \item Causal
 
     La señal no es causal porque esta definida para todos los tiempos, $t \in (-\infty,\infty)$
@@ -329,7 +327,7 @@ Considerar las siguientes señales proporcionadas por un rectificador de onda co
 
       $$\{(n, |C_n|) \mid -5 \leq n \leq 5\}$$
 
-      correspondientes a cada señal $x_1, x_2$.\newline
+      Correspondientes a cada señal $x_1, x_2$.\newline
 
     \item Calcular una aproximación a las potencias medias $P_1, P_2$, por medio de la relación de Parseval con los 
       espectros de frecuencia de ambas señales en módulo (usar la información de los incisos anteriores) y discriminar 
@@ -360,20 +358,20 @@ $T$ y amplitud unitaria.
       \begin{minipage}{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/ej3.1}
-        \caption{Grafico de la señal $x_1$}
+        \caption{Gráfico de la señal $x_1$}
         \label{fig:imagen1}
       \end{minipage}
       \hfill
       \begin{minipage}{0.45\textwidth}
         \includegraphics[width=\textwidth]{images/ej3.2}
-        \caption{Grafico de la señal $x_2$}
+        \caption{Gráfico de la señal $x_2$}
         \label{fig:imagen2}
       \end{minipage}
     \end{figure}
 
-    Para calcular la energia de cada respectiva señal aplicamos la definición:
+    Para calcular la energía de cada respectiva señal aplicamos la definición:
     $$E_x = \int_{-\infty}^{\infty}x_t^2dt$$
-    En este caso, por ser una señal de amplitud 1, simplemente es el area encerrada bajo cada una de las curvas
+    En este caso, por ser una señal de amplitud 1, simplemente es el área encerrada bajo cada una de las curvas
     $$E_1 = \int_{-\infty}^{\infty}x_1^2dt= \int_{-0,5}^{0,5}1dt=1$$
     $$E_2 = \int_{-\infty}^{\infty}x_2^2dt= \int_{-0,05}^{0,05}1dt=0.1$$
 
@@ -382,7 +380,7 @@ $T$ y amplitud unitaria.
     ¿Qué representa la variable $\omega$ y qué diferencia tiene con la variable $t$? 
     ¿Las funciones $F_1, F_2$ resultan periódicas?
 
-    La transformada de furier para una un pulso genérico $G_T$ es:
+    La transformada de Fourier para una un pulso genérico $G_T$ es:
 
     $$\mathcal{F}\{G_T\} = \int_{-\infty}^{\infty}G_T e^{-jwt}dt$$
 
@@ -430,7 +428,7 @@ $T$ y amplitud unitaria.
         \textbf{Reflexionar:} ¿El espectro de frecuencia en fase es discreto o continuo? ¿El gráfico admite una simetría
         par, impar o ninguna?\\
 
-        En ambos casos, el espectro de la frecuencia en fase es una señal de tiempo continuo y admite simetria par.\\
+        En ambos casos, el espectro de la frecuencia en fase es una señal de tiempo continuo y admite simetría par.\\
 
       \item Graficar el espectro de frecuencia en módulo para $F_1, F_2$, esto es, graficar los pares ordenados
         $$\{(\omega, |F|) \mid \omega \in \mathbb{R}\}$$
@@ -456,7 +454,7 @@ $T$ y amplitud unitaria.
         \textbf{Reflexionar:} ¿El espectro de frecuencia en módulo es discreto o continuo? ¿El gráfico admite una 
         simetría par, impar o ninguna?\\
 
-        Para ambas señales el espectro de frecuencia en modulo es una señal de tiempo continuo, y admiten simtria par.\\
+        Para ambas señales el espectro de frecuencia en modulo es una señal de tiempo continuo, y admiten simetría par.\\
 
       \item Graficar la densidad espectral para $F_1, F_2$, esto es, graficar los pares ordenados
         $$\{(\omega, |F|^2) \mid \omega \in \mathbb{R}\}$$
@@ -482,11 +480,11 @@ $T$ y amplitud unitaria.
         \textbf{Reflexionar:} ¿La densidad espectral es discreta o continua? ¿El gráfico admite una simetría par, impar
         o ninguna?\\
 
-        La densidad espectral tambien es una señal de tiempo continuo, y acepta simetria par.\\
+        La densidad espectral también es una señal de tiempo continuo, y acepta simetría par.\\
 
       \item Calcular la energía $E_1, E_2$ haciendo uso de la relación de Parseval.
 
-        La relacion de Parseval indica que:
+        La relación de Parseval indica que:
 
         $$E_x=\frac{1}{2\pi}\int_{-\infty}^{\infty}|\mathcal{F}\{x\}|^2$$
 
@@ -499,7 +497,7 @@ $T$ y amplitud unitaria.
           \Big(-\frac{4}{\omega}\Big) \frac{T}{2} \sin(\omega T)d\omega \\[6pt]
           &= \sin^2\Big(\frac{\omega T}{2}\Big)\Big(-\frac{4}{\omega}\Big) +
             2 T^2 \int \frac{\sin(\omega T)}{\omega T}d\omega \\[6pt]
-          &\text{Apoyandonos en la sustitución $\omega T=x$}\\[6pt]
+          &\text{Apoyándonos en la sustitución $\omega T=x$}\\[6pt]
           &=-\sin^2\Big(\frac{\omega T}{2}\Big)\frac{4}{\omega} + 2T \int_{-\infty}^{\infty} \frac{\sin(x)}{x} dx\\[6pt]
           &=\Big[-\frac{4}{\omega} \Big(\frac{1- \cos(\omega t)}{2}\Big) + 2T Si(x)\Big]\Big|_{-\infty}^{\infty}\\[6pt]
           &=\Big[\frac{2}{\omega} (\cos(wt) - 1) + 2T Si(\omega T)\Big]\Big|_{-\infty}^{\infty}\\[6pt]
@@ -531,7 +529,7 @@ $T$ y amplitud unitaria.
         $$\int_{-\infty}^{\infty} \Bigg[\hspace{1mm}\frac{2}{\omega} 
         \sin\left(\frac{\omega T}{2}\right)\Bigg]^2 d\omega= 2\pi T$$
 
-        Siendo la energía de cada señal a través de la relacion de persaval:
+        Siendo la energía de cada señal a través de la relación de Parseval:
           $$E_1 = \frac{2\pi \cdot 1}{2\pi} = 1 $$
           $$E_2 = \frac{2\pi \cdot 0.1}{2\pi} = 0.1 $$
 
@@ -541,9 +539,9 @@ $T$ y amplitud unitaria.
         E_2$ de las señales $x_1, x_2$ en la variable de tiempo $t$ y el método que se deriva de la relación de Parseval
         , en donde los cálculos se realizan en la variable $\omega$?
 
-        En este caso, el metodo sobre la variable $t$ es mucho más simple, directo y visual. En contra parte el calculo
+        En este caso, el método sobre la variable $t$ es mucho más simple, directo y visual. En contra parte el calculo
         mediante la relación de Parseval es mucho más tedioso, requiriendo la resolución de una integral compleja
-        y la ayuda de herramientas como la función $Si()$. Sin embargo, esto se debe a las caracteristicas de nuestra
+        y la ayuda de herramientas como la función $Si()$. Sin embargo, esto se debe a las características de nuestra
         señal en particular, es decir que no es extensible a otros casos.
 
   \end{itemize}
@@ -551,7 +549,7 @@ $T$ y amplitud unitaria.
   \item Comparar los espectros obtenidos para cada una de las señales $x_1, x_2$, evaluar y proponer las 
     características sobresalientes de ambos espectros.
 
-    Se puede observar claramente en los graficos que los espectros obtenidos obedecen a la relación:
+    Se puede observar claramente en los gráficos que los espectros obtenidos obedecen a la relación:
 
     $$
     \begin{aligned}
@@ -594,7 +592,7 @@ $T$ y amplitud unitaria.
       $$x(t) = R\cdot y(t) + \frac{1}{C} \cdot \int_{0}^{t} y(\tau) d\tau$$
       Teniendo en cuenta que $y(t)$ es la salida e $x(t)$ la entrada, las ecuaciones diferenciales toman la forma:
       $$\left(D^N + \sum_{i=0}^{N-1} a_i D^i\right) \cdot y(t) = \left(\sum_{i=0}^{M} b_i D^i\right) \cdot x(t)$$
-      Reacomodando la ecuacion caracteristica generalizada, nos queda:
+      Reacomodando la ecuación característica generalizada, nos queda:
       $$
       \begin{aligned}
         y(t) + D^{-1} \left\{\frac{1}{RC} \cdot y(t) \right\} &= x(t) \cdot \frac{1}{R}\\[6pt]
@@ -603,10 +601,10 @@ $T$ y amplitud unitaria.
       \end{aligned}
       $$
 
-      Lo cual es la ecuacion diferencial de primer orden a coeficientes constantes que describe el comportamiento del
+      Lo cual es la ecuación diferencial de primer orden a coeficientes constantes que describe el comportamiento del
       circuito RC.
 
-      Para el diagrama de simulacion, utilizamos la ecuacion caracteristica generalizada del sistema, solo que se
+      Para el diagrama de simulación, utilizamos la ecuación característica generalizada del sistema, solo que se
       despeja y:
       \begin{figure}[h]
         \centering
@@ -658,12 +656,12 @@ $T$ y amplitud unitaria.
           $$y_t = \beta_1 x_t + (y_0 - \beta_1 x_0) e^{-\alpha t} + (\beta_0 - \alpha \beta_1) \int_{0}^{t} x(\tau)
           e^{-\alpha(t - \tau)} d\tau$$
 
-          donde $y_0 = y(0), x_0 = x(0)$ son Condiciones Iniciales arbitrarias
+          Donde $y_0 = y(0), x_0 = x(0)$ son Condiciones Iniciales arbitrarias
         \end{itemize}
 
         Identificando los coeficientes $\alpha, \beta_0, \beta_1$, tenemos lo siguiente:
         $$\alpha = \frac{1}{RC}; \hspace{1cm}\beta_0 = 0; \hspace{1cm}\beta_1 = \frac{1}{R}$$
-        Por lo tanto, la solucion general explicita para el $S_1\{x_t\}$ es:
+        Por lo tanto, la solución general explicita para el $S_1\{x_t\}$ es:
         $$y_t = S_1\{x_t\} = x_t \cdot \frac{1}{R} + \left(y_o - \frac{x_0}{R}\right) \cdot e^{\frac{-t}{RC}} -
         \frac{1}{R^2C} \int_{0}^{t} x_\tau \cdot e^{\frac{-(t-\tau)}{RC}} d\tau$$
 
@@ -677,16 +675,16 @@ $T$ y amplitud unitaria.
       distintas)? ¿es suficiente para garantizar la Linealidad del sistema? ¿Las señales $y_1, y_2$ son iguales? ¿es
       suficiente para garantizar la Inv. Tiempo del sistema?.
 
-      Solucion para $x_t = x_0 = 0$:
+      Solución para $x_t = x_0 = 0$:
       \begin{align*}
         y_0(t) &= 0 \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot
           e^{\frac{-t}{RC}} - \frac{1}{R^2C} \int_{0}^{t} 0 \cdot e^{\frac{-(t-\tau)}{RC}} d\tau\\[6pt]
         y_0(t) &= \left(y_0 - \frac{x_0}{R}\right) \cdot e^{\frac{-t}{RC}}
       \end{align*}
       Como se puede ver, la señal $y_0$ no es completamente nula. Esta presenta una exponencial decreciente para
-      $t > 0$. Seria nula en caso de que las C.I. sean nulas, o que se cumpla que $y_0 = x_0/R$.\\
+      $t > 0$. Seria nula en caso de que las CI. sean nulas, o que se cumpla que $y_0 = x_0/R$.\\
 
-      Solucion para $x_t = x_1 = \mu_t$:
+      Solución para $x_t = x_1 = \mu_t$:
       \begin{align*}
         y_1(t) &= \mu_t \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot
           e^{\frac{-t}{RC}} - \frac{1}{R^2C} \int_{0}^{t} \mu_t \cdot e^{\frac{-(t-\tau)}{RC}} d\tau\\[6pt]
@@ -697,7 +695,7 @@ $T$ y amplitud unitaria.
         y_1(t) &= \mu_t \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot e^{\frac{-t}{RC}} - \frac{1}{R}
           \left[1 - e^{\frac{-t}{RC}}\right]
       \end{align*}
-      Solucion para $x_t = x_2 = \mu_{t-1}$:
+      Solución para $x_t = x_2 = \mu_{t-1}$:
       \begin{align*}
         y_2(t) &= \mu_{t-1} \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot
           e^{\frac{-t}{RC}} - \frac{1}{R^2C} \int_{0}^{t} \mu_{t-1} \cdot e^{\frac{-(t-\tau)}{RC}} d\tau\\[6pt]
@@ -708,7 +706,7 @@ $T$ y amplitud unitaria.
         y_2(t) &= \mu_{t-1} \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot e^{\frac{-t}{RC}} -
           \frac{1}{R} \left[1 - e^{\frac{1-t}{RC}}\right]
       \end{align*}
-      Solucion para $x_t = x_3 = \mu_t - \mu_{t-1}$:
+      Solución para $x_t = x_3 = \mu_t - \mu_{t-1}$:
       \begin{align*}
         y_3(t) &= (\mu_t - \mu_{t-1}) \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot e^{\frac{-t}{RC}} -
           \frac{1}{R^2C} \int_{0}^{t} (\mu_t - \mu_{t-1}) \cdot e^{\frac{-(t-\tau)}{RC}} d\tau\\[6pt]
@@ -726,7 +724,7 @@ $T$ y amplitud unitaria.
         y_3(t) &= (\mu_t - \mu_{t-1}) \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot e^{\frac{-t}{RC}} -
           \frac{1}{R} \left[e^{\frac{1-t}{RC}} - e^{\frac{-t}{RC}}\right]
       \end{align*}
-      Solucion para $y' = y_1 - y_2$:
+      Solución para $y' = y_1 - y_2$:
       \begin{align*}
         y' &= \mu_t \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot e^{\frac{-t}{RC}} - \frac{1}{R}
           \left[1 - e^{\frac{-t}{RC}}\right] - \left(\mu_{t-1} \cdot \frac{1}{R} + \left(y_0 -
@@ -739,7 +737,7 @@ $T$ y amplitud unitaria.
       debido a que por un lado, se debe desplazar la señal de entrada, y por otro lado, se debe desplazar la señal de
       salida, para verificar que el sistema es invariante en el tiempo.\\
 
-      Solucion para $x_t = x_4 = t$:
+      Solución para $x_t = x_4 = t$:
       \begin{align*}
         y_4(t) &= t \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot e^{\frac{-t}{RC}} -
           \frac{1}{R^2C} \int_{0}^{t} \tau \cdot e^{\frac{-(t-\tau)}{RC}} d\tau\\[6pt]
@@ -760,8 +758,8 @@ $T$ y amplitud unitaria.
     \item Usando la descripción explicita de la salida del Sistema $y_t = S_1\{x_t\}$ (CI arbitrarias), demostrar si el
       Sistema $S_1$ es (o no): Lineal, Homogéneo e Invariante en el Tiempo.
 
-      \textbf{Linealidad:} La verificacion de la linealidad del sistema, viene de la mano de la homogeneidad y la aditividad,
-      los cuales se demuestran a continuacion, donde $x_a$ y $x_b$ son dos señales arbitrarias, e $y_1(t) = S_1\{k_0x_a\},
+      \textbf{Linealidad:} La verificación de la linealidad del sistema, viene de la mano de la homogeneidad y la aditividad,
+      los cuales se demuestran a continuación, donde $x_a$ y $x_b$ son dos señales arbitrarias, e $y_1(t) = S_1\{k_0x_a\},
       y_2(t) = S_1\{k_0x_b\}$ y $y_3(t) = k_0S_1\{x_a + x_b\}$:
       \begin{align*}
         y_1(t) &= k_0x_a \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot
@@ -774,10 +772,10 @@ $T$ y amplitud unitaria.
         y_3(t) &\neq k_0(x_a + x_b) \cdot \frac{1}{R} + 2\left(y_0 - \frac{x_0}{R}\right) \cdot
           e^{\frac{-t}{RC}} - \frac{1}{R^2C} \int_{0}^{t} k_0(x_a + x_b) \cdot e^{\frac{-(t-\tau)}{RC}} d\tau
       \end{align*}
-      La desigualdad anterior permite establecer que el $S_1\{x_t\}$ no es ni aditivo ni homogeneo, por lo tanto no es
+      La desigualdad anterior permite establecer que el $S_1\{x_t\}$ no es ni aditivo ni homogéneo, por lo tanto no es
       lineal. Esto se debe a causa del termino no lineal que involucra las condiciones iniciales.\\
 
-      \textbf{Invarianza en el tiempo:} La verificacion de la invarianza en el tiempo involucra realizar un desplazamiento
+      \textbf{Invarianza en el tiempo:} La verificación de la invarianza en el tiempo involucra realizar un desplazamiento
       temporal en la señal de entrada, y comparar si realizando un desplazamiento temporal en la señal de salida, se
       obtiene la misma señal o no. Para eso, establecemos que $t_0$ es un desplazamiento arbitrario, que $y_1(t) = S_1
       \{x_{(t-t_0)}\}$ y que $y_2(t) = y_{(t-t_0)}$:
@@ -793,16 +791,16 @@ $T$ y amplitud unitaria.
         &\hspace{4cm}y_1(t) \neq y_2(t)
       \end{align*}
       Como se puede ver, $y_1(t) \neq y_2(t)$, por lo que el $S_1\{x_t\}$ no es invariante en el tiempo. Esto es debido
-      a los limites de integracion, ya que el resto de los terminos son practicamente iguales, y por el termino no
+      a los limites de integración, ya que el resto de los términos son prácticamente iguales, y por el termino no
       lineal que involucra las condiciones iniciales.
 
-    \item Demostrar que el sistema anterior en reposo gana propiedades, esto es, definir $y_t = S_2\{x_t\}$ con C.I. 
+    \item Demostrar que el sistema anterior en reposo gana propiedades, esto es, definir $y_t = S_2\{x_t\}$ con CI. 
       nulas $y_0 = x_0 = 0$, y clasificar el sistema S2 (Aditivo, Homogéneo, Inv. Tiempo).
 
       La respuesta del sistema ahora esta dada por la ecuación:
       $$y(t) = x(t) \cdot \frac{1}{R}- \frac{1}{R^2C} \int_{0}^{t} x(\tau) \cdot e^{\frac{\tau-(t - t_0))}{RC}} d\tau$$
 
-      \textbf{Linealidad:} Trayendo el analisis del punto anterior, tenemos que:
+      \textbf{Linealidad:} Trayendo el análisis del punto anterior, tenemos que:
       \begin{align*}
         y_3(t) &= k_0\left((x_a + x_b) \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot e^{\frac{-t}{RC}} -
           \frac{1}{R^2C} \int_{0}^{t} (x_a + x_b) \cdot e^{\frac{-(t-\tau)}{RC}} d\tau\right)\\[12pt]
@@ -810,13 +808,13 @@ $T$ y amplitud unitaria.
         y_3(t) &\neq k_0(x_a + x_b) \cdot \frac{1}{R} + 2\left(y_0 - \frac{x_0}{R}\right) \cdot
           e^{\frac{-t}{RC}} - \frac{1}{R^2C} \int_{0}^{t} k_0(x_a + x_b) \cdot e^{\frac{-(t-\tau)}{RC}} d\tau
       \end{align*}
-      Como ahora, para el $S_2$ las C.I. son nulas, la desigualdad ahora se cumple, quedando:
+      Como ahora, para el $S_2$ las CI. son nulas, la desigualdad ahora se cumple, quedando:
       \begin{gather*}
         y_3(t) = y_1(t) + y_2(t)\\[6pt]
         y_3(t) = k_0\left((x_a + x_b) \cdot \frac{1}{R} - \frac{1}{R^2C} \int_{0}^{t} (x_a + x_b) \cdot
         e^{\frac{-(t-\tau)}{RC}} d\tau\right)
       \end{gather*}
-      Lo cual verifica que el $S_2$ es completamente aditivo y homogeneo, por lo que ahora se lo puede considerar
+      Lo cual verifica que el $S_2$ es completamente aditivo y homogéneo, por lo que ahora se lo puede considerar
       lineal.\\
 
       \textbf{Invarianza en el tiempo:} La respuesta del sistema desplazada $t_0$ es:
@@ -855,11 +853,11 @@ $T$ y amplitud unitaria.
 %      Lo que aun no permite que el sistema sea invariante en el tiempo, por los limites de integracion que son
 %      diferentes.
 
-    \item Refinar aun más el sistemas, exijamos C.I nulas y respuesta causal (se elimine el pasado), esto es, definir
+    \item Refinar aun más el sistemas, exijamos CI nulas y respuesta causal (se elimine el pasado), esto es, definir
       $y_t = S_3{x_t} = S_2{x_t} \mu_t$. Demostrar que el sistema S3 es LIT (Lineal e Inv. Tiempo). Sintetizar sus
       respuestas es una tabla de doble entrada.
 
-      Para el $S_3$, nuevamente trayendo desarrollos de los puntos anteriores, ya sabemos que con C.I. nulas, el $S_2$
+      Para el $S_3$, nuevamente trayendo desarrollos de los puntos anteriores, ya sabemos que con CI. nulas, el $S_2$
       es Lineal, por lo que solamente falta demostrar la invarianza en el tiempo.\\
 
       La respuesta de nuestro sistema es ahora:
@@ -889,13 +887,13 @@ $T$ y amplitud unitaria.
       $$y_2(t) = \mu_t x(t-t_0) \cdot \frac{1}{R}- \frac{1}{R^2C} \mu_t \left( \int_{-t_0}^{0} x(v) \cdot 
       e^{\frac{v-(t-t_0)}{RC}} dv +\int_{0}^{t-t_0} x(v) \cdot e^{\frac{v-(t-t_0)}{RC}} dv \right)$$
 
-      Si bien esta señal no es igual a $y(t-t_0)$. si consideramos a $x(t)$ como una señal causal entonces:
+      Si bien esta señal no es igual a $y(t-t_0)$. Si consideramos a $x(t)$ como una señal causal entonces:
       $$\int_{-t_0}^{0} x(v) \cdot e^{\frac{v-(t-t_0)}{RC}} dv = 0$$
 
       y:
       $$y_2(t) = y(t-t_0) \hspace{10mm} (\text{para }t_0>0 \text{, y } x_t \text{ causal})$$
 
-      De esta forma podemos afirmar que el sistema es el sistema es LTI bajo las condiciones de CI=0, respuesta causal,
+      De esta forma podemos afirmar que el sistema es el sistema es LIT bajo las condiciones de CI=0, respuesta causal,
       y entrada causal.
 
 
@@ -932,13 +930,13 @@ $T$ y amplitud unitaria.
         \centering
         \begin{tabular}{|c|c|c|c|}
           \hline
-          \textbf{Sistema} & \textbf{Aditivo} & \textbf{Homogeneo} & \textbf{Inv. Tiempo}\\
+          \textbf{Sistema} & \textbf{Aditivo} & \textbf{Homogéneo} & \textbf{Inv. Tiempo}\\
           \hline
-          $S_1$ (C.I. arbitrarias) & No & No & No\\
+          $S_1$ (CI. arbitrarias) & No & No & No\\
           \hline
-          $S_2$ (C.I. nulas) & Si & Si & No\\
+          $S_2$ (CI. nulas) & Si & Si & No\\
           \hline
-          $S-3$ (C.I. nulas y RTA causal) & Si & Si & Si\\
+          $S-3$ (CI. nulas y RTA causal) & Si & Si & Si\\
           \hline
         \end{tabular}
       \end{table}
@@ -949,9 +947,9 @@ $T$ y amplitud unitaria.
       ¿Cuales son los requerimientos para que esto suceda? ¿El dominio de señales de entrada del sistema linealizado
       $S_3{x}$, es igual al dominio del sistema $x * h$?
 
-      Los desarrollos de este ejercicio resultaron ser bastante repetitivos y en la mayoria de los casos las
-      propiedades utilizadas eran las mismas. Las unicas diferencias en los desarrollos fueron algunas integrales que
-      se convirtieron en integrales por partes. A continuacion esta el cuadro de comparacion:
+      Los desarrollos de este ejercicio resultaron ser bastante repetitivos y en la mayoría de los casos las
+      propiedades utilizadas eran las mismas. Las únicas diferencias en los desarrollos fueron algunas integrales que
+      se convirtieron en integrales por partes. A continuación esta el cuadro de comparación:
       
       \begin{table}[h!]
         \centering
@@ -968,13 +966,12 @@ $T$ y amplitud unitaria.
                     & Diferente\\
           \hline
             $\mu_{t-1}$ & $\frac{1}{R}\left(\mu_{(t-1)} - 1 + e^{\frac{1-t}{RC}}\right) \mu_t$
-                        & $\frac{1}{R} \left(\mu_{(t-1)} + 1 - e^{\frac{1-t}{RC}}\right)$%$\frac{1}{R}\left(\mu_{(t-1)} - 1 + e^{\frac{1-t}{RC}}\right) \mu_t$
+                        & $\frac{1}{R} \left(\mu_{(t-1)} + 1 - e^{\frac{1-t}{RC}}\right)$
                         & Diferente\\
           \hline
             $\mu_t - \mu_{t-1}$ & $\frac{1}{R} \left[\mu_t \left(1 + e^{\frac{-t}{RC}} - e^{\frac{1-t}{RC}}\right) -
             \mu_{(t-1)} \right]$
-                                & $ \frac{1}{R}\left(\mu_t - \mu_{(t-1)} - 2 + e^{\frac{-t}{RC}} + e^{\frac{1-t}{RC}}\right)$%$\frac{1}{R} \left[\mu_t \left(1 + e^{\frac{-t}{RC}} - e^{\frac{1-t}{RC}}\right) -
-           %\mu_{(t-1)} \right]$
+                                & $ \frac{1}{R}\left(\mu_t - \mu_{(t-1)} - 2 + e^{\frac{-t}{RC}} + e^{\frac{1-t}{RC}}\right)$
                                 & Diferente\\
           \hline
             $t$ & $\frac{t}{R} - \frac{1}{R} \cdot \mu_t \left(t - RC + RC e^{\frac{-t}{RC}} \right)$
@@ -998,16 +995,16 @@ $T$ y amplitud unitaria.
         \end{tabular}
       \end{table}
 
-      Como se pudo ver, ningun sistema admite la descripcion por convolucion, excepto el sistema donde $x_t = \delta_t$.
+      Como se pudo ver, ningún sistema admite la descripción por convolución, excepto el sistema donde $x_t = \delta_t$.
       Esto es porque el sistema no es invariante en el tiempo. Anteriormente mostramos que es posible que el sistema se
-      comporte como un LIT, causalizando su entrada. Por lo tanto, debido a la no invarianza en el tiempo del sustema,
-      cualquier representacion por convolucion va a ser erronea, debido a que no asegura que la respuesta al sea la
-      misma para cualquier desplazamiento temporal del sistema, lo cual es la base de la convolucion. Ademas, el sistema
-      donde $x_t = t$ no es comparable, debido a que su convolucion tiende a infinito, debido a que $t$, no es
+      comporte como un LIT, causalizando su entrada. Por lo tanto, debido a la no invarianza en el tiempo del sistema,
+      cualquier representación por convolución va a ser errónea, debido a que no asegura que la respuesta al sea la
+      misma para cualquier desplazamiento temporal del sistema, lo cual es la base de la convolución. Ademas, el sistema
+      donde $x_t = t$ no es comparable, debido a que su convolución tiende a infinito, debido a que $t$, no es
       absolutamente integrable.
 
-      Teniendo todas las respuestas de todos los sistemas, a continuacion mostramos las graficas de respuesta al
-      impulso y al escalon unidad obtenidas a partir de $S_3\{x_t\}$:
+      Teniendo todas las respuestas de todos los sistemas, a continuación mostramos las gráficas de respuesta al
+      impulso y al escalón unidad obtenidas a partir de $S_3\{x_t\}$:
 
       \noindent
       \begin{figure}[h]
@@ -1025,13 +1022,13 @@ $T$ y amplitud unitaria.
         \end{minipage}
       \end{figure}
 
-      Es importante mencionar cual es la razon de por la que el grafico de la respuesta al impulso es negativa.
-      Esto se debe a que cuando el capacitor recibe el pico de corriente, se carga "instantaneamente"
+      Es importante mencionar cual es la razón de por la que el gráfico de la respuesta al impulso es negativa.
+      Esto se debe a que cuando el capacitor recibe el pico de corriente, se carga "instantáneamente"
       (el pico en $t=0$), y en el momento que deja de haber corriente circulando, el capacitor invierte el flujo de la
-      misma, convirtiendose en "fuente" de corriente y voltaje.
+      misma, convirtiéndose en "fuente" de corriente y voltaje.
 
-      Una alternativa para poder llegar a calcular la respuesta del sistema por medio de la convolucion, es usar la
-      propiedad de convolucion para la transformada de Laplace. Para ello, es necesario transformar la respuesta del
+      Una alternativa para poder llegar a calcular la respuesta del sistema por medio de la convolución, es usar la
+      propiedad de convolución para la transformada de Laplace. Para ello, es necesario transformar la respuesta del
       sistema en $t$, a $s$:
       \begin{gather*}
         \mathcal{L}\left\{h(t)\right\} = \int_{0^-}^{\infty} \left(\frac{1}{R} \delta_t - \frac{1}{R^2C}e^{\frac{-t}{RC}} 
@@ -1040,7 +1037,7 @@ $T$ y amplitud unitaria.
         \mathcal{L}\left\{h(t)\right\} = \frac{1}{R} - \frac{1}{R+R^2CS}\\
         \mathcal{L}\left\{h(t)\right\} = \frac{Cs}{1+RCs}
       \end{gather*}
-      Como se puede ver, la transformada de laplace de la respuesta al impulso presenta un cero en $s = 0$, y solo
+      Como se puede ver, la transformada de Laplace de la respuesta al impulso presenta un cero en $s = 0$, y solo
       presenta un polo en el eje real en $\left(-\frac{1}{RC},0\right)$:
 
       \noindent
@@ -1059,7 +1056,7 @@ $T$ y amplitud unitaria.
         \tau = \frac{1}{|polo|} = \frac{1}{|-\frac{1}{RC}|} = RC
       \end{gather*}
 
-      Ademas, ahora podemos tambien determinar los valores para $y(0)$ e $y(\infty)$ utilizando la transformada de
+      Ademas, ahora podemos también determinar los valores para $y(0)$ e $y(\infty)$ utilizando la transformada de
       Laplace, y los teoremas del valor inicial y valor final, que a groso modo, son hacer tender $sH(s)$ al
       infinito y a cero:
       \begin{align*}
@@ -1068,12 +1065,12 @@ $T$ y amplitud unitaria.
         y(0^+) =& \lim_{s\to\infty} \frac{Cs^2}{1+RCs} \hspace{3cm} &y(\infty) =& \lim_{s\to0} \frac{Cs^2}{1+RCs}\\[6pt]
         y(0^+) \to& \infty \hspace{3cm} &y(\infty) \to& 0
       \end{align*}
-      Los valores obtenidos para el sistema tienen mucho sentido. Si le damos un analisis fisico, tiene sentido que
+      Los valores obtenidos para el sistema tienen mucho sentido. Si le damos un análisis físico, tiene sentido que
       cuando el circuito recibe el impulso, la corriente tiende a infinito, debido a que el capacitor "funciona" como
-      un cortocircuito. Obviamente, en una situacion real, esto no se iria al infinito, si no que solamente tenderia a
-      $\frac{V}{R}$, de tal forma que el capacitor actua como un cable.
-      Asi mismo, cuando la funcion tiende al infinito, la corriente tiende a cero, debido a que ya el capacitor deberia
-      estar completamente cargado, comportandose como un circuito abierto, y evitando la totalidad del paso de la
+      un cortocircuito. Obviamente, en una situación real, esto no se iría al infinito, si no que solamente tendería a
+      $\frac{V}{R}$, de tal forma que el capacitor actúa como un cable.
+      Así mismo, cuando la función tiende al infinito, la corriente tiende a cero, debido a que ya el capacitor debería
+      estar completamente cargado, comportándose como un circuito abierto, y evitando la totalidad del paso de la
       corriente por el resto del circuito.
 
       Sabiendo que podemos aplicar la propiedad de transformada en el dominio del tiempo para Laplace, ahora podemos
@@ -1090,7 +1087,7 @@ $T$ y amplitud unitaria.
 
   \newpage
   \textbf{Circuito Eléctrico RLC:} circuito eléctrico correspondiente a un sistema de 2° orden y su ecuación
-  caracteristica:
+  característica:
   \begin{equation*}
     v(t) = Ri_{(t)} + L \frac{d}{dt} i_{(t)} + \frac{1}{C} \int_{0}^{t} i_{(\tau)} d\tau
   \end{equation*}
@@ -1111,11 +1108,11 @@ $T$ y amplitud unitaria.
     y con ello, definir un Sistema en tiempo continuo con entrada $x_{(t)} = v_{(t)}$ y salida $y_{(t)} = i_{(t)}$. Luego,
     hacer un diagrama de bloques de la E.D; exponiendo los integradores que la conforma.
     
-    El circuito RLC esta descrito por la ecuacion caracteristica:
+    El circuito RLC esta descrito por la ecuación característica:
     \begin{equation*}
       v(t) = Ri_{(t)} + L \frac{d}{dt} i_{(t)} + \frac{1}{C} \int_{0}^{t} i_{(\tau)} d\tau
     \end{equation*}
-    Para tener una nomenclatura mas generica, sustituimos la entrada $v(t)$ con $x(t)$ y la salida $i(t)$ con $y(t)$:
+    Para tener una nomenclatura mas genérica, sustituimos la entrada $v(t)$ con $x(t)$ y la salida $i(t)$ con $y(t)$:
     \begin{equation*}
       x(t) = Ry_{(t)} + L \frac{d}{dt} y_{(t)} + \frac{1}{C} \int_{0}^{t} y_{(\tau)} d\tau
     \end{equation*}
@@ -1123,16 +1120,16 @@ $T$ y amplitud unitaria.
     \begin{equation*}
       \left(D^N + \sum_{i=0}^{N-1} a_i D^i\right) \cdot y(t) = \left(\sum_{i=0}^{M} b_i D^i\right) \cdot x(t)
     \end{equation*}
-    Reacomodando la ecuacion caracteristica generalizada, nos queda:
+    Reacomodando la ecuación característica generalizada, nos queda:
     \begin{align*}
       D^1\left\{x_t\right\} &= D^1\left\{R y_t\right\} + D^2\left\{L y_t\right\} + \frac{1}{C} y_t\\[6pt]
       D^1\left\{\frac{1}{L} x_t\right\} &= D^2\left\{y_t\right\} + D^1\left\{\frac{R}{L} y_t\right\} + \frac{1}{LC} y_t\\[6pt]
       \frac{dx_t}{dt} \frac{1}{L} &= \frac{d^2 y_t}{dt^2} + \frac{dy_t}{dt} \frac{R}{L} + \frac{1}{LC} y_t
     \end{align*}
-    Lo cual es la ecuacion diferencial de segundo orden a coeficientes constantes que describe el comportamiento
+    Lo cual es la ecuación diferencial de segundo orden a coeficientes constantes que describe el comportamiento
     del circuito RCL.
 
-    Para el diagrama de simulacion solo tuvimos que integrar la ecuacion diferencial hasta que no hubo mas derivadores:
+    Para el diagrama de simulación solo tuvimos que integrar la ecuación diferencial hasta que no hubo mas derivadores:
       
     \begin{figure}[h]
       \centering
@@ -1186,15 +1183,15 @@ $T$ y amplitud unitaria.
     transformada $Y_{(s)} = \mathcal{L}\{y_t\} = \mathcal{L}\{S\{x_t\}\}$:
     \begin{itemize}
       \item Sean $\alpha_1, \alpha_0, \beta_2, \beta_1, \beta_0 \in \mathbb{R}$ constantes; $y_{(t)}, x_{(t)}$ funciones
-        con variable de tiempo continuo, las cuales verifican la ecuacion diferencial de segundo orden con coeficientes
+        con variable de tiempo continuo, las cuales verifican la ecuación diferencial de segundo orden con coeficientes
         constantes:
         $$y_t'' + \alpha_1 y_t' + \alpha_0 y_t = \beta_2 x_t'' + \beta_1 x_t' + \beta_0 x_t$$
-        Entonces, una Solucion General explicita de la Ecuacion Diferencial Transformada es:
+        Entonces, una Solución General explicita de la Ecuación Diferencial Transformada es:
         $$Y_{(s)} = \frac{\beta_2 s^2 + \beta_1 s + \beta_0}{s^2 + \alpha_1 s + \alpha_0}X_{(s)} + \frac{(y_0 - \beta_2 x_0)
           s + (\alpha_1 y_0 - \beta_1 x_0 + y_0' - \beta_2 x_0')}{s^2 + \alpha_1 s + \alpha_0}$$
         donde $Y_{(s)} = L\{y_t\}$, $X_{(s)} = L\{x_t\}$, con $s = \sigma + j \omega$ (variable compleja). Condiciones
         Iniciales arbitrarias; $y_0 = y(0), y_0' = y'(0), x_0 = x(0), x_0' = x'(0)$.
-      \item Usando las propiedades de la transformada de Laplace, demostrar la igualdad propuesta para la funcion
+      \item Usando las propiedades de la transformada de Laplace, demostrar la igualdad propuesta para la función
       $Y_{(s)}$.
     \end{itemize}
 
@@ -1203,13 +1200,13 @@ $T$ y amplitud unitaria.
       \alpha_1 = \frac{R}{L}; \hspace{1cm}\alpha_0 = \frac{1}{LC}; \hspace{1cm}\beta_1 = \frac{1}{L};
         \hspace{1cm}\beta_2 = \beta_0 = 0
     \end{equation*}
-    Por lo tanto, la solucion general explicita de la ecuacion diferencial transformada es:
+    Por lo tanto, la solución general explicita de la ecuación diferencial transformada es:
     \begin{equation*}
       Y_s = \frac{\frac{1}{L}s}{s^2 + \frac{R}{L}s + \frac{1}{LC}} X_s + \frac{y_0 s +
         \frac{R}{L} y_0 - \frac{1}{L} x_0 + y_0'}{s^2 + \frac{R}{L}s + \frac{1}{LC}}
     \end{equation*}
-    Esto se puede verificar, tomando la ecuacion diferencial de segundo orden a coeficientes constantes, y aplicandole
-    su transformada de Laplace, utilizando la propiedad de derivacion en el dominio del tiempo, y luego despejando para
+    Esto se puede verificar, tomando la ecuación diferencial de segundo orden a coeficientes constantes, y aplicándole
+    su transformada de Laplace, utilizando la propiedad de derivación en el dominio del tiempo, y luego despejando para
     $Y_s$:
     \begin{gather*}
       x_t' \frac{1}{L} = y_t'' + y_t' \frac{R}{L} + y_t \frac{1}{LC}\\[6pt]
@@ -1225,15 +1222,15 @@ $T$ y amplitud unitaria.
   Luego, calcular la Función de transferencia $H_{(s)} = \mathcal{L}\{h_t\}$ donde $h_t$ es la respuesta al impulso del sistema
     linealizado. Luego, graficar en el plano complejo los polos y ceros de dicha función.
     
-    La nueva transformada con C.I. nulas es la siguiente:
+    La nueva transformada con CI. nulas es la siguiente:
     \begin{equation*}
       Y_s = \frac{\frac{s}{L}}{s^2 + \frac{R}{L} s + \frac{1}{LC}} X_s
     \end{equation*}
-    La funcion de transferencia $H_s$ se obtiene despejando la funcion anterior para $\frac{Y_s}{X_s}$:
+    La función de transferencia $H_s$ se obtiene despejando la función anterior para $\frac{Y_s}{X_s}$:
     \begin{equation*}
       \frac{Y_s}{X_s} = H_s = \frac{\frac{s}{L}}{s^2 + \frac{R}{L} s + \frac{1}{LC}}
     \end{equation*}
-    Con la funcion de transferencia, si aplicamos la antitransformada, podemos obtener la respuesta al impulso en el
+    Con la función de transferencia, si aplicamos la antitransformada, podemos obtener la respuesta al impulso en el
     dominio del tiempo. Para ello, se utiliza Bhaskara para saber cuales son los polos de $H_s$, y despejamos para los
     ceros:
     
@@ -1258,18 +1255,18 @@ $T$ y amplitud unitaria.
       \end{minipage}
     \end{figure}
     
-    Con los polos determinados, podemos pasar a hacer la antitransformada de la funcion de transferencia para obtener
+    Con los polos determinados, podemos pasar a hacer la antitransformada de la función de transferencia para obtener
     $h(t)$:
     \begin{equation*}
       \mathcal{L}^{-1}\left\{H_s\right\} = \frac{1}{2\pi j} \int_{\sigma - j\infty}^{\sigma + j\infty}
         \frac{\frac{s}{L}}{s^2 + \frac{R}{L} s + \frac{1}{LC}} e^{st} ds\\[6pt]
     \end{equation*}
-    Viendo que esta funcion tiene un polinomio de grado 2 en el denominador, uno pensaria que la integral se podria
-    realizar utilizando descomposicion de fracciones. Pero en realidad, no es posible debido a la existencia de la
-    funcion $e^{st}$. Debido a esto, el unico camino que se puede tomar es utilizar el teorema del residuo para obtener
+    Viendo que esta función tiene un polinomio de grado 2 en el denominador, uno pensaría que la integral se podría
+    realizar utilizando descomposición de fracciones. Pero en realidad, no es posible debido a la existencia de la
+    función $e^{st}$. Debido a esto, el único camino que se puede tomar es utilizar el teorema del residuo para obtener
     el resultado de dicha integral. Para eso, debemos clasificar los polos que obtuvimos previamente. De antemano nos
     podemos dar cuenta que los polos no son evitables, debido a que no hay forma de simplificarlos con lo que ya tiene
-    la funcion, por lo tanto, vamos a obtener el orden de los polos:
+    la función, por lo tanto, vamos a obtener el orden de los polos:
     \begin{align*}
       \lim_{s \to s_0}& \frac{\frac{s e^{st}}{s - s_1}}{s - s_0} (s - s_0) \hspace{3cm}
                       &\lim_{s \to s_1}& \frac{\frac{s e^{st}}{s - s_0}}{s - s_1} (s - s_1)\\[6pt]
@@ -1281,12 +1278,12 @@ $T$ y amplitud unitaria.
       \lim_{s \to s_0}& \frac{s e^{st}}{s - s_1} = -e^{-t} \hspace{3cm}
                       &\lim_{s \to s_1}& \frac{s e^{st}}{s - s_0} = 2e^{-2t}
     \end{align*}
-    Con lo que nos queda que ambos polos son de primer orden. Segun el teorema del residuo, tenemos que:
+    Con lo que nos queda que ambos polos son de primer orden. Según el teorema del residuo, tenemos que:
     \begin{equation*}
       \oint_C f(z) = 2\pi j \sum_{k=1}^{n} Res(f(z), z_k)
     \end{equation*}
     En el caso de la antitransformada, no tenemos una integral de contorno cerrado. Para circundar este problema, vamos
-    a suponer una trayectoria de integracion cerrada C, la cual cuando esta cerca de $\pm j \infty$, esta se cierra, de
+    a suponer una trayectoria de integración cerrada C, la cual cuando esta cerca de $\pm j \infty$, esta se cierra, de
     tal forma que todos los polos quedan encerrados en el contorno. Algo que es importante destacar,
     es que para que el teorema del residuo se pueda usar, debemos seleccionar un valor de $\sigma = Re\{s\}$, tal que
     todos los polos queden a la izquierda del mismo. Teniendo esto en cuenta, procedemos a aplicar el teorema:
@@ -1317,8 +1314,8 @@ $T$ y amplitud unitaria.
                                                &= \frac{3}{L}\frac{se^{-2s}}{s^2 + \frac{R}{L} s + \frac{1}{LC}}\\[6pt]
       \mathcal{L} \left\{3\delta (t-2)\right\} &= 3 e^{-2s}
     \end{align*}
-    La antitransformada para $Y_1(s)$ tiene exactamente los mismos polos que para $H_s$, lo unico que cambia es la
-    funcion en el numerador, por lo que se va a utilizar el desarrollo anterior para obtener la antitransformada $y_1(t)$
+    La antitransformada para $Y_1(s)$ tiene exactamente los mismos polos que para $H_s$, lo único que cambia es la
+    función en el numerador, por lo que se va a utilizar el desarrollo anterior para obtener la antitransformada $y_1(t)$
     \begin{align*}
       y_1(t) &= \frac{1}{2\pi j} \frac{3}{L} \oint_C \frac{se^{-2s}}{s^2 + \frac{R}{L} s + \frac{1}{LC}} e^{st} ds\\[6pt]
       y_1(t) &= \frac{1}{2\pi j} \frac{3}{L} \oint_C \frac{se^{s(t-2)}}{(s-s_0)(s-s_1)} ds\\[6pt]
@@ -1337,7 +1334,7 @@ $T$ y amplitud unitaria.
         &= \frac{1}{L} \frac{se^{2s}}{s^3 + \frac{R}{L} s^2 + \frac{1}{LC}s}
     \end{align*}
     La antitransformada para $Y_2(s)$ tiene exactamente los mismos polos que para $H_s$, mas un extra polo en $s = 0$.
-    Por suerte, este nuevo polo es uno evitable, por lo que no se agrega ningun termino nuevo al teorema del residuo.
+    Por suerte, este nuevo polo es uno evitable, por lo que no se agrega ningún termino nuevo al teorema del residuo.
     Por lo tanto, se va a utilizar el desarrollo anterior para obtener la antitransformada $y_2(t)$
     \begin{align*}
       y_2(t) &= \frac{1}{2\pi j} \frac{1}{L} \oint_C \frac{se^{2s}}{s^3 + \frac{R}{L} s^2 + \frac{1}{LC}s} e^{st} ds\\[6pt]
@@ -1348,14 +1345,14 @@ $T$ y amplitud unitaria.
     \begin{equation*}
       y_2(t) = e^{-(t+2)} - e^{-2(t+2)}\\[6pt]
     \end{equation*}
-    Como se pudo ver, las funciones $Y_1(s)$ e $Y_2(s)$, ambas estan definidas en el dominio $s$, el cual es un dominio
-    que relaciona un factor de atenuacion o crecimiento y frecuencia angular ($\sigma$ y $jw$ respectivamente). Esto
-    significa que la funcion resultante, no se puede graficar en un plano, lo cual puede dificultar su visualizacion y
-    el analisis de las caracteristicas. En contraparte, las funciones $y_1(t)$ e $y_2(t)$, las cuales estan en el
-    dominio del tiempo, si se pueden graficar, y si se pueden analizar sus caracteristicas de una forma mas visual. Uno
-    puede pensar de las funciones en el dominio del tiempo, como aquellas que presentan toda la informacion, pero cruda.
-    Aplicando herramientas sobre esas funciones, como las transformadas, uno puede condensar informacion especifica
-    sobre la funcion, como componentes de frecuencia, o detalles de la estabilidad del mismo sistema. No se pueden
+    Como se pudo ver, las funciones $Y_1(s)$ e $Y_2(s)$, ambas están definidas en el dominio $s$, el cual es un dominio
+    que relaciona un factor de atenuación o crecimiento y frecuencia angular ($\sigma$ y $jw$ respectivamente). Esto
+    significa que la función resultante, no se puede graficar en un plano, lo cual puede dificultar su visualización y
+    el análisis de las características. En contratarte, las funciones $y_1(t)$ e $y_2(t)$, las cuales están en el
+    dominio del tiempo, si se pueden graficar, y si se pueden analizar sus características de una forma mas visual. Uno
+    puede pensar de las funciones en el dominio del tiempo, como aquellas que presentan toda la información, pero cruda.
+    Aplicando herramientas sobre esas funciones, como las transformadas, uno puede condensar información especifica
+    sobre la función, como componentes de frecuencia, o detalles de la estabilidad del mismo sistema. No se pueden
     establecer diferencias concretas fuera de la variable independiente de las funciones $Y_n(s)$ e $y_n(t)$.
 
   \item Graficar en diagrama de bloques del sistema en el dominios de la variable compleja.  Determinar el coeficiente
@@ -1411,15 +1408,15 @@ $T$ y amplitud unitaria.
     bloques del inciso (e)? ¿Las variables $s$ y $t$ están presentes de alguna forma en los diagramas mencionados? ¿Tiene
     algún significado subrayar que el diagrama esta en el dominio del tiempo $(- \infty , \infty)$, o en el dominio complejo?
 
-    El coeficiente de amortiguamiento de una ecuacion diferencial de segundo orden, es un factor que indica cual es la
-    reaccion del sistema al paso del tiempo. Un coeficiente de amortiguacion igual a cero, describe un sistema
-    que va a permanecer en oscilacion por un tiempo indefinido. Asi mismo, un coeficiente entre 0 y
-    1, describe un sistema que con oscilacion, pero con el paso del tiempo esta disminuye en amplitud pico-pico,
+    El coeficiente de amortiguamiento de una ecuación diferencial de segundo orden, es un factor que indica cual es la
+    reacción del sistema al paso del tiempo. Un coeficiente de amortiguación igual a cero, describe un sistema
+    que va a permanecer en oscilación por un tiempo indefinido. Así mismo, un coeficiente entre 0 y
+    1, describe un sistema que con oscilación, pero con el paso del tiempo esta disminuye en amplitud pico-pico,
     hasta llegar a un valor estable. Un coeficiente igual a uno describe un sistema totalmente amortiguado, el cual no
-    describe ninguna oscilacion, y llega a su valor maximo en poco tiempo. Un coeficiente mayor a uno describe un sistema
-    sobreamortiguado, el cual tiene un tiempo mas extenso para llegar a su valor maximo.
+    describe ninguna oscilación, y llega a su valor máximo en poco tiempo. Un coeficiente mayor a uno describe un sistema
+    sobreamortiguado, el cual tiene un tiempo mas extenso para llegar a su valor máximo.
 
-    Teniendo la transformada de Laplace de la solucion general de una ecuacion diferencial de segundo orden a
+    Teniendo la transformada de Laplace de la solución general de una ecuación diferencial de segundo orden a
     coeficientes constantes como la siguiente:
     \begin{equation*}
       F(s) = \frac{b}{s^2+as+b}
@@ -1433,22 +1430,22 @@ $T$ y amplitud unitaria.
       \xi = \frac{a}{2\sqrt{b}} = \frac{3\sqrt{2}}{4} \approx 1,\!06
     \end{equation*}
 
-    Lo que justifica por que el sistema describe esta grafica:
+    Lo que justifica por que el sistema describe esta gráfica:
     \noindent
     \begin{figure}[h]
       \centering
       \begin{minipage}[h]{0.5\textwidth}
         \centering
         \includegraphics[width=1\textwidth]{./images/ej4.7.png}
-        \textit{Grafica $h(t)$}
+        \textit{Gráfica $h(t)$}
       \end{minipage}
     \end{figure}
 
-    Asi como el coeficiente de amortiguamiento, la frecuencia natural es otra constante que describe el sistema que se
-    esta analizando. La frecuencia natural es la frecuencia a la cual oscilaria el sistema, en caso de que no hubiese
-    ningun tipo de amortiguacion.
+    Así como el coeficiente de amortiguamiento, la frecuencia natural es otra constante que describe el sistema que se
+    esta analizando. La frecuencia natural es la frecuencia a la cual oscilaría el sistema, en caso de que no hubiese
+    ningún tipo de amortiguación.
 
-    Teniendo la transformada de Laplace de la solucion general de una ecuacion diferencial de segundo orden a
+    Teniendo la transformada de Laplace de la solución general de una ecuación diferencial de segundo orden a
     coeficientes constantes como la siguiente:
     \begin{equation*}
       F(s) = \frac{b}{s^2+as+b}
