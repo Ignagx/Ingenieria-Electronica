@@ -12,6 +12,7 @@
 \usepackage{enumitem}
 \usepackage{lmodern}
 \usepackage{tikz}
+\usepackage{afterpage}
 
 \allowdisplaybreaks
 \def\arraystretch{1.7}
@@ -27,6 +28,13 @@
 \patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
 
 \renewcommand{\chaptername}{Ejercicio}
+
+\newcommand\myemptypage{
+    \null
+    \thispagestyle{empty}
+    \addtocounter{page}{-1}
+    \newpage
+    }
 
 \usetikzlibrary{calc, arrows.meta, positioning}
 
@@ -46,19 +54,21 @@
   \fontsize{20}{25}\selectfont Trabajo Practico 2
 }
 \author{
-Alejo Agustin Lopez Demichelis\\
-Franco Palombo\\
-Ignacio Gil\\
-Jesus Agustin Frigerio\\
-Laureano Valentin Reinoso\\
-Luciano Tomas Cortesini Perez\\
-Matias Gabriel Moran\\
-Leonardo Ramos\\
+Alejo Agustin Lopez Demichelis - 401900\\
+Franco Palombo - 401910\\
+Ignacio Gil - 401891\\
+Jesus Agustin Frigerio - 400799\\
+Laureano Valentin Reinoso - 402075\\
+Luciano Tomas Cortesini Perez - 402719\\
+Matias Gabriel Moran - 406870\\
+Leonardo Ramos - \\
 }
-\date{19 / 08 / 2024}
+\date{26 / 08 / 2024}
 
 \begin{document}
 \maketitle
+
+\myemptypage
 
 \chapter{}%ejercicio 1
 
@@ -77,6 +87,21 @@ Teniendo como punto de referencia el "suelo", responder las siguientes consignas
 \begin{enumerate}[label=\alph*),left=0pt]
   \item Realizar un gráfico que represente la situación de los dos cuerpos en caída libre, sus respectivos vectores 
     de velocidad y posición.
+  \noindent
+  \begin{figure}[h]
+    \centering
+    \begin{minipage}[h]{0.4\textwidth}
+      \centering
+      \includegraphics[width=1\textwidth]{./images/ej1.1.png}
+      \textit{Representacion de $y_1(t)$}
+    \end{minipage}
+    \hspace{5mm}
+    \begin{minipage}[h]{0.4\textwidth}
+      \centering
+      \includegraphics[width=1\textwidth]{./images/ej1.2.png}
+      \textit{Rrepresentacion de $y_2(t)$}
+    \end{minipage}
+  \end{figure}
 
   \item Determinar las ecuaciones de cinemáticas para la posición $y_1(t)$ y $y_2(t)$ en función del tiempo para cada
     uno de los cuerpos, respectivamente. \textbf{Reflexionar:} ¿las funciones $y_1, y_2$ pueden interpretarse como 
@@ -182,6 +207,15 @@ equilibrio, máxima amplitud $A > 0$ y despreciando los efectos de la fricción,
 
 \begin{enumerate}[label=\alph*),left=0pt]
   \item Realizar un gráfico que represente el sistema y sus respectivos vectores de fuerza.
+  \noindent
+  \begin{figure}[h]
+    \centering
+    \begin{minipage}[h]{0.4\textwidth}
+      \centering
+      \includegraphics[width=1\textwidth]{./images/ej1.3.png}
+      \textit{Representacion del MAS}
+    \end{minipage}
+  \end{figure}
 
   \item Determinar la ecuación de cinemática para la posición $x(t)$ en función del tiempo. \textbf{Reflexionar:} ¿la
     función $x$ puede interpretarse como una señal de variable de tiempo continua?
@@ -936,7 +970,7 @@ $T$ y amplitud unitaria.
           \hline
           $S_2$ (CI. nulas) & Si & Si & No\\
           \hline
-          $S-3$ (CI. nulas y RTA causal) & Si & Si & Si\\
+          $S_3$ (CI. nulas y RTA y Entrada causal) & Si & Si & Si\\
           \hline
         \end{tabular}
       \end{table}
@@ -1002,7 +1036,8 @@ $T$ y amplitud unitaria.
       misma para cualquier desplazamiento temporal del sistema, lo cual es la base de la convolución. Ademas, el sistema
       donde $x_t = t$ no es comparable, debido a que su convolución tiende a infinito, debido a que $t$, no es
       absolutamente integrable.
-
+      
+      \newpage
       Teniendo todas las respuestas de todos los sistemas, a continuación mostramos las gráficas de respuesta al
       impulso y al escalón unidad obtenidas a partir de $S_3\{x_t\}$:
 
@@ -1032,11 +1067,15 @@ $T$ y amplitud unitaria.
       sistema en $t$, a $s$:
       \begin{gather*}
         \mathcal{L}\left\{h(t)\right\} = \int_{0^-}^{\infty} \left(\frac{1}{R} \delta_t - \frac{1}{R^2C}e^{\frac{-t}{RC}} 
-          \mu_t\right) \cdot e^{-st} dt\\
-        ...\\
-        \mathcal{L}\left\{h(t)\right\} = \frac{1}{R} - \frac{1}{R+R^2CS}\\
+          \mu_t\right) \cdot e^{-st} dt\\[6pt]
+        \mathcal{L}\left\{h(t)\right\} = \frac{1}{R} \int_{0^-}^{\infty} \delta_t \cdot e^{-st} dt - \frac{1}{R^2C} 
+        \int_{0^-}^{\infty} e^{\frac{-t}{RC}} \mu_t \cdot e^{-st} dt\\[6pt]
+        ...\\[6pt]
+        \mathcal{L}\left\{h(t)\right\} = \frac{1}{R} - \frac{1}{R+R^2CS}\\[6pt]
         \mathcal{L}\left\{h(t)\right\} = \frac{Cs}{1+RCs}
       \end{gather*}
+
+      \newpage
       Como se puede ver, la transformada de Laplace de la respuesta al impulso presenta un cero en $s = 0$, y solo
       presenta un polo en el eje real en $\left(-\frac{1}{RC},0\right)$:
 
@@ -1233,11 +1272,11 @@ $T$ y amplitud unitaria.
     Con la función de transferencia, si aplicamos la antitransformada, podemos obtener la respuesta al impulso en el
     dominio del tiempo. Para ello, se utiliza Bhaskara para saber cuales son los polos de $H_s$, y despejamos para los
     ceros:
-    
+    \vspace{-1mm}
     \noindent
     \begin{figure}[h]
       \centering
-      \begin{minipage}[h]{0.4\textwidth}
+      \begin{minipage}[h]{0.38\textwidth}
         \begin{align*}
           s_n &= \frac{-\frac{R}{L} \pm \sqrt{\left(\frac{R}{L}\right)^2 - \frac{4}{LC}}}{2}\\[6pt]
           s_n &= \frac{-\frac{R}{L} \pm \sqrt{\frac{R^2LC - 4L^2}{L^3C}}}{2}\\[6pt]
@@ -1248,7 +1287,7 @@ $T$ y amplitud unitaria.
           s_0 = -1; \hspace{1cm}s_1 = -2
         \end{equation*}
       \end{minipage}
-      \begin{minipage}[h]{0.4\textwidth}
+      \begin{minipage}[h]{0.38\textwidth}
         \centering
         \includegraphics[width=1\textwidth]{./images/ej4.6.png}
         \textit{Polos y Ceros de $H_s$}
@@ -1271,7 +1310,7 @@ $T$ y amplitud unitaria.
       \lim_{s \to s_0}& \frac{\frac{s e^{st}}{s - s_1}}{s - s_0} (s - s_0) \hspace{3cm}
                       &\lim_{s \to s_1}& \frac{\frac{s e^{st}}{s - s_0}}{s - s_1} (s - s_1)\\[6pt]
       \lim_{s \to s_0}& \frac{s e^{st}}{s - s_1} = \frac{s_0 e^{s_0t}}{s_0 - s_1} 
-                      &\lim_{s \to s_1}& \frac{s e^{st}}{s - s_0} = \frac{s_1 e^{s_1t}}{s_1 - s_0}\\[6pt]
+                      &\lim_{s \to s_1}& \frac{s e^{st}}{s - s_0} = \frac{s_1 e^{s_1t}}{s_1 - s_0}
     \end{align*}
     Lo cual, para $R = 3$, $C = \frac{1}{2}$ y $L = 1$, queda que:
     \begin{align*}
@@ -1325,6 +1364,9 @@ $T$ y amplitud unitaria.
     \begin{equation*}
       y_1(t) = 3\left(-e^{-(t-2)} + 2e^{-2(t-2)}\right)\\[6pt]
     \end{equation*}
+    En este caso, intentar hacer la convolucion en el dominio del tiempo de $h_{(t))}$ y $3\delta_{t-2}$ va a dar la
+    misma funcion que por la antitransformada. Esto se debe a que independientemente de que el sistema sea LIT o no,
+    la convolucion de una funcion $\delta_t$ da la misma funcion por la que esta multiplicada, valuada en $t$.
 
     Para $Y_2(s) = L\{S\{\mu_{(t+2)}\}\}$:
     \begin{align*}
@@ -1345,6 +1387,10 @@ $T$ y amplitud unitaria.
     \begin{equation*}
       y_2(t) = e^{-(t+2)} - e^{-2(t+2)}\\[6pt]
     \end{equation*}
+    En este caso, intentar hacer la convolucion en el dominio del tiempo de $h_{(t))}$ y $\mu_{(t+2}$ va a dar una
+    funcion diferente a la obtenida por la antitransformada. Esto se debe a que el sistema no es LIT, por lo que la
+    $h_{(t)}$ no responde igual para diferentes desplazamientos.
+
     Como se pudo ver, las funciones $Y_1(s)$ e $Y_2(s)$, ambas están definidas en el dominio $s$, el cual es un dominio
     que relaciona un factor de atenuación o crecimiento y frecuencia angular ($\sigma$ y $jw$ respectivamente). Esto
     significa que la función resultante, no se puede graficar en un plano, lo cual puede dificultar su visualización y
@@ -1354,9 +1400,13 @@ $T$ y amplitud unitaria.
     Aplicando herramientas sobre esas funciones, como las transformadas, uno puede condensar información especifica
     sobre la función, como componentes de frecuencia, o detalles de la estabilidad del mismo sistema. No se pueden
     establecer diferencias concretas fuera de la variable independiente de las funciones $Y_n(s)$ e $y_n(t)$.
-
+    
+  \newpage
   \item Graficar en diagrama de bloques del sistema en el dominios de la variable compleja.  Determinar el coeficiente
     de amortiguamiento $\xi$ y la frecuencia natural $\omega_n$ del sistema linealizado.\\
+    \textbf{Reflexionar}: ¿Que diferencias se observan entre el diagrama de bloques del inciso (a) y el diagrama de
+    bloques del inciso (e)? ¿Las variables $s$ y $t$ están presentes de alguna forma en los diagramas mencionados? ¿Tiene
+    algún significado subrayar que el diagrama esta en el dominio del tiempo $(- \infty , \infty)$, o en el dominio complejo?
 
     \begin{figure}[h]
       \centering
@@ -1404,9 +1454,6 @@ $T$ y amplitud unitaria.
       \end{equation*}
     \end{figure}
 
-    \textbf{Reflexionar}: ¿Que diferencias se observan entre el diagrama de bloques del inciso (a) y el diagrama de
-    bloques del inciso (e)? ¿Las variables $s$ y $t$ están presentes de alguna forma en los diagramas mencionados? ¿Tiene
-    algún significado subrayar que el diagrama esta en el dominio del tiempo $(- \infty , \infty)$, o en el dominio complejo?
 
     El coeficiente de amortiguamiento de una ecuación diferencial de segundo orden, es un factor que indica cual es la
     reacción del sistema al paso del tiempo. Un coeficiente de amortiguación igual a cero, describe un sistema
