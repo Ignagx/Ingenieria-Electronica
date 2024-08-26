@@ -240,101 +240,94 @@ Considerar las siguientes señales proporcionadas por un rectificador de onda co
 \begin{enumerate}[label=\alph*),left=0pt]
   \item Calcular el periodo fundamental $T_0$ de las señales $x_1, x_2$. ¿Las señales tienen energía finita? Calcular
     la energía relativa a un intervalo con longitud un periodo fundamental $T_0$.\\
-	\textbf{Señal sinusoidal rectificada de media onda}
-        \\
-        Esta señal tiene la siguiente representación analítica:
-        $$x(t)=
-        \begin{cases}
-            sen(t), & 0<t<\pi\\
-            0, & \pi<t<2\pi
-        \end{cases}
-        $$
-        \\
+    \textbf{Señal sinusoidal rectificada de media onda}
+
+    Esta señal tiene la siguiente representación analítica:
+    $$x(t)=
+    \begin{cases}
+      sen(t), & 0<t<\pi\\
+      0, & \pi<t<2\pi
+    \end{cases}
+    $$
 
     $$
     \begin{aligned}
       E &= \int_{0}^{\pi} |\sin(t)|^2 \, dt \\
-        &= \int_{0}^{\pi} \sin(t)^2 \, dt
+        &= \int_{0}^{\pi} \sin^2(t) \, dt
     \end{aligned}
     $$
 
     $$
     \text{utilizando la siguiente identidad: }
-    \sin(t)^2 = \frac{1 - \cos(2t)}{2}
+    \sin^2(t) = \frac{1 - \cos(2t)}{2}
     $$
 
     $$
     \begin{aligned}
-                      E &= \int_{0}^{\pi} \frac{1 - \cos(2t)}{2} \, dt \\
-                        &= \frac{1}{2} \int_{0}^{\pi} (1 - \cos(2t)) \, dt \\
-                        &= \frac{1}{2} \left( \int_{0}^{\pi} dt - \int_{0}^{\pi} \cos(2t) \, dt \right)
+      E &= \int_{0}^{\pi} \frac{1 - \cos(2t)}{2} \, dt \\
+        &= \frac{1}{2} \left( \int_{0}^{\pi} 1 dt - \int_{0}^{\pi} \cos(2t) \, dt \right)
     \end{aligned}
     $$
-    
+
     \text{Resolviendo la integral por sustitución}
-    
-    $$
-    \begin{aligned}
-      u = 2t, \quad du = 2dt \quad \Rightarrow \quad dt = \frac{du}{2}
-    \end{aligned}
-    $$
-    
+
+    $$u = 2t, \quad du = 2dt \quad \Rightarrow \quad dt = \frac{du}{2}$$
+
     $$
     \begin{aligned}
        E &= \frac{1}{2} \left( \pi - \frac{1}{2} \int_{0}^{2\pi} \cos(u) \, du \right) \\
          &= \frac{\pi}{2} - \frac{1}{4} \left( \sin(2\pi) - \sin(0) \right) \\
-         &= \frac{\pi}{2} - 0 \\
          &= \frac{\pi}{2}
     \end{aligned}
     $$
-    
+
     \textbf{Energía en el período:}
+    $$T_0 = \pi$$
+
+    El período fundamental $T_0>0$, se determina por:
+
     $$
-    T_0 = \pi
+      \begin{aligned}
+      x(t) &= x(t+T_0)\\
+      sen(t)&=sen(t+T_0) \Rightarrow T_0=2\pi
+      \end{aligned}
     $$
 
-        El período fundamental $T_0>0$, se determina por:
+    Las señales son periódicas y por lo tanto tienen energía infinita. 
 
-          $$
-        \begin{aligned}
-        x(t) &= x(t+T_0)\\
-        sen(t)&=sen(t+T_0) \Rightarrow T_0=2\pi
-        \end{aligned}
-        $$  
+    Energía relativa a un periódo $T_0$:
+    $$
+    \begin{aligned}
+      E_{T_{0}}&=\int_0^{2\pi}|x(t)|^2=\int _0^\pi sen(t)^2dt=\int_0^\pi \frac{1}{2}(1-cos(2t) dt\\
+            E_{T_0}&=\frac{t|^\pi_0}{2}-\frac{sen(2t)|^\pi_0}{2}\\
+      E_{T_0}&=\frac{\pi}{2}
+    \end{aligned}
+    $$
 
-        
-        Las señales son periódicas y por lo tanto tienen energía infinita. 
-        \\
-
-        Energía relativa a un periódo $T_0$:
-        $$
-	\begin{aligned}
-		E_{T_{0}}&=\int_0^{2\pi}|x(t)|^2=\int _0^\pi sen(t)^2dt=\int_0^\pi \frac{1}{2}(1-cos(2t) dt\\
-        E_{T_0}&=\frac{t|^\pi_0}{2}-\frac{sen(2t)|^\pi_0}{2}\\
-	E_{T_0}&=\frac{\pi}{2}
-	\end{aligned}
-	$$
-	
   \item Teniendo en cuenta que la potencia media de una señal se define como
 
-  $$P_1 = \lim_{r \to \infty} \frac{1}{2r} \int_{-r}^{r} |x(t)|^2 \, dt$$
+    $$P_1 = \lim_{r \to \infty} \frac{1}{2r} \int_{-r}^{r} |x(t)|^2 \, dt$$
 
     \begin{itemize}[left=0pt]
-    \item Demostrar la siguiente igualdad, válida para señales periódicas en donde la potencia media relativa a un
-      intervalo con longitud un periodo fundamental $T_0$ coincide con la potencia media, es decir:
+      \item Demostrar la siguiente igualdad, válida para señales periódicas en donde la potencia media relativa a un
+        intervalo con longitud un periodo fundamental $T_0$ coincide con la potencia media, es decir:
 
-     $$P_1 = \frac{1}{T_0} \int_{t_0}^{t_0 + T_0} |x(t)|^2 \, dt$$
-	\textbf{Demostración}
-Sea la potencia media definida como:
-        $$
-        P_m=\lim _{r \to \infty} \frac{1}{2r}\int_{-r}^{r}|x(t)|^2dt
-	$$
-	Si x(t) es periódica con período T, entonces el integrando de la potencia media es igual
-	para cualquier intervalo de longitud T, permitiendo que el límite se tome de manera tal 
-que 2L sea un múltiplo entero del período  $2T=mr$, la energía total de x(t) sobre un intervalo de longitud $2r$ is m veces la energía sobre un período. Por lo tanto la potencia media es:
+         $$P_1 = \frac{1}{T_0} \int_{t_0}^{t_0 + T_0} |x(t)|^2 \, dt$$
+
+        \textbf{Demostración}
+
+        Sea la potencia media definida como:
+
+        $$P_m=\lim _{r \to \infty} \frac{1}{2r}\int_{-r}^{r}|x(t)|^2dtk$$
+
+        Si x(t) es periódica con período T, entonces el integrando de la potencia media es igual
+        para cualquier intervalo de longitud T, permitiendo que el límite se tome de manera tal 
+        que 2L sea un múltiplo entero del período  $2T=mr$, la energía total de x(t) sobre un intervalo de longitud $2r$ is m veces la energía sobre un período. Por lo tanto la potencia media es:
+
         $$P_m=\lim_{r to \infty}[\frac{1}{mT}m\int_{t_0}^{t_0+T} |x(t)|^2 dt]=\frac{1}{T}\int_{t_0}^{t_0+T} |x(t)|^2 dt$$
-    \item Calcular la potencia media $P_1$ de la señal $x_1$ y similarmente, $P_2$ de la señal $x_2$\\
-   La potencia media para la señal 2 es:
+
+      \item Calcular la potencia media $P_1$ de la señal $x_1$ y similarmente, $P_2$ de la señal $x_2$\\
+        La potencia media para la señal 2 es:
 
         $$
         \begin{aligned}
@@ -347,122 +340,111 @@ que 2L sea un múltiplo entero del período  $2T=mr$, la energía total de x(t) 
         =\frac{1}{4}
         \end{aligned}
         $$
-		
 
+    \end{itemize}
 
-  \end{itemize}
+    $$ P = \frac{1}{T_0} \int_{t_0}^{t_0 + T_0} |x(t)|^2 \, dt $$
 
-  $$
-P = \frac{1}{T_0} \int_{t_0}^{t_0 + T_0} |x(t)|^2 \, dt
-$$
+    \textbf{Donde}
 
-\textbf{Donde}
-
-$$
-\begin{aligned}
-  t_0 &= 0 \quad \text{y} \quad T_0 = \pi \\
-  \Longrightarrow P &= \frac{1}{\pi} \int_{0}^{\pi} |\sin(t)|^2 \, dt \\
+    $$
+    \begin{aligned}
+      t_0 &= 0 \quad \text{y} \quad T_0 = \pi \\
+      \Longrightarrow P &= \frac{1}{\pi} \int_{0}^{\pi} |\sin(t)|^2 \, dt \\
       &= \frac{1}{\pi} \int_{0}^{\pi} \sin^2(t) \, dt
-\end{aligned}
-$$
+    \end{aligned}
+    $$
 
-\textbf{Como}
+    \textbf{Como}
 
-$$
-\sin^2(t) = \frac{1 - \cos(2t)}{2}
-$$
+    $$
+    \sin^2(t) = \frac{1 - \cos(2t)}{2}
+    $$
 
-\text{Resuelvo integrando por sustitución}
+    \text{Resuelvo integrando por sustitución}
 
-$$
-\begin{aligned}
-  u &= 2t, \quad du = 2 \, dt \quad \Longrightarrow \quad dt = \frac{du}{2}
-\end{aligned}
-$$
+    $$
+    \begin{aligned}
+      u &= 2t, \quad du = 2 \, dt \quad \Longrightarrow \quad dt = \frac{du}{2}
+    \end{aligned}
+    $$
 
-$$
-P = \frac{1}{2\pi} \left( \int_{0}^{\pi} dt - \frac{1}{2} \int_{0}^{2\pi} \cos(u) \, du \right)
-$$
+    $$ P = \frac{1}{2\pi} \left( \int_{0}^{\pi} dt - \frac{1}{2} \int_{0}^{2\pi} \cos(u) \, du \right) $$
 
-Resolvemos las integrales:
+    Resolvemos las integrales:
 
-$$
-\begin{aligned}
-  P &= \frac{1}{2\pi} \left( \pi - \frac{1}{2} \left( \sin(2\pi) - \sin(0) \right) \right) \\
-     &= \frac{1}{2\pi} \left( \pi - 0 \right) \\
-     &= \frac{1}{2\pi} \times \pi \\
-     &= \frac{1}{2}
-\end{aligned}
-$$
+    $$
+    \begin{aligned}
+      P &= \frac{1}{2\pi} \left( \pi - \frac{1}{2} \left( \sin(2\pi) - \sin(0) \right) \right) \\
+         &= \frac{1}{2\pi} \left( \pi - 0 \right) \\
+         &= \frac{1}{2\pi} \times \pi \\
+         &= \frac{1}{2}
+    \end{aligned}
+    $$
 
   \item Considerar el conjunto de señales básicas
 
-  $$\{\psi_n(t) = \cos(n\omega t) \mid n \geq 0\} \cup \{\varphi_n(t) = \sin(n\omega t) \mid n \geq 1\}$$
+    $$\{\psi_n(t) = \cos(n\omega t) \mid n \geq 0\} \cup \{\varphi_n(t) = \sin(n\omega t) \mid n \geq 1\}$$
 
-    \begin{itemize}[left=0pt]
-    \item Calcular la energía relativa a un intervalo con longitud un periodo fundamental $T_0$ y el periodo $T_n$
-      de cada señal del conjunto, y luego, demostrar que (dos a dos) forman un conjunto de señales ortogonales más no
-      ortonormales.
-	$$
-	\begin{aligned}	
-			E_{T_0}&=\int^{\frac{2\pi}{\omega_0}}_0 sen^2(nw_0t)dt
-			\\
-			&=\int^{\frac{2\pi}{\omega_0}}_0\frac{1}{2}(1-cos(2nw_0t)dt\\
-			E_{T_0}&=\frac{t|^{\frac{2\pi}{\omega_0}}_0}{2}-\frac{cos(2n\omega_0t)|^{\frac{2\pi}{\omega_0}}_0}{2n\omega_0}\hspace{1cm}(1)
-	\end{aligned}
-	$$
-  Para todo n la segunda parte de la ecuación es 0, ya que es una función coseno que se integra en $2n$ periódos, lo cual da 0. Por lo tanto:
+      \begin{itemize}[left=0pt]
+      \item Calcular la energía relativa a un intervalo con longitud un periodo fundamental $T_0$ y el periodo $T_n$
+        de cada señal del conjunto, y luego, demostrar que (dos a dos) forman un conjunto de señales ortogonales más no
+        ortonormales.
+    $$
+    \begin{aligned}	
+    E_{T_0}&=\int^{\frac{2\pi}{\omega_0}}_0 sen^2(nw_0t)dt
+    \\
+    &=\int^{\frac{2\pi}{\omega_0}}_0\frac{1}{2}(1-cos(2nw_0t)dt\\
+    E_{T_0}&=\frac{t|^{\frac{2\pi}{\omega_0}}_0}{2}-\frac{cos(2n\omega_0t)|^{\frac{2\pi}{\omega_0}}_0}{2n\omega_0}\hspace{1cm}(1)
+    \end{aligned}
+    $$
 
-        $$
-        E_{T_0}=\frac{\pi}{\omega_0}
-        $$
-        En el caso de calcular la energía relativa a $T_n$, lo único que cambia son los límtes 
-    	de integración, de todos modos la segunda parte de la ecuación sigue siendo 0, ya que se 
-	integra una función coseno en 2 períodos. y la energía relativa a $T_n$ es por lo tanto:
-        $$
-        E_{T_n}=\frac{t|^{\frac{2n\pi}{\omega_0}}_0}{2}=\frac{2n\pi}{2\omega_0}=\frac{n\pi}{\omega_0}
-        $$
+    Para todo n la segunda parte de la ecuación es 0, ya que es una función coseno que se integra en $2n$ periódos, lo cual da 0. Por lo tanto:
+
+    $$ E_{T_0}=\frac{\pi}{\omega_0} $$
+
+    En el caso de calcular la energía relativa a $T_n$, lo único que cambia son los límtes 
+    de integración, de todos modos la segunda parte de la ecuación sigue siendo 0, ya que se 
+    integra una función coseno en 2 períodos. y la energía relativa a $T_n$ es por lo tanto:
+
+    $$ E_{T_n}=\frac{t|^{\frac{2n\pi}{\omega_0}}_0}{2}=\frac{2n\pi}{2\omega_0}=\frac{n\pi}{\omega_0} $$
 
         Se dice que un conjunto de señales es ortogonal sobre un intervalo $(a,b)$ si:
-        
-        $$
-        I=\int^b_a\phi_l(t)\phi^*_kdt=\begin{cases}
-            E_k,& l=k\\
-            0, & l\neq k
-        \end{cases}
-        $$
-        
-        Se dice que es ortonormal en el caso en que $E_k=1$.
-        \\
-        
-        En nuestro caso sobre un intervalo $T_0=\frac{2\pi}{\omega_0}$, debemos calcular si el conjunto es ortogonal.
-        $$
-        E_{T_0}=\int_0^{T_0}sen(n\omega_0t)sen(m\omega_0t)dt
-        $$
-        
-        $$
-        =\frac{1}{2}\int_0^{T_0}[cos((m-n)\omega_0 t)-cos((m+n)\omega_0 t)]dt
-        $$
 
-        En el caso en que $m=n$ estamos en el mismo caso que en (1) del inciso anterior, por lo tanto 
+    $$
+    I=\int^b_a\phi_l(t)\phi^*_kdt=\begin{cases}
+        E_k,& l=k\\
+        0, & l\neq k
+    \end{cases}
+    $$
 
-        $$
-        I=\frac{\pi}{\omega_0}, \hspace{1cm}n=m
-        $$
+    Se dice que es ortonormal en el caso en que $E_k=1$.
 
-        En el caso en que $m\neq n$:
-        $$
-        I=\frac{1}{2}(\frac{sen((m-n)\omega_0t)}{(m-n)\omega_0}-\frac{sen((m+n)\omega_0t)}{(m+n)\omega_0})|^{t_0+T_0}_{t_0}
-        $$
+    En nuestro caso sobre un intervalo $T_0=\frac{2\pi}{\omega_0}$, debemos calcular si el conjunto es ortogonal.
 
-        Tanto $m-n$ como $m+n$ son números enteros, por lo tanto se integra un número entero de veces sobre un período, es decir que ambas integrales valuadas dan 0. Por lo tanto:
-        $$
-        I=\begin{cases}
-            \frac{\pi}{\omega_0},&n=m\\
-            0,&\forall n\neq m
-        \end{cases}
-        $$
-        No son ortonormales porque $\frac{\pi}{\omega_0}\neq 0$	
+    $$ E_{T_0}=\int_0^{T_0}sen(n\omega_0t)sen(m\omega_0t)dt $$
+
+    $$ =\frac{1}{2}\int_0^{T_0}[cos((m-n)\omega_0 t)-cos((m+n)\omega_0 t)]dt $$
+
+    En el caso en que $m=n$ estamos en el mismo caso que en (1) del inciso anterior, por lo tanto 
+
+    $$
+    I=\frac{\pi}{\omega_0}, \hspace{1cm}n=m
+    $$
+
+    En el caso en que $m\neq n$:
+    $$
+    I=\frac{1}{2}(\frac{sen((m-n)\omega_0t)}{(m-n)\omega_0}-\frac{sen((m+n)\omega_0t)}{(m+n)\omega_0})|^{t_0+T_0}_{t_0}
+    $$
+
+    Tanto $m-n$ como $m+n$ son números enteros, por lo tanto se integra un número entero de veces sobre un período, es decir que ambas integrales valuadas dan 0. Por lo tanto:
+    $$
+    I=\begin{cases}
+        \frac{\pi}{\omega_0},&n=m\\
+        0,&\forall n\neq m
+    \end{cases}
+    $$
+    No son ortonormales porque $\frac{\pi}{\omega_0}\neq 0$	
 
 
 	\textbf{Reflexión:} ¿si los periodos $T_n$ de cada señal del conjunto básico son distintos, por qué la suma 
