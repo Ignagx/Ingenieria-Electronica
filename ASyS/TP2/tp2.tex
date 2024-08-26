@@ -93,13 +93,13 @@ Teniendo como punto de referencia el "suelo", responder las siguientes consignas
     \begin{minipage}[h]{0.4\textwidth}
       \centering
       \includegraphics[width=1\textwidth]{./images/ej1.1.png}
-      \textit{Representacion de $y_1(t)$}
+      \textit{Representación de $y_1(t)$}
     \end{minipage}
     \hspace{5mm}
     \begin{minipage}[h]{0.4\textwidth}
       \centering
       \includegraphics[width=1\textwidth]{./images/ej1.2.png}
-      \textit{Rrepresentacion de $y_2(t)$}
+      \textit{Representación de $y_2(t)$}
     \end{minipage}
   \end{figure}
 
@@ -213,7 +213,7 @@ equilibrio, máxima amplitud $A > 0$ y despreciando los efectos de la fricción,
     \begin{minipage}[h]{0.4\textwidth}
       \centering
       \includegraphics[width=1\textwidth]{./images/ej1.3.png}
-      \textit{Representacion del MAS}
+      \textit{Representación del MAS}
     \end{minipage}
   \end{figure}
 
@@ -340,7 +340,7 @@ Considerar las siguientes señales proporcionadas por un rectificador de onda co
 
     Las señales son periódicas y por lo tanto tienen energía infinita. 
 
-    Energía relativa a un periódo $T_0$:
+    Energía relativa a un periodo $T_0$:
     $$
     \begin{aligned}
       E_{T_{0}}&=\int_0^{2\pi}|x(t)|^2=\int _0^\pi sen(t)^2dt=\int_0^\pi \frac{1}{2}(1-cos(2t) dt\\
@@ -444,11 +444,11 @@ Considerar las siguientes señales proporcionadas por un rectificador de onda co
     \end{aligned}
     $$
 
-    Para todo n la segunda parte de la ecuación es 0, ya que es una función coseno que se integra en $2n$ periódos, lo cual da 0. Por lo tanto:
+    Para todo n la segunda parte de la ecuación es 0, ya que es una función coseno que se integra en $2n$ periodos, lo cual da 0. Por lo tanto:
 
     $$ E_{T_0}=\frac{\pi}{\omega_0} $$
 
-    En el caso de calcular la energía relativa a $T_n$, lo único que cambia son los límtes 
+    En el caso de calcular la energía relativa a $T_n$, lo único que cambia son los límites 
     de integración, de todos modos la segunda parte de la ecuación sigue siendo 0, ya que se 
     integra una función coseno en 2 períodos. y la energía relativa a $T_n$ es por lo tanto:
 
@@ -639,7 +639,7 @@ Para calcular los coeficientes $a_n$ y $b_n$ podemos hacer uso de los coeficient
             \end{aligned}
             $$
 
-       Para el caso en donde n=-1,1, necesitamos evaluar la integral primero y resolver despuésde tal forma utilizando (1), calculamos:
+       Para el caso en donde n=-1,1, necesitamos evaluar la integral primero y resolver después de tal forma utilizando (1), calculamos:
 
        $$
        \begin{aligned}
@@ -777,7 +777,7 @@ $$
 
 	\textbf{Reflexión:} ¿si los periodos $T_n$ de cada señal del conjunto básico son distintos, por qué la suma
       (finita/infinita) es periódica? \\
-		  Nuevamente las señales son periódicas con periodo $T_n=\frac{T_0}{n}$, de tal forma todas compartenel periodo $T_0$, y la suma finita/infinita de señales periódicas con un periodo comun es periódica con dicho periodo.\\
+		  Nuevamente las señales son periódicas con periodo $T_n=\frac{T_0}{n}$, de tal forma todas comparten el periodo $T_0$, y la suma finita/infinita de señales periódicas con un periodo común es periódica con dicho periodo.\\
 		  ¿Por qué se restringe el dominio del tiempo en un intervalo del tipo 
       $t_0 \leq t \leq t_0 + T_0$, si las señales básicas están bien definidas en todo el eje temporal?\\
 		  Nuevamente si no se restringe el dominio la energía de dichas señales sería infinito.
@@ -895,7 +895,9 @@ $$
  
 
       \textbf{Señal $x_2$}\\
+  \begin{minipage}[h]{0.6\textwidth}
       \includegraphics[width=1\textwidth]{images/ej2.4.png}	
+  \end{minipage}
       %graficos arg cn señal 2
 
       \item Considerar $|n| \leq 5$ y realizar el espectro de frecuencias de ambas señales en módulo, esto es, graficar 
@@ -920,6 +922,7 @@ $$
   \begin{minipage}[h]{0.6\textwidth}
       \includegraphics[width=1\textwidth]{images/ej.2.3.png}
   \end{minipage}
+\newpage
 
      \textbf{Señal $x_2$}\\
   \begin{minipage}[h]{0.6\textwidth}
@@ -969,7 +972,7 @@ $$
     primeros armónicos tienen mayor relevancia en ambas señales, sin
     embargo los armónicos pares en la señal rectificada de media onda 
     desaparece. En el espectro de fase-frecuencia observamos que en 
-    la señal rectificada de onda completa todos los armonicos tienen 
+    la señal rectificada de onda completa todos los armónicos tienen 
     un desfase en $\pi$, en cambio en la señal rectificada de media onda 
     los armónicos tienen un desfase de $\pi$ para los n pares, y 0 para 
     los impares, excepto en $n=-1,1$, en los cuales el desfase es $\frac{\pi}{2}$ y $\frac{-\pi}{2}$, respectivamente.
@@ -1963,9 +1966,9 @@ $T$ y amplitud unitaria.
     \begin{equation*}
       y_1(t) = 3\left(-e^{-(t-2)} + 2e^{-2(t-2)}\right)\\[6pt]
     \end{equation*}
-    En este caso, intentar hacer la convolucion en el dominio del tiempo de $h_{(t))}$ y $3\delta_{t-2}$ va a dar la
-    misma funcion que por la antitransformada. Esto se debe a que independientemente de que el sistema sea LIT o no,
-    la convolucion de una funcion $\delta_t$ da la misma funcion por la que esta multiplicada, valuada en $t$.
+    En este caso, intentar hacer la convolución en el dominio del tiempo de $h_{(t))}$ y $3\delta_{t-2}$ va a dar la
+    misma función que por la antitransformada. Esto se debe a que independientemente de que el sistema sea LIT o no,
+    la convolución de una función $\delta_t$ da la misma función por la que esta multiplicada, valuada en $t$.
 
     Para $Y_2(s) = L\{S\{\mu_{(t+2)}\}\}$:
     \begin{align*}
@@ -1986,8 +1989,8 @@ $T$ y amplitud unitaria.
     \begin{equation*}
       y_2(t) = e^{-(t+2)} - e^{-2(t+2)}\\[6pt]
     \end{equation*}
-    En este caso, intentar hacer la convolucion en el dominio del tiempo de $h_{(t))}$ y $\mu_{(t+2}$ va a dar una
-    funcion diferente a la obtenida por la antitransformada. Esto se debe a que el sistema no es LIT, por lo que la
+    En este caso, intentar hacer la convolución en el dominio del tiempo de $h_{(t))}$ y $\mu_{(t+2}$ va a dar una
+    función diferente a la obtenida por la antitransformada. Esto se debe a que el sistema no es LIT, por lo que la
     $h_{(t)}$ no responde igual para diferentes desplazamientos.
 
     Como se pudo ver, las funciones $Y_1(s)$ e $Y_2(s)$, ambas están definidas en el dominio $s$, el cual es un dominio
