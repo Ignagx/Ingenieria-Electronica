@@ -16,6 +16,7 @@
 \allowdisplaybreaks
 \def\arraystretch{1.7}
 
+\renewcommand{\contentsname}{Tabla de Contenidos}
 \pagestyle{fancy}
 \fancyhf{} 
 \fancyhead[L]{UTN-FRC}
@@ -293,6 +294,9 @@ equilibrio, máxima amplitud $A > 0$ y despreciando los efectos de la fricción,
     La señal no es causal porque esta definida para todos los tiempos, $t \in (-\infty,\infty)$
   \end{itemize}
 \end{enumerate}
+
+\newpage
+\myemptypage
 
 \chapter{Ejercicio 2}
 Considerar las siguientes señales proporcionadas por un rectificador de onda completa y $1/2$ onda respectivamente:
@@ -740,7 +744,7 @@ Si truncamos la suma en $n=5$ entonces podemos aproximar a la señal como:
         $$
  El gráfico de dicha señal comparada con la original es:\\
 
-%grafico senal 2
+%gráfico señal 2
  \centering
   \begin{minipage}[h]{0.6\textwidth}
 \includegraphics[width=1\textwidth]{images/ej2.2a.png}
@@ -923,7 +927,7 @@ $$
   \begin{minipage}[h]{0.6\textwidth}
       \includegraphics[width=1\textwidth]{images/ej2.4.png}	
   \end{minipage}
-      %graficos arg cn señal 2
+      %gráficos Arg en señal 2
 
       \item Considerar $|n| \leq 5$ y realizar el espectro de frecuencias de ambas señales en módulo, esto es, graficar 
         los pares ordenados
@@ -932,7 +936,7 @@ $$
 
       Correspondientes a cada señal $x_1, x_2$.\newline
 
-      %graficos amplitud
+      %gráficos amplitud
 
   \textbf{Señal $x_1$}\\
       $$
@@ -947,7 +951,6 @@ $$
   \begin{minipage}[h]{0.6\textwidth}
       \includegraphics[width=1\textwidth]{images/ej.2.3.png}
   \end{minipage}
-\newpage
 
      \textbf{Señal $x_2$}\\
   \begin{minipage}[h]{0.6\textwidth}
@@ -1005,6 +1008,8 @@ $$
 
 \end{enumerate}
 
+\newpage
+\myemptypage
 \chapter{Ejercicio 3}
 
 Considerar $G_T(t) = \mu_{(t + \frac{T}{2})} - \mu_{(t - \frac{T}{2})}$ una señal pulso rectangular con duración finita
@@ -1231,7 +1236,7 @@ $T$ y amplitud unitaria.
 
 \chapter{Ejercicio 4}
 
-  \fakesection{Cirtuito RC}
+  \fakesection{Circuito RC}
   \textbf{Circuito Eléctrico RC:} circuito eléctrico correspondiente a un sistema de 1° orden y su ecuación
   característica:
   $$v(t) = R\cdot i(t) + \frac{1}{C} \cdot \int_{0}^{t} i(\tau) d\tau$$
@@ -1504,7 +1509,7 @@ $T$ y amplitud unitaria.
 
       Por ende el sistema no es invariante en el tiempo.
 
-%      Invarianza en el tiempo: Trayendo nuevamente el analisis del punto anterior:
+%      Invarianza en el tiempo: Trayendo nuevamente el análisis del punto anterior:
 %      \begin{align*}
 %        y_1(t) &= x_{(t - t_0)} \cdot \frac{1}{R} + \left(y_0 - \frac{x_0}{R}\right) \cdot
 %          e^{\frac{-t}{RC}} - \frac{1}{R^2C} \int_{0}^{t} x_{(\tau - t_0)} \cdot e^{\frac{-(t-\tau)}{RC}} d\tau\\[12pt]
@@ -1521,7 +1526,7 @@ $T$ y amplitud unitaria.
 %          e^{\frac{-(t-v)}{RC}} dv\\[12pt]
 %        y_1(t) \neq y_2(t)
 %      \end{gather*}
-%      Lo que aun no permite que el sistema sea invariante en el tiempo, por los limites de integracion que son
+%      Lo que aun no permite que el sistema sea invariante en el tiempo, por los limites de integración que son
 %      diferentes.
 
     \fakesubsection{}
@@ -1578,7 +1583,7 @@ $T$ y amplitud unitaria.
 %          e^{\frac{-(t-v)}{RC}} dv\\[12pt]
 %        y_1(t) \neq y_2(t)
 %      \end{gather*}
-%      Si multiplicamos la salida de ambas funciones por $\mu_t$ para que el sistema sea causal, nos quedaria lo
+%      Si multiplicamos la salida de ambas funciones por $\mu_t$ para que el sistema sea causal, nos quedaría lo
 %      siguiente:
 %      \begin{gather*}
 %        y_1(t) = \mu_t \cdot x_{(t - t_0)} \cdot \frac{1}{R} - \frac{1}{R^2C} \int_{0}^{t} \mu_t \cdot x_{(\tau - t_0)}
@@ -1587,16 +1592,16 @@ $T$ y amplitud unitaria.
 %          \cdot e^{\frac{-(t-v)}{RC}} dv\\[12pt]
 %      \end{gather*}
 %      Para que el sistema $S_3$ sea invariante en el tiempo, se necesita que la entrada sea causal. De esa forma,
-%      podemos reacomodar la integral para que quede igual que $y_1(t)$:
+%      podemos re acomodar la integral para que quede igual que $y_1(t)$:
 %      \begin{equation*}
 %        y_2(t) = \mu_t \cdot x_{(t - t_0)} \cdot \frac{1}{R} - \frac{1}{R^2C} \left[\underbrace{\int_{0}^{t_0}
 %          x_{(v-t_0)} \cdot e^{\frac{-(t-v)}{RC}} dv}_{=0} + \int_{t_0}^{t} x_{(v-t_0)} \cdot
 %          e^{\frac{-(t-v)}{RC}} dv\right]\\[12pt]
 %      \end{equation*}
 %      La nueva integral que se agrego, es igual a cero debido a que, como dijimos, que la señal de entrada es causal,
-%      por lo tanto, cuando $v < t_0$, la señal de entrada va a ser evualuada en $t < 0$, por lo que su salida va a ser
-%      nula debido a la causalidad. Cuando $v = t_0$, la señal de entrada va a ser evaulada en 0, pero
-%      independientemente de lo que valga, el aporte a la integracion va a ser nulo. Esto permite 
+%      por lo tanto, cuando $v < t_0$, la señal de entrada va a ser evaluada en $t < 0$, por lo que su salida va a ser
+%      nula debido a la causalidad. Cuando $v = t_0$, la señal de entrada va a ser evaluada en 0, pero
+%      independientemente de lo que valga, el aporte a la integración va a ser nulo. Esto permite 
 
       \begin{table}[h]
         \centering
@@ -2013,9 +2018,9 @@ $T$ y amplitud unitaria.
       \begin{equation*}
         y_1(t) = 3\left(-e^{-(t-2)} + 2e^{-2(t-2)}\right)\\[6pt]
       \end{equation*}
-      En este caso, intentar hacer la convolucion en el dominio del tiempo de $h_{(t))}$ y $3\delta_{t-2}$ va a dar la
-      misma funcion que por la antitransformada. Esto se debe a que independientemente de que el sistema sea LIT o no,
-      la convolucion de una funcion $\delta_t$ da la misma funcion por la que esta multiplicada, valuada en $t$.
+      En este caso, intentar hacer la convolución en el dominio del tiempo de $h_{(t))}$ y $3\delta_{t-2}$ va a dar la
+      misma función que por la antitransformada. Esto se debe a que independientemente de que el sistema sea LIT o no,
+      la convolución de una función $\delta_t$ da la misma función por la que esta multiplicada, valuada en $t$.
       Para $Y_2(s) = L\{S\{\mu_{(t+2)}\}\}$:
       \begin{align*}
         \mathcal{L} \left\{\mu (t+2)\right\} &= e^{2s}\mathcal{L}\left\{\mu_t\right\} \hspace{1cm} &Y_2(s)
@@ -2035,8 +2040,8 @@ $T$ y amplitud unitaria.
       \begin{equation*}
         y_2(t) = e^{-(t+2)} - e^{-2(t+2)}\\[6pt]
       \end{equation*}
-      En este caso, intentar hacer la convolucion en el dominio del tiempo de $h_{(t))}$ y $\mu_{(t+2}$ va a dar una
-      funcion diferente a la obtenida por la antitransformada. Esto se debe a que el sistema no es LIT, por lo que la
+      En este caso, intentar hacer la convolución en el dominio del tiempo de $h_{(t))}$ y $\mu_{(t+2}$ va a dar una
+      función diferente a la obtenida por la antitransformada. Esto se debe a que el sistema no es LIT, por lo que la
       $h_{(t)}$ no responde igual para diferentes desplazamientos.
 
       Como se pudo ver, las funciones $Y_1(s)$ e $Y_2(s)$, ambas están definidas en el dominio $s$, el cual es un dominio
