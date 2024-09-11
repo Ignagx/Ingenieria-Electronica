@@ -1,0 +1,106 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[left=2.5cm,right=2.5cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{etoolbox}
+\usepackage{titlesec}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{ulem}
+\usepackage{cancel}
+\usepackage{enumitem}
+\usepackage{lmodern}
+\usepackage{tikz}
+\usepackage{afterpage}
+
+\geometry{a4paper}
+
+% Configuración de cabecera y pie de página
+\pagestyle{fancy}
+\fancyhf{} 
+\fancyhead[L]{UTN-FRC}
+\fancyhead[C]{QUÍMICA: TPL1}
+\fancyhead[R]{2R3}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancyfoot[C]{\vfill\thepage}
+
+% Cambio en el estilo de las páginas de capítulo
+\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
+
+% Tamaños de fuente para matemáticas
+\DeclareMathSizes{15}{13}{8}{8}
+
+% Configuración del título del documento
+\title{%
+  \fontsize{25}{0}\selectfont Universidad Tecnológica Nacional \\
+  \fontsize{22}{30}\selectfont Química \\
+  \fontsize{18}{25}\selectfont TPL1: Soluciones, Termoquimica y Cinetica Quimica.
+}
+\author{
+  Jerónimo Billoto - 415323\\
+  Luciano Cortesini - 402719\\
+  Gaston Grasso - 401892\\
+  Ignacio Gil - 401891\\
+}
+\date{23 / 08 / 2024}
+
+% Formato de títulos y secciones
+\titleformat{\chapter}[block]
+  {\normalfont\huge\bfseries}{Experiencia \thechapter}{0pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{-30pt}{0pt}
+
+\titleformat{\section}[block]
+  {\normalfont\Large\bfseries}{\thesection}{2mm}{\Large}
+\titlespacing*{\section}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+
+\titleformat{\subsection}[block]
+  {\normalfont\large\bfseries}{}{0pt}{\large}
+\titlespacing*{\subsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\begin{document}
+\maketitle
+\section*{Cuestionario de orientacion}
+
+\begin{enumerate}
+
+  \item Con que tipo de material de vidrio se prepara una solucion?
+  \item Cual es el objetivo de usar una propipeta?
+  \item Cuantos gramos de $Ca(NO_3)_2$ se necesitan para preparar 150mL de solucion 0.25M?
+  \item que volumen de  una solucion concentrada de $HNO_3$ al $38\% $ P/P, cuya densidad es de 1,19g/mL, es necesario para preparar 500mL de una solucion de $HNO_3$ 0.8M?
+ 
+\end{enumerate}
+
+\chapter
+\begin{enumerate}[label=\alph*]
+
+\item Para preparar una solucion 0.010M de $KMNnO_4$ en un matraz de 50mL se necesitan: 0.079g de $KMNnO_4$.\\
+  
+  
+  calculos:
+      $$
+\begin{aligned}
+   1 Mol  \, &\rightarrow&& 158.04g \,KMnO_4\\[6pt]
+   0.01 Mol  \, &\rightarrow&& 1.5804g \,KMnO_4\\[6pt]
+    \\
+   1000mL \,  &\rightarrow&& 1.5804g \,KMnO_4  \\[6pt]
+    50mL\,  &\rightarrow&& 0.079g \, KMnO_4\\[6pt]
+\end{aligned}
+$$
+
+\item usamos una balanza para medir el $KMnO_4$, en vez de pesar 0.079g, pesamos 0.084g pero no hubo derrames de ningun tipo.
+\item pasamos el $KMnO_4$ al vaso de precipitados y enjuagamos el vidrio de reloj con agua destilada asegurandonos de que la solucion cayera en el vaso, luego disolvimos la mayor cantidad de soluto con la varilla de vidrio.
+\item Agregamos el aproximadamente 20mL de solvente en el matraz y con ayuda del embudo trasvasamos todo el material disuelto.
+\item enrrasamos exactamente a 50mL
+\item colocamos el tapon y agitamos el matraz suavemente hasta que casi no quedo material sin disolver. como el soluto era de dificil solucion, esto no fue facil.
+
+\end{enumerate}
+ 
+\chapter
+
+\begin{enumerate}[label=\alph*]
+  \item Para preparar 100mL de solucion de $NaCl$ 0.05M a partir de el reactivo solido se necesitan 0.2922g de $NaCl$--
+
+  \item Se
+
+\end{document}
+
