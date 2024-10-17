@@ -1,5 +1,5 @@
-\documentclass[12pt]{report}
-\usepackage[left=2.5cm,right=2.5cm,top=3cm,bottom=3cm]{geometry}
+\documentclass[a4paper,12pt]{report}
+\usepackage[left=2.5cm,right=2.5cm,top=3cm,bottom=2.5cm]{geometry}
 \usepackage{fancyhdr}
 \usepackage{etoolbox}
 \usepackage{titlesec}
@@ -9,25 +9,34 @@
 \pagestyle{fancy}
 \fancyhf{} 
 \fancyhead[L]{UTN-FRC}
-\fancyhead[C]{FISICA ELECTRONICA: TPL1}
+\fancyhead[C]{FÍSICA ELECTRÓNICA: RACIACIÓN TÉRMICA}
 \fancyhead[R]{2R3}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancyfoot[C]{\vfill\thepage}
+\setlength{\headwidth}{\textwidth} % Hace que el ancho del encabezado coincida con el ancho del texto
+\setlength{\headheight}{15pt}  % Ajusta la altura del encabezado
+\setlength{\headsep}{20pt}     % Ajusta la separación entre el encabezado y el contenido
 
-\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalfont\Large\bfseries}{}{0pt}{}
+\titlespacing*{\chapter}{10pt}{-45pt}{10pt}
 
-%\renewcommand{\chaptername}{Experiencia}
+\usepackage{etoolbox} 
+\makeatletter
+\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{} %Muestra encabezado en las paginas con \chapter
+\makeatother
 
 \titleformat{\chapter}[display]
-  {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\huge}
-\titlespacing*{\chapter}{0pt}{0pt}{0pt}
+  {\normalfont\bfseries}{}{0pt}{\huge}
+\titlespacing*{\chapter}{0pt}{-30pt}{20pt}
 
 \DeclareMathSizes{12}{13}{6}{5}
 
 \title{%
   \fontsize{25}{0}\selectfont Universidad Tecnológica Nacional \\
-  \fontsize{22}{30}\selectfont Física 2 \\
-  \fontsize{18}{25}\selectfont TPL1: Calorimetría
+  \fontsize{22}{30}\selectfont Física Electrónica \\
+  \fontsize{18}{25}\selectfont TPL1: Raciación térmica
 }
 \author{
 Franco Palombo\\
@@ -35,9 +44,11 @@ Gaston Grasso\\
 Ignacio Gil\\
 Luciano Cortesini\\
 }
-\date{03 / 10 / 2024}
+\date{17 / 10 / 2024}
 
 \begin{document}
+
+\maketitle
 
 \chapter{Introduccion}
   El fenomeno de la radiacion es la propagacion de energia en forma de ondas electromagneticas o particulas subatomicas
@@ -79,135 +90,258 @@ Luciano Cortesini\\
   diferentes propiedades fisicas, se los puede emplear como capas protectoras del calor o instrumentos de dispersion de
   calor.
 
-%aluminio temp vs tiempo
-\begin{tikzpicture}
-    \begin{axis}[
-        xlabel={Tiempo (s)},
-        ylabel={Temperatura (°C)},
-        title={Aluminio Temp vs Tiempo},
-        grid=major,
-        legend pos=north west % Posición de la leyenda
-    ]
-    % Primera función
-    \addplot coordinates {
-      (0,67.5) (21.87,67.3) (32.98,66.2) (90.17,63.1) (124.26,60.2) (143.13,58.3) (160.01,57)
-    };
-    \end{axis}
-\end{tikzpicture}
+  \section{Radiación en funcion de la temperatura}
 
-%aluminio rad vs tiempo
-\begin{tikzpicture}
-    \begin{axis}[
-        xlabel={Timepo(s)},
-        ylabel={Radiaciom(mW)},
-        title={Aluminio Rad vs Tiempo},
-        grid=major,
-        legend pos=north west 
-    ]
-    \addplot coordinates {
-    (0,0.136) (21.87,0.132) (32.98,0.127) (90.17,0.114) (124.26,0.1) (143.13,0.091) (160.01,0.086)
-    };
-    \end{axis}
-\end{tikzpicture}\\
-%bronce temp vs tiempo
-\begin{tikzpicture}
-    \begin{axis}[
-        xlabel={Timepo(s)},
-        ylabel={Temperatura (°C)},
-        title={Bronce Temp vs Tiempo},
-        grid=major,
-        legend pos=north west
-    ]
-    \addplot coordinates {
-      (0,65) (17,64) (24,63) (28,62) (33,61) (46,60) (58,59) (70,58) (77, 57)
-    };
-    \end{axis}
-\end{tikzpicture}
-%bronce rad vs tiempo
-\begin{tikzpicture}
-    \begin{axis}[
-        xlabel={Timepo(s)},
-        ylabel={radiaciom(mW)},
-        title={Bronce Rad vs Tiempo},
-        grid=major,
-        legend pos=north west
-    ]
-    \addplot coordinates {
-      (0,0.145) (17,0.132) (24,0.132) (28,0.127) (33,0.123) (46,0.118) (58,0.109) (70,0.105) (77, 0.1)
-    };
-    \end{axis}
-\end{tikzpicture}\\
+  \begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[
+          width=11cm,
+          height=8cm,
+          xlabel={Temperatura (°C)},
+          ylabel={Radiación (mW)},
+          title={Aluminio},
+          grid=major,
+        ]
+        % Primera función
+        \addplot coordinates {
+          (67.5,0.136) (67.3,0.132) (66.2,0.127) (63.1,0.114) (60.2,0.1) (58.3,0.091) (57,0.086)
+        };
+        \end{axis}
+    \end{tikzpicture}
+  \end{center}
+%  \begin{tikzpicture}
+%      \begin{axis}[
+%          xlabel={Tiempo (s)},
+%          ylabel={Temperatura (°C)},
+%          title={Aluminio Temp vs Tiempo},
+%          grid=major,
+%          legend pos=north west % Posición de la leyenda
+%      ]
+%      % Primera función
+%      \addplot coordinates {
+%        (0,67.5) (21.87,67.3) (32.98,66.2) (90.17,63.1) (124.26,60.2) (143.13,58.3) (160.01,57)
+%      };
+%      \end{axis}
+%  \end{tikzpicture}
+%
+%  \begin{tikzpicture}
+%      \begin{axis}[
+%          xlabel={Timepo(s)},
+%          ylabel={Radiaciom(mW)},
+%          title={Aluminio Rad vs Tiempo},
+%          grid=major,
+%          legend pos=north west 
+%      ]
+%      \addplot coordinates {
+%      (0,0.136) (21.87,0.132) (32.98,0.127) (90.17,0.114) (124.26,0.1) (143.13,0.091) (160.01,0.086)
+%      };
+%      \end{axis}
+%  \end{tikzpicture}\\
 
-\begin{tikzpicture}
-    \begin{axis}[
-        xlabel={Temperatura (°C)},
-        ylabel={radiaciom(mW)},
-        title={Bronce},
-        grid=major,
-        legend pos=north west
-    ]
-    \addplot coordinates {
-      (65,0.145) (64,0.132) (63,0.132) (62,0.127) (61,0.123) (60,0.118) (59,0.109) (58,0.105) (57, 0.1)
-    };
-    \end{axis}
-\end{tikzpicture}
+  \begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[
+          width=11cm,
+          height=8cm,
+          xlabel={Temperatura (°C)},
+          ylabel={radiaciom(mW)},
+          title={Bronce},
+          grid=major,
+        ]
+        \addplot coordinates {
+          (65,0.145) (64,0.132) (63,0.132) (62,0.127) (61,0.123) (60,0.118) (59,0.109) (58,0.105) (57, 0.1)
+        };
+        \end{axis}
+    \end{tikzpicture}
+  \end{center}
+%  \begin{tikzpicture}
+%      \begin{axis}[
+%          xlabel={Timepo(s)},
+%          ylabel={Temperatura (°C)},
+%          title={Bronce Temp vs Tiempo},
+%          grid=major,
+%          legend pos=north west
+%      ]
+%      \addplot coordinates {
+%        (0,65) (17,64) (24,63) (28,62) (33,61) (46,60) (58,59) (70,58) (77, 57)
+%      };
+%      \end{axis}
+%  \end{tikzpicture}
+%  \begin{tikzpicture}
+%      \begin{axis}[
+%          xlabel={Timepo(s)},
+%          ylabel={radiaciom(mW)},
+%          title={Bronce Rad vs Tiempo},
+%          grid=major,
+%          legend pos=north west
+%      ]
+%      \addplot coordinates {
+%        (0,0.145) (17,0.132) (24,0.132) (28,0.127) (33,0.123) (46,0.118) (58,0.109) (70,0.105) (77, 0.1)
+%      };
+%      \end{axis}
+%  \end{tikzpicture}\\
 
+  \begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[
+          width=11cm,
+          height=8cm,
+          xlabel={Temperatura (°C)},
+          ylabel={Radiaciom(mW)},
+          title={Plomo},
+          grid=major,
+        ]
+        \addplot coordinates {
+          (63,0.227) (62,0.214) (61,0.205) (60,0.2) (59,0.195) (58,0.186) (57,0.173) (56,0.168) (55,0.164)
+        };
+        \end{axis}
+    \end{tikzpicture}
+  \end{center}
+%  \begin{tikzpicture}
+%      \begin{axis}[
+%          xlabel={Timepo(s)},
+%          ylabel={Radiaciom(mW)},
+%          title=a{Plomo Temp vs Tiempo},
+%          grid=major,
+%          legend pos=north west
+%      ]
+%      \addplot coordinates {
+%        (0,62.7) (20, 61.9) (40, 60.3) (60, 58.1) (80,56.6) (100,53.4) (120,52.1) (140,50.5)
+%      };
+%      \end{axis}
+%  \end{tikzpicture}
+%  \begin{tikzpicture}
+%      \begin{axis}[
+%          xlabel={Timepo(s)},
+%          ylabel={Radiaciom(mW)},
+%          title={Plomo Rad vs Tiempo},
+%          grid=major,
+%          legend pos=north west
+%      ]
+%      \addplot coordinates {
+%        (0,0.227) (20,0.213 ) (40,0.195) (60,0.177) (80,0.163) (100,0.145) (120,0.136) (140,0.122)
+%      };
+%      \end{axis}
+%  \end{tikzpicture}
 
-%Plomo Temp vs tiempo
-\begin{tikzpicture}
-    \begin{axis}[
-        xlabel={Timepo(s)},
-        ylabel={Radiaciom(mW)},
-        title=a{Plomo Temp vs Tiempo},
-        grid=major,
-        legend pos=north west
-    ]
-    \addplot coordinates {
-      (0,62.7) (20, 61.9) (40, 60.3) (60, 58.1) (80,56.6) (100,53.4) (120,52.1) (140,50.5)
-    };
-    \end{axis}
-\end{tikzpicture}
-%Plomo rad vs tiempo
-\begin{tikzpicture}
-    \begin{axis}[
-        xlabel={Timepo(s)},
-        ylabel={Radiaciom(mW)},
-        title={Plomo Rad vs Tiempo},
-        grid=major,
-        legend pos=north west
-    ]
-    \addplot coordinates {
-      (0,0.227) (20,0.213 ) (40,0.195) (60,0.177) (80,0.163) (100,0.145) (120,0.136) (140,0.122)
-    };
-    \end{axis}
-\end{tikzpicture}
+  \begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[
+          width=11cm,
+          height=8cm,
+          xlabel={Temperatura (°C)},
+          ylabel={Radiaciom(mW)},
+          title={Cobre},
+          grid=major,
+        ]
+        \addplot coordinates {
+          (63,0.236) (62.3,0.227) (61.5,0.223) (60.5,0.214) (59.9,0.205) (58.9,0.2) (58,0.191)
+        };
+        \end{axis}
+    \end{tikzpicture}
+  \end{center}
+%  \begin{tikzpicture}
+%      \begin{axis}[
+%          xlabel={Timepo(s)},
+%          ylabel={Radiaciom(mW)},
+%          title={Cobre Rad vs Tiempo},
+%          grid=major,
+%          legend pos=north west
+%      ]
+%      \addplot coordinates {
+%        (0,0.236) (10,0.227) (20,0.223) (30,0.214) (40,0.205) (50,0.200) (60,0.191) 
+%      };
+%      \end{axis}
+%  \end{tikzpicture}
+%  
+%  %Cobre tiempo temperatura
+%  \begin{tikzpicture}
+%      \begin{axis}[
+%          xlabel={Timepo(s)},
+%          ylabel={Temperatura(C°)},
+%          title={Cobre Rad vs Tiempo},
+%          grid=major,
+%          legend pos=north west
+%      ]
+%      \addplot coordinates {
+%        (0,63) (10,62.3) (20,61.5) (30,60.5) (40,59.9) (50,58.9) (60,58) (70,63) (80,62.3) (90,61.5) (100,60.5) (110,59.9) (120,58.9) (130,58) (140,0)
+%      };
+%      \end{axis}
+%  \end{tikzpicture}
+  \begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[
+          width=11cm,
+          height=8cm,
+          xlabel={Temperatura (°C)},
+          ylabel={Radiación (mW)},
+          title={Aluminio Anodizado},
+          grid=major,
+        ]
+        % Primera función
+        \addplot coordinates {
+          (65,0.250) (64,0.241) (63,0.232) (62,0.223) (61,0.214) (60,0.205) (59,0.2) (58,0.191) (57,0.182)
+        };
+        \end{axis}
+    \end{tikzpicture}
+  \end{center}
 
-\begin{tikzpicture}
-    \begin{axis}[
-        xlabel={Temperatura (°C)},
-        ylabel={radiaciom(mW)},
-        title={Plomo},
-        grid=major,
-        legend pos=north west
-    ]
-    \addplot coordinates {
-      (62.7,0.227) (61.9,0.213 ) (60.3,0.195) (58.1,0.177) (56.6,0.163) (53.4,0.145) (52.1,0.136) (50.5,0.122)
-    };
-    \end{axis}
-\end{tikzpicture}
-%Plomo rad vs tiempo
-\begin{tikzpicture}
-    \begin{axis}[
-        xlabel={Timepo(s)},
-        ylabel={Radiaciom(mW)},
-        title={Plomo Rad vs Tiempo},
-        grid=major,
-        legend pos=north west
-    ]
-    \addplot coordinates {
-      (0,0.227) (20,0.213 ) (40,0.195) (60,0.177) (80,0.163) (100,0.145) (120,0.136) (140,0.122)
-    };
-    \end{axis}
-\end{tikzpicture}
+  \begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[
+          width=11cm,
+          height=8cm,
+          xlabel={Temperatura (°C)},
+          ylabel={Radiación (mW)},
+          title={Superposición},
+          grid=major,
+          legend style={
+            at={(0.5,-0.25)}, % Cambia la posición a bajo el gráfico
+            anchor=north, % Ancla al centro norte de la leyenda
+            legend columns=2, % Número de columnas en la leyenda
+            },
+        ]
+        \addplot[black,mark=*] coordinates{
+          (65,0.250) (64,0.241) (63,0.232) (62,0.223) (61,0.214) (60,0.205) (59,0.2) (58,0.191) (57,0.182)
+        }; \addlegendentry{Aluminio anodizado}
+
+        \addplot[blue,mark=*] coordinates{
+          (67.5,0.136) (67.3,0.132) (66.2,0.127) (63.1,0.114) (60.2,0.1) (58.3,0.091) (57,0.086)
+        }; \addlegendentry{Aluminio}
+
+        \addplot[red,mark=*] coordinates{
+          (65,0.145) (64,0.132) (63,0.132) (62,0.127) (61,0.123) (60,0.118) (59,0.109) (58,0.105) (57, 0.1)
+        }; \addlegendentry{Bronce}
+
+        \addplot[orange,mark=*] coordinates{
+          (63,0.227) (62,0.214) (61,0.205) (60,0.2) (59,0.195) (58,0.186) (57,0.173) (56,0.168) (55,0.164)
+        }; \addlegendentry{Plomo}
+
+        \addplot[green,mark=*] coordinates{
+          (63,0.236) (62.3,0.227) (61.5,0.223) (60.5,0.214) (59.9,0.205) (58.9,0.2) (58,0.191)
+        }; \addlegendentry{Cobre}
+        \end{axis}
+    \end{tikzpicture}
+  \end{center}
+
+  \section{Radiación en función de la distancia}
+
+  \begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[
+          width=11cm,
+          height=8cm,
+          xlabel={Distancia (mm)},
+          ylabel={Radiación (mW)},
+          title={Bronce},
+          yticklabel style={/pgf/number format/fixed,/pgf/number format/precision=3},
+          grid=major,
+        ]
+        \addplot coordinates {
+          (0,0.1) (10,0.094) (20,0.089) (30,0.084) (40,0.079) (50,0.071) (60,0.064) (70,0.055) (80,0.046) (90,0.04)
+        };
+        \end{axis}
+    \end{tikzpicture}
+  \end{center}
 
 \end{document}
