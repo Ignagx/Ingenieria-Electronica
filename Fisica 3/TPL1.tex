@@ -3,11 +3,11 @@
 \usepackage{fancyhdr}
 \usepackage{etoolbox}
 \usepackage{titlesec}
-\usepackage{titling} 
+\usepackage{titling}
 \usepackage{pgfplots}
 
 \pagestyle{fancy}
-\fancyhf{} 
+\fancyhf{}
 \fancyhead[L]{UTN-FRC}
 \fancyhead[C]{FÍSICA ELECTRÓNICA: RACIACIÓN TÉRMICA}
 \fancyhead[R]{2R3}
@@ -55,20 +55,42 @@ Luciano Cortesini\\
   que viajan a traves del vacio o de un medio en especifico.\\
 
   Existen multiples tipos de radiacion, pero para el enfoque de este trabajo practico, se va a experimentar con la
-  radiacion electromagnetica a partir de una fuente de luz infrarroja, como puede ser la emitida por cualquier cuerpo
-  que se encuentra a una temperatura mayor a 0ºK y mayor a la del entorno en donde se encuentra. Este tipo de radiacion
-  es denominada radiacion termica. Es producto del movimiento termico que presentan las particulas cargadas presentes
-  en la materia. La intensidad de esta radiacion depende de la temperatura de la materia o el cuerpo y de la longitud
-  de onda que se considere.\\
+  radiacion termica, como puede ser la emitida por cualquier cuerpo que se encuentra a una temperatura mayor a 0ºK.
+  Este tipo de radiacion es denominada radiacion termica. Es producto del movimiento termico que presentan las
+  particulas cargadas presentes en la materia. La intensidad de esta radiacion depende de la temperatura de la materia
+  o el cuerpo y de la longitud de onda que se considere.\\
+
+  Todos los cuerpos emiten energía y a su vez la absorben de sus inmediaciones. Cuando se alcanza el equilibrio térmico,
+  la velocidad de emisión y absorción son iguales. La materia en estado condensado (sólido o líquido) emite un espectro
+  continuo de radiación. Este espectro depende solamente de la temperatura.\\
+
+  La radiacion por unidad de area se puede calcular de la siguiente forma:
+  \begin{equation}
+    R = e \sigma T^4
+  \end{equation}
+
+  Donde $e$ es el poder emisivo o emisividad relativa a un cuerpo negro, $\sigma$ es la constante de Stefan-Boltzmann y
+  $T$ la temperatura en el instante de tiempo dado en grados kelvin.\\
 
   Los cuerpos pueden ser emisores de radiacion o receptores de radiacion. En ambos casos, las cantidades son iguales,
-  pero opuestas. Esto es debido a reciprocidad, un fenomeno que establece que la razon de emision de radiacion
+  pero opuestas. Esto es debido a la reciprocidad, un fenomeno que establece que la razon de emision de radiacion
   electromagnetica de un cuerpo a una frecuencia dada, va a ser la misma a la que el cuerpo pueda absorber.\\
 
-  Para cuerpos emisores, la intensidad de la radiacion emitida, puede propagarse en cualquier direccion en cualquiera
-  de sus superficies o caras. Asimismo, la emisividad de un cuerpo es la razón entre la intensidad emitida por la
+  Para cuerpos emisores, la radiacion emitida, puede propagarse en cualquier direccion en cualquiera
+  de sus superficies o caras. La emisividad de un cuerpo es la razón entre la intensidad emitida por la
   superficie en una dirección particular y la intensidad que sería emitida por un cuerpo negro a la misma temperatura y
   longitud de onda.\\
+
+  Diferentes cuerpos emiten radiacion termica en diferentes formas. Todos expulsan calor en forma de radiacion termica,
+  pero tambien emiten radiacion en el espectro de la luz. Segun el material y su temperatura, la radiacion en el
+  espectro de la luz aumenta o disminuye de intensidad y longitud de onda. Todos los materiales a una
+  temperatura menor de 798ºK emiten luz infrarroja. Cuando se supera este umbral, en algunos materiales, suficiente de
+  la radiacion infrarroja es emitida como para que se empiece a percibir luz visible. De aqui se puede generar un
+  espectro de luz que relaciona la temperatura de un material dado y la longitud de onda de la luz que emite.\\\\\\\\
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{images/img1.png}
+  \end{figure}
 
   Existe un tipo de cuerpo, cuyas capacidades de emision y absorcion son ideales. Este cuerpo, denominado cuerpo negro,
   esta caracterizado por permitir el paso de todos las ondas electromagneticas, independientemente de su longitud de
