@@ -95,14 +95,15 @@ Luciano Cortesini\\
   \begin{center}
     \begin{tikzpicture}
         \begin{axis}[
+          title={Aluminio},
+          ylabel={Radiación (mW)},
+          xlabel={Temperatura (°C)},
           width=11cm,
           height=8cm,
-          xlabel={Temperatura (°C)},
-          ylabel={Radiación (mW)},
-          title={Aluminio},
+          yticklabel style={/pgf/number format/fixed,/pgf/number format/precision=3},
+          ytick distance = 0.01,
           grid=major,
         ]
-        % Primera función
         \addplot coordinates {
           (67.5,0.136) (67.3,0.132) (66.2,0.127) (63.1,0.114) (60.2,0.1) (58.3,0.091) (57,0.086)
         };
@@ -118,6 +119,7 @@ Luciano Cortesini\\
           xlabel={Temperatura (°C)},
           ylabel={radiaciom(mW)},
           title={Bronce},
+          ytick distance = 0.01,
           grid=major,
         ]
         \addplot coordinates {
@@ -135,6 +137,7 @@ Luciano Cortesini\\
           xlabel={Temperatura (°C)},
           ylabel={Radiaciom(mW)},
           title={Plomo},
+          ytick distance = 0.01,
           grid=major,
         ]
         \addplot coordinates {
@@ -152,6 +155,7 @@ Luciano Cortesini\\
           xlabel={Temperatura (°C)},
           ylabel={Radiaciom(mW)},
           title={Cobre},
+          ytick distance = 0.01,
           grid=major,
         ]
         \addplot coordinates {
@@ -169,6 +173,7 @@ Luciano Cortesini\\
           xlabel={Temperatura (°C)},
           ylabel={Radiación (mW)},
           title={Aluminio Anodizado},
+          ytick distance = 0.01,
           grid=major,
         ]
         % Primera función
@@ -188,6 +193,8 @@ Luciano Cortesini\\
           ylabel={Radiación (mW)},
           title={Superposición},
           grid=major,
+          ytick distance = 0.02,
+          yticklabel style={/pgf/number format/fixed,/pgf/number format/precision=3},
           legend style={
             at={(0.5,-0.25)}, % Cambia la posición a bajo el gráfico
             anchor=north, % Ancla al centro norte de la leyenda
@@ -227,6 +234,7 @@ Luciano Cortesini\\
           xlabel={Distancia (mm)},
           ylabel={Radiación (mW)},
           title={Bronce},
+          ytick distance = 0.01,
           yticklabel style={/pgf/number format/fixed,/pgf/number format/precision=3},
           grid=major,
         ]
