@@ -16,7 +16,7 @@
 
 \patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
 
-\renewcommand{\chaptername}{Experiencia}
+%\renewcommand{\chaptername}{Experiencia}
 
 \titleformat{\chapter}[display]
   {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\huge}
@@ -38,6 +38,47 @@ Luciano Cortesini\\
 \date{03 / 10 / 2024}
 
 \begin{document}
+
+\chapter{Introduccion}
+  El fenomeno de la radiacion es la propagacion de energia en forma de ondas electromagneticas o particulas subatomicas
+  que viajan a traves del vacio o de un medio en especifico.\\
+
+  Existen multiples tipos de radiacion, pero para el enfoque de este trabajo practico, se va a experimentar con la
+  radiacion electromagnetica a partir de una fuente de luz infrarroja, como puede ser la emitida por cualquier cuerpo
+  que se encuentra a una temperatura mayor a 0ºK y mayor a la del entorno en donde se encuentra. Este tipo de radiacion
+  es denominada radiacion termica. Es producto del movimiento termico que presentan las particulas cargadas presentes
+  en la materia. La intensidad de esta radiacion depende de la temperatura de la materia o el cuerpo y de la longitud
+  de onda que se considere.\\
+
+  Los cuerpos pueden ser emisores de radiacion o receptores de radiacion. En ambos casos, las cantidades son iguales,
+  pero opuestas. Esto es debido a reciprocidad, un fenomeno que establece que la razon de emision de radiacion
+  electromagnetica de un cuerpo a una frecuencia dada, va a ser la misma a la que el cuerpo pueda absorber.\\
+
+  Para cuerpos emisores, la intensidad de la radiacion emitida, puede propagarse en cualquier direccion en cualquiera
+  de sus superficies o caras. Asimismo, la emisividad de un cuerpo es la razón entre la intensidad emitida por la
+  superficie en una dirección particular y la intensidad que sería emitida por un cuerpo negro a la misma temperatura y
+  longitud de onda.\\
+
+  Existe un tipo de cuerpo, cuyas capacidades de emision y absorcion son ideales. Este cuerpo, denominado cuerpo negro,
+  esta caracterizado por permitir el paso de todos las ondas electromagneticas, independientemente de su longitud de
+  onda o su direccion. Tambien, no hay superficie que pueda emitir mas radiacion que la de un cuerpo negro en las
+  mismas condiciones de temperatura y longitud de onda.\\
+
+  Habiendo presentado estos conceptos, se procede a presentar las experiencias de laboratorio.
+
+\chapter{Experiencia de laboratorio}
+  Esta experiencia consta en la utilizacion del cubo de Leslie, un dispositivo que contiene en su interior una fuente
+  de radiacion termica en forma de una bombilla incandescente. Una caja metalica, colocada sobre la bombilla, se pone
+  en contacto con diferentes tipos de materiales, para probar dos propiedades de los mismos:
+  \begin{itemize}
+    \item Capacidad de emision
+    \item Capacidad de absorcion
+  \end{itemize}
+
+  Estas propiedades permiten caracterizar diferentes materiales como aislantes o conductores termicos, y dependiendo de
+  diferentes propiedades fisicas, se los puede emplear como capas protectoras del calor o instrumentos de dispersion de
+  calor.
+
 %aluminio temp vs tiempo
 \begin{tikzpicture}
     \begin{axis}[
