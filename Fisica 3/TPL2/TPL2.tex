@@ -120,25 +120,25 @@ Luciano Cortesini\\
         \hline
         Linea Espectral & Intensidad [\%] & $V_0$ [mV]& Tiempo [s]\\
         \hline
-        \multirow{5}{*}{Verde} & 100 & 368,5 & 53,26 \\
+        \multirow{5}{*}{Verde} & 100 & 368.5 & 53.26 \\
                                 \cline{2-4}
-                                &  80 & 350,3 & 74.76 \\
+                                &  80 & 350.3 & 74.76 \\
                                 \cline{2-4}
-                                &  60 & 330,6 & 50,54 \\
+                                &  60 & 330.6 & 50.54 \\
                                 \cline{2-4}
-                                &  40 & 303,1 & 43,34 \\
+                                &  40 & 303.1 & 43.34 \\
                                 \cline{2-4}
-                                &  20 & 268,3 & 38,44 \\
+                                &  20 & 268.3 & 38.44 \\
         \hline
-        \multirow{5}{*}{Amarillo} & 100 & 306,1 & 35 \\
+        \multirow{5}{*}{Amarillo} & 100 & 306.1 & 35 \\
                                 \cline{2-4}
-                                  &  80 & 293,6 & 40,25 \\
+                                  &  80 & 293.6 & 40.25 \\
                                 \cline{2-4}
-                                  &  60 & 279,7 & 50,20 \\
+                                  &  60 & 279.7 & 50.20 \\
                                 \cline{2-4}
-                                  &  40 & 261,3 & 40,68 \\
+                                  &  40 & 261.3 & 40.68 \\
                                 \cline{2-4}
-                                  &  20 & 231 & 31,1 \\
+                                  &  20 & 231 & 31.1 \\
         \hline
         \end{tabular}
         \caption{Cuadro de valores medidos}
@@ -256,7 +256,7 @@ Luciano Cortesini\\
         \hline
         \multicolumn{6}{|c|}{Primer Orden} \\
         \hline
-        Linea Espectral & Frecuencia [$10^{14} Hz]$ & Longitud de Onda [nm] & $V_0$ [mV]& W [$10^{16} J$] & $eV_0 $\\
+        Linea Espectral & Frecuencia [$10^{14} Hz]$ & Longitud de Onda [nm] & $V_0$ [mV]& W [$10^{-16} J$] & $eV_0 $\\
         \hline
         Ultravioleta & 5195 & 577 & 350 & 3.439 & 5.6 $\cdot 10^{-20}$ \\
         \hline
@@ -277,7 +277,7 @@ Luciano Cortesini\\
         \hline
         \multicolumn{6}{|c|}{Segundo Orden} \\
         \hline
-        Linea Espectral & Frecuencia [$10^{14} Hz]$ & Longitud de Onda [nm] & $V_0$ [mV]& W [$10^{16} J$] & $eV_0 $\\
+        Linea Espectral & Frecuencia [$10^{14} Hz]$ & Longitud de Onda [nm] & $V_0$ [mV]& W [$10^{-16} J$] & $eV_0 $\\
         \hline
         Ultravioleta & 5195 & 577 & 295 & 3.439 & 4.72 $\cdot 10^{-20}$\\
         \hline
@@ -349,8 +349,24 @@ Luciano Cortesini\\
         \end{tikzpicture}
     \end{minipage}
 
-\chapter{Conclusion}
+\chapter{Conclusión}
 
-  
+    Los resultados encontrados en el Apartado A reflejan una contradiccion a lo expuesto en el documento ya que podemos
+  ver que la tension de corte si varia segun la intensidad de la luz. Aun asi, creemos firmemente que esto es producto 
+  de:
+    \begin{itemize}
+      \item Errores en la medidcion: No era claro cuando estaba cargado el capacitor, ya que nunca se estabilizaba la
+      tension realmente, sino que era mas intuicion de cuando parar el tiempo.
+      \item Instrumentos utilizados mal calibrados: Es muy probable que el lente para bajar la intensidad haya estado
+      vieja y descalibrada, provocando no solamente una disminucion en la intensidad de la luz sino que tambien
+      puede haber cambiado su direccion y demas variables no deseadas.
+    \end{itemize}
+  Todo esto influye directamente en las mediciones, obteniendo resultados erroneos. Para evitar tales discrepancias,
+  se recomienda siempre utilizar equipamento del mas alto nivel y teniendo precaucion a la hora de trabajar con ellos
+  para aumentar su vida util.
+
+  En el Apartado B se pudo visualizar mejor los resultados a partir de la realizacion del promedio, llegando mejor
+  a una media de los datos y asi comprobando el valor de la constante de planck a partir de datos medidos. Esto nos
+  permite concluir que el efecto fotoelectrico es real y que hay una energia asociada a cada onda del espectro.
 
 \end{document}
