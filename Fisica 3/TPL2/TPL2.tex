@@ -26,7 +26,7 @@
 
 \usepackage{etoolbox} 
 \makeatletter
-\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{} %Muestra encabezado en las paginas con \chapter
+\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{} %Muestra encabezado en las páginas con \chapter
 \makeatother
 
 \titleformat{\chapter}[display]
@@ -38,7 +38,7 @@
 \title{%
   \fontsize{25}{0}\selectfont Universidad Tecnológica Nacional \\
   \fontsize{22}{30}\selectfont Física Electrónica \\
-  \fontsize{18}{25}\selectfont TPL 2: Efecto Fotoelectrico
+  \fontsize{18}{25}\selectfont TPL 2: Efecto Fotoeléctrico
 }
 \author{
 Franco Palombo\\
@@ -52,10 +52,10 @@ Luciano Cortesini\\
 
 \maketitle
 
-\chapter{Introduccion}
+\chapter{Introducción}
   El \textbf{efecto fotoeléctrico} es el fenómeno por el cual ciertos materiales emiten electrones al ser iluminados
   con luz de alta frecuencia. Este proceso ocurre cuando los fotones de la luz inciden sobre el material y transfieren
-  su energía a los electrones del mismo. Para que el electrón sea emitido, la energía del fotón debe ser mayor o igual
+  su energía a los electrones de este. Para que el electrón sea emitido, la energía del fotón debe ser mayor o igual
   que la \textit{energía de extracción} del material, es decir, la energía mínima necesaria para liberar un electrón de
   su superficie.
 
@@ -83,12 +83,12 @@ Luciano Cortesini\\
   continua, y demuestra la naturaleza cuantizada de la interacción entre la radiación electromagnética y la materia.
 
 \chapter{Experiencia de laboratorio}
-  Utilizamos una fuente de luz que genera lineas espectrales. Se regulan los bastagos que sostienen la lente convexa
-  para que el punto focal este exactamente sobre el catodo del diodo foto electrico en vacío dentro del aparato h/e,
-  conectado al circuito (ref). Al incidir el haz de luz, se emiten los electrones del catodo al anodo y se carga el
-  capacitor. Al estabilizarse la tension medida, significa que ya está cargado el capacitor y la corriente en ese
-  momento es nula. El tiempo en el que se carga del condensador y la carga en éste dependera de la frecuencia que
-  incida sobre el catodo.
+  Utilizamos una fuente de luz que genera líneas espectrales. Se regulan los vástagos que sostienen la lente convexa
+  para que el punto focal este exactamente sobre el cátodo del diodo foto eléctrico en vacío dentro del aparato h/e,
+  conectado al circuito (ref). Al incidir el haz de luz, se emiten los electrones del cátodo al ánodo y se carga el
+  capacitor. Al estabilizarse la tensión medida, significa que ya está cargado el capacitor y la corriente en ese
+  momento es nula. El tiempo en el que se carga del condensador y la carga en éste dependerá de la frecuencia que
+  incida sobre el cátodo.
 
 
     \begin{circuitikz}
@@ -102,16 +102,16 @@ Luciano Cortesini\\
       \draw (40mm, 20mm) node[buffer, label={[xshift=-1.2mm, yshift=-2.4mm]{1:1}}]{};
       \draw (-3mm,-0.5cm) |- (35mm, 20mm);
       \draw (47mm,20mm) -- (60mm, 20mm);
-      \draw (60mm, 20mm) to[capacitor, *-*] (60mm,-5.1mm);
+      \draw (60mm, 20mm) to[capacitor, -] (60mm,-5.1mm);
       \draw (47mm, 20mm) -- (80mm, 20mm);
       \draw (0.5cm,-0.5cm) -- (80mm,-0.5cm);
-      \draw [-|] (80mm, 20mm ) to[voltmeter, *-*](80mm, -5.1mm);
+      \draw [-|] (80mm, 20mm ) to[voltmeter, -](80mm, -5.1mm);
     \end{circuitikz}
 
   \section{Apartado A}
-    Se trabaja con 2 lineas espectrales para investigar la maxima energia de los electrones como una funcion de la
-    intensidad. Se descarga por completo el capacitor, y al comenzar el tiempo se incide el haz de luz sobre el catodo
-    del diodo fotoelectrico en vacio, cargando el capacitor. Al estabilizarse la tension, se cargó el capacitor
+    Se trabaja con 2 líneas espectrales para investigar la máxima energía de los electrones como una funcion de la
+    intensidad. Se descarga por completo el capacitor, y al comenzar el tiempo se incide el haz de luz sobre el cátodo
+    del diodo fotoeléctrico en vacío, cargando el capacitor. Al estabilizarse la tensión, se cargó el capacitor
     y el tiempo se frena. Se prueba esto para distintas intensidades de luz, colocando un filtro
 
     \begin{table}[htbp!]
@@ -145,18 +145,18 @@ Luciano Cortesini\\
         \label{tab:datos experiencia 1}
     \end{table}
 
-
+\noindent
 \begin{figure}[htbp]
     \noindent % Prevents indentation
-    \begin{minipage}{0.45\textwidth} % Left side (first figure)
+    \begin{minipage}{0.4\textwidth} % Left side (first figure)
         \raggedright % Aligns the first table to the left
         \begin{tikzpicture}
             \begin{axis}[
               title={Verde},
               xlabel={Intensidad [$\%$]},
               ylabel={$V_0$ [mV]},
-              width=8cm,
-              height=8cm,
+              width=7cm,
+              height=7cm,
               yticklabel style={/pgf/number format/fixed,/pgf/number format/precision=3},
               ytick distance = 10,
               xtick distance = 20,
@@ -169,15 +169,15 @@ Luciano Cortesini\\
         \end{tikzpicture}
     \end{minipage}
     \hfill % Adds space between the two minipages
-    \begin{minipage}{0.45\textwidth} % Right side (second figure)
+    \begin{minipage}{0.4\textwidth} % Right side (second figure)
         \raggedleft % Aligns the second table to the right
         \begin{tikzpicture}
             \begin{axis}[
               title={Amarillo},
               xlabel={Intensidad [$\%$]},
               ylabel={$V_0$ [mV]},
-              width=8cm,
-              height=8cm,
+              width=7cm,
+              height=7cm,
               ytick distance = 10,
               xtick distance = 20,
               grid=major,
@@ -189,15 +189,15 @@ Luciano Cortesini\\
         \end{tikzpicture}
     \end{minipage}
     \hfill % Adds space between the two minipages
-    \begin{minipage}{0.45\textwidth} % Right side (second figure)
+    \begin{minipage}{0.4\textwidth} % Right side (second figure)
         \raggedleft % Aligns the second table to the right
         \begin{tikzpicture}
             \begin{axis}[
               title={},
               xlabel={Intensidad [$\%$]},
               ylabel={t [s]},
-              width=8cm,
-              height=8cm,
+              width=7cm,
+              height=7cm,
               ytick distance = 3,
               xtick distance = 20,
               grid=major,
@@ -209,15 +209,15 @@ Luciano Cortesini\\
         \end{tikzpicture}
     \end{minipage}
     \hfill % Adds space between the two minipages
-    \begin{minipage}{0.45\textwidth} % Right side (second figure)
+    \begin{minipage}{0.4\textwidth} % Right side (second figure)
         \raggedleft % Aligns the second table to the right
         \begin{tikzpicture}
             \begin{axis}[
               title={},
               xlabel={Intensidad [$\%$]},
               ylabel={t [s]},
-              width=8cm,
-              height=8cm,
+              width=7cm,
+              height=7cm,
               ytick distance = 2,
               xtick distance = 20,
               grid=major,
@@ -228,7 +228,7 @@ Luciano Cortesini\\
             \end{axis}
         \end{tikzpicture}
     \end{minipage}
-    \caption{Comparacion entre la intensidad y la tension de corte y tiempo de carga segun espectro}
+    \caption{Comparación entre la intensidad y la tensión de corte y tiempo de carga según espectro}
     \label{fig:comparison}
 \end{figure}
 \bigskip
@@ -237,17 +237,17 @@ Luciano Cortesini\\
 \bigskip
 \bigskip
   \section{Apartado B}
-    Se trabaja con 5 lineas espectrales y 2 ordenes de magnitud. Se calcula la energia cinetica maxima del electron
+    Se trabaja con 5 líneas espectrales y 2 órdenes de magnitud. Se calcula la energía cinética máxima del electrón
     ($W$), se obtiene un promedio para $W$, para la frecuencia ($f$) y para la funcion de trabajo ($eV_0$), y asi
-    calcular la constante de planck ($h$).
+    calcular la constante de Planck ($h$).
     Para calcular $W$ en cada linea espectral, utilizamos la siguiente formula:
     $$W = hf - eV_0$$
     donde:
     \begin{itemize}
-      \item $h$ = constante de planck ($6,62607015 \cdot 10^{-34} J \cdot s$)
+      \item $h$ = constante de Planck ($6,62607015 \cdot 10^{-34} J \cdot s$)
       \item $f$ = frecuencia [$Hz$]
       \item $e$ = carga elemental ($1.602176634 \cdot 10^{-19} C$)
-      \item $V_0$ = tension de corte [$V$]
+      \item $V_0$ = tensión de corte [$V$]
     \end{itemize}
 
     \begin{table}[htbp!]
@@ -315,58 +315,60 @@ Luciano Cortesini\\
     $$h = \frac{W - eV_0}{f}$$
     $$h = 6.62 \cdot 10^{-34}$$
 
-    \begin{minipage}{0.45\textwidth} % Right side (second figure)
-        \raggedleft % Aligns the second table to the right
-        \begin{tikzpicture}
-            \begin{axis}[
-              title={},
-              axis lines = center,
-              xlabel={$f$ [$10^{18} Hz$]},
-              ylabel={$V_0$ [V]},
-              width=15cm,
-              height=15cm,
-              ymin = -3, ymax = 3,
-              ytick distance = 0.5,
-              xmin = -5e16, xmax = 1e18,
-              xtick distance = 1e17,
-              grid=major,
-            ]
-            \addplot[red, mark=*] coordinates{
-            (0, -2.77374999999999995) (670392749244713000, 0)
-            };
+    \noindent
+    \begin{minipage}{0.35\textwidth} % Right side (second figure)
+      \noindent
+      \raggedleft % Aligns the second table to the right
+      \begin{tikzpicture}
+          \begin{axis}[
+            title={},
+            axis lines = center,
+            xlabel={$f$ [$10^{18} Hz$]},
+            ylabel={$V_0$ [V]},
+            width=15cm,
+            height=15cm,
+            ymin = -3, ymax = 3,
+            ytick distance = 0.5,
+            xmin = -5e16, xmax = 1e18,
+            xtick distance = 1e17,
+            grid=major,
+          ]
+          \addplot[red, mark=*] coordinates{
+          (0, -2.77374999999999995) (670392749244713000, 0)
+          };
 
-            \node[label={-2:{(0, -2.7737)}},circle,fill,inner sep=1pt] at (axis cs:0, -2.77374999999999995) {};
-            \node[label={135:{($6.703 \cdot 10^{17}$, 0)}},circle,fill,inner sep=1pt] at (axis cs:670392749244713000,
-            0) {};
+          \node[label={-2:{(0, -2.7737)}},circle,fill,inner sep=1pt] at (axis cs:0, -2.77374999999999995) {};
+          \node[label={135:{($6.703 \cdot 10^{17}$, 0)}},circle,fill,inner sep=1pt] at (axis cs:670392749244713000,
+          0) {};
 
-            \addplot[red, very thick][
-                domain = -5e16:1.1e19, % Defines the range for x
-                samples=20,      % Number of sample points for smoothness
-            ]
-            {(((6.62 * x) - 4.438e18) / 1.6e15) / 1000};
-            \addlegendentry{$V_0 = h/e \cdot f - W/e$}
-            \end{axis}
-        \end{tikzpicture}
+          \addplot[red, very thick][
+              domain = -5e16:1.1e19, % Defines the range for x
+              samples=20,      % Number of sample points for smoothness
+          ]
+          {(((6.62 * x) - 4.438e18) / 1.6e15) / 1000};
+          \addlegendentry{$V_0 = h/e \cdot f - W/e$}
+          \end{axis}
+      \end{tikzpicture}
     \end{minipage}
 
 \chapter{Conclusión}
 
-    Los resultados encontrados en el Apartado A reflejan una contradiccion a lo expuesto en el documento ya que podemos
-  ver que la tension de corte si varia segun la intensidad de la luz. Aun asi, creemos firmemente que esto es producto 
+    Los resultados encontrados en el Apartado A reflejan una contradicción a lo expuesto en el documento ya que podemos
+  ver que la tensión de corte si varía según la intensidad de la luz. Aun asi, creemos firmemente que esto es producto 
   de:
     \begin{itemize}
-      \item Errores en la medidcion: No era claro cuando estaba cargado el capacitor, ya que nunca se estabilizaba la
-      tension realmente, sino que era mas intuicion de cuando parar el tiempo.
+      \item Errores en la medición: No era claro cuando estaba cargado el capacitor, ya que nunca se estabilizaba la
+      tensión realmente, sino que era más intuición de cuando parar el tiempo.
       \item Instrumentos utilizados mal calibrados: Es muy probable que el lente para bajar la intensidad haya estado
-      vieja y descalibrada, provocando no solamente una disminucion en la intensidad de la luz sino que tambien
-      puede haber cambiado su direccion y demas variables no deseadas.
+      vieja y descalibrada, provocando no solamente una disminución en la intensidad de la luz, sino que tambien
+      puede haber cambiado su dirección y demas variables no deseadas.
     \end{itemize}
-  Todo esto influye directamente en las mediciones, obteniendo resultados erroneos. Para evitar tales discrepancias,
-  se recomienda siempre utilizar equipamento del mas alto nivel y teniendo precaucion a la hora de trabajar con ellos
-  para aumentar su vida util.
+  Todo esto influye directamente en las mediciones, obteniendo resultados erróneos. Para evitar tales discrepancias,
+  se recomienda siempre utilizar equipamiento del más alto nivel y teniendo precaución a la hora de trabajar con ellos
+  para aumentar su vida útil.
 
-  En el Apartado B se pudo visualizar mejor los resultados a partir de la realizacion del promedio, llegando mejor
-  a una media de los datos y asi comprobando el valor de la constante de planck a partir de datos medidos. Esto nos
-  permite concluir que el efecto fotoelectrico es real y que hay una energia asociada a cada onda del espectro.
+  En el Apartado B se pudo visualizar mejor los resultados a partir de la realización del promedio, llegando mejor
+  a una media de los datos y asi comprobando el valor de la constante de Planck a partir de datos medidos. Esto nos
+  permite concluir que el efecto fotoeléctrico es real y que hay una energía asociada a cada onda del espectro.
 
 \end{document}
