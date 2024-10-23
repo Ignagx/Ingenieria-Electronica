@@ -86,12 +86,12 @@ Luciano Cortesini - 402719\\
 \chapter{Experiencia de laboratorio}
   Utilizamos una fuente de luz que genera líneas espectrales. Se regulan los vástagos que sostienen la lente convexa
   para que el punto focal este exactamente sobre el cátodo del diodo foto eléctrico en vacío dentro del aparato h/e,
-  conectado al circuito (ref). Al incidir el haz de luz, se emiten los electrones del cátodo al ánodo y se carga el
+  conectado al circuito \ref{circuito}. Al incidir el haz de luz, se emiten los electrones del cátodo al ánodo y se carga el
   capacitor. Al estabilizarse la tensión medida, significa que ya está cargado el capacitor y la corriente en ese
   momento es nula. El tiempo en el que se carga del condensador y la carga en éste dependerá de la frecuencia que
   incida sobre el cátodo.
 
-
+  \begin{figure}[h!]
     \begin{circuitikz}
       \centering
       \draw (0,0) arc[start angle=90,end angle=-90,radius=0.5 cm];
@@ -108,6 +108,9 @@ Luciano Cortesini - 402719\\
       \draw (0.5cm,-0.5cm) -- (80mm,-0.5cm);
       \draw [-|] (80mm, 20mm ) to[voltmeter, -](80mm, -5.1mm);
     \end{circuitikz}
+    \caption{Circuito dentro del aparato h/e}
+    \label{circuito}
+  \end{figure}
 
   \section{Apartado A}
     Se trabaja con 2 líneas espectrales para investigar la máxima energía de los electrones como una funcion de la
