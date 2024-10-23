@@ -12,7 +12,7 @@
 \pagestyle{fancy}
 \fancyhf{} 
 \fancyhead[L]{UTN-FRC}
-\fancyhead[C]{FÍSICA ELECTRÓNICA: EFECTO FOTOELECTRICO}
+\fancyhead[C]{Fisica Electronica: Efecto Fotoeléctrico}
 \fancyhead[R]{2R3}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancyfoot[C]{\vfill\thepage}
@@ -92,8 +92,8 @@ Luciano Cortesini - 402719\\
   incida sobre el cátodo.
 
   \begin{figure}[h!]
+    \hspace{1.2cm}
     \begin{circuitikz}
-      \centering
       \draw (0,0) arc[start angle=90,end angle=-90,radius=0.5 cm];
       \fill (-3mm,-0.5 cm) circle (0.2);
       \draw[very thick] (-27mm,4mm) -- (-17mm,-3mm);
@@ -109,7 +109,6 @@ Luciano Cortesini - 402719\\
       \draw [-|] (80mm, 20mm ) to[voltmeter, -](80mm, -5.1mm);
     \end{circuitikz}
     \caption{Circuito dentro del aparato h/e}
-    \label{circuito}
   \end{figure}
 
   \section{Apartado A}
@@ -118,128 +117,126 @@ Luciano Cortesini - 402719\\
     del diodo fotoeléctrico en vacío, cargando el capacitor. Al estabilizarse la tensión, se cargó el capacitor
     y el tiempo se frena. Se prueba esto para distintas intensidades de luz, colocando un filtro
 
-    \begin{table}[htbp!]
-        \centering
-        \begin{tabular}{|c|c|c|c|}
-        \hline
-        Linea Espectral & Intensidad [\%] & $V_0$ [mV]& Tiempo [s]\\
-        \hline
-        \multirow{5}{*}{Verde} & 100 & 368.5 & 53.26 \\
-                                \cline{2-4}
-                                &  80 & 350.3 & 74.76 \\
-                                \cline{2-4}
-                                &  60 & 330.6 & 50.54 \\
-                                \cline{2-4}
-                                &  40 & 303.1 & 43.34 \\
-                                \cline{2-4}
-                                &  20 & 268.3 & 38.44 \\
-        \hline
-        \multirow{5}{*}{Amarillo} & 100 & 306.1 & 35 \\
-                                \cline{2-4}
-                                  &  80 & 293.6 & 40.25 \\
-                                \cline{2-4}
-                                  &  60 & 279.7 & 50.20 \\
-                                \cline{2-4}
-                                  &  40 & 261.3 & 40.68 \\
-                                \cline{2-4}
-                                  &  20 & 231 & 31.1 \\
-        \hline
-        \end{tabular}
-        \caption{Cuadro de valores medidos}
-        \label{tab:datos experiencia 1}
-    \end{table}
+    \begin{table}[h!]
+      \centering
+      \begin{tabular}{|c|c|c|c|}
+      \hline
+      Linea Espectral & Intensidad [\%] & $V_0$ [mV]& Tiempo [s]\\
+      \hline
+      \multirow{5}{*}{Verde} & 100 & 368.5 & 53.26 \\
+                              \cline{2-4}
+                              &  80 & 350.3 & 74.76 \\
+                              \cline{2-4}
+                              &  60 & 330.6 & 50.54 \\
+                              \cline{2-4}
+                              &  40 & 303.1 & 43.34 \\
+                              \cline{2-4}
+                              &  20 & 268.3 & 38.44 \\
+      \hline
+      \multirow{5}{*}{Amarillo} & 100 & 306.1 & 35 \\
+                              \cline{2-4}
+                                &  80 & 293.6 & 40.25 \\
+                              \cline{2-4}
+                                &  60 & 279.7 & 50.20 \\
+                              \cline{2-4}
+                                &  40 & 261.3 & 40.68 \\
+                              \cline{2-4}
+                                &  20 & 231 & 31.1 \\
+      \hline
+      \end{tabular}
+      \caption{Cuadro de valores medidos}
+    \label{tab:datos experiencia 1}
+  \end{table}
 
-\noindent
-\begin{figure}[htbp]
-    \noindent % Prevents indentation
-    \begin{minipage}{0.4\textwidth} % Left side (first figure)
-        \raggedright % Aligns the first table to the left
-        \begin{tikzpicture}
-            \begin{axis}[
-              title={Verde},
-              xlabel={Intensidad [$\%$]},
-              ylabel={$V_0$ [mV]},
-              width=7cm,
-              height=7cm,
-              yticklabel style={/pgf/number format/fixed,/pgf/number format/precision=3},
-              ytick distance = 10,
-              xtick distance = 20,
-              grid=major,
-            ]
-            \addplot[green, mark=*] coordinates {
-              (100,368.5) (80,350.3) (60,330.6) (40,303.1) (20,268.3)
-            };
-            \end{axis}
-        \end{tikzpicture}
-    \end{minipage}
-    \hfill % Adds space between the two minipages
-    \begin{minipage}{0.4\textwidth} % Right side (second figure)
-        \raggedleft % Aligns the second table to the right
-        \begin{tikzpicture}
-            \begin{axis}[
-              title={Amarillo},
-              xlabel={Intensidad [$\%$]},
-              ylabel={$V_0$ [mV]},
-              width=7cm,
-              height=7cm,
-              ytick distance = 10,
-              xtick distance = 20,
-              grid=major,
-            ]
-            \addplot[yellow, mark=*] coordinates {
-              (100,306.1) (80,293.6) (60,279.7) (40,261.3) (20,231)
-            };
-            \end{axis}
-        \end{tikzpicture}
-    \end{minipage}
-    \hfill % Adds space between the two minipages
-    \begin{minipage}{0.4\textwidth} % Right side (second figure)
-        \raggedleft % Aligns the second table to the right
-        \begin{tikzpicture}
-            \begin{axis}[
-              title={},
-              xlabel={Intensidad [$\%$]},
-              ylabel={t [s]},
-              width=7cm,
-              height=7cm,
-              ytick distance = 3,
-              xtick distance = 20,
-              grid=major,
-            ]
-            \addplot[green, mark=*] coordinates {
-              (100,53.26) (80,74.76) (60,50.54) (40,45.34) (20,38.44)
-            };
-            \end{axis}
-        \end{tikzpicture}
-    \end{minipage}
-    \hfill % Adds space between the two minipages
-    \begin{minipage}{0.4\textwidth} % Right side (second figure)
-        \raggedleft % Aligns the second table to the right
-        \begin{tikzpicture}
-            \begin{axis}[
-              title={},
-              xlabel={Intensidad [$\%$]},
-              ylabel={t [s]},
-              width=7cm,
-              height=7cm,
-              ytick distance = 2,
-              xtick distance = 20,
-              grid=major,
-            ]
-            \addplot[yellow, mark=*] coordinates {
-              (100,35) (80,40.25) (60,50.2) (40,40.68) (20,31.1)
-            };
-            \end{axis}
-        \end{tikzpicture}
-    \end{minipage}
-    \caption{Comparación entre la intensidad y la tensión de corte y tiempo de carga según espectro}
-    \label{fig:comparison}
-\end{figure}
-\bigskip
-\bigskip
-\bigskip
-\bigskip
-\bigskip
+  \newpage
+
+  \noindent
+  \begin{figure}[h!]
+      \noindent % Prevents indentation
+      \begin{minipage}{0.4\textwidth} % Left side (first figure)
+          \begin{tikzpicture}
+              \begin{axis}[
+                title={Verde},
+                xlabel={Intensidad [$\%$]},
+                ylabel={$V_0$ [mV]},
+                width=7cm,
+                height=7cm,
+                yticklabel style={/pgf/number format/fixed,/pgf/number format/precision=3},
+                ytick distance = 10,
+                xtick distance = 20,
+                grid=major,
+              ]
+              \addplot[green, mark=*] coordinates {
+                (100,368.5) (80,350.3) (60,330.6) (40,303.1) (20,268.3)
+              };
+              \end{axis}
+          \end{tikzpicture}
+      \end{minipage}
+      \hspace{1cm}
+      \begin{minipage}{0.4\textwidth} % Right side (second figure)
+          \begin{tikzpicture}
+              \begin{axis}[
+                title={Amarillo},
+                xlabel={Intensidad [$\%$]},
+                ylabel={$V_0$ [mV]},
+                width=7cm,
+                height=7cm,
+                ytick distance = 10,
+                xtick distance = 20,
+                grid=major,
+              ]
+              \addplot[yellow, mark=*] coordinates {
+                (100,306.1) (80,293.6) (60,279.7) (40,261.3) (20,231)
+              };
+              \end{axis}
+          \end{tikzpicture}
+      \end{minipage}
+    \end{figure}
+
+    \begin{figure}[h!]
+      \begin{minipage}{0.4\textwidth} % Right side (second figure)
+          \begin{tikzpicture}
+              \begin{axis}[
+                title={},
+                xlabel={Intensidad [$\%$]},
+                ylabel={t [s]},
+                width=7cm,
+                height=7cm,
+                ytick distance = 3,
+                xtick distance = 20,
+                grid=major,
+              ]
+              \addplot[green, mark=*] coordinates {
+                (100,53.26) (80,74.76) (60,50.54) (40,45.34) (20,38.44)
+              };
+              \end{axis}
+          \end{tikzpicture}
+      \end{minipage}
+      \hspace{1cm}
+      \begin{minipage}{0.4\textwidth} % Right side (second figure)
+          \begin{tikzpicture}
+              \begin{axis}[
+                title={},
+                xlabel={Intensidad [$\%$]},
+                ylabel={t [s]},
+                width=7cm,
+                height=7cm,
+                ytick distance = 2,
+                xtick distance = 20,
+                grid=major,
+              ]
+              \addplot[yellow, mark=*] coordinates {
+                (100,35) (80,40.25) (60,50.2) (40,40.68) (20,31.1)
+              };
+              \end{axis}
+          \end{tikzpicture}
+      \end{minipage}
+      \caption{Comparación entre la intensidad y la tensión de corte y tiempo de carga según espectro}
+      \label{fig:comparison}
+  \end{figure}
+
+  \newpage
+
   \section{Apartado B}
     Se trabaja con 5 líneas espectrales y 2 órdenes de magnitud. Se calcula la energía cinética máxima del electrón
     ($W$), se obtiene un promedio para $W$, para la frecuencia ($f$) y para la funcion de trabajo ($eV_0$), y asi
