@@ -1,0 +1,62 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage{adjustbox}
+\usepackage[left=2.5cm,right=2.5cm,top=3cm,bottom=2.5cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{circuitikz} % Para dibujar circuitos
+\usepackage{etoolbox}
+\usepackage{multirow}
+\usepackage{titlesec}
+\usepackage{titling} 
+\usepackage{pgfplots}
+
+\pagestyle{fancy}
+\fancyhf{} 
+\fancyhead[L]{UTN-FRC}
+\fancyhead[C]{Fisica Electronica: Efecto Compton}
+\fancyhead[R]{2R3}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancyfoot[C]{\vfill\thepage}
+\setlength{\headwidth}{\textwidth} % Hace que el ancho del encabezado coincida con el ancho del texto
+\setlength{\headheight}{15pt}  % Ajusta la altura del encabezado
+\setlength{\headsep}{20pt}     % Ajusta la separación entre el encabezado y el contenido
+
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalfont\Large\bfseries}{}{0pt}{}
+\titlespacing*{\chapter}{10pt}{-45pt}{10pt}
+
+\usepackage{etoolbox} 
+\makeatletter
+\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{} %Muestra encabezado en las páginas con \chapter
+\makeatother
+
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries}{}{0pt}{\huge}
+\titlespacing*{\chapter}{0pt}{-30pt}{20pt}
+
+\DeclareMathSizes{12}{13}{6}{5}
+
+\title{%
+  \fontsize{25}{0}\selectfont Universidad Tecnológica Nacional \\
+  \fontsize{22}{30}\selectfont Física Electrónica \\
+  \fontsize{18}{25}\selectfont TPL 4: Efecto Compton
+}
+\author{
+Franco Palombo - 401910\\
+Gaston Grasso - 401892\\
+Ignacio Gil - 401891\\
+Luciano Cortesini - 402719\\
+}
+\date{30 / 10 / 2024}
+
+\begin{document}
+
+\maketitle
+
+\chapter{Introducción}
+
+\chapter{Experiencia de laboratorio}
+  \section{Instrumentos utilizados}
+  \section{Mediciones}
+\chapter{Conclusión}
+\end{document}
