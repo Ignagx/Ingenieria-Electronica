@@ -1,0 +1,141 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[left=2.5cm,right=2.5cm,top=3cm,bottom=2.5cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{etoolbox}
+\usepackage{titlesec}
+\usepackage{titling} 
+\usepackage{pgfplots}
+\usepackage{array}
+
+\pagestyle{fancy}
+\fancyhf{} 
+\fancyhead[L]{UTN-FRC}
+\fancyhead[C]{FÍSICA ELECTRÓNICA: Caga especifica del electrón}
+\fancyhead[R]{2R3}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancyfoot[C]{\vfill\thepage}
+\setlength{\headwidth}{\textwidth} % Hace que el ancho del encabezado coincida con el ancho del texto
+\setlength{\headheight}{15pt}  % Ajusta la altura del encabezado
+\setlength{\headsep}{20pt}     % Ajusta la separación entre el encabezado y el contenido
+
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalfont\Large\bfseries}{}{0pt}{}
+\titlespacing*{\chapter}{10pt}{-45pt}{10pt}
+
+\usepackage{etoolbox} 
+\makeatletter
+\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{} %Muestra encabezado en las paginas con \chapter
+\makeatother
+
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries}{}{0pt}{\huge}
+\titlespacing*{\chapter}{0pt}{-30pt}{20pt}
+
+\DeclareMathSizes{12}{13}{6}{5}
+
+\title{
+  \fontsize{25}{0}\selectfont Universidad Tecnológica Nacional \\
+  \fontsize{22}{30}\selectfont Física Electrónica \\
+  \fontsize{18}{25}\selectfont TPL 3: CARGA ESPECIFICA DEL ELECTRON $\frac{E}{M}$\\ 
+}
+\author{
+Franco Palombo\\
+Gaston Grasso\\
+Ignacio Gil\\
+Luciano Cortesini\\
+}
+\date{25 / 10 / 2024}
+
+\begin{document}
+
+\maketitle
+
+\chapter{Introduccion}
+
+\chapter{Tablas}
+
+% Tabla para Radio cm = 5
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Ih (Amp)} & \textbf{U (Volts)} \\ \hline
+        1.59 & 300 \\ \hline
+        1.54 & 280 \\ \hline
+        1.49 & 260 \\ \hline
+        1.44 & 240 \\ \hline
+        1.36 & 220 \\ \hline
+        1.31 & 200 \\ \hline
+        1.24 & 180 \\ \hline
+        1.18 & 160 \\ \hline
+        1.09 & 140 \\ \hline
+        0.98 & 120 \\ \hline
+    \end{tabular}
+    \caption{Datos para Radio cm = 5}
+\end{table}
+
+% Tabla para Radio cm = 4
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Ih (Amp)} & \textbf{U (Volts)} \\ \hline
+        1.98 & 300 \\ \hline
+        1.90 & 280 \\ \hline
+        1.83 & 260 \\ \hline
+        1.77 & 240 \\ \hline
+        1.69 & 220 \\ \hline
+        1.63 & 200 \\ \hline
+        1.54 & 180 \\ \hline
+        1.44 & 160 \\ \hline
+        1.36 & 140 \\ \hline
+        1.24 & 120 \\ \hline
+    \end{tabular}
+    \caption{Datos para Radio cm = 4}
+\end{table}
+
+% Tabla para Radio cm = 3
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Ih (Amps)} & \textbf{U (Volts)} \\ \hline
+        2.66 & 300 \\ \hline
+        2.53 & 280 \\ \hline
+        2.44 & 260 \\ \hline
+        2.36 & 240 \\ \hline
+        2.26 & 220 \\ \hline
+        2.16 & 200 \\ \hline
+        2.03 & 180 \\ \hline
+        1.91 & 160 \\ \hline
+        1.80 & 140 \\ \hline
+        1.64 & 120 \\ \hline
+    \end{tabular}
+    \caption{Datos para Radio cm = 3}
+\end{table}
+
+% Tabla para Radio cm = 2
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Ih (Amp)} & \textbf{U (Volts)} \\ \hline
+      3.91 & 300 \\ \hline
+      3.78 & 280 \\ \hline
+      3.64 & 260 \\ \hline
+      3.54 & 240 \\ \hline
+      3.37 & 220 \\ \hline
+      3.19 & 200 \\ \hline
+      3.04 & 180 \\ \hline
+      2.89 & 160 \\ \hline
+      2.74 & 140 \\ \hline
+      2.43 & 120 \\ \hline
+    \end{tabular}
+    \caption{Datos para Radio cm = 2}
+\end{table}
+
+\end{document}
+
+
+
