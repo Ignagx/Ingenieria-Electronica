@@ -6,11 +6,12 @@
 \usepackage{titling} 
 \usepackage{pgfplots}
 \usepackage{array}
+\usepackage{amsmath}
 
 \pagestyle{fancy}
 \fancyhf{} 
 \fancyhead[L]{UTN-FRC}
-\fancyhead[C]{FÍSICA ELECTRÓNICA: Caga especifica del electrón}
+\fancyhead[C]{Fisica Electronica: Caga especifica del electrón}
 \fancyhead[R]{2R3}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancyfoot[C]{\vfill\thepage}
@@ -35,9 +36,9 @@
 \DeclareMathSizes{12}{13}{6}{5}
 
 \title{
-  \fontsize{25}{0}\selectfont Universidad Tecnológica Nacional \\
-  \fontsize{22}{30}\selectfont Física Electrónica \\
-  \fontsize{18}{25}\selectfont TPL 3: CARGA ESPECIFICA DEL ELECTRON $\frac{E}{M}$\\ 
+  \fontsize{25}{0}\selectfont Universidad Tecnológica Nacional\\
+  \fontsize{22}{30}\selectfont Física Electrónica\\
+  \fontsize{18}{25}\selectfont TPL 3: CARGA ESPECIFICA DEL ELECTRON\\
 }
 \author{
 Franco Palombo\\
@@ -53,87 +54,143 @@ Luciano Cortesini\\
 
 \chapter{Introduccion}
 
-\chapter{Tablas}
+    Una particula con carga que viaja por el espacio, emite una onda electromagnetica a su paso. Un electron, es una
+    particula con carga negativa, que al ser acelerada por un potencial de aceleracion $V$, describe una rapidez $v$.
+    Este potencial de aceleracion, tambien se puede entender como la energia que tiene el electron. Esta energia, se
+    traduce a energia cinetica, haciendo que el electron describa una velocidad en direccion opuesta a cualquier otra
+    carga de su mismo signo:
+    \begin{figure}[h!]
+        \centering
+        \begin{minipage}{0.3\textwidth}
+            \begin{equation*}
+                \frac{1}{2} m v^2 = eV
+            \end{equation*}
+        \end{minipage}
+        \begin{minipage}{0.3\textwidth}
+            \begin{equation}
+                \label{v.electron}
+                v = \sqrt{\frac{2 eV}{m}}
+            \end{equation}
+        \end{minipage}
+    \end{figure}
 
-% Tabla para Radio cm = 5
-\begin{table}[h]
-    \centering
-    \begin{tabular}{|c|c|}
-        \hline
-        \textbf{Ih (Amp)} & \textbf{U (Volts)} \\ \hline
-        1.59 & 300 \\ \hline
-        1.54 & 280 \\ \hline
-        1.49 & 260 \\ \hline
-        1.44 & 240 \\ \hline
-        1.36 & 220 \\ \hline
-        1.31 & 200 \\ \hline
-        1.24 & 180 \\ \hline
-        1.18 & 160 \\ \hline
-        1.09 & 140 \\ \hline
-        0.98 & 120 \\ \hline
-    \end{tabular}
-    \caption{Datos para Radio cm = 5}
-\end{table}
+    Cuando una partícula cargada se mueve en un campo magnético, sobre ella actúa la fuerza magnética dada por la
+    siguiente ecuación:
+    \begin{equation}
+        \vec{F} = q \vec{v} \times \vec{B}
+    \end{equation}
+    y su movimiento está determinado por las leyes de Newton.
 
-% Tabla para Radio cm = 4
-\begin{table}[h]
-    \centering
-    \begin{tabular}{|c|c|}
-        \hline
-        \textbf{Ih (Amp)} & \textbf{U (Volts)} \\ \hline
-        1.98 & 300 \\ \hline
-        1.90 & 280 \\ \hline
-        1.83 & 260 \\ \hline
-        1.77 & 240 \\ \hline
-        1.69 & 220 \\ \hline
-        1.63 & 200 \\ \hline
-        1.54 & 180 \\ \hline
-        1.44 & 160 \\ \hline
-        1.36 & 140 \\ \hline
-        1.24 & 120 \\ \hline
-    \end{tabular}
-    \caption{Datos para Radio cm = 4}
-\end{table}
+    En el caso de que el campo magnetico sea permendicular al plano de movimiento de la particula cargada, esta
+    va a describir un movimiento circular uniforme, por tiempo indeterminado, donde $\vec{F}$ va a proporcionar la
+    aceleracion centripeta para mantener a la particula girando de manera indeterminada en circulo hasta que se
+    remueva el campo magnetico o cambie su perpendicularidad.
 
-% Tabla para Radio cm = 3
-\begin{table}[h]
-    \centering
-    \begin{tabular}{|c|c|}
-        \hline
-        \textbf{Ih (Amps)} & \textbf{U (Volts)} \\ \hline
-        2.66 & 300 \\ \hline
-        2.53 & 280 \\ \hline
-        2.44 & 260 \\ \hline
-        2.36 & 240 \\ \hline
-        2.26 & 220 \\ \hline
-        2.16 & 200 \\ \hline
-        2.03 & 180 \\ \hline
-        1.91 & 160 \\ \hline
-        1.80 & 140 \\ \hline
-        1.64 & 120 \\ \hline
-    \end{tabular}
-    \caption{Datos para Radio cm = 3}
-\end{table}
+    Por lo tanto, trayendo de la teoria del movimiento circular uniforme, tenemos que:
+    \begin{equation*}
+        F = |q| v B = m \frac{v^2}{r}
+    \end{equation*}
+    donde m es la masa de la partícula. 
+    Si volvemos a que nuestra particula cargada es un electron, la carga del electron es $e$, por lo que $|q| = e$.
+    Entonces, reemplazando $v$ por la expresion que obtivimos en (\ref{v.electron}), nos queda:
+    \begin{equation*}
+        e B = m \frac{\sqrt{\frac{2 eV}{m}}}{r}
+    \end{equation*}
+    Ahora, si despejamos para quedarnos con $\frac{e}{m}$:
+    \begin{equation}
+        \label{relac.e/m}
+        \frac{e}{m} = 2 \frac{V}{(r B)^2}
+    \end{equation}
 
-% Tabla para Radio cm = 2
-\begin{table}[h]
-    \centering
-    \begin{tabular}{|c|c|}
-        \hline
-        \textbf{Ih (Amp)} & \textbf{U (Volts)} \\ \hline
-      3.91 & 300 \\ \hline
-      3.78 & 280 \\ \hline
-      3.64 & 260 \\ \hline
-      3.54 & 240 \\ \hline
-      3.37 & 220 \\ \hline
-      3.19 & 200 \\ \hline
-      3.04 & 180 \\ \hline
-      2.89 & 160 \\ \hline
-      2.74 & 140 \\ \hline
-      2.43 & 120 \\ \hline
-    \end{tabular}
-    \caption{Datos para Radio cm = 2}
-\end{table}
+\chapter{Experiencia}
+    Para la realización de la experiencia de la medición de la carga específica del electrón se utilizan un dispositivo
+    compuesto por dos elementos básicos:
+    \begin{itemize}
+        \item El tubo de rayos filiformes, que genera los electrones y los acelera bajo la acción de una diferencia de
+            potencial.
+        \item Un par de bobinas de Helmholtz encargadas de generar el campo magnético uniforme al cual serán sometidos
+            los electrones.
+    \end{itemize}
+
+    % Tabla para Radio cm = 5
+    \begin{table}[h]
+        \centering
+        \begin{tabular}{|c|c|}
+            \hline
+            \textbf{Ih (Amp)} & \textbf{U (Volts)} \\ \hline
+            1.59 & 300 \\ \hline
+            1.54 & 280 \\ \hline
+            1.49 & 260 \\ \hline
+            1.44 & 240 \\ \hline
+            1.36 & 220 \\ \hline
+            1.31 & 200 \\ \hline
+            1.24 & 180 \\ \hline
+            1.18 & 160 \\ \hline
+            1.09 & 140 \\ \hline
+            0.98 & 120 \\ \hline
+        \end{tabular}
+        \caption{Datos para Radio cm = 5}
+    \end{table}
+    
+    % Tabla para Radio cm = 4
+    \begin{table}[h]
+        \centering
+        \begin{tabular}{|c|c|}
+            \hline
+            \textbf{Ih (Amp)} & \textbf{U (Volts)} \\ \hline
+            1.98 & 300 \\ \hline
+            1.90 & 280 \\ \hline
+            1.83 & 260 \\ \hline
+            1.77 & 240 \\ \hline
+            1.69 & 220 \\ \hline
+            1.63 & 200 \\ \hline
+            1.54 & 180 \\ \hline
+            1.44 & 160 \\ \hline
+            1.36 & 140 \\ \hline
+            1.24 & 120 \\ \hline
+        \end{tabular}
+        \caption{Datos para Radio cm = 4}
+    \end{table}
+    
+    % Tabla para Radio cm = 3
+    \begin{table}[h]
+        \centering
+        \begin{tabular}{|c|c|}
+            \hline
+            \textbf{Ih (Amps)} & \textbf{U (Volts)} \\ \hline
+            2.66 & 300 \\ \hline
+            2.53 & 280 \\ \hline
+            2.44 & 260 \\ \hline
+            2.36 & 240 \\ \hline
+            2.26 & 220 \\ \hline
+            2.16 & 200 \\ \hline
+            2.03 & 180 \\ \hline
+            1.91 & 160 \\ \hline
+            1.80 & 140 \\ \hline
+            1.64 & 120 \\ \hline
+        \end{tabular}
+        \caption{Datos para Radio cm = 3}
+    \end{table}
+    
+    % Tabla para Radio cm = 2
+    \begin{table}[h]
+        \centering
+        \begin{tabular}{|c|c|}
+            \hline
+            \textbf{Ih (Amp)} & \textbf{U (Volts)} \\ \hline
+          3.91 & 300 \\ \hline
+          3.78 & 280 \\ \hline
+          3.64 & 260 \\ \hline
+          3.54 & 240 \\ \hline
+          3.37 & 220 \\ \hline
+          3.19 & 200 \\ \hline
+          3.04 & 180 \\ \hline
+          2.89 & 160 \\ \hline
+          2.74 & 140 \\ \hline
+          2.43 & 120 \\ \hline
+        \end{tabular}
+        \caption{Datos para Radio cm = 2}
+    \end{table}
 
 \end{document}
 
