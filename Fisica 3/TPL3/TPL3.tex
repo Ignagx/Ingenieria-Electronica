@@ -7,6 +7,7 @@
 \usepackage{pgfplots}
 \usepackage{array}
 \usepackage{amsmath}
+\usepackage{caption}
 
 \pagestyle{fancy}
 \fancyhf{} 
@@ -112,9 +113,11 @@ Luciano Cortesini\\
             los electrones.
     \end{itemize}
 
-    % Tabla para Radio cm = 5
-    \begin{table}[h]
-        \centering
+% Tabla y gráfico para Radio cm = 5
+\begin{table}[h]
+    \centering
+    \begin{minipage}{0.35\textwidth}
+        \centering \captionsetup{labelformat=empty} % sin "Table 1"
         \begin{tabular}{|c|c|}
             \hline
             \textbf{Ih (Amp)} & \textbf{U (Volts)} \\ \hline
@@ -130,11 +133,42 @@ Luciano Cortesini\\
             0.98 & 120 \\ \hline
         \end{tabular}
         \caption{Datos para Radio cm = 5}
-    \end{table}
-    
-    % Tabla para Radio cm = 4
-    \begin{table}[h]
+    \end{minipage}%
+    \hfill
+    \begin{minipage}{0.55\textwidth}
         \centering
+        \centering \captionsetup{labelformat=empty} % sin "Table 1"
+        \begin{tikzpicture}
+            \begin{axis}[
+                xlabel={$ (rB)^2 \cdot 10^{-9}$},
+                ylabel={$ 2U $},
+                xmin=0, xmax=5,
+                ymin=0, ymax=700,
+                width=1\textwidth,
+                height=0.3\textheight
+            ]
+            \addplot+[
+                only marks,
+                mark=*,
+                mark size=2pt
+            ] coordinates {
+                (3.49, 600) (3.27, 560) (3.06, 520) (2.86, 480)
+                (2.55, 440) (2.37, 400) (2.12, 360) (1.92, 320)
+                (1.64, 280) (1.32, 240)
+            };
+            \addplot[domain=0:10, samples=2, thick] {168.55 * x + 5.36};
+            \end{axis}
+        \end{tikzpicture}
+        \caption*{Y = 168.55$\cdot$x + 5.36}
+    \end{minipage}
+\end{table}
+
+% Tabla y gráfico para Radio cm = 4
+\begin{table}[h]
+    \centering
+    \begin{minipage}{0.35\textwidth}
+        \centering
+        \captionsetup{labelformat=empty} % sin "Table 1"
         \begin{tabular}{|c|c|}
             \hline
             \textbf{Ih (Amp)} & \textbf{U (Volts)} \\ \hline
@@ -150,14 +184,45 @@ Luciano Cortesini\\
             1.24 & 120 \\ \hline
         \end{tabular}
         \caption{Datos para Radio cm = 4}
-    \end{table}
-    
-    % Tabla para Radio cm = 3
-    \begin{table}[h]
+    \end{minipage}%
+    \hfill
+    \begin{minipage}{0.55\textwidth}
         \centering
+        \captionsetup{labelformat=empty} % sin "Table 1"
+        \begin{tikzpicture}
+            \begin{axis}[
+                xlabel={$ (rB)^2 \cdot 10^{-9}$},
+                ylabel={$ 2U $},
+                xmin=0, xmax=5,
+                ymin=0, ymax=700,
+                width=1\textwidth,
+                height=0.3\textheight
+            ]
+            \addplot+[
+                only marks,
+                mark=*,
+                mark size=2pt
+            ] coordinates {
+                (3.46, 600) (3.19, 560) (2.9, 520) (2.76, 480)
+                (2.52, 440) (2.34, 400) (2.09, 360) (1.83, 320)
+                (1.63, 280) (1.35, 240)
+            };
+            \addplot[domain=0:10, samples=2, thick] { 175.77 * x -3.08};
+            \end{axis}
+        \end{tikzpicture}
+        \caption*{Y = 175.77$\cdot$x - 3.08}
+    \end{minipage}
+\end{table}
+
+% Tabla y gráfico para Radio cm = 3
+\begin{table}[h]
+    \centering
+    \begin{minipage}{0.35\textwidth}
+        \centering
+        \captionsetup{labelformat=empty} % sin "Table 1"
         \begin{tabular}{|c|c|}
             \hline
-            \textbf{Ih (Amps)} & \textbf{U (Volts)} \\ \hline
+            \textbf{Ih (Amp)} & \textbf{U (Volts)} \\ \hline
             2.66 & 300 \\ \hline
             2.53 & 280 \\ \hline
             2.44 & 260 \\ \hline
@@ -170,27 +235,133 @@ Luciano Cortesini\\
             1.64 & 120 \\ \hline
         \end{tabular}
         \caption{Datos para Radio cm = 3}
-    \end{table}
-    
-    % Tabla para Radio cm = 2
-    \begin{table}[h]
+    \end{minipage}%
+    \hfill
+    \begin{minipage}{0.55\textwidth}
+        \centering
+        \captionsetup{labelformat=empty} % sin "Table 1"
+        \begin{tikzpicture}
+            \begin{axis}[
+                xlabel={$ (rB)^2 \cdot 10^{-9}$},
+                ylabel={$ 2U $},
+                xmin=0, xmax=5,
+                ymin=0, ymax=700,
+                width=1\textwidth,
+                height=0.27\textheight
+            ]
+            \addplot+[
+                only marks,
+                mark=*,
+                mark size=2pt
+            ] coordinates {
+                (3.51, 600) (3.18, 560) (2.96, 520) (2.76, 480)
+                (2.53, 440) (2.31, 400) (2.04, 360) (1.81, 320)
+                (1.61, 280) (1.33, 240)
+            };
+            \addplot[domain=0:10, samples=2, thick] {170.09 * x + 11.1};
+            \end{axis}
+        \end{tikzpicture}
+        \caption*{Y = 170.09$\cdot$x + 11.10}
+    \end{minipage}
+\end{table}
+
+% Tabla y gráfico para Radio cm = 2
+\begin{table}[h]
+    \centering
+        \captionsetup{labelformat=empty} % sin "Table 1"
+    \begin{minipage}{0.35\textwidth}
         \centering
         \begin{tabular}{|c|c|}
             \hline
             \textbf{Ih (Amp)} & \textbf{U (Volts)} \\ \hline
-          3.91 & 300 \\ \hline
-          3.78 & 280 \\ \hline
-          3.64 & 260 \\ \hline
-          3.54 & 240 \\ \hline
-          3.37 & 220 \\ \hline
-          3.19 & 200 \\ \hline
-          3.04 & 180 \\ \hline
-          2.89 & 160 \\ \hline
-          2.74 & 140 \\ \hline
-          2.43 & 120 \\ \hline
+            3.91 & 300 \\ \hline
+            3.78 & 280 \\ \hline
+            3.64 & 260 \\ \hline
+            3.54 & 240 \\ \hline
+            3.37 & 220 \\ \hline
+            3.19 & 200 \\ \hline
+            3.04 & 180 \\ \hline
+            2.89 & 160 \\ \hline
+            2.74 & 140 \\ \hline
+            2.43 & 120 \\ \hline
         \end{tabular}
         \caption{Datos para Radio cm = 2}
-    \end{table}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}{0.55\textwidth}
+        \centering
+        \captionsetup{labelformat=empty} % sin "Table 1"
+        \begin{tikzpicture}
+            \begin{axis}[
+                xlabel={$ (rB)^2 \cdot 10^{-9}$},
+                ylabel={$ 2U $},
+                xmin=0, xmax=5,
+                ymin=0, ymax=700,
+                width=1\textwidth,
+                height=0.27\textheight
+            ]
+            \addplot+[
+                only marks,
+                mark=*,
+                mark size=2pt
+            ] coordinates {
+                (3.37, 600) (3.15, 560) (2.92, 520) (2.76, 480)
+                (2.5, 440) (2.24, 400) (2.04, 360) (1.84, 320)
+                (1.65, 280) (1.3, 240)
+            };
+            \addplot[domain=0:10, samples=2, thick] { 178.09 * x -3.33};
+            \end{axis}
+        \end{tikzpicture}
+        \caption*{Y = 178.09$\cdot$x - 3.33}
+    \end{minipage}
+\end{table}
+
+\begin{figure}[b]
+\centering
+\captionsetup{labelformat=empty} % Sin "Table 1"
+\begin{tikzpicture}
+    \begin{axis}[
+        xlabel={$ (rB)^2 \cdot 10^{-9}$},
+        ylabel={$ 2U $},
+        xmin=0, xmax=5,
+        ymin=0, ymax=700,
+        width=0.9\textwidth,
+        height=0.28\textheight
+    ]
+    \addplot+[
+        only marks,
+        mark=*,
+        mark size=2pt
+    ] coordinates {
+        (3.37, 600) (3.15, 560) (2.92, 520) (2.76, 480)
+        (2.5, 440) (2.24, 400) (2.04, 360) (1.84, 320)
+        (1.65, 280) (1.3, 240)
+        (3.49, 600) (3.27, 560) (3.06, 520) (2.86, 480)
+        (2.55, 440) (2.37, 400) (2.12, 360) (1.92, 320)
+        (1.64, 280) (1.32, 240)
+        (3.46, 600) (3.19, 560) (2.9, 520) (2.76, 480)
+        (2.52, 440) (2.34, 400) (2.09, 360) (1.83, 320)
+        (1.63, 280) (1.35, 240)
+        (3.51, 600) (3.18, 560) (2.96, 520) (2.76, 480)
+        (2.53, 440) (2.31, 400) (2.04, 360) (1.81, 320)
+        (1.61, 280) (1.33, 240)
+    };
+    \addplot[domain=0:5, samples=2, thick] {172.59 * x + 3.7};
+    \end{axis}
+\end{tikzpicture}
+\caption*{TODOS LOS RADIOS: Y = 175.59$\cdot$x + 3.7 }
+\end{figure}
+
+\vspace{5cm}
+
+\chapter{Resultados}
+
+    En las tablas anteriores se presentan los datos obtenidos para diferentes radios. A partir de los gráficos obtenidos, podemos deducir la relación lineal entre $ (rB)^2 $ y $ 2U $. 
+    El ajuste de cada uno de los gráficos permite obtener la pendiente que está directamente relacionada con el valor de $ \frac{e}{m} $.
+
+\section{Conclusiones}
+
+    La medición de la carga específica del electrón a través del experimento realizado nos ha permitido observar la relación entre la corriente, el voltaje aplicado y las características del campo magnético. A partir de los datos obtenidos, se puede concluir que el valor de $ \frac{e}{m} $ calculado a partir de los experimentos concuerda con el valor conocido de esta relación, validando así la efectividad de la configuración experimental utilizada.
 
 \end{document}
 
