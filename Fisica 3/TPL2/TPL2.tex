@@ -185,7 +185,7 @@ Luciano Cortesini - 402719\\
                 xtick distance = 20,
                 grid=major,
               ]
-              \addplot[yellow, mark=*] coordinates {
+              \addplot[blue, mark=*] coordinates {
                 (100,306.1) (80,293.6) (60,279.7) (40,261.3) (20,231)
               };
               \end{axis}
@@ -225,7 +225,7 @@ Luciano Cortesini - 402719\\
                 xtick distance = 20,
                 grid=major,
               ]
-              \addplot[yellow, mark=*] coordinates {
+              \addplot[blue, mark=*] coordinates {
                 (100,35) (80,40.25) (60,50.2) (40,40.68) (20,31.1)
               };
               \end{axis}
@@ -238,37 +238,27 @@ Luciano Cortesini - 402719\\
   \newpage
 
   \section{Apartado B}
-    Se trabaja con 5 líneas espectrales y 2 órdenes de magnitud. Se calcula la energía cinética máxima del electrón
-    ($W$), se obtiene un promedio para $W$, para la frecuencia ($f$) y para la funcion de trabajo ($eV_0$), y asi
-    calcular la constante de Planck ($h$).
-    Para calcular $W$ en cada linea espectral, utilizamos la siguiente formula:
-    $$W = hf - eV_0$$
-    donde:
-    \begin{itemize}
-      \item $h$ = constante de Planck ($6,62607015 \cdot 10^{-34} J \cdot s$)
-      \item $f$ = frecuencia [$Hz$]
-      \item $e$ = carga elemental ($1.602176634 \cdot 10^{-19} C$)
-      \item $V_0$ = tensión de corte [$V$]
-    \end{itemize}
+    Se trabaja con 5 líneas espectrales y 2 órdenes de magnitud. Se obtiene un promedio para la frecuencia ($f$) y 
+    para la tension de corte ($V_0$), y asi calcular la constante de Planck ($h$) a partir de la regresion lineal.
 
     \begin{table}[htbp!]
         \centering
         \begin{adjustbox}{width=\linewidth}
-        \begin{tabular}{|c|c|c|c|c|c|}
+        \begin{tabular}{|c|c|c|c|c|}
         \hline
-        \multicolumn{6}{|c|}{Primer Orden} \\
+        \multicolumn{5}{|c|}{Primer Orden} \\
         \hline
-        Linea Espectral & Frecuencia [$10^{14} Hz]$ & Longitud de Onda [nm] & $V_0$ [mV]& W [$10^{-16} J$] & $eV_0 $\\
+        Linea Espectral & Frecuencia [$10^{14} Hz]$ & Longitud de Onda [nm] & $V_0$ [mV] & $eV_0 $\\
         \hline
-        Ultravioleta & 5195 & 577 & 350 & 3.439 & 5.6 $\cdot 10^{-20}$ \\
+        Amarillo & 5195 & 577 & 350 & 5.6 $\cdot 10^{-20}$ \\
         \hline
-        Violeta & 5896 & 546 & 435 & 3.902 & 6.96 $\cdot 10^{-20}$\\
+        Verde & 5896 & 546 & 435 & 6.96 $\cdot 10^{-20}$\\
         \hline
-        Azul & 6849 & 433.8 & 1100 & 4.532 & 1.76 $\cdot 10^{-19}$\\
+        Azul & 6849 & 433.8 & 1100 & 1.76 $\cdot 10^{-19}$\\
         \hline
-        Verde & 7407 & 404.7 & 1302 & 4.901 & 2.083 $\cdot 10^{-19}$\\
+        Violeta & 7407 & 404.7 & 1302 & 2.083 $\cdot 10^{-19}$\\
         \hline
-        Amarillo & 8184 & 366.3 & 1030 & 5.416 & 1.648 $\cdot 10^{-19}$\\
+        Ultravioleta & 8184 & 366.3 & 1030 & 1.648 $\cdot 10^{-19}$\\
         \hline
         \end{tabular}
         \end{adjustbox}
@@ -277,84 +267,92 @@ Luciano Cortesini - 402719\\
     \begin{table}[htbp!]
         \centering
         \begin{adjustbox}{width=\linewidth}
-        \begin{tabular}{|c|c|c|c|c|c|}
+        \begin{tabular}{|c|c|c|c|c|}
         \hline
-        \multicolumn{6}{|c|}{Segundo Orden} \\
+        \multicolumn{5}{|c|}{Segundo Orden} \\
         \hline
-        Linea Espectral & Frecuencia [$10^{14} Hz]$ & Longitud de Onda [nm] & $V_0$ [mV]& W [$10^{-16} J$] & $eV_0 $\\
+        Linea Espectral & Frecuencia [$10^{14} Hz]$ & Longitud de Onda [nm] & $V_0$ [mV]& $eV_0 $\\
         \hline
-        Ultravioleta & 5195 & 577 & 295 & 3.439 & 4.72 $\cdot 10^{-20}$\\
+        Amarillo & 5195 & 577 & 295 & 4.72 $\cdot 10^{-20}$\\
         \hline
-        Violeta & 5896 & 546 & 322 & 3.903 & 5.152 $\cdot 10^{-20}$\\
+        Verde & 5896 & 546 & 322 & 5.152 $\cdot 10^{-20}$\\
         \hline
-        Azul & 6849 & 433.8 & 895 & 4.533 & 1.432 $\cdot 10^{-19}$\\
+        Azul & 6849 & 433.8 & 895 & 1.432 $\cdot 10^{-19}$\\
         \hline
-        Verde & 7407 & 404.7 & 965 & 4.902 & 1.544 $\cdot 10^{-19}$\\
+        Violeta & 7407 & 404.7 & 965 & 1.544 $\cdot 10^{-19}$\\
         \hline
-        Amarillo & 8184 & 366.3 & 900 & 5.416 & 1.44 $\cdot 10^{-19}$\\
+        Ultravioleta & 8184 & 366.3 & 900 & 1.44 $\cdot 10^{-19}$\\
         \hline
         \end{tabular}
         \end{adjustbox}
     \end{table}
 
-    A partir de los datos obtenidos, se calcula un promedio de ellos, obteniendo:
+    A partir de los datos obtenidos, se calcula una regresion lineal para cada orden espectral:\\
 
-
-    \begin{table}[htbp!]
-        \centering
-        \begin{tabular}{|c|c|}
-        \hline
-        \multicolumn{2}{|c|}{Promedios} \\
-        \hline
-        $W$ & $4.438 \cdot 10^{-16} J$ \\
-        \hline
-        $f$ & $6.7062 \cdot 10^{17} Hz$ \\
-        \hline
-        $eV_0$ & $1.215 \cdot 10^{-19} C$ \\
-        \hline
-        \end{tabular}
-    \end{table}
-
-    Se calcula entonces $h$ y se obtiene el grafico para $V_0$ en funcion de la frecuencia:
-
-    $$h = \frac{W - eV_0}{f}$$
-    $$h = 6.615944946 \cdot 10^{-34}$$
-
-    \noindent
-    \begin{minipage}{0.35\textwidth} % Right side (second figure)
-      \noindent
-      \raggedleft % Aligns the second table to the right
-      \begin{tikzpicture}
-          \begin{axis}[
-            title={},
-            axis lines = center,
-            xlabel={$f$ [$10^{18} Hz$]},
-            ylabel={$V_0$ [V]},
-            width=15cm,
-            height=15cm,
-            ymin = -3, ymax = 3,
-            ytick distance = 0.5,
-            xmin = -5e16, xmax = 1e18,
-            xtick distance = 1e17,
-            grid=major,
-          ]
-          \addplot[red, mark=*] coordinates{
-          (0, -2.77374999999999995) (670392749244713000, 0)
-          };
-
-          \node[label={-2:{(0, -2.7737)}},circle,fill,inner sep=1pt] at (axis cs:0, -2.77374999999999995) {};
-          \node[label={135:{($6.703 \cdot 10^{17}$, 0)}},circle,fill,inner sep=1pt] at (axis cs:670392749244713000,
-          0) {};
-
+          \begin{tikzpicture}
+\centering
+              \begin{axis}[
+                title={},
+		axis lines = center,
+		xlabel={Frecuencia [$[Hz \cdot 10^{18}$]},
+		ylabel={$Vo [V]$},
+                width=15cm,
+                height=7cm,
+		ymin = -2, ymax = 3,
+                ytick distance = 0.5,
+            	xmin = -3e16, xmax = 1e18,
+                xtick distance = 1e17,
+                grid=major,
+              ]
+              \addplot[blue, mark=*] coordinates {
+		      (5195e14, 0.350) (5896e14, 0.435) (6849e14, 1.100) (7407e14, 1.302) (8184e14, 1.030)
+              };
           \addplot[red, very thick][
               domain = -5e16:1.1e19, % Defines the range for x
               samples=20,      % Number of sample points for smoothness
           ]
-          {(((6.62 * x) - 4.438e18) / 1.6e15) / 1000};
-          \addlegendentry{$V_0 = h/e \cdot f - W/e$}
-          \end{axis}
-      \end{tikzpicture}
-    \end{minipage}
+          {-1.191+3.032e-18 * x};
+              \end{axis}
+          \end{tikzpicture}
+
+          \begin{tikzpicture}
+\centering
+              \begin{axis}[
+                title={},
+		axis lines = center,
+		xlabel={Frecuencia [$[Hz \cdot 10^{18}$]},
+		ylabel={$Vo [V]$},
+                width=15cm,
+                height=7cm,
+		ymin = -2, ymax = 3,
+                ytick distance = 0.5,
+            	xmin = -3e16, xmax = 1e18,
+                xtick distance = 1e17,
+                grid=major,
+              ]
+              \addplot[blue, mark=*] coordinates {
+		      (5195e14, 0.295) (5896e14, 0.322) (6849e14,0.895) (7407e14, 0.965) (8184e14, 0.9)
+              };
+          \addplot[red, very thick][
+              domain = -5e16:1.1e19, % Defines the range for x
+              samples=20,      % Number of sample points for smoothness
+          ]
+          {-1.023+2.533e-18 * x};
+              \end{axis}
+          \end{tikzpicture}
+
+	  Se obtiene entonces $\frac{h}{e}$ como el promedio de la pendiente de la recta y $\frac{W}{e}$ como el promedio de 
+	  la ordenada al origen:
+	  $$\frac{h}{e} = 2.783 \cdot 10^{-18} V \cdot s$$
+	  $$\frac{W}{e} = -1.107 V $$
+	  $$W = -1.771 \cdot 10^{-19} J$$
+
+
+    Se calcula entonces $h$ y se obtiene el grafico para $V_0$ en funcion de la frecuencia:
+
+    $$h = \frac{W + eV_0}{f}$$
+    $$h = 4.453 \cdot 10^{-37} J \cdot s$$
+
 
 \chapter{Conclusión}
 
@@ -372,8 +370,7 @@ Luciano Cortesini - 402719\\
   se recomienda siempre utilizar equipamiento del más alto nivel y teniendo precaución a la hora de trabajar con ellos
   para aumentar su vida útil.
 
-  En el Apartado B se pudo visualizar mejor los resultados a partir de la realización del promedio, llegando mejor
-  a una media de los datos y asi comprobando el valor de la constante de Planck a partir de datos medidos. Esto nos
-  permite concluir que el efecto fotoeléctrico es real y que hay una energía asociada a cada onda del espectro.
+  En el Apartado B también se ve resultados bastantes alejados de la realidad. Esto se debe a la imposibilidad de
+  aislar de toda radiación al aparato $\frac{h}{e}$.
 
 \end{document}
